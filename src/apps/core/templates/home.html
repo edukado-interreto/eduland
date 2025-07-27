@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load ftl %}
+
+{% block "content" %}
+<h1>EduLand</h1>
+<h2>
+{% ftlmsg "app-about-the-project" %}
+{% ftlmsg "app-comics" %}
+{% ftlmsg "app-modules" %}
+{% ftlmsg "app-methodology" %}
+</h2>
+{% endblock "content" %}
