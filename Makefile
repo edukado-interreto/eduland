@@ -1,5 +1,4 @@
-django := uv run python src/manage.py
-run := npm run --prefix ui
+django := uv run python manage.py
 
 all: runserver
 
@@ -7,9 +6,6 @@ runserver:
 	$(django) runserver
 
 lint:
-	uv run ruff format --check src
-	uv run ruff check src
-	uv run basedpyright src
-
-css:
-	$(run)
+	uv run ruff format --check apps config
+	uv run ruff check apps config
+	uv run basedpyright apps config

@@ -1,0 +1,49 @@
+{% load ftl static %}{# Icons: https://fonts.google.com/icons #}
+
+<header class="white medium-padding medium-elevate indigo-text">
+  <nav class="m l">
+    <img src="{% static "android-chrome-192x192.png" %}" class="extra round">
+    <h6 class="bold max">{% t "app-project-name" %}</h6>
+    {% for item in main_menu %}
+      {% if item.subitems %}
+      <button class="transparent extra">
+        <span><i>{{ item.icon }}</i> {{ item.title }}</span>
+        <menu class="left min no-wrap">
+        <li>
+          <i>{{ item.icon }}</i> {{ item.title }}
+        </li>
+        {% for subitem in item.subitems %}
+          <li>
+            <a href="#">
+              <i>{{ subitem.icon }}</i>
+              <div>{{ subitem.title }}</div>
+            </a>
+          </li>
+        {% endfor %}
+        </menu>
+      </button>
+      {% else %}
+      <a href="#" class="button transparent extra">
+        <i class="extra">{{ item.icon }}</i>
+        <div>{{ item.title }}</div>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+
+  <nav class="s small">
+    <img src="{% static "android-chrome-192x192.png" %}" class="extra round">
+    <h6 class="bold max">{% t "app-project-name" %}</h6>
+    <button class="transparent large round">
+      <span><i class="large">menu</i></span>
+      <menu class="left no-wrap white">
+        {% for item in main_menu %}
+        <li>
+          <a href="#"> <i>{{ item.icon }}</i> {{ item.title }} </a>
+        </li>
+        {% endfor %}
+      </menu>
+    </button>
+  </nav>
+
+</header>
