@@ -1,0 +1,53 @@
+name: "eduland"
+
+secrets:
+  postgres-passfile:
+    file: ./secrets/postgres-passfile
+  postgres-password:
+    file: ./secrets/postgres-password
+
+services:
+  django:
+    build:
+      context: .
+      target: production
+      args:
+        - USER_ID=$USER_ID
+        - GROUP_ID=$GROUP_ID
+        - PORT=$PORT
+    # command: /bin/sh -c "./manage.py migrate && ./manage.py runserver 0.0.0.0:$PORT"
+    ports:
+      - 127.0.0.1:$PORT:$PORT
+    environment:
+      - DEBUG=True
+      - SECRETS_DIR=./secrets
+      - USER_ID=$USER_ID
+      - GROUP_ID=$GROUP_ID
+      - PORT=$PORT
+    secrets:
+      - source: postgres-passfile
+        target: POSTGRES_PASSFILE
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:17-alpine
+    # user: $USER_ID:$GROUP_ID
+    secrets:
+      - postgres-password
+    volumes:
+      - $POSTGRES_DATA_DIR:/var/lib/postgresql/data:z
+      # - ./db/postgresql:/usr/local/etc/postgresql:z
+    environment:
+      - POSTGRES_DB=$POSTGRES_DB
+      - POSTGRES_USER=$POSTGRES_USER
+      - POSTGRES_PASSWORD_FILE=/run/secrets/$POSTGRES_PASSWORD_FILE
+    restart: unless-stopped
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 127.0.0.1:8080:8080
+

@@ -1,6 +1,9 @@
 django := uv run python manage.py
 
-all: runserver
+all: run
+
+run:
+	docker compose up --build django
 
 runserver:
 	$(django) runserver
