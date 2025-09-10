@@ -1,14 +1,15 @@
 from pathlib import Path
-from toml_decouple import config
+from toml_decouple import TomlDecouple
 
 CONFIG_DIR = Path(__file__).resolve().parent
 BASE_DIR = CONFIG_DIR.parent
 
+config = TomlDecouple(prefix="EDULAND_").load()
+
 SECRET_KEY = config.SECRET_KEY
 DEBUG = config.DEBUG
 
-
-ALLOWED_HOSTS = config.get("ALLOWED_HOSTS", ["localhost"])
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", ["localhost"])
 
 
 INSTALLED_APPS = [

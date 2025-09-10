@@ -41,7 +41,7 @@ COPY --chmod=755 <<EOT /entrypoint.sh
 #!/usr/bin/env bash
 set -xe
 python manage.py migrate --noinput &
-granian --interface wsgi --blocking-threads 3 config.wsgi:application --host 0.0.0.0 --port $PORT
+granian --interface wsgi --blocking-threads 3 config.wsgi:application --host 0.0.0.0 --port 8000
 EOT
 
 ENTRYPOINT ["/entrypoint.sh"]
