@@ -9,7 +9,7 @@ dependencies = [
   "django-ftl>=0.14",
   "granian>=2.5.2",
   "psycopg[binary]>=3.2.10",
-  "toml-decouple>=0.2.0",
+  "toml-decouple>=0.3.0",
   "whitenoise[brotli]>=6.9.0",
 ]
 
