@@ -1,16 +1,15 @@
 [project]
 name = "eduland"
 version = "0.1.0"
-description = "Add your description here"
+description = "EduLand: lernu lingvojn per komiksoj"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-  "dj-database-url>=3.0.1",
   "django>=5.2.4",
   "django-ftl>=0.14",
-  "gunicorn>=23.0.0",
-  "pyinotify>=0.9.6",
-  "toml-decouple>=0.1.0",
+  "granian>=2.5.2",
+  "psycopg[binary]>=3.2.10",
+  "toml-decouple>=0.2.0",
   "whitenoise[brotli]>=6.9.0",
 ]
 

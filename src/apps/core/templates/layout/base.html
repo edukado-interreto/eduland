@@ -1,0 +1,31 @@
+{% load ftl static %}<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://api.fonts.coollabs.io">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "apple-touch-icon.png" %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static "favicon-32x32.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "favicon-16x16.png" %}">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>{% block head_title %}{% ftlmsg "app-project-name" %}{% endblock %}</title>
+    <!-- BeerCSS -->
+    {# <link rel="stylesheet" href="{% static "beer-3.11.33.min.css" %}"> #}
+    {# <script type="module" src="{% static "beer-3.11.33.min.js" %}"></script> #}
+    <link rel="stylesheet" href="{% static "beer-3.12.0.min.css" %}">
+    <script type="module" src="{% static "beer-3.12.0.min.js" %}"></script>
+    <link rel="stylesheet" href="{% static "theme.css" %}">
+    <!-- Fonts -->
+    <link href="https://api.fonts.coollabs.io/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://api.fonts.coollabs.io/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static "eduland.css" %}">
+  </head>
+  <body>
+    {% include "layout/navbar.html" %}
+    <main>
+      {% block "content" %}{% endblock %}
+    </main>
+    {% include "layout/footer.html" %}
+  </body>
+</html>
