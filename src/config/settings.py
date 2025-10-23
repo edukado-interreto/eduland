@@ -1,30 +1,60 @@
+import os
+import sys
 from pathlib import Path
-from toml_decouple import TomlDecouple
 
-CONFIG_DIR = Path(__file__).resolve().parent
+from toml_decouple import config
+
+
+def mod(pkg: str, modules: list[str]) -> list[str]:
+    return [".".join([t for t in [pkg, module] if t]) for module in modules]
+
+
+CONFIG_DIR = Path(__file__).absolute().parent
 BASE_DIR = CONFIG_DIR.parent
-
-config = TomlDecouple(prefix="EDULAND_").load()
+PROJECT_DIR = BASE_DIR.parent
 
 SECRET_KEY = config.SECRET_KEY
 DEBUG = config.DEBUG
+TESTING = "test" in sys.argv or "PYTEST_VERSION" in os.environ
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", ["localhost"])
-print()
-print(" ALLOWED_HOSTS", ALLOWED_HOSTS)
-print(" ALLOWED_HOSTS type:", type(ALLOWED_HOSTS))
-print()
+if not DEBUG:
+    ALLOWED_HOSTS = config.ALLOWED_HOSTS
+
+DJANGO_CONTRIB_APPS = [
+    "admin",
+    "auth",
+    "contenttypes",
+    "sessions",
+    "messages",
+    "staticfiles",
+]
+WAGTAIL_APPS = [
+    "contrib.forms",
+    "contrib.redirects",
+    "embeds",
+    "sites",
+    "users",
+    "snippets",
+    "documents",
+    "images",
+    "search",
+    "admin",
+    "",
+]
+PROJECT_APPS = ["core", "education", "home", "search"]
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
     "whitenoise.runserver_nostatic",
-    "django.contrib.staticfiles",
+    "wagtail_localize",
+    "wagtail_localize.locales",
+    *mod("wagtail", WAGTAIL_APPS),
+    "modelcluster",
+    "taggit",
+    "django_filters",
+    "django_extensions",
+    *mod("django.contrib", DJANGO_CONTRIB_APPS),
     "django_ftl.apps.DjangoFtlConfig",
-    "apps.core",
+    *mod("apps", PROJECT_APPS),
 ]
 
 MIDDLEWARE = [
@@ -38,7 +68,21 @@ MIDDLEWARE = [
     "django.middleware.locale.LocaleMiddleware",
     "django_ftl.middleware.activate_from_request_language_code",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
+    "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
+
+DEBUG_TOOLBAR_CONFIG = {"SHOW_TOOLBAR_CALLBACK": lambda request: DEBUG}
+
+if not TESTING:
+    INSTALLED_APPS = [
+        *INSTALLED_APPS,
+        "debug_toolbar",
+    ]
+    MIDDLEWARE = [
+        "debug_toolbar.middleware.DebugToolbarMiddleware",
+        *MIDDLEWARE,
+    ]
 
 ROOT_URLCONF = "config.urls"
 
@@ -87,14 +131,55 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+WAGTAIL_SITE_NAME = config.PROJECT
+
+# Search
+# https://docs.wagtail.org/en/stable/topics/search/backends.html
+WAGTAILSEARCH_BACKENDS = {
+    "default": {
+        "BACKEND": "wagtail.search.backends.database",
+    }
+}
+
+# Base URL to use when referring to full URLs within the Wagtail admin backend -
+# e.g. in notification emails. Don't include '/admin' or a trailing slash
+WAGTAILADMIN_BASE_URL = config.HOST
+
+# Allowed file extensions for documents in the document library.
+# This can be omitted to allow all files, but note that this may present a security risk
+# if untrusted users are allowed to upload files -
+# see https://docs.wagtail.org/en/stable/advanced_topics/deploying.html#user-uploaded-files
+WAGTAILDOCS_EXTENSIONS = [
+    "csv",
+    "docx",
+    "key",
+    "odt",
+    "pdf",
+    "pptx",
+    "rtf",
+    "txt",
+    "xlsx",
+    "zip",
+]
+
+USE_TZ, TIME_ZONE = True, "Europe/Bratislava"
+
 LANGUAGE_CODE = "en"
 LANGUAGE_COOKIE_NAME = "lang"
-TIME_ZONE = "Europe/Bratislava"
-USE_I18N = USE_TZ = True
+USE_I18N = WAGTAIL_I18N_ENABLED = True
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
+    ("fr", "French"),
+    ("sk", "Slovak"),
+    ("en", "English"),
+    ("eo", "Esperanto"),
+]
 
 WHITENOISE_ROOT = BASE_DIR / "public"
 STATICFILES_DIRS = [BASE_DIR / "public" / "static"]
 STATIC_URL = "static/"
+MEDIA_ROOT = PROJECT_DIR / "uploads/"
+MEDIA_URL = "uploads/"
+
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
