@@ -1,6 +1,7 @@
 import os
 import sys
 from pathlib import Path
+from typing import Any
 
 from toml_decouple import config
 
@@ -9,9 +10,8 @@ def mod(pkg: str, modules: list[str]) -> list[str]:
     return [".".join([t for t in [pkg, module] if t]) for module in modules]
 
 
-CONFIG_DIR = Path(__file__).absolute().parent
-BASE_DIR = CONFIG_DIR.parent
-PROJECT_DIR = BASE_DIR.parent
+SRC_DIR = Path(__file__).absolute().parent.parent
+PROJECT_DIR = SRC_DIR.parent
 
 SECRET_KEY = config.SECRET_KEY
 DEBUG = config.DEBUG
@@ -74,7 +74,7 @@ MIDDLEWARE = [
 
 DEBUG_TOOLBAR_CONFIG = {"SHOW_TOOLBAR_CALLBACK": lambda request: DEBUG}
 
-if not TESTING:
+if DEBUG and not TESTING:
     INSTALLED_APPS = [
         *INSTALLED_APPS,
         "debug_toolbar",
@@ -174,8 +174,9 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
     ("eo", "Esperanto"),
 ]
 
-WHITENOISE_ROOT = BASE_DIR / "public"
-STATICFILES_DIRS = [BASE_DIR / "public" / "static"]
+WHITENOISE_USE_FINDERS = True
+WHITENOISE_ROOT = SRC_DIR / "public"
+STATICFILES_DIRS = [SRC_DIR / "public" / "static"]
 STATIC_URL = "static/"
 MEDIA_ROOT = PROJECT_DIR / "uploads/"
 MEDIA_URL = "uploads/"
@@ -190,3 +191,51 @@ STORAGES = {
 }
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGGING: dict[str, Any] = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "filters": {
+        "require_debug_false": {
+            "()": "django.utils.log.RequireDebugFalse",
+        },
+        "require_debug_true": {
+            "()": "django.utils.log.RequireDebugTrue",
+        },
+    },
+    "formatters": {
+        "django.server": {
+            "()": "django.utils.log.ServerFormatter",
+            "format": "[{server_time}] {message}",
+            "style": "{",
+        }
+    },
+    "handlers": {
+        "console": {
+            "level": "INFO",
+            "filters": [],  # ["require_debug_true"]
+            "class": "logging.StreamHandler",
+        },
+        "django.server": {
+            "level": "INFO",
+            "class": "logging.StreamHandler",
+            "formatter": "django.server",
+        },
+        "mail_admins": {
+            "level": "ERROR",
+            "filters": ["require_debug_false"],
+            "class": "django.utils.log.AdminEmailHandler",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console", "mail_admins"],
+            "level": "INFO",
+        },
+        "django.server": {
+            "handlers": ["django.server"],
+            "level": "INFO",
+            "propagate": False,
+        },
+    },
+}

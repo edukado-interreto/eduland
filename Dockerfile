@@ -1,14 +1,11 @@
 ##### BASE STAGE #####
 FROM python:3.13-slim-trixie AS base
 
-ARG PORT=$PORT
-
 ENV VIRTUAL_ENV=/opt/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH" \
     PYTHONUNBUFFERED=1 \
     UV_SYSTEM_PYTHON=1 \
-    UV_PROJECT_ENVIRONMENT=$VIRTUAL_ENV \
-    PORT=$PORT
+    UV_PROJECT_ENVIRONMENT=$VIRTUAL_ENV
 
 
 ##### BUILDER STAGE #####
@@ -63,10 +60,10 @@ WORKDIR /app/src
 ##### PRODUCTION STAGE #####
 FROM base AS production
 
-COPY --from=builder --chown=app:app /app /app
+ENV HOME="/app/src"
 
-# Place executables in the environment at the front of the path
-ENV HOME=/app/src PATH="/app/.venv/bin:$PATH"
+COPY --from=builder --chown=appuser:appuser $VIRTUAL_ENV $VIRTUAL_ENV
+COPY --chown=appuser:appuser ./src /app/src
 
 WORKDIR /app/src
 
@@ -74,7 +71,7 @@ COPY --chmod=755 <<EOT /entrypoint.sh
 #!/usr/bin/env bash
 set -xe
 python manage.py migrate --noinput &
-granian --interface wsgi --blocking-threads 3 config.wsgi:application --host 0.0.0.0 --port 8000
+granian --interface wsgi --blocking-threads 3 config.wsgi:application --host 0.0.0.0 --port $PORT
 EOT
 
 ENTRYPOINT ["/entrypoint.sh"]
