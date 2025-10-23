@@ -5,24 +5,55 @@ secrets:
     file: ./secrets/postgres-password
 
 services:
+  proxy:
+    image: caddy:latest
+    environment:
+      - CADDY_HOSTS=${CADDY_HOSTS}
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./etc/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./uploads:/srv/uploads:z
+    depends_on:
+      - django
+    networks:
+      - public
+      - backend
+    
   django:
     build:
       context: .
-      target: production
+      target: development
       args:
         - USER_ID=$USER_ID
         - GROUP_ID=$GROUP_ID
         - PORT=$PORT
+    user: "1000"
+    command: /bin/sh -c "./manage.py migrate && ./manage.py runserver 0.0.0.0:$PORT"
+    secrets:
+      - source: postgres-password
+        target: DB_PASSWORD
+    networks:
+      - backend
+    volumes:
+      - ./:/app:z
+      - ./uploads:/app/uploads:z
     ports:
       - 127.0.0.1:$PORT:$PORT
+    env_file:
+      - src/.env.django
     depends_on:
       - postgres
     restart: unless-stopped
+    stop_grace_period: 1s
 
   postgres:
     image: postgres:17-alpine
     secrets:
       - postgres-password
+    networks:
+      - backend
     volumes:
       - $POSTGRES_DATA_DIR:/var/lib/postgresql/data:z
     environment:
@@ -37,3 +68,6 @@ services:
     ports:
       - 127.0.0.1:8080:8080
 
+networks:
+  public:
+  backend:

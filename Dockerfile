@@ -1,7 +1,17 @@
-# --- BASE STAGE ---
+##### BASE STAGE #####
 FROM python:3.13-slim-trixie AS base
 
-# --- BUILDER STAGE ---
+ARG PORT=$PORT
+
+ENV VIRTUAL_ENV=/opt/venv
+ENV PATH="$VIRTUAL_ENV/bin:$PATH" \
+    PYTHONUNBUFFERED=1 \
+    UV_SYSTEM_PYTHON=1 \
+    UV_PROJECT_ENVIRONMENT=$VIRTUAL_ENV \
+    PORT=$PORT
+
+
+##### BUILDER STAGE #####
 FROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder
 
 # Install the project into `/app`
@@ -13,6 +23,9 @@ ENV UV_COMPILE_BYTECODE=1
 # Copy from the cache instead of linking since it's a mounted volume
 ENV UV_LINK_MODE=copy
 
+# Use a different virtual environment from /app/.venv
+ENV UV_PROJECT_ENVIRONMENT=/opt/venv
+
 # Install the project's dependencies using the lockfile and settings
 RUN --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=uv.lock,target=uv.lock \
@@ -21,14 +34,34 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 # Then, add the rest of the project source code and install it
 # Installing separately from its dependencies allows optimal layer caching
-ADD . /app
+COPY pyproject.toml uv.lock /app/
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev
 
-# --- PRODUCTION STAGE ---
-FROM base AS production
 
-ARG PORT=$PORT
+
+##### DEVELOPMENT STAGE #####
+FROM base AS development
+
+ENV PYTHONDONTWRITEBYTECODE=1
+
+COPY --from=builder --chown=appuser:appuser $VIRTUAL_ENV $VIRTUAL_ENV
+
+RUN \
+--mount=from=ghcr.io/astral-sh/uv,source=/uv,target=/bin/uv \
+--mount=type=cache,target=/root/.cache/uv \
+--mount=type=bind,source=uv.lock,target=uv.lock \
+--mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+uv sync --frozen
+
+RUN chmod +x $VIRTUAL_ENV/bin/activate; $VIRTUAL_ENV/bin/activate
+
+WORKDIR /app/src
+
+
+
+##### PRODUCTION STAGE #####
+FROM base AS production
 
 COPY --from=builder --chown=app:app /app /app
 

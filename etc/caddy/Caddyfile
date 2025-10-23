@@ -1,0 +1,10 @@
+{$CADDY_HOSTS} {
+	handle /uploads/* {
+		file_server
+	}
+	handle {
+		reverse_proxy django:{$PORT} {
+			header_up Host {host}
+		}
+	}
+}
