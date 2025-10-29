@@ -1,7 +1,7 @@
 import os
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from toml_decouple import config
 
@@ -18,7 +18,11 @@ DEBUG = config.DEBUG
 TESTING = "test" in sys.argv or "PYTEST_VERSION" in os.environ
 
 if not DEBUG:
-    ALLOWED_HOSTS = config.ALLOWED_HOSTS
+    ALLOWED_HOSTS = cast(list[str], config.ALLOWED_HOSTS)
+    CSRF_TRUSTED_ORIGINS = config(
+        "CSRF_TRUSTED_ORIGINS",
+        default=[f"https://{h}" for h in ALLOWED_HOSTS],
+    )
 
 DJANGO_CONTRIB_APPS = [
     "admin",
