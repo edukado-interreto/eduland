@@ -18,6 +18,8 @@
     <link href="https://api.fonts.coollabs.io/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static "eduland.css" %}">
+    <style>{% block extra_css %}{% endblock %}
+    </style>
   </head>
   <body>
     {% include "layout/navbar.html" %}
@@ -25,5 +27,6 @@
       {% block content %}{% endblock %}
     </main>
     {% include "layout/footer.html" %}
+    {% block extra_js %}{% endblock %}
   </body>
 </html>

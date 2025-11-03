@@ -1,21 +1,25 @@
 {% extends "layout/base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 
-{% image page.hero_image width-1024 as hero_image %}
-
 {% block body_class %}template-homepage{% endblock %}
 
-<!-- replace everything below with: -->
+{% block extra_css %}{% image page.hero_image width-1024 as hero_image %} {{ block.super }}
+    .hero::before {
+        background-image: url('{{ hero_image.url }}')
+    }
+{% endblock extra_css %}
+
 {% block content %}
-<section id="hero" class="hero white-text medium-elevate"
-style="background-image: url('{% get_media_prefix %}{{ hero_image.url }}')">
-<br>
-{{ hero_image.url }}
-<br>
-{{ hero_image.renditions.0.url }}
-<br>
+
+<section id="hero" class="hero white-text medium-elevate">
     {{ page.hero_text|richtext }}
     <div class="large-space"></div>
     <p> <a href="{{ page.hero_cta_link }}" class="button extra border transparent">{{ page.hero_cta }}</a> </p>
 </section>
-{% endblock %}
+
+<section id="about" class="responsive white-text">
+    {{ page.about|richtext }}
+</section>
+
+<div class="large-space"></div>
+{% endblock content %}

@@ -17,12 +17,11 @@ SECRET_KEY = config.SECRET_KEY
 DEBUG = config.DEBUG
 TESTING = "test" in sys.argv or "PYTEST_VERSION" in os.environ
 
-if not DEBUG:
-    ALLOWED_HOSTS = cast(list[str], config.ALLOWED_HOSTS)
-    CSRF_TRUSTED_ORIGINS = config(
-        "CSRF_TRUSTED_ORIGINS",
-        default=[f"https://{h}" for h in ALLOWED_HOSTS],
-    )
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", [config("HOST")])
+CSRF_TRUSTED_ORIGINS = config(
+    "CSRF_TRUSTED_ORIGINS",
+    default=[f"https://{h}" for h in cast(list[str], ALLOWED_HOSTS)],
+)
 
 DJANGO_CONTRIB_APPS = [
     "admin",

@@ -31,6 +31,8 @@ class HomePage(Page):
         help_text="Choose a page to link to for the Call to Action",
     )
 
+    about = RichTextField(blank=True)
+
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [
@@ -38,6 +40,7 @@ class HomePage(Page):
                 FieldPanel("hero_text"),
                 FieldPanel("hero_cta"),
                 FieldPanel("hero_cta_link"),
+                FieldPanel("about"),
             ],
             heading="Hero section",
         ),
