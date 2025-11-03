@@ -3,9 +3,9 @@ name = "eduland"
 version = "0.1.0"
 description = "EduLand: lernu lingvojn per komiksoj"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.14"
 dependencies = [
-  "django>=5.2.4",
+  "django>=5.2.7",
   "django-extensions>=4.1",
   "django-ftl>=0.14",
   "granian>=2.5.2",
@@ -13,7 +13,7 @@ dependencies = [
   "toml-decouple==0.6.0",
   "wagtail>=7.1.1",
   "wagtail-localize>=1.12.2",
-  "whitenoise[brotli]>=6.9.0",
+  "whitenoise>=6.11.0",
 ]
 
 [dependency-groups]

@@ -1,5 +1,5 @@
 ##### BASE STAGE #####
-FROM python:3.13-slim-trixie AS base
+FROM python:3.14-slim-trixie AS base
 
 ENV VIRTUAL_ENV=/opt/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH" \
@@ -9,7 +9,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH" \
 
 
 ##### BUILDER STAGE #####
-FROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder
+FROM ghcr.io/astral-sh/uv:python3.14-trixie-slim AS builder
 
 # Install the project into `/app`
 WORKDIR /app
