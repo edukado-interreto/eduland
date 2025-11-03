@@ -9,14 +9,13 @@ services:
     image: caddy:latest
     environment:
       - CADDY_HOSTS=${CADDY_HOSTS}
+      - PORT=$PORT
     ports:
       - 80:80
       - 443:443
     volumes:
       - ./etc/caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./uploads:/srv/uploads:z
-    depends_on:
-      - django
     networks:
       - public
       - backend
@@ -44,6 +43,7 @@ services:
     env_file:
       - src/.env.django
     depends_on:
+      - proxy
       - postgres
     restart: unless-stopped
     stop_grace_period: 1s
@@ -64,9 +64,11 @@ services:
 
   adminer:
     image: adminer
-    restart: always
+    restart: unless-stopped
     ports:
       - 127.0.0.1:8080:8080
+    networks:
+      - backend
 
 networks:
   public:

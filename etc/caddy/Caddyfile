@@ -8,3 +8,10 @@
 		}
 	}
 }
+adminer.localhost {
+	handle {
+		reverse_proxy adminer:8080 {
+			header_up Host {host}
+		}
+	}
+}
