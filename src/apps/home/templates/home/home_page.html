@@ -1,5 +1,5 @@
 {% extends "layout/base.html" %}
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load debug_filters static wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -10,15 +10,14 @@
 {% endblock extra_css %}
 
 {% block content %}
-
 <section id="hero" class="hero white-text medium-elevate">
-    {{ page.hero_text|richtext }}
+    {{ page.hero_text | richtext }}
     <div class="large-space"></div>
     <p> <a href="{{ page.hero_cta_link }}" class="button extra border transparent">{{ page.hero_cta }}</a> </p>
 </section>
 
 <section id="modules" class="responsive white-text">
-    {{ page.unit_modules }}
+    {{ page.modules }}
 </section>
 
 <section id="about" class="responsive white-text">

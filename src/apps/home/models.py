@@ -43,6 +43,7 @@ class HomePage(Page):
 
     about = RichTextField(blank=True)
 
+    parent_page_types = ["wagtailcore.Page"]  # under Root only
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [f"hero_{f}" for f in ["image", "text", "cta", "cta_link"]],

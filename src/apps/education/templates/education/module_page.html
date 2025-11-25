@@ -1,0 +1,20 @@
+{% extends "layout/base.html" %}
+{% load debug_filters static wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<h1 class="center-align bold large-margin">{{ self.title }}</h1>
+
+{% for unit in self.get_children.live %}
+    <article class="no-padding round s m l large-margin">
+        <a href="{{ unit.url }}">
+          <img class="responsive medium" src="{% static "press_letters.jpeg" %}">
+          <div class="absolute bottom left right padding bottom-shadow bottom-round white-text">
+            <nav>
+              <h5>{{ unit.specific.name }}</h5>
+              <div class="max"></div>
+            </nav>
+          </div>
+      </a>
+    </article>
+{% endfor %}
+{% endblock content %}

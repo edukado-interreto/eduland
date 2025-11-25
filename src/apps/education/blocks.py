@@ -7,5 +7,5 @@ class ModuleBlock(StructBlock):
     )
 
     class Meta:
-        icon = "check"
+        icon = "table"
         template = "education/blocks/module_block.html"
