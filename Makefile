@@ -14,6 +14,9 @@ run:
 runserver:
 	$(django) runserver
 
+shell:
+	$(dc) exec django ./manage.py shell_plus
+
 migrations:
 	$(dc) exec django ./manage.py makemigrations
 

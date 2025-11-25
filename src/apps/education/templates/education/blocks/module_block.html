@@ -1,0 +1,5 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+<div class="module">
+  <h3 id="module-{{ self.module_page.slug }}">{{ self.module_page.title }}</h3>
+  {% image self.module_page.image width-512 class="responsive medium" loading="lazy" decoding="async" %}
+</div>

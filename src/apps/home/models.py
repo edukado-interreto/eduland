@@ -1,8 +1,16 @@
 from django.db import models
-
+from wagtail.admin.panels import MultiFieldPanel
+from wagtail.blocks import StreamBlock
+from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Page
-from wagtail.fields import RichTextField
-from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+
+from apps.core.blocks import HeadingBlock
+from apps.education.blocks import ModuleBlock
+
+
+class ModuleStreamBlock(StreamBlock):
+    title = HeadingBlock()
+    module = ModuleBlock()
 
 
 class HomePage(Page):
@@ -12,7 +20,7 @@ class HomePage(Page):
         blank=True,
         on_delete=models.SET_NULL,
         related_name="+",
-        help_text="Hero image",
+        verbose_name="Background image",
     )
     hero_text = RichTextField(blank=True)
     hero_cta = models.CharField(
@@ -31,17 +39,15 @@ class HomePage(Page):
         help_text="Choose a page to link to for the Call to Action",
     )
 
+    modules = StreamField(ModuleStreamBlock(), blank=True, verbose_name="Modules")
+
     about = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
         MultiFieldPanel(
-            [
-                FieldPanel("hero_image"),
-                FieldPanel("hero_text"),
-                FieldPanel("hero_cta"),
-                FieldPanel("hero_cta_link"),
-                FieldPanel("about"),
-            ],
+            [f"hero_{f}" for f in ["image", "text", "cta", "cta_link"]],
             heading="Hero section",
         ),
+        MultiFieldPanel(["modules"], heading="Content section"),
+        MultiFieldPanel(["about"], heading="Footer section"),
     ]
