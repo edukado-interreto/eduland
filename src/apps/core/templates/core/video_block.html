@@ -1,0 +1,4 @@
+{% load wagtailembeds_tags %}
+<section id="{{ video.value.id }}" class="youtube surface-container-lowest no-round responsive">
+    {% embed video.value.url %}
+</section>

@@ -1,11 +1,12 @@
 from django.contrib.auth import get_user_model
 from django.db import models
-from wagtail.fields import RichTextField
+from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Orderable, Page
 from wagtail.snippets.models import register_snippet
 from django_extensions.db.models import TimeStampedModel
 
 from apps.core.utils import long_id
+from apps.education.blocks import UnitStreamBlock
 
 User = get_user_model()
 
@@ -91,7 +92,8 @@ class UnitPage(Page):
         on_delete=models.SET_NULL,
         related_name="+",
     )
+    body = StreamField(UnitStreamBlock(), blank=True, verbose_name="Content")
 
     parent_page_types = ["education.ModulePage"]
     subpage_types = []
-    content_panels = Page.content_panels + ["name", "description", "image"]
+    content_panels = Page.content_panels + ["name", "description", "image", "body"]

@@ -160,6 +160,8 @@ WAGTAILDOCS_EXTENSIONS = [
     "zip",
 ]
 
+WAGTAILEMBEDS_RESPONSIVE_HTML = True
+
 USE_TZ, TIME_ZONE = True, "Europe/Bratislava"
 
 LANGUAGE_CODE = "en"

@@ -5,15 +5,44 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('home', '0006_homepage_modules'),
+        ("home", "0006_homepage_modules"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='homepage',
-            name='modules',
-            field=wagtail.fields.StreamField([('title', 2), ('module', 4)], blank=True, block_lookup={0: ('wagtail.blocks.CharBlock', (), {'form_classname': 'title', 'required': True}), 1: ('wagtail.blocks.ChoiceBlock', [], {'choices': [('h2', 'H2'), ('h3', 'H3'), ('h4', 'H4')]}), 2: ('wagtail.blocks.StructBlock', [[('heading_text', 0), ('size', 1)]], {}), 3: ('wagtail.blocks.PageChooserBlock', (), {'page_type': ['education.ModulePage'], 'verbose_name': 'Module'}), 4: ('wagtail.blocks.StructBlock', [[('module_page', 3)]], {})}, verbose_name='Modules'),
+            model_name="homepage",
+            name="modules",
+            field=wagtail.fields.StreamField(
+                [("title", 2), ("module", 4)],
+                blank=True,
+                block_lookup={
+                    0: (
+                        "wagtail.blocks.CharBlock",
+                        (),
+                        {"form_classname": "title", "required": True},
+                    ),
+                    1: (
+                        "wagtail.blocks.ChoiceBlock",
+                        [],
+                        {"choices": [("h2", "H2"), ("h3", "H3"), ("h4", "H4")]},
+                    ),
+                    2: (
+                        "wagtail.blocks.StructBlock",
+                        [[("heading_text", 0), ("size", 1)]],
+                        {},
+                    ),
+                    3: (
+                        "wagtail.blocks.PageChooserBlock",
+                        (),
+                        {
+                            "page_type": ["education.ModulePage"],
+                            "verbose_name": "Module",
+                        },
+                    ),
+                    4: ("wagtail.blocks.StructBlock", [[("module_page", 3)]], {}),
+                },
+                verbose_name="Modules",
+            ),
         ),
     ]

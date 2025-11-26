@@ -1,7 +1,46 @@
 {% extends "layout/base.html" %}
-{% load debug_filters static wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block extra_css %}
+.youtube {
+  position: relative;
+  text-align: center;
+  
+  iframe {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+  }
+}
+{% endblock %}
 
 {% block content %}
-<h1 class="center-align bold">{{ self.title }}</h1>
+<section class="large-margin large-padding">
+<h1 class="center-align bold white-text">{{ self.title }}</h1>
+
+{% for content in self.body %}
+  {% if content.block_type == "text" %}
+    <div class="large-margin large-padding">{{ content }}</div>
+  {% elif content.block_type == "video" %}
+    {% include "core/video_block.html" with video=content %}
+  {% elif content.block_type == "exercise" %}
+    <pre class="large-opacity">
+      <large>{{ content.value.name }}</large>
+      <code class="tiny-line" style="font-size:0.7em"> {{ content.value.data }} </code>
+    </pre>
+  {% elif content.block_type == "testu" %}
+    <article style="height:100vh;width:100%" class="round large-padding surface-container-lowest">
+      <iframe src="{{ content.value }}" height="600" width="800"
+    style="height:100%;width:100%" frameborder="0"></iframe>
+    </article>
+  {% else %} {# never reached #}
+    {{ content }}
+  {% endif %}
+
+  {% if not forloop.last %}
+    <br class="space">
+  {% endif %}
+{% endfor %}
+</section>
 {% endblock content %}
 

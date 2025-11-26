@@ -5,15 +5,14 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('home', '0003_homepage_hero_cta_homepage_hero_cta_link_and_more'),
+        ("home", "0003_homepage_hero_cta_homepage_hero_cta_link_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='homepage',
-            name='about',
+            model_name="homepage",
+            name="about",
             field=wagtail.fields.RichTextField(blank=True),
         ),
     ]

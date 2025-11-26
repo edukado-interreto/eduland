@@ -1,4 +1,5 @@
 from wagtail.blocks import StructBlock, CharBlock, ChoiceBlock
+from wagtail.embeds.blocks import EmbedBlock
 
 
 class HeadingBlock(StructBlock):
@@ -8,3 +9,12 @@ class HeadingBlock(StructBlock):
     class Meta:
         icon = "title"
         template = "core/blocks/heading_block.html"
+
+
+class VideoBlock(EmbedBlock):
+    help_text = (
+        "Insert an URL to embed. For example, https://www.youtube.com/watch?v=xm4qTLcXKc4",
+    )
+    icon = "media"
+    max_width = 640
+    max_height = 360
