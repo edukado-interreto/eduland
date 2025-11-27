@@ -23,16 +23,6 @@
     <div class="large-margin large-padding">{{ content }}</div>
   {% elif content.block_type == "video" %}
     {% include "core/video_block.html" with video=content %}
-  {% elif content.block_type == "exercise" %}
-    <pre class="large-opacity">
-      <large>{{ content.value.name }}</large>
-      <code class="tiny-line" style="font-size:0.7em"> {{ content.value.data }} </code>
-    </pre>
-  {% elif content.block_type == "testu" %}
-    <article style="height:100vh;width:100%" class="round large-padding surface-container-lowest">
-      <iframe src="{{ content.value }}" height="600" width="800"
-    style="height:100%;width:100%" frameborder="0"></iframe>
-    </article>
   {% else %} {# never reached #}
     {{ content }}
   {% endif %}
@@ -41,6 +31,21 @@
     <br class="space">
   {% endif %}
 {% endfor %}
+
+<div class="grid space">
+{% for exercise_page in page.get_children.live %}
+<div class="s12 center-align">
+  <a
+    href="{{ exercise_page.url }}"
+    class="button extra margin surface-container-lowest primary-text elevate"
+    style="min-width:16em;font-size:1.2em"
+  >
+    <b class="primary-text">{{ exercise_page.title }}</b>
+  </a>
+</div>
+{% endfor %}
+</div>
+
 </section>
 {% endblock content %}
 

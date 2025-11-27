@@ -1,15 +1,14 @@
 from django.contrib.auth import get_user_model
 from django.db import models
-from wagtail.fields import RichTextField, StreamField
+from django_extensions.db.models import TimeStampedModel
+from wagtail.fields import StreamField
 from wagtail.models import Orderable, Page
 from wagtail.snippets.models import register_snippet
-from django_extensions.db.models import TimeStampedModel
 
 from apps.core.utils import long_id
-from apps.education.blocks import UnitStreamBlock
+from apps.education.blocks import ExerciseBlock, UnitStreamBlock
 
 User = get_user_model()
-
 
 CEFR = models.IntegerChoices("CEFR", "A1 A2 B1 B2 C1 C2")
 
@@ -83,8 +82,6 @@ class ModulePage(Page):
 
 
 class UnitPage(Page):
-    name = models.CharField(max_length=255)
-    description = RichTextField(blank=True)
     image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
@@ -95,5 +92,16 @@ class UnitPage(Page):
     body = StreamField(UnitStreamBlock(), blank=True, verbose_name="Content")
 
     parent_page_types = ["education.ModulePage"]
+    subpage_types = ["education.ExercisePage"]
+    content_panels = Page.content_panels + ["image", "body"]
+
+
+class ExercisePage(Page):
+    exercise = StreamField(
+        [("exercise", ExerciseBlock())],
+        block_counts={"exercise": {"max_count": 1}},
+    )
+
+    parent_page_types = ["education.UnitPage"]
     subpage_types = []
-    content_panels = Page.content_panels + ["name", "description", "image", "body"]
+    content_panels = Page.content_panels + ["exercise"]

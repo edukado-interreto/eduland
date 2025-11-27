@@ -1,0 +1,29 @@
+{% extends "layout/base.html" %}
+{% load debug_filters static wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<p class="margin medium-opacity white-text">
+  <a href="{{ page.get_parent.get_parent.url }}">{{ page.get_parent.get_parent }}</a>
+  <i>chevron_right</i>
+  <a href="{{ page.get_parent.url }}">{{ page.get_parent }}</a>
+  <i>chevron_right</i>
+  {{ self }}
+</p>
+
+<h1 class="large-margin center-align white-text">{{ page.title }}</h1>
+{% with value=page.exercise.first_block_by_name.exercise.value %}
+{% if value.testu_link %}
+<article
+  id="testu-exercise"
+  style="height:200vh; overflow-y:auto; resize:vertical"
+  class="round large-margin surface-container-lowest"
+>
+ <iframe src="{{ value.testu_link }}" style="height:100%;width:100%" frameborder="0"></iframe></article>
+{% elif value.exercise %}
+  {% with sheet=value.exercise.data.sheet.0 %}
+  <h4 class="large-margin white-text">{{ sheet.description }}</h4>
+  <pre class="large-margin"><code style="font-size:0.7em">{{ sheet.code }}</code></pre>
+  {% endwith %}
+{% endif %}
+{% endwith %}
+{% endblock content %}
