@@ -1,4 +1,5 @@
 {$CADDY_HOSTS} {
+	tls internal
 	handle /uploads/* {
 		file_server
 	}
