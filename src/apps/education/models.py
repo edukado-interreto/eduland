@@ -68,7 +68,6 @@ class Exercise(TimeStampedModel, Orderable):
 
 
 class ModulePage(Page):
-    name = models.CharField(max_length=255)
     image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
@@ -78,7 +77,7 @@ class ModulePage(Page):
     )
 
     parent_page_types = ["home.HomePage"]
-    content_panels = Page.content_panels + ["name", "image"]
+    content_panels = Page.content_panels + ["image"]
 
 
 class UnitPage(Page):

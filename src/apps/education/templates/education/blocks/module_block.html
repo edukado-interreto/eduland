@@ -1,22 +1,20 @@
-{% load static wagtailcore_tags wagtailimages_tags %}
-<section class="module large-margin">
-  <h3 id="module-{{ self.module_page.slug }}" class="center-align">{{ self.module_page.title }}</h3>
+{% load static wagtailimages_tags %}
+<h3 id="module-{{ module_page.slug }}" class="center-align">
+  <a href="{{ module_page.url }}">{{ module_page.title }}</a>
+</h3>
 
-  {% image self.module_page.image width-512 class="responsive medium" loading="lazy" decoding="async" %}
-
-  <div class="row space-evenly scroll large-margin">
-  {% for unit in self.module_page.get_children.live %}
-      <article class="no-padding round s m l">
-          <a href="{{ unit.url }}">
-            <img class="responsive medium" src="{% static "press_letters.jpeg" %}">
-            <div class="absolute bottom left right padding bottom-shadow bottom-round white-text">
-              <nav>
-                <h5>{{ unit.specific.name }}</h5>
-                <div class="max"></div>
-              </nav>
-            </div>
-        </a>
-      </article>
-  {% endfor %}
-  </div>
-</section>
+<div class="row space-evenly scroll large-margin">
+{% for unit_page in module_page.get_children.live %}
+    <article class="no-padding round s m l">
+        <a href="{{ unit_page.url }}">
+          <img class="responsive medium" src="{% static "press_letters.jpeg" %}">
+          <div class="absolute bottom left right padding bottom-shadow bottom-round white-text">
+            <nav>
+              <h5>{{ unit_page.title }}</h5>
+              <div class="max"></div>
+            </nav>
+          </div>
+      </a>
+    </article>
+{% endfor %}
+</div>

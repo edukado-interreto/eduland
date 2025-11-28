@@ -1,5 +1,19 @@
-from wagtail.blocks import StructBlock, CharBlock, ChoiceBlock
+from django.core.exceptions import ValidationError
+from django.core.validators import URLValidator
+from wagtail.blocks import (
+    CharBlock,
+    ChoiceBlock,
+    PageChooserBlock,
+    StructBlock,
+)
 from wagtail.embeds.blocks import EmbedBlock
+
+url_validator = URLValidator()
+
+
+def fragment_validator(value: str):
+    if not value.startswith("#"):
+        url_validator(value)
 
 
 class HeadingBlock(StructBlock):
@@ -18,3 +32,21 @@ class VideoBlock(EmbedBlock):
     icon = "media"
     max_width = 640
     max_height = 360
+
+
+class CallToActionBlock(StructBlock):
+    text = CharBlock(required=True, help_text="Text to display in the button")
+    url = CharBlock(
+        required=False,
+        help_text="Anchor or link to another website page",
+        validators=[fragment_validator],
+    )
+    page = PageChooserBlock(required=False, help_text="Link to a page")
+
+    def clean(self, value):
+        result = super().clean(value)
+        if not (result["page"] or result["url"]):
+            raise ValidationError(
+                "You must specify either an internal page or an external URL"
+            )
+        return result

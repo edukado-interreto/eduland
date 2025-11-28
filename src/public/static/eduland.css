@@ -48,17 +48,10 @@ main>footer {
 .hero {
   margin: -0.5rem;
   margin-bottom: 10vh;
-  min-height: 70vh;
+  min-height: 60vh;
   padding: 5rem 10vw;
   text-align: center;
 
-  h1 {
-    opacity: 0.8;
-  }
-
-  h2 {
-    opacity: 0.8;
-  }
 }
 
 .hero::before {

@@ -2,11 +2,11 @@
 {% load debug_filters static wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
-<p class="margin medium-opacity white-text">
+<p class="margin small-opacity white-text">
   <a href="{{ page.get_parent.get_parent.url }}">{{ page.get_parent.get_parent }}</a>
-  <i>chevron_right</i>
+  <i class="medium-opacity" style="font-size:2rem">chevron_right</i>
   <a href="{{ page.get_parent.url }}">{{ page.get_parent }}</a>
-  <i>chevron_right</i>
+  <i class="medium-opacity" style="font-size:2rem">chevron_right</i>
   {{ self }}
 </p>
 

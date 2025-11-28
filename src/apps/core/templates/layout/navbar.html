@@ -1,9 +1,9 @@
 {% load ftl static %}{# Icons: https://fonts.google.com/icons #}
-
+{% url "wagtail_serve" "" as home_url %}
 <header class="white medium-padding medium-elevate indigo-text">
   <nav class="m l">
-    <img src="{% static "android-chrome-192x192.png" %}" class="extra round">
-    <h6 class="bold max">{% ftlmsg "app-project-name" %}</h6>
+    <a href="{{ home_url }}"><img src="{% static "android-chrome-192x192.png" %}" class="extra round"></a>
+    <h6 class="bold max"><a href="{{ home_url }}">{% ftlmsg "app-project-name" %}</a></h6>
     {% for item in main_menu %}
       {% if item.subitems %}
       <button class="transparent extra">

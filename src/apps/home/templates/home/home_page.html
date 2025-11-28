@@ -1,5 +1,5 @@
 {% extends "layout/base.html" %}
-{% load debug_filters static wagtailcore_tags wagtailimages_tags %}
+{% load static ftl wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -10,15 +10,58 @@
 {% endblock extra_css %}
 
 {% block content %}
-<section id="hero" class="hero white-text medium-elevate">
-    {{ page.hero_text | richtext }}
-    <div class="large-space"></div>
-    <p> <a href="{{ page.hero_cta_link }}" class="button extra border transparent">{{ page.hero_cta }}</a> </p>
+<section id="hero" class="hero white-text medium-elevate small-opacity">
+  {{ page.hero_text | richtext }}
+  <div class="large-space"></div>
+  {% for cta in page.hero_cta %}
+    <p>
+      <a href="{% firstof cta.value.url cta.value.page.url %}" class="button extra border transparent">
+        {{ cta.value.text }}
+      </a>
+    </p>
+  {% endfor %}
 </section>
 
-<section id="modules" class="responsive white-text">
-    {{ page.modules }}
+
+<section id="comics" class="responsive white-text">
+    <h2 class="center-align bold">{% ftlmsg "app-comics" %}</h2>
+    <div class="row space-evenly wrap">
+      {% for file in page.comics %}
+        {{ file }}
+      {% endfor %}
+    </div>
 </section>
+
+<section id="modules" class="white-text">
+    <h2 class="center-align bold">{% ftlmsg "app-modules" %}</h2>
+
+    {% for module in page.get_children.live.in_menu %}
+        {% include "education/blocks/module_block.html" with module_page=module only %}
+    {% endfor %}
+</section>
+
+<section id="methodology" class="responsive white-text">
+    <h2 class="center-align bold">{% ftlmsg "app-methodology" %}</h2>
+
+    <article class="card-medium no-padding round fill">
+      <img class="responsive medium" src="{% static 'study.jpeg' %}">
+      <div class="absolute bottom left right padding bottom-shadow bottom-round white-text">
+        <nav>
+          <h5>Download methodology PDF</h5>
+          <div class="max"></div>
+          <button class="circle transparent">
+            <i>more_vert</i>
+            <menu class="top left no-wrap white">
+              <li>English</li>
+              <li>Slovak</li>
+              <li>French</li>
+              <li>Esperanto</li>
+          </button>
+        </nav>
+      </div>
+    </article>
+</section>
+
 
 <section id="about" class="responsive white-text">
     {{ page.about|richtext }}
@@ -26,3 +69,4 @@
 
 <div class="large-space"></div>
 {% endblock content %}
+

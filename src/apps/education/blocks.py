@@ -1,14 +1,28 @@
 from django.core.exceptions import ValidationError
 from wagtail.blocks import (
+    CharBlock,
     PageChooserBlock,
-    StructBlock,
-    StreamBlock,
     RichTextBlock,
+    StreamBlock,
+    StructBlock,
     URLBlock,
 )
+from wagtail.documents.blocks import DocumentChooserBlock
+from wagtail.images.blocks import ImageBlock
 from wagtail.snippets.blocks import SnippetChooserBlock
 
 from apps.core.blocks import VideoBlock
+
+
+class PdfBlock(StructBlock):
+    title = CharBlock()
+    text = CharBlock()
+    image = ImageBlock()
+    pdf = DocumentChooserBlock()
+
+    class Meta:
+        icon = "doc-full-inverse"
+        template = "education/blocks/pdf_block.html"
 
 
 class ModuleBlock(StructBlock):
