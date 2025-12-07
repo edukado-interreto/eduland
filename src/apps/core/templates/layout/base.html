@@ -1,4 +1,4 @@
-{% load ftl static %}<!DOCTYPE html>
+{% load ftl static django_vite %}<!DOCTYPE html>
 <html lang="{{ request.LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8">
@@ -18,14 +18,17 @@
     <link href="https://api.fonts.coollabs.io/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static "eduland.css" %}">
+    {% vite_hmr_client %}
     <style>{% block extra_css %}{% endblock %}
     </style>
+    {% block extra_head %}{% endblock %}
   </head>
   <body>
     {% include "layout/navbar.html" %}
     <main>
       {% block content %}{% endblock %}
     </main>
+    {% block bottom %}{% endblock %}
     {% include "layout/footer.html" %}
     {% block extra_js %}{% endblock %}
   </body>

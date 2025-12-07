@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     "django_extensions",
     *mod("django.contrib", DJANGO_CONTRIB_APPS),
     "django_ftl.apps.DjangoFtlConfig",
+    "django_vite",
     *mod("apps", PROJECT_APPS),
 ]
 
@@ -78,8 +79,8 @@ MIDDLEWARE = [
 
 # Django Debug Toolbar
 if DEBUG and not TESTING:
-    INSTALLED_APPS = [*INSTALLED_APPS, "debug_toolbar"]
-    MIDDLEWARE = ["debug_toolbar.middleware.DebugToolbarMiddleware", *MIDDLEWARE]
+    # INSTALLED_APPS = [*INSTALLED_APPS, "debug_toolbar"]
+    # MIDDLEWARE = ["debug_toolbar.middleware.DebugToolbarMiddleware", *MIDDLEWARE]
     DEBUG_TOOLBAR_CONFIG = {"SHOW_TOOLBAR_CALLBACK": lambda request: DEBUG}
 
 ROOT_URLCONF = "config.urls"
@@ -180,6 +181,7 @@ WHITENOISE_USE_FINDERS = True
 WHITENOISE_ROOT = SRC_DIR / "public"
 STATICFILES_DIRS = [SRC_DIR / "public" / "static"]
 STATIC_URL = "static/"
+# STATIC_ROOT = ""  # HACK: for django-vite
 MEDIA_ROOT = PROJECT_DIR / "uploads/"
 MEDIA_URL = "uploads/"
 
@@ -190,6 +192,14 @@ STORAGES = {
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
+}
+
+DJANGO_VITE = {
+    "default": {
+        "dev_mode": False,
+        "manifest_path": STATICFILES_DIRS[0] / "vue/assets/manifest.json",
+        "static_url_prefix": "vue",
+    }
 }
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

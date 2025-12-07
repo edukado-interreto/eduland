@@ -1,3 +1,4 @@
+import json
 from django.contrib.auth import get_user_model
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
@@ -63,9 +64,6 @@ class Exercise(TimeStampedModel, Orderable):
                 self.lid = long_id()
         return super().save(*args, **kwargs)
 
-    def get_absolute_url(self):
-        return f"/exercise/{self.lid}"
-
 
 class ModulePage(Page):
     image = models.ForeignKey(
@@ -104,3 +102,11 @@ class ExercisePage(Page):
     parent_page_types = ["education.UnitPage"]
     subpage_types = []
     content_panels = Page.content_panels + ["exercise"]
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+
+        exercise_block: ExerciseBlock = self.exercise.first_block_by_name("exercise")
+        if exercise := exercise_block.value.get("exercise"):
+            context["exercise"] = json.dumps(exercise.data, ensure_ascii=False)
+        return context

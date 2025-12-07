@@ -1,5 +1,9 @@
 {% extends "layout/base.html" %}
-{% load debug_filters static wagtailcore_tags wagtailimages_tags %}
+{% load debug_filters static django_vite wagtailcore_tags wagtailimages_tags %}
+
+{% block extra_head %}
+  {% vite_asset "main.ts" %}
+{% endblock %}
 
 {% block content %}
 <p class="margin small-opacity white-text">
@@ -20,10 +24,14 @@
 >
  <iframe src="{{ value.testu_link }}" style="height:100%;width:100%" frameborder="0"></iframe></article>
 {% elif value.exercise %}
-  {% with sheet=value.exercise.data.sheet.0 %}
-  <h4 class="large-margin white-text">{{ sheet.description }}</h4>
-  <pre class="large-margin"><code style="font-size:0.7em">{{ sheet.code }}</code></pre>
-  {% endwith %}
+<article
+  id="exercise"
+  class="round large-margin surface-container-lowest"
+  style="min-height:80vh"
+>
+  <code id="exercise-data" style="display:none">{% autoescape off %}{{ exercise }}{% endautoescape %}</code>
+  <div id="app"></div>
+</article>
 {% endif %}
 {% endwith %}
 {% endblock content %}

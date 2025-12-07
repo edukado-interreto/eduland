@@ -19,7 +19,7 @@ services:
     networks:
       - public
       - backend
-    
+
   django:
     build:
       context: .
@@ -28,7 +28,7 @@ services:
         - USER_ID=$USER_ID
         - GROUP_ID=$GROUP_ID
         - PORT=$PORT
-    user: "1000"
+    user: $USER_ID:$GROUP_ID
     command: /bin/sh -c "./manage.py migrate && ./manage.py runserver 0.0.0.0:$PORT"
     secrets:
       - source: postgres-password

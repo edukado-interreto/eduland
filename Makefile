@@ -33,6 +33,8 @@ beercss:
 	wget -O src/public/static/beer-$(TAG).min.js https://cdn.jsdelivr.net/npm/beercss@$(TAG)/dist/cdn/beer.min.js
 	wget -O src/public/static/beer-$(TAG).min.css https://cdn.jsdelivr.net/npm/beercss@$(TAG)/dist/cdn/beer.min.css
 
-# Subcommands
-localize_update_fields:
-	$(dc) exec django make localize_update_fields
+vue:
+	npm --prefix ui run build-only
+
+vue-dev:
+	npm --prefix ui run dev
