@@ -7,7 +7,7 @@
     {% for item in main_menu %}
       {% if item.subitems %}
       <button class="transparent extra">
-        <span><i>{{ item.icon }}</i> {{ item.title }}</span>
+        <span><i class="extra">{{ item.icon }}</i> {{ item.title }}</span>
         <menu class="left min no-wrap">
         <li>
           <i>{{ item.icon }}</i> {{ item.title }}
@@ -29,6 +29,15 @@
       </a>
       {% endif %}
     {% endfor %}
+    <button class="button transparent extra">
+      <i class="extra">translate</i>
+      <menu class="left no-wrap surface-container-lowest">
+        <li class="active">{{ page.locale.language_name_localized | capfirst }}</li>
+        {% for page_tr in page.get_translations %}
+        <li><a href="{{ page_tr.get_url }}">{{ page_tr.locale.language_name_local | capfirst }}</a></li>
+        {% endfor %}
+      </menu>
+    </button>
   </nav>
 
   <nav class="s small">
@@ -41,6 +50,10 @@
         <li>
           <a href="#"> <i>{{ item.icon }}</i> {{ item.title }} </a>
         </li>
+        {% endfor %}
+        <li class="active"><i>translate</i>{{ page.locale.language_name_localized | capfirst }}</li>
+        {% for page_tr in page.get_translations %}
+        <li><a href="{{ page_tr.get_url }}"><i>translate</i> {{ page_tr.locale.language_name_local | capfirst }}</a></li>
         {% endfor %}
       </menu>
     </button>
