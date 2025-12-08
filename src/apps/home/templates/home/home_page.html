@@ -35,7 +35,7 @@
 <section id="modules" class="white-text">
     <h2 class="center-align bold">{% ftlmsg "app-modules" %}</h2>
 
-    {% for module in page.get_children.live.in_menu %}
+    {% for module in page.get_children.live %}
         {% include "education/blocks/module_block.html" with module_page=module only %}
     {% endfor %}
 </section>
