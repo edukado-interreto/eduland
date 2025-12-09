@@ -1,10 +1,11 @@
 import json
+from django.conf import settings
 from django.contrib.auth import get_user_model
+from django.contrib import admin
 from django.db import models
 from django_extensions.db.models import TimeStampedModel
 from wagtail.fields import StreamField
 from wagtail.models import Orderable, Page
-from wagtail.snippets.models import register_snippet
 
 from apps.core.utils import long_id
 from apps.education.blocks import ExerciseBlock, UnitStreamBlock
@@ -12,9 +13,9 @@ from apps.education.blocks import ExerciseBlock, UnitStreamBlock
 User = get_user_model()
 
 CEFR = models.IntegerChoices("CEFR", "A1 A2 B1 B2 C1 C2")
+AGES = [(i, str(i)) for i in range(18)] + [(18, "18+")]
 
 
-@register_snippet
 class Exercise(TimeStampedModel, Orderable):
     """Testu exercises.Exercise
 
@@ -33,22 +34,28 @@ class Exercise(TimeStampedModel, Orderable):
     )
     data = models.JSONField("data", default=dict, blank=True)
     lang_learn = models.BooleanField("about language", default=True)
-    src_lang = models.CharField("source language", max_length=10, blank=True)
-    lang_learn_lang = models.CharField("target language", max_length=10, blank=True)
+    src_lang = models.CharField(
+        "source language", choices=settings.LANGUAGES, max_length=10, blank=True
+    )
+    lang_learn_lang = models.CharField(
+        "target language", choices=settings.LANGUAGES, max_length=10, blank=True
+    )
     lang_learn_cefr_level_min = models.PositiveSmallIntegerField(
         "CEFR min",
         choices=CEFR.choices,
+        default=CEFR.A1,
         null=True,
         blank=True,
     )
     lang_learn_cefr_level_max = models.PositiveSmallIntegerField(
         "CEFR max",
         choices=CEFR.choices,
+        default=CEFR.C2,
         null=True,
         blank=True,
     )
-    age_min = models.PositiveSmallIntegerField("minimum age", null=True, blank=True)
-    age_max = models.PositiveSmallIntegerField("maximum age", null=True, blank=True)
+    age_min = models.PositiveSmallIntegerField("minimum age", choices=AGES, default=0)
+    age_max = models.PositiveSmallIntegerField("maximum age", choices=AGES, default=18)
 
     class Meta:
         indexes = [
@@ -58,7 +65,20 @@ class Exercise(TimeStampedModel, Orderable):
     def __str__(self):
         return self.name
 
+    @property
+    @admin.display(ordering="src_lang")
+    def language(self):
+        return dict(settings.LANGUAGES).get(self.src_lang, "N/A")
+
     def save(self, *args, **kwargs):
+        print("SELF", self)
+        for attr in dir(self):
+            if attr.startswith("__"):
+                continue
+            if attr == "objects":
+                continue
+            print(attr, getattr(self, attr))
+
         if self._state.adding:
             while self.__class__.objects.filter(lid=self.lid).exists():
                 self.lid = long_id()

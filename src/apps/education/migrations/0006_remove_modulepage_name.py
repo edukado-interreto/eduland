@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('education', '0005_exercisepage_remove_unitpage_description_and_more'),
+        ("education", "0005_exercisepage_remove_unitpage_description_and_more"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='modulepage',
-            name='name',
+            model_name="modulepage",
+            name="name",
         ),
     ]

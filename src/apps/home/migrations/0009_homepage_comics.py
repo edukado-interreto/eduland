@@ -5,15 +5,27 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('home', '0008_remove_homepage_hero_cta_link_and_more'),
+        ("home", "0008_remove_homepage_hero_cta_link_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='homepage',
-            name='comics',
-            field=wagtail.fields.StreamField([('pdf', 3)], blank=True, block_lookup={0: ('wagtail.blocks.CharBlock', (), {}), 1: ('wagtail.images.blocks.ImageBlock', [], {}), 2: ('wagtail.documents.blocks.DocumentChooserBlock', (), {}), 3: ('wagtail.blocks.StructBlock', [[('title', 0), ('text', 0), ('image', 1), ('pdf', 2)]], {})}),
+            model_name="homepage",
+            name="comics",
+            field=wagtail.fields.StreamField(
+                [("pdf", 3)],
+                blank=True,
+                block_lookup={
+                    0: ("wagtail.blocks.CharBlock", (), {}),
+                    1: ("wagtail.images.blocks.ImageBlock", [], {}),
+                    2: ("wagtail.documents.blocks.DocumentChooserBlock", (), {}),
+                    3: (
+                        "wagtail.blocks.StructBlock",
+                        [[("title", 0), ("text", 0), ("image", 1), ("pdf", 2)]],
+                        {},
+                    ),
+                },
+            ),
         ),
     ]
