@@ -1,5 +1,4 @@
 {$CADDY_HOSTS} {
-	tls internal
 	handle /uploads/* {
 		file_server
 	}
@@ -7,6 +6,16 @@
 		reverse_proxy django:{$PORT} {
 			header_up Host {host}
 		}
+	}
+}
+https://eduland.localhost:5173 {
+	handle {
+		reverse_proxy vue:5173
+	}
+}
+https://eduland.localhost:24678 {
+	handle {
+		reverse_proxy vue:24678
 	}
 }
 adminer.localhost {

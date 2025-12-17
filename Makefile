@@ -5,8 +5,12 @@ all: run
 
 install:
 	mkdir -p uploads
+	mkdir -p .docker/postgres_data .docker/caddy_data
 	cp .env.example .env
 	$(dc) build
+
+certs:
+	openssl req -x509 -newkey ed25519 -days 3650 -noenc -keyout etc/eduland.key -out etc/eduland.cert -subj "/CN=eduland.localhost" -addext "subjectAltName=DNS:eduland.localhost,DNS:*.eduland.localhost,IP:127.0.0.1"
 
 run:
 	$(dc) up --build django

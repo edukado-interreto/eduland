@@ -1,10 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import RichContent from "./components/RichContent.vue";
-import useUnitComponent from "./composables/useUnitComponent.ts";
-
-import type { Ref } from "vue";
-
 const unit_component = useUnitComponent();
 const all_silent = ref(true);
 const all_readonly = ref(false);
@@ -33,6 +27,7 @@ const submit = () => {
     <v-spacer />
   </v-container>
   <v-container v-if="exercise">
+    <h2>Hot reloadzzz</h2>
     <v-sheet v-for="(unit, i) in exercise.sheet" :key="unit._key">
       <div class="text-h4 my-4">
         <span v-if="exercise.sheet.length > 1">{{ i + 1 }}.</span>
