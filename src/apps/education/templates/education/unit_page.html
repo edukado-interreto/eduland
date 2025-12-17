@@ -23,6 +23,17 @@
     <div class="large-margin large-padding">{{ content }}</div>
   {% elif content.block_type == "video" %}
     {% include "core/video_block.html" with video=content %}
+  {% elif content.block_type == "pdf" %}
+    <div class="s12 center-align">
+      <a
+        href="{{ content.value.url }}"
+        target="_blank"
+        class="button extra margin surface-container-lowest primary-text elevate"
+        style="min-width:16em;font-size:1.2em"
+      >
+        <b class="primary-text">PDF: {{ content.value }}</b>
+      </a>
+    </div>
   {% else %} {# never reached #}
     {{ content }}
   {% endif %}

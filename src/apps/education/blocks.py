@@ -38,8 +38,7 @@ class ModuleBlock(StructBlock):
 class UnitStreamBlock(StreamBlock):
     text = RichTextBlock()
     video = VideoBlock()
-    exercise = SnippetChooserBlock("education.Exercise")
-    testu = URLBlock(help_text="E.g.: https://www.testu.eu/exercise/i2E4S6T")
+    pdf = DocumentChooserBlock()
 
 
 class ExerciseBlock(StructBlock):
