@@ -2,6 +2,8 @@ from django.db import models
 from wagtail.admin.panels import MultiFieldPanel
 from wagtail.blocks import StreamBlock
 from wagtail.fields import RichTextField, StreamField
+from wagtail.blocks import RichTextBlock
+from wagtail.images.blocks import ImageBlock
 from wagtail.models import Page
 
 from apps.core.blocks import CallToActionBlock, HeadingBlock
@@ -38,3 +40,32 @@ class HomePage(Page):
         MultiFieldPanel(["comics"], heading="Content"),
         MultiFieldPanel(["about"], heading="Footer section"),
     ]
+
+    def module_pages(self):
+        from apps.education.models import ModulePage
+
+        return self.get_children().type(ModulePage).live()
+
+
+class AboutPage(Page):
+    content = RichTextField(blank=True)
+
+    parent_page_types = ["home.HomePage"]
+    content_panels = Page.content_panels + ["content"]
+
+
+class NewsIndexPage(Page):
+    header = RichTextField(blank=True)
+
+    parent_page_types = ["home.HomePage"]
+    content_panels = Page.content_panels + ["header"]
+
+
+class NewsPost(Page):
+    content = StreamField(
+        {"text": RichTextBlock(), "image": ImageBlock()}.items(),
+        blank=True,
+    )
+
+    parent_page_types = ["home.NewsIndexPage"]
+    content_panels = Page.content_panels + ["content"]
