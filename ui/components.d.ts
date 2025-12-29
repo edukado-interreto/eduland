@@ -11,6 +11,14 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    RichContent: typeof import('./src/components/RichContent.vue')['default']
+    RichContentImage: typeof import('./src/components/RichContentImage.vue')['default']
+    RichContentSound: typeof import('./src/components/RichContentSound.vue')['default']
+    UnitDefault: typeof import('./src/components/UnitDefault.vue')['default']
+    UnitMultipleChoice: typeof import('./src/components/UnitMultipleChoice.vue')['default']
+    UnitMultipleChoiceCheckbox: typeof import('./src/components/UnitMultipleChoiceCheckbox.vue')['default']
+    UnitOpenAnswer: typeof import('./src/components/UnitOpenAnswer.vue')['default']
+    UnitOpenAnswerTextField: typeof import('./src/components/UnitOpenAnswerTextField.vue')['default']
+    UnitPairing: typeof import('./src/components/UnitPairing.vue')['default']
   }
 }

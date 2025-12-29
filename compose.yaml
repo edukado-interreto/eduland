@@ -6,7 +6,8 @@ secrets:
 
 services:
   proxy:
-    image: caddy:latest
+    image: caddy:alpine
+    user: $USER_ID:$GROUP_ID
     environment:
       - CADDY_HOSTS=${CADDY_HOSTS}
       - PORT=$PORT
@@ -14,7 +15,8 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./etc/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./.docker/caddy/data:/data:z
+      - ./etc/caddy:/etc/caddy:z
       - ./uploads:/srv/uploads:z
     networks:
       - public
@@ -41,7 +43,7 @@ services:
     ports:
       - 127.0.0.1:$PORT:$PORT
     env_file:
-      - src/.env.django
+      - .env.django
     depends_on:
       - proxy
       - postgres

@@ -1,10 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import RichContent from "./components/RichContent.vue";
-import useUnitComponent from "./composables/useUnitComponent.ts";
-
-import type { Ref } from "vue";
-
 const unit_component = useUnitComponent();
 const all_silent = ref(true);
 const all_readonly = ref(false);

@@ -83,6 +83,19 @@ if DEBUG and not TESTING:
     # MIDDLEWARE = ["debug_toolbar.middleware.DebugToolbarMiddleware", *MIDDLEWARE]
     DEBUG_TOOLBAR_CONFIG = {"SHOW_TOOLBAR_CALLBACK": lambda request: DEBUG}
 
+# CORS headers for Vite dev mode
+if DEBUG:
+    INSTALLED_APPS = ["corsheaders", *INSTALLED_APPS]
+    MIDDLEWARE = ["corsheaders.middleware.CorsMiddleware", *MIDDLEWARE]
+    CORS_ALLOWED_ORIGINS = [
+        "http://eduland.localhost:5173",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://eduland.localhost:5173",
+        "https://localhost:5173",
+        "https://127.0.0.1:5173",
+    ]
+
 ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
@@ -181,7 +194,6 @@ WHITENOISE_USE_FINDERS = True
 WHITENOISE_ROOT = SRC_DIR / "public"
 STATICFILES_DIRS = [SRC_DIR / "public" / "static"]
 STATIC_URL = "static/"
-# STATIC_ROOT = ""  # HACK: for django-vite
 MEDIA_ROOT = PROJECT_DIR / "uploads/"
 MEDIA_URL = "uploads/"
 
@@ -196,9 +208,12 @@ STORAGES = {
 
 DJANGO_VITE = {
     "default": {
-        "dev_mode": False,
-        "manifest_path": STATICFILES_DIRS[0] / "vue/assets/manifest.json",
+        "manifest_path": SRC_DIR / "public/static/vue/assets/manifest.json",
         "static_url_prefix": "vue",
+        "dev_mode": config("DJANGO_VITE_DEV_MODE", False),
+        "dev_server_host": config("HOST"),
+        "dev_server_port": "443",  # Overrides 5173
+        "dev_server_protocol": "https",  # Overrides http
     }
 }
 

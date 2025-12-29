@@ -5,17 +5,25 @@ all: run
 
 install:
 	mkdir -p uploads
+	mkdir -p .docker/postgres_data .docker/caddy/data
+	cp .env.example .env
 	cp .env.example .env
 	$(dc) build
 
 run:
 	$(dc) up --build django
 
+run-vite:
+	$(dc) -f compose.yaml -f compose-vite.yaml up proxy django vue
+
 runserver:
 	$(django) runserver
 
 shell:
 	$(dc) exec django ./manage.py shell_plus
+
+superuser:
+	$(dc) exec django ./manage.py createsuperuser
 
 migrations:
 	$(dc) exec django ./manage.py makemigrations

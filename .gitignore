@@ -1,6 +1,8 @@
 .env
+.env.django
 .env.local
 .docker/db/*
+.docker/caddy/*
 node_modules
 secrets
 uploads/*

@@ -1,27 +1,27 @@
 {
-  "../node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot": {
+  "node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot": {
     "file": "assets/materialdesignicons-webfont-CSr8KVlo.eot",
-    "src": "../node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot"
+    "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot"
   },
-  "../node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf": {
+  "node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf": {
     "file": "assets/materialdesignicons-webfont-B7mPwVP_.ttf",
-    "src": "../node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf"
+    "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.ttf"
   },
-  "../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff": {
+  "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff": {
     "file": "assets/materialdesignicons-webfont-PXm3-2wK.woff",
-    "src": "../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff"
+    "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff"
   },
-  "../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2": {
+  "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2": {
     "file": "assets/materialdesignicons-webfont-Dp5v-WZN.woff2",
-    "src": "../node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2"
+    "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2"
   },
-  "main.ts": {
-    "file": "assets/eduland-vue-CHby9u71.js",
-    "name": "eduland-vue",
-    "src": "main.ts",
+  "src/exercise.ts": {
+    "file": "assets/exercise-vue-BFBP--qF.js",
+    "name": "exercise-vue",
+    "src": "src/exercise.ts",
     "isEntry": true,
     "css": [
-      "assets/eduland-vue-DasDA-tZ.css"
+      "assets/exercise-vue-NtL6h_xh.css"
     ],
     "assets": [
       "assets/materialdesignicons-webfont-CSr8KVlo.eot",

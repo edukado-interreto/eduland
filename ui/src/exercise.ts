@@ -39,4 +39,4 @@ const app = createApp(Exercise)
 
 registerPlugins(app)
 
-app.mount("#app")
+app.mount("#mount-exercise")

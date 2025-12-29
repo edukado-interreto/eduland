@@ -2,10 +2,18 @@
 	handle /uploads/* {
 		file_server
 	}
+	handle /static/vue/* {
+		reverse_proxy vue:5173
+	}
 	handle {
 		reverse_proxy django:{$PORT} {
 			header_up Host {host}
 		}
+	}
+}
+https://eduland.localhost:24678 {
+	handle {
+		reverse_proxy vue:24678
 	}
 }
 adminer.localhost {

@@ -1,0 +1,23 @@
+name: "eduland"
+
+services:
+  proxy:
+    ports:
+      - 80:80
+      - 443:443
+      - 24678:24678
+    command: caddy run --config /etc/caddy/Caddyfile.vite
+
+  vue:
+    image: node:24-alpine
+    user: $USER_ID:$GROUP_ID
+    volumes:
+      - .:/app:z
+    working_dir: /app/ui
+    networks:
+      - backend
+    command: /bin/sh -c "npm i && npm run dev"
+
+  django:
+    environment:
+      - EDULAND_DJANGO_VITE_DEV_MODE=true

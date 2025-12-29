@@ -2,7 +2,7 @@
 {% load debug_filters static django_vite wagtailcore_tags wagtailimages_tags %}
 
 {% block extra_head %}
-  {% vite_asset "main.ts" %}
+  {% vite_asset "src/exercise.ts" %}
 {% endblock %}
 
 {% block content %}
@@ -30,7 +30,7 @@
   style="min-height:80vh"
 >
   <code id="exercise-data" style="display:none">{% autoescape off %}{{ exercise }}{% endautoescape %}</code>
-  <div id="app"></div>
+  <div id="mount-exercise"></div>
 </article>
 {% endif %}
 {% endwith %}
