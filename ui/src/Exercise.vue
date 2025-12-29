@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import useUnitComponent from "@/composables/useUnitComponent";
+
 const unit_component = useUnitComponent();
 const all_silent = ref(true);
 const all_readonly = ref(false);
@@ -52,7 +54,7 @@ const submit = () => {
     <v-btn
       @click="submit"
       type="submit"
-      class="mt-9 d-print-none"
+      class="d-flex mt-9 d-print-none"
       :color="submitted ? 'grey' : 'primary'"
       :disabled="submitted"
       v-text="$t('exercise.check')"

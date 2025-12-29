@@ -53,11 +53,16 @@ declare global {
   const toValue: typeof import('vue').toValue
   const triggerRef: typeof import('vue').triggerRef
   const unref: typeof import('vue').unref
+  const useApiFetch: typeof import('./src/composables/useApiFetch').useApiFetch
   const useAttrs: typeof import('vue').useAttrs
+  const useCefr: typeof import('./src/composables/useCefr').default
+  const useConfettiShoot: typeof import('./src/composables/useConfettiShoot').default
   const useCssModule: typeof import('vue').useCssModule
   const useCssVars: typeof import('vue').useCssVars
   const useId: typeof import('vue').useId
+  const useLangsAvailable: typeof import('./src/composables/useLangsAvailable').default
   const useModel: typeof import('vue').useModel
+  const useShuffleArray: typeof import('./src/composables/useShuffleArray').default
   const useSlots: typeof import('vue').useSlots
   const useTemplateRef: typeof import('vue').useTemplateRef
   const useTokenize: typeof import('./src/composables/useTokenize').default

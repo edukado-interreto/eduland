@@ -1,10 +1,12 @@
-import UnitDefault from "@/components/UnitDefault.vue"
-import UnitMultipleChoice from "@/components/UnitMultipleChoice.vue"
-import UnitOpenAnswer from "@/components/UnitOpenAnswer.vue"
-import UnitPairing from "@/components/UnitPairing.vue"
+import {
+  UnitDefault,
+  UnitMultipleChoice,
+  UnitOpenAnswer,
+  UnitPairing,
+} from "@/components"
 
 export default function () {
-  return (unit_type) =>
+  return (unit_type: UnitType): UnitComponent =>
     ({
       default: UnitDefault,
       open_answer: UnitOpenAnswer,

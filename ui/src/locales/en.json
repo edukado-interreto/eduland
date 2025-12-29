@@ -1,1 +1,6 @@
-{ "exercise": { "check": "Check result" } }
+{
+  "exercise": {
+    "check": "Check result",
+    "drop_here": "Drop here"
+  }
+}

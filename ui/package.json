@@ -14,6 +14,7 @@
     "@dragdroptouch/drag-drop-touch": "^2.0.3",
     "@fontsource/roboto": "^5.2.7",
     "@mdi/font": "7.4.47",
+    "canvas-confetti": "^1.9.4",
     "vue": "^3.5.21",
     "vue-i18n": "^11.2.2",
     "vuetify": "^3.10.1"

@@ -6,6 +6,7 @@
 
 // Composables
 import { createI18n } from "vue-i18n"
+
 import * as en from "@/locales/en.json"
 import * as eo from "@/locales/eo.json"
 import * as fr from "@/locales/fr.json"
