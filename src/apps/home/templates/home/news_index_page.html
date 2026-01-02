@@ -4,11 +4,16 @@
 {% block content %}
 <h1 class="center-align bold white-text" style="margin-top:4vh">{{ self.title }}</h1>
 
+<section class="center-align white-text">
 {{ self.header | richtext }}
+</section>
 
 <section style="margin-top:4vh">
 {% for news_page in self.get_children.live %}
-  <h2>{{ news_page.title }}</h2>
+<article href="{{ news_page.url }}">
+  <h5 class="bold"><a href="{{ news_page.url }}">{{ news_page.title }}</a></h5>
+  <p>{{ news_page.specific.content }}</p>
+</article>
 {% endfor %}
 </section>
 {% endblock content %}
