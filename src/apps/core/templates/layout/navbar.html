@@ -14,18 +14,18 @@
         </li>
         {% for subitem in item.subitems %}
           <li>
-            <a href="#">
+            <a href="{{ subitem.page.url }}">
               <i>{{ subitem.icon }}</i>
-              <div>{{ subitem.title }}</div>
+              <div>{% firstof subitem.title subitem.page.title %}</div>
             </a>
           </li>
         {% endfor %}
         </menu>
       </button>
       {% else %}
-      <a href="#" class="button transparent extra">
+      <a href="{{ item.page.url }}" class="button transparent extra">
         <i class="extra">{{ item.icon }}</i>
-        <div>{{ item.title }}</div>
+        <div>{% firstof item.title item.page.title %}</div>
       </a>
       {% endif %}
     {% endfor %}
@@ -51,7 +51,7 @@
           <a href="#"> <i>{{ item.icon }}</i> {{ item.title }} </a>
         </li>
         {% endfor %}
-        <li class="active"><i>translate</i>{{ page.locale.language_name_localized | capfirst }}</li>
+        <li class="active"><i>translate</i>{{ page.locale.language_name_localizd | capfirst }}</li>
         {% for page_tr in page.get_translations %}
         <li><a href="{{ page_tr.get_url }}"><i>translate</i> {{ page_tr.locale.language_name_local | capfirst }}</a></li>
         {% endfor %}

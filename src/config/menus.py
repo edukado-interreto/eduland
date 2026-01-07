@@ -1,14 +1,19 @@
 from dataclasses import asdict, dataclass
 
+from wagtail.models import Locale, Page
+
 from apps.core.ftl_bundles import main
+
+ENGLISH = Locale.objects.get(language_code="en")
 
 t = main.format_lazy
 
 
 @dataclass
 class MenuItem:
-    title: str
     icon: str
+    page: Page | None = None
+    title: str | None = None
     subitems: "list[MenuItem] | None" = None
 
 
@@ -17,32 +22,34 @@ class Menu:
     items: list[MenuItem]
 
 
-module_menu = [
+def page(slug) -> Page:
+    try:
+        return Page.objects.get(slug=slug, locale=ENGLISH).localized
+    except Page.DoesNotExist:
+        return Page.objects.filter(locale=ENGLISH).first()
+
+
+menu_items = [
     MenuItem(
-        title=t("app-modules-about-language"),
-        icon="emoji_language",
+        icon="apps",
+        title=t("app-modules"),
+        subitems=[
+            MenuItem("emoji_language", page=page("crash-course")),
+            MenuItem("dictionary", page=page("about-history")),
+            MenuItem("flag", page=page("about-eu")),
+        ],
     ),
     MenuItem(
-        title=t("app-modules-about-history"),
-        icon="dictionary",
+        icon="newsmode",
+        title=t("app-news"),
+        page=page("news"),
     ),
     MenuItem(
-        title=t("app-modules-about-eu"),
-        icon="flag",
+        icon="info",
+        title=t("app-about-the-project"),
+        page=page("about"),
     ),
 ]
 
-main_menu = asdict(
-    Menu(
-        items=[
-            # MenuItem(title=t("app-about-the-project"), icon="question_mark"),
-            MenuItem(title=t("app-comics"), icon="comic_bubble"),
-            MenuItem(
-                title=t("app-modules"),
-                icon="apps",
-                subitems=module_menu,
-            ),
-            MenuItem(title=t("app-methodology"), icon="tactic"),
-        ]
-    )
-)["items"]
+
+main_menu = asdict(Menu(menu_items))["items"]

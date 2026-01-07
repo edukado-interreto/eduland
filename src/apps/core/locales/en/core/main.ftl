@@ -1,5 +1,6 @@
 app-project-name = EduLand
 app-about-the-project = About EduLand
+app-news = News
 app-comics = Comics
 app-modules = Modules
 app-modules-about-language = About the Language

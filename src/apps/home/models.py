@@ -47,7 +47,7 @@ class HomePage(Page):
         return self.get_children().type(ModulePage).live()
 
 
-class AboutPage(Page):
+class SimplePage(Page):
     content = RichTextField(blank=True)
 
     parent_page_types = ["home.HomePage"]
