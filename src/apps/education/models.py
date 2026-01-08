@@ -1,8 +1,10 @@
 import json
+
 from django.conf import settings
-from django.contrib.auth import get_user_model
 from django.contrib import admin
+from django.contrib.auth import get_user_model
 from django.db import models
+from django.urls import reverse_lazy
 from django_extensions.db.models import TimeStampedModel
 from wagtail.fields import StreamField
 from wagtail.models import Orderable, Page
@@ -69,6 +71,9 @@ class Exercise(TimeStampedModel, Orderable):
     @admin.display(ordering="src_lang")
     def language(self):
         return dict(settings.LANGUAGES).get(self.src_lang, "N/A")
+
+    def get_absolute_url(self):
+        return reverse_lazy("wagtailsnippets_education_exercise:edit", pk=self.pk)
 
     def save(self, *args, **kwargs):
         print("SELF", self)

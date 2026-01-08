@@ -1,0 +1,8 @@
+{% extends "wagtailadmin/generic/form.html" %}
+
+{% block main_header %}
+    {{ block.super }}
+    <div class="nice-padding">
+        <a href="{% url 'exercise_edit' pk=exercise.pk %}" class="button">Exercise Editor</a>
+    </div>
+{% endblock %}

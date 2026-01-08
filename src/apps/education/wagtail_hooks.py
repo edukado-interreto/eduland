@@ -1,9 +1,21 @@
 from django.http import HttpRequest
+from django.urls import path
 from wagtail import hooks
 from wagtail.snippets.models import register_snippet
 
 from apps.education.models import Exercise
-from apps.education.views import ExerciseViewSet
+from apps.education.views import ExerciseFormView, ExerciseViewSet
+
+
+@hooks.register("register_admin_urls")
+def register_exercise_list_url():
+    return [
+        path(
+            "exercises/edit/<int:pk>/editor/",
+            ExerciseFormView.as_view(),
+            name="exercise_edit",
+        ),
+    ]
 
 
 @hooks.register("after_create_snippet")
