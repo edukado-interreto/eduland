@@ -1,6 +1,504 @@
 {
+  "about": {
+    "about": "About the project",
+    "about_text": "TestU Online is a free, multilingual, online e-learning platform enabling easy and fast creation of various quizzes, tests, and exercises primarily intended for learning languages. The platform users will be mainly teachers, coaches/lecturers as well as their pupils, who are attending elementary schools, or other forms of education, whether formal or informal. The reasons for creating such a platform can be explained by the necessity for allowing a young generation to access free education despite their socio-economic, religious, or national background, geographical limitations, or even various kinds of disabilities.",
+    "partners_title": "Partners",
+    "partners": {
+      "bit_description": "bit (= best in training) schulungscenter (= training centre), founded in 1986, is one of the leading education providers in the area of labour-market projects, vocational education, training and employability in Austria. Their clear strength is their experience and know-how in designing (didactics, methodology, instructional design) and carrying out diverse national and international projects. They have substantial experience in working with different target groups, e.g. young people, young unemployed adults, and their educational needs through their regular activities.",
+      "bit_location": "Graz, Austria",
+      "european_commission": "This project has been funded with support from the European Commission. This publication reflects the views only of the author, and the Commission cannot be held responsible for any use which may be made of the information contained therein.",
+      "ikso_description": "The international organisation E{'@'}I, relying on around 250 volunteers, supports intercultural learning on the internet. Its projects, which provide the basis for deutsch.info, are multilingual websites where one can learn Esperanto ({1}) and Slovak ({2}). As well as developing learning portals, E{'@'}I also organises various training initiatives, especially in the areas of languages and new technologies.",
+      "ikso_location": "Partizánske, Slovakia",
+      "leipzig_description": "Leipzig University, founded in 1409, is a research university which offers education in a rich and diverse research environment for about 30,000 students taught by approximately 400 faculty members. The large variety of 14 faculties (covering disciplines from medicine to natural sciences, from mathematics to theology and from social sciences to sports) offers excellent opportunities for interdisciplinary work. Its Institute of Sorbian Studies, concerned with research into the Sorbian and other minority languages, their literature and culture, as well as with the training of schoolteachers, is unique in the world. In the years since the political changes in 1989 significant amounts of money have been invested in the research infrastructure, so that Leipzig University is a top institution both in buildings and equipment today.",
+      "leipzig_location": "Leipzig, Germany",
+      "leipzig_name": "Leipzig University",
+      "uam_description": "Adam Mickiewicz University in Poznań, named after the esteemed Polish Romantic poet, is a research university, one of the top Polish universities and the major academic institution in Poznań. It was founded at 1919 but its reputation is founded on long tradition of higher education in the city of Poznań, dates back to the 16th century (Akademia Lubrańskiego, English: The Lubrański Academy, Latin: Collegium Lubranscianum; established in 1518 in Poznań). At present, an academic staff of 3,000 offers 193 majors and specialties to about 40,000 students, including more than 1,300 doctoral students in doctoral programmes. It is responsible for more than 8,000 scientific publications each year and takes part in more than 600 national and international projects. The university is divided into 20 faculties across a broad range of natural and social sciences and the humanities, three of them are focused on language studies, offering practical language teaching of about 50 languages. Many of the language courses have been awarded the highest quality category by the Polish Accreditation Commission, which attests to both the excellent subject-related competence of the teachers and the use of the latest teaching methods, as well as excellent academic results. The Faculty of Modern Languages and Literatures is one of the university’s largest and offer the biggest number of language courses. The Institute of Ethnolinguistics, within the Faculty teaches over a dozen languages across 6 majors with a staff from over 15 different countries.",
+      "uam_location": "Poznań, Poland",
+      "uam_name": "Adam Mickiewicz University",
+      "vu_description": "Vilnius University was founded in the 16th century and is considered to be one of the oldest universities in Central and Eastern Europe. Language studies have been an integral part of Vilnius University’s curriculum. Back then, the primary language taught was Latin alongside Ancient Greek and Hebrew. Thus, even though the Faculty of Philology was established as recently as 1944, language studies were being taught even before the Jesuit College became a university in 1579. The Institute for the Languages and Cultures of the Baltic brings together researchers of General Linguistics, Baltic, Germanic, Polish, Russian, Scandinavian studies, as well as many others. Strong traditions of studying the Russian language, literature and culture (Russian philology department was founded in 1803) successfully coexist with the most advanced and modern teaching methods, what is shown in active participation members of this department in international projects and scientific events.",
+      "vu_location": "Vilnius, Lithuania",
+      "vu_name": "Vilnius University"
+    }
+  },
+  "account": {
+    "danger_zone": "Danger zone",
+    "delete_btn": "Delete my account",
+    "delete_confirm_btn": "Delete all my data",
+    "delete_description": "By continuing, all your data will be immediatly be deleted without any recovery options.",
+    "title": "Account settings"
+  },
+  "editor": {
+    "age_range": "Age range",
+    "cefr_levels_label": "CEFR levels",
+    "confirm_leave": {
+      "close": "Return to editor",
+      "continue": "Exit",
+      "title": "Are you sure you want to leave the editor?",
+      "message": "This page is asking you to confirm that you want to leave – data you have entered may not be saved."
+    },
+    "description": "Description",
+    "details": "Exercise details",
+    "option_new_gap_tooltip": "Add the ‘leave blank’ option",
+    "save": "Save",
+    "tags": "Tags",
+    "title": "Title",
+    "unexpected_response": "Unexpected server response",
+    "unlisted": "Unlisted in search results"
+  },
+  "exam": {
+    "accept_submissions": "Accept submissions",
+    "accepts_submissions": "Accepts submissions",
+    "confirm": "This operation cannot be undone. Proceed?",
+    "copy": "Copy",
+    "created": "Created: {date}",
+    "delete": "Delete exam",
+    "description": "Exam description",
+    "details": "Exam details",
+    "error": "An error occurred while submitting the exam.",
+    "goto_exercise": "Go to the exercise",
+    "is_exam": "This is an exam",
+    "link": "Link",
+    "name": "Exam name",
+    "no_new_submissions": "This exam does not accept new submissions",
+    "no_submissions": "No submissions",
+    "or": "or",
+    "please_log_in": "To proceed to the exam, please log in or choose a display name.",
+    "untitled": "Untitled exam",
+    "view": "View",
+    "visible_by": "The results of this exercise will be visible to the examinator {name}.",
+    "well_done": "Your exam has been successfully submitted to the examinator!"
+  },
   "exercise": {
+    "age": "Age:",
+    "anonymous": "anonymous",
+    "author": "Author",
     "check": "Check result",
-    "drop_here": "Drop here"
+    "create_copy": "Create a copy",
+    "create_exam": "Create exam",
+    "create_exam_confirm": "The creator of this exercise may edit or delete it while the exam is running. Proceed anyway?",
+    "delete": "Delete exercise",
+    "delete_confirm": "Are you sure you want to delete this exercise?",
+    "drop_here": "drop here",
+    "edit": "Edit exercise",
+    "error": "An error occurred while saving the exercise submission",
+    "explanation": "Explanation:",
+    "language": "Language",
+    "mistake": "Report a mistake",
+    "mistake_explanation": "Explanation:",
+    "misuse": "Report a misuse",
+    "pdf": "PDF",
+    "report_mistake_to_creator": "Report a mistake to {username}",
+    "report_misuse_to_administrators": "Report misusage to administrators",
+    "submit_mistake_confirm": "Thank you! The creator will receive a notification.",
+    "submit_misuse_confirm": "Thank you for helping keeping Testu.eu appropriate.",
+    "target_language": "Studied language",
+    "target_language_is": "Studied language:",
+    "unlisted": "This exercise is unlisted in search results",
+    "untitled": "Untitled exercise"
+  },
+  "guide": {
+    "about": "How to create exercises",
+    "about_text": "To create new exercice, you'll first need to register and login in the website.",
+    "construction": "Under construction",
+    "gap_filling": "Gap Filling",
+    "video": "about a video",
+    "exam": {
+      "explanation1": "When you did an exercise, you can transform it in an exam. To do that, you have to be on the page of the exercise and click on the three dots on the right upper corner of the exercise (1).",
+      "explanation2": "You can do an exam from your own exercises, that you'll find in ”My learning” or you can use other's exercises in the ”Home” part. If you use someone else's exercise, your exam will change if the owner of the exercise changes the exercise itself.",
+      "explanation3": "When you click on the three dots (1), four options appear. To make an exam, you have to click on the option ”Create an exam” (2). It will then lead you to the next page where you will be able to customize your exam.",
+      "explanation4": "As you can see below, you can choose the title of your exam (3). It will then show on the upper part (4). You can also add a description of the exam (5) and save it by clicking on the ”save” button (6).",
+      "explanation5": "The page will then change and you will see the page as below, with the title you chose. In the box ”link” (7), you have the link to your exam. You can copy it by clicking on the left icon (and send it to your students) or you can click on ”VIEW” to see your exam as your students will.",
+      "explanation6": "You can also go back to the exercise if you want to change it by clicking on (8) ”Go to the exercise”. In the box ”Submissions” (9), there will be the exams submitted by the students and you will be able to see their results and check every submission.",
+      "explanation7": "If you want to change or control the details of the exam, there are always in the box (10) at the bottom of that page. All your exams will be stored in the ”My teaching” part (11).",
+      "name": "Create an exam"
+    },
+    "exercice": {
+      "explanation1": "To create a new exercise, you have to be in the Home menu (1), then you can select ”+ CREATE A NEW EXERCISE” (2). Once created, they'll appear on this page. But for now you will be moved to the next page as you can see just below.",
+      "explanation2": "An exercise can be composed in multiple units. You can add units by clicking on ”+ ADD UNIT” (3). There are different kinds of exercises but in each unit you can only use the same kind. If you want to mix different types of questions in an exercise, you'll have to do separate units for each type of questions you want.",
+      "explanation3": "As you can see on the left, there are a lot of different types of units. But mainly, we can group them in 3 families: gap filling questions, multiple choices and match or sort questions.",
+      "explanation4": "Gap filling question is a text or a sentence where you choose to remove a word or a few words. For theses questions, you can choose to give some answers (at least one right answer and some false ones) or you can let the field open and the person answering the question will have to complete by typing the answer. In each case, you'll indicate the right answer(s) when creating the question.",
+      "explanation5": "Multiple choices allow you to create question with a choice of answers. It can be one or more right answers and as for the gap filling questions, you'll have to give the right answer(s) when creating the question.",
+      "explanation6": "For match or sort questions, you'll have the choice to give descriptions or questions or pictures or even sounds and words or answers related to the given items. The learners will have to pair the items with the answers or if you chose the sort question, they'll have to sort them in the right order.",
+      "explanation7": "You can find more explanations for each family by clicking on the tabs on the top of this page.",
+      "gap_filling_1": "The default type of exercise is a gap filling question. There are two kinds of gap filling exercises. The first one (1) is called ”Default”, and gives given answers when you click on the gap. The second type is the ”Open answer” (8), there is no answer given, the learner has to write it directly. We will see how to write the questions and how to give the answer, some wrong ones and the right one(s).",
+      "gap_filling_2": "In the fields (2), you can write the title of the exercises and in the field (3) a short description to explain the instructions fo the following questions or give some context.",
+      "gap_filling_3": "The questions themselves are written in the box (4). There are always two ways to do it. You can write directly the questions and the answers in the box or you can use the tools in the upper left corner (6). The result will be the same, you will see the same text in the field (4).",
+      "gap_filling_4": "If you write the questions directly in the box, every questions have to be separated by a blank line and the answer has to be given between brackets [ ] and separated by a vertical separator |. And you have to put a + before the right answer(s). If there is more than one right answer, any of them will be considered as correct for the result. You can also choose to shuffle the proposed answers by clicking on the ”Shuffle options” (7).",
+      "gap_filling_5": "If you use the tools to create the questions (6), the one on the left will pass a blank line to start a new question. You'll have to write the question or text and where you want to put a gap, you click on the tool on the right. A pop up window will open, as showed in the image. You can type the answers one by one. They'll be validated when you type ”enter”. By default, the first one will automatically be considered as the right one, and a green ”v” will show in front of it, but you can select the correct answer(s) by clicking on the small button in front of each answer (8). You can also choose to add a ”leave blank” option by clicking on the dashed square on the right (9).",
+      "gap_filling_open_answer_1": "The other type of gap filling exercise is the ”Open answer” (10). As you can see below, for this kind of exercise, there is no proposed answer. You can give expected answers, one or more, the same ways as we just explained, with the tool or directly in the box (11). You can proposed wrong answers, they will not appear but during the correction, it will show a red X if someone filled with one of these answers, nothing if they wrote another answer et a green V if they have one of the right answers.",
+      "gap_filling_open_answer_2": "You can add other questions, the same ways as before, by passing a blank line or by clicking on the button on the left (6). When you are happy with your questions, don't forget to click on the ”Save” button to save your work. You can always come back to add questions or to make some changes.",
+      "name": "New exercise"
+    },
+    "multiple_choice": {
+      "explanation1": "If you prefer to show the answers not as gaps but as a multiple choice with the answers under the question with boxes to check, you can select the ”Multiple choice” type (12).",
+      "explanation2": "In the list of exercises that appears when you add a unit, the ”Questions about a picture, true or false” and the ”Questions about a text, multiple choice” types give you two other examples of how to use this type of questions.",
+      "explanation3": "As before, you can give a title for the series of questions. You can also add a description, for instance a text about which you want to ask questions or an introduction about the questions...",
+      "explanation4": "The questions and the answers can be added as before, by writing them directly in the text box (13) or with de buttons as explained before for the gap filling questions (6). The correct answer must have ”+” before it and the answers must be separated by ”|”. If there are more than one correct answers, the question will be marked as correct when all the correct answers are checked.",
+      "explanation5": "You also have te possibility to add pictures or sounds in the description, by clicking on the three dots (14) and selecting them on your computer. You can then ask questions about the sound or the image. You can add as many as you want and choose where you want them to be in the text by moving the element between curly braces {'{}'} (15).",
+      "name": "Multiple choice"
+    },
+    "sort_and_match": {
+      "explanation1": "The last family of exercises is the ”sort and match” also called pairing (text with text, text with pictures, pictures with sounds and sorting pictures). You can select this type of exercices in the type box (16) or in the list of new units.",
+      "explanation1_1": "The simplest one consists in matching words. To create them, you can use the button (17) or write them in the text box (18).",
+      "explanation2": "Each match has to be written with one part on the left and one part on the right of the ”==” symbol, with one blank line between them. In this example, there are fruits in one column and colors in the other one. But it can be translations, numbers, or even pictures, sounds or videos. The most important thing is to put the same type in the same column. The propositions will be mixed for the exercise.",
+      "explanation3": "To add pictures or sound, you have to use the buttons (19) and select the file on your computer. It will then create the elements between curly braces {'{}'} as before. After that, you can move them on the place you want. To add a video, you have to select the third button (19) and you have to write the url address of the video (for instance on youtube or vimeo...). You can't directly upload a video from your computer.",
+      "explanation4": "You can associate text with text, or with picture or sound, or associate pictures with sounds as shown in (20).",
+      "explanation5": "If you don't write the ”==” symbol to pair something with the proposition, as shown in (21), the exercise become a sorting exercise where you have to put the proposition in the right order. You can do it with pictures, text, sounds or video.",
+      "name": "Sort and Match",
+      "video": "You can also add a video, directly in the description box, by writing the url address of the video between curly brackets and with ”video:” before it, as shown in (22). There is no button to do it but you can have a written example by selecting the type of unit: ”Questions about a video, open answer”."
+    }
+  },
+  "home": {
+    "create_exercise": "Create a new exercise",
+    "search_exercise": "Search exercise"
+  },
+  "langs": {
+    "help": "Help us to translate the website",
+    "name": {
+      "cs": "Czech",
+      "cy": "Welsh",
+      "de": "German",
+      "dsb": "Lower Sorbian",
+      "en": "English",
+      "eo": "Esperanto",
+      "es": "Spanish",
+      "fr": "French",
+      "ga": "Irish",
+      "hu": "Hungarian",
+      "lt": "Lithuanian",
+      "pl": "Polish",
+      "ru": "Russian",
+      "sk": "Slovak",
+      "uk": "Ukrainian"
+    },
+    "self": "English"
+  },
+  "learn": {
+    "date": "Date",
+    "exam": "Exam",
+    "exercise": "Exercise",
+    "recent": "Recent activity",
+    "review": "Review",
+    "submitted": "Submitted exercises per day"
+  },
+  "login": {
+    "already_registered": "Already have an account?",
+    "check_inbox": "Please check your inbox to confirm your registration.",
+    "email": "E-mail",
+    "email_is_verified": "Your e-mail is verified! You can now log in.",
+    "login": "Login",
+    "mail_invalid": "E-mail must be valid",
+    "no_account_yet": "You don’t have an account yet?",
+    "page_title": "Login",
+    "password": "Password",
+    "password_reset": "Password reset",
+    "password_reset_done": "Your password was successfully reset",
+    "password_reset_sent": "A link was sent to your email address to reset your password.",
+    "required_field": "Required field",
+    "resend_link": "Resend link",
+    "signup": "Register to TestU",
+    "signup_thanks": "Thank you for signing up.",
+    "username": "Username",
+    "verify_email": "Verifying your e-mail",
+    "verify_token_used_or_invalid": "It seems that this link was already used or is invalid."
+  },
+  "main": {
+    "about": "About",
+    "accept": "Accept",
+    "cancel": "Cancel",
+    "catchphrase": "Create your own language quizzes",
+    "cookie_consent": "This website uses the minimal amount of cookies for its functioning. By continuing using this website we assume you accept the use of the functional cookies.",
+    "edit": "Edit",
+    "facebook_page": "Facebook page",
+    "guide": "How To",
+    "home": "Home",
+    "lang_menu_header": "Interface language",
+    "login": "Log in",
+    "logout": "Logout",
+    "my_learning": "My learning",
+    "my_teaching": "My teaching",
+    "of": "{current} of {total}",
+    "ok": "OK",
+    "only_logged_in": "This page is available only for signed in users",
+    "privacy": "Privacy policy",
+    "settings": "Account settings",
+    "signup": "Sign up",
+    "social": "Social",
+    "source_code": "Source code",
+    "submit": "Submit",
+    "telegram_chat": "Telegram chat",
+    "terms": "Terms of use",
+    "why": "Why"
+  },
+  "review": {
+    "exam": "Exam review",
+    "exercise": "Exercise review",
+    "go_exam": "Go to the exam",
+    "go_exercise": "Go to the exercise",
+    "submitted_on": "These are the exercise solutions you submitted on {date}."
+  },
+  "sheet_editor": {
+    "add_matching_pair": "Add matching pair",
+    "add_option_placeholder": "Start typing an option…",
+    "add_option_validation": "Please insert at least one option",
+    "add_option_is_right_answer": "Correct answer?",
+    "add_sentence": "Add sentence",
+    "add_unit": "Add unit",
+    "add_unit_to_begin": "Add a new unit to begin",
+    "close": "Close editor",
+    "delete": "Delete",
+    "edit_next": "Edit next",
+    "edit_previous": "Edit previous",
+    "empty_exercise": "Empty exercise",
+    "first_item": "First item",
+    "ignore_case": "Ignore case",
+    "insert_gap": "Insert gap",
+    "insert_image": "Insert image",
+    "insert_pair": "Insert pair",
+    "insert_sound": "Insert sound",
+    "insert_video": "Insert video",
+    "move_down": "Move down",
+    "move_up": "Move up",
+    "new_gap": "New gap",
+    "new_matching_pair": "New matching pair",
+    "second_item": "Second item",
+    "shuffle_options": "Shuffle options",
+    "start_typing": "Start typing a sentence…",
+    "title": "Title",
+    "untitled_unit": "Untitled unit",
+    "valid_url": "Please type a valid URL",
+    "snippets": {
+      "blank_unit": {
+        "name": "Blank unit"
+      },
+      "gap_filling_dropdown": {
+        "code": "The book is [+on{'|'}in] the table.",
+        "name": "Gap filling, dropdown"
+      },
+      "gap_filling_open_answer": {
+        "code": "The book is [+on{'|'}in] the table.",
+        "name": "Gap filling, open answer"
+      },
+      "multiple_choice": {
+        "code": "Where is the book?\n[+on the table{'|'}in the table]",
+        "name": "Multiple choice (for questions)"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{'{img:dog.jpeg}'} == {'{sound:dog.mp3}'}\n\n{'{img:elephant.jpeg}'} == {'{sound:elephant.mp3}'}\n\n{'{img:cat.jpeg}'} == {'{sound:cat.mp3}'}",
+        "name": "Pairing pictures with sounds"
+      },
+      "pairing_text_with_pictures": {
+        "code": "Dog == {'{img:dog.jpeg}'}\n\nElephant == {'{img:elephant.jpeg}'}\n\nCat == {'{img:cat.jpeg}'}",
+        "name": "Pairing text with pictures"
+      },
+      "pairing_text_with_sounds": {
+        "code": "Dog == {'{sound:dog.mp3}'}\n\nElephant == {'{sound:elephant.mp3}'}\n\nCat == {'{sound:cat.mp3}'}",
+        "name": "Pairing text with sounds"
+      },
+      "pairing_text_with_text": {
+        "code": "Cherry == Red\n\nLemon == Yellow\n\nBroccoli == Green",
+        "name": "Pairing text with text"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "The animal in the picture is: [A dog{'|'}+A cat{'|'}An elephant]\n\nIs it a wild animal or a pet? [+A pet{'|'}A wild animal]",
+        "description": "{'{img:cat.jpeg}'}",
+        "name": "Questions about a picture, true or false"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Which animal makes this sound?\n[+Cat{'|'}Dog{'|'}Elephant]\n\nWhat is the term used to describe the sound this animal makes?\n[+Meowing{'|'}Barking{'|'}Trumpeting]",
+        "description": "Listen to the audio and aswer the questions:\n\n{'{sound:cat.mp3}'}",
+        "name": "Questions about a sound, dropdown"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Who challenged the hare to a race? [The hare{'|'}+The tortoise{'|'}A bird]\n\nWhy did the hare take a nap during the race? [He was tired{'|'}He wanted to give the tortoise a chance to catch up{'|'}+He was confident in his victory]\n\nWho won the race? [The hare{'|'}+The tortoise{'|'}A bird]",
+        "description": "Once upon a time, a hare and a tortoise were always arguing about who was faster.\nThe tortoise challenged the hare to a race, and the hare accepted, thinking it would be an easy win.\n\nThe race began, and the hare took off quickly, leaving the tortoise behind. The hare became overconfident and decided to take a nap. Meanwhile, the tortoise kept moving steadily towards the finish line.\n\nWhen the hare woke up, he realized the tortoise was almost at the finish line. The hare tried to catch up, but it was too late. The tortoise had won the race.",
+        "name": "Questions about a text, multiple choice"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Where is this place located?\n[]\n\nWho built it?\n[]",
+        "description": "Watch the video and answer the questions.\n\n{'{video:https://www.youtube.com/watch?v=chii_rEU30g}'}",
+        "name": "Questions about a video, open answer"
+      },
+      "sorting_pictures": {
+        "code": "{'{img:one_circle.png}'}\n\n{'{img:two_circles.png}'}\n\n{'{img:three_circles.png}'}",
+        "name": "Sorting pictures"
+      }
+    },
+    "types": {
+      "default": "Dropdown list",
+      "multiple_choice": "Multiple choice",
+      "open_answer": "Open answer",
+      "pairing": "Sort and match"
+    }
+  },
+  "sort": {
+    "rated": "Best rated",
+    "recent": "Most recent",
+    "sort": "Sort"
+  },
+  "tags": {
+    "agriculture": "Agriculture",
+    "art": "Art",
+    "astronomy": "Astronomy",
+    "biology": "Biology",
+    "business": "Business",
+    "chemistry": "Chemistry",
+    "computing": "Computing",
+    "crafting": "Crafting",
+    "economics": "Economics",
+    "engineering": "Engineering",
+    "geography": "Geography",
+    "grammar": "Grammar",
+    "history": "History",
+    "languages": "Languages",
+    "literature": "Literature",
+    "logic": "Logic",
+    "math": "Math",
+    "medicine": "Medicine",
+    "miscellaneous": "Miscellaneous",
+    "music": "Music",
+    "pedagogy": "Pedagogy",
+    "philosophy": "Philosophy",
+    "physics": "Physics",
+    "politics": "Politics",
+    "psychology": "Psychology",
+    "religion": "Religion",
+    "science": "Science",
+    "sport": "Sport",
+    "technology": "Technology",
+    "trivia": "Trivia",
+    "zoology": "Zoology"
+  },
+  "teach": {
+    "exams": "Exams",
+    "exercises": "Exercises"
+  },
+  "terms": {
+    "intro": "A warm welcome to TestU Online, a free, multilingual, online e-learning platform enabling easy and fast creation of various quizzes, tests, and exercises primarily intended for learning languages! Accessing and using the website testu.eu (“the website”, “the service”, “the provider”) implies that you (the “user”) have read, understood and accepted the following terms and conditions, regardless of whether you are registered as a member on testu.eu. Therefore, please read the following text thoroughly.",
+    "last_update": "Last updated: {date}",
+    "section1": {
+      "text1": "You can use some of our services without registration on the website. In order to use all the features of the website, you need to set up a personal account. Registration is free.",
+      "text2": "Only people over the age of 13 are eligible to register. The use of this website by minors is permitted only with the consent of the guardian.",
+      "text3": "You guarantee that all data provided by you at registration are true and correct and that you will always keep it up to date.",
+      "text4": "When registering, the use of data (e.g., username, name, exercise texts, pictures, audio and video files, etc.) that infringe third party rights, including trademarks or registered rights, is forbidden. Unlawful data or data contrary to these terms of use may also not be used.",
+      "text5": "During registration you will choose a password; you are responsible for keeping this password secret.",
+      "text6": "You agree that certain data from your user profile may be publicly available (such as your username, linguistic progress, online status, selected language, registration date and last date of activity and other voluntary disclosures, including your profile picture). Your e-mail address and password will not be accessible by other users.",
+      "text7": "Registration on the website is completed via an activation link. Upon registration on the website, you will receive an automatic confirmation email from the Provider, containing this link.",
+      "text8": "If an account is registered but never activated, the provider reserves the right to delete the incomplete registered account.",
+      "text9": "The provider of this site does not guarantee the true identity of a user. Each user is responsible for checking the identity of other users. The provider reserves the right to request proof of the information relevant as evidence of identity and age. If supporting documents are not provided within the period specified by the provider of this website, the provider will delete the user account in question.",
+      "title": "Registration"
+    },
+    "section2": {
+      "text1": "The provider of this site is aware that the protection of personal data is very important. That is why the site adheres strictly to the rules of data protection law. Details concerning the processing of user data are governed by the Privacy Policy.",
+      "title": "Data protection"
+    },
+    "section3": {
+      "text1": "The website may only be used for purposes permitted by law.",
+      "text2": "As a user you are required to:",
+      "text2_1": "only to make truthful and non-misleading statements in your profile and your communications with other users;",
+      "text2_2": "to keep registration data secret and not disclose it to third parties;",
+      "text2_3": "immediately inform the supplier of the website if there is reason to suspect that a third party has gained knowledge of access data for and/or has abused a user account.",
+      "text3": "You are solely responsible for the content posted by you and for communication with others, both public and private. You are also obliged to protect the rights and interests of other users or third parties, in particular their personal rights.",
+      "text4": "It is strictly prohibited to upload the following content (as images, links, photos, exercises, audio and video files or other content) on the Website and to post, send, link, transmit, promote, offer or otherwise provide it:",
+      "text4_1": "legally protected content, for example content that is protected by copyright, related/neighbouring rights, naming rights, branding, trademarks, patents (including utility and industrial design), proprietary or personal rights if you are not entitled to these rights;",
+      "text4_2": "content which is pornographic, violent, obscene, sexist, defamatory, libelous, racist, abusive of members of minority religions or hurtful representations as well as content that violates child protection laws;",
+      "text4_3": "propaganda and symbols of banned organizations;",
+      "text4_4": "harassment or abusive, slanderous, threatening and discriminatory statements;",
+      "text4_5": "private data from other users (e.g. address, phone number, bank account) or quotations from private communication with other users, providers/administrators of the website or third parties;",
+      "text4_6": "links to websites with illegal content;",
+      "text4_7": "any unsolicited or unauthorized advertising, promotional materials, ”junk mail”, spam, chain letters, pyramid or pyramid schemes or any other form of solicitation;",
+      "text4_8": "any material which contains viruses, worms, Trojan horses or other programs that may jeopardize or impair the functionality or existence of this or other websites.",
+      "text5": "The following acts are prohibited to the user:",
+      "text5_1": "using, or trying to use, the account of another user or the system without the authorization of the provider;",
+      "text5_2": "impersonating another person or providing false information about yourself;",
+      "text5_3": "the blocking of website functions, overwriting, modifying or copying of the content, of the program code and/or data of the website, as well as the automated retrieval of content, unless this is necessary for the proper use of the services of the website.",
+      "text6": "The owner of this site reserves the right to delete unauthorized posts (including tests, exercises, texts and images) that do not meet these terms and conditions, or the user’s account, at any time and without notice.",
+      "title": "Responsibilities of the user"
+    },
+    "section4": {
+      "text1": "The provider is also entitled to change or discontinue the services offered at any time, at its discretion without prior notice.",
+      "title": "Changes to service"
+    },
+    "section5": {
+      "text1": "The provider of the website gives you, as a user, a personal, worldwide, non-transferable and non-exclusive right to use these services in accordance with these terms and conditions.",
+      "text2": "As a user, you grant the website a worldwide, non-exclusive, royalty-free, transferable, temporally, content and spatially unrestricted right to use the content posted by you in all media used by the provider. The owner of this site is specifically authorized to use this content in any media, as well as to publish, copy, reproduce, modify, edit, distribute, and adapt it for this purpose.",
+      "text3": "As a user, you guarantee that your content can be used freely by third-parties in the context of 5.2. You certify that you own all the rights and authority necessary for the rights granted herein relating to content submitted by you.",
+      "text4": "The rights granted to you by the website, and the above stated warranties and indemnities do not end with the termination of the contractual relationship.",
+      "title": "Granting of rights"
+    },
+    "section6": {
+      "text1": "All text, images and other content published on the website including the content provided by users are – unless indicated otherwise – published under the {license}.",
+      "text1_license": "CC0 1.0 Universal Creative Commons license",
+      "title": "Property rights"
+    },
+    "section7": {
+      "text1": "The term of the membership of the website begins with the registration and agreement to these terms of use and privacy rules, and continues indefinitely.",
+      "text2": "You can cancel the service at any time without notice for any reason at {link}. Upon termination, you will no longer have access to your profile and all information it contains will be deleted by the website provider. You agree that some content (such as comments, posts or messages) that are not directly connected to your profile, may remain even after the deletion of your profile. You are not entitled to restitution or other transfer of the content posted by you.",
+      "text3": "The right to extraordinary termination for good cause remains unaffected. An important reason would be if one of the parties has breached obligations under these terms of use. In the case of an extraordinary termination by the provider you are excluded from further use of the website permanently. This also means that re-registration is not permitted.",
+      "text4": "The owner of this site reserves the right to delete the user's account if a user has not used the service for more than 6 months.",
+      "title": "Contract period and termination"
+    },
+    "section8": {
+      "text1": "The provider tries to keep the website running, error free and secure, but it does not guarantee that the website is safe, secure or error free at any time, nor that it always works without disruptions, delays or deficiencies.",
+      "text2": "The provider does not accept liability for slight, negligent breaches of duty, unless this breach leads to damage to life, body or health, and as long as no regulations under the Product Liability Act have been breached. The liability for breaches of obligations, which prevent the proper execution of the contractual relationship and on whose observance the user regularly relies, remain unaffected by this. The same applies to violations by our agents.",
+      "text3": "According to the law, the supplier of the website as a service provider is not obliged to monitor the transmitted or stored information or to investigate circumstances that indicate illegal activity. It therefore accepts no responsibility for the information provided by users of the website content, data and/or information, statements made or the content of linked external websites.",
+      "text4": "Despite careful checking of content, the providers of the site are not liable for the contents of external links. Their creators are solely responsible for the content of linked pages.",
+      "text5": "The provider is not responsible for the content and accuracy of advertising. The author is solely responsible for the content of the advertisements. The same applies to the content of the advertised website. Allowing an advertisement to appear on the website does not mean that the provider is agreeing to the legality of its content. The responsibility for this rests solely with the advertisers.",
+      "text6": "As a user, you free the website provider from all claims, including claims for damages, which other users or other third parties bring against the provider for breach of their rights by you or due to the content created by you. A user who posts such content on the website assumes all costs incurred by the third party provider of the site due to a violation of rights, including costs for legal defense costs. All other rights, including damage claims by the party remain unaffected.",
+      "title": "Liability"
+    },
+    "section9": {
+      "text1": "These terms and conditions and any disputes related to them are subject to the laws of the Slovak Republic. The location of performance and exclusive place of jurisdiction, as far as legally possible, is Slovakia.",
+      "text2": "The English version of the agreement is legally binding.",
+      "text3": "The owner of this site reserves the right to modify these terms at any time without giving reasons. The latest version is always available at {link}. Users will not be informed when there is a change in the terms of use; it is the responsibility of the user to retrieve and view the current terms of use. By continuing to use the website after a change in the conditions of use, the user agrees to the changes.",
+      "text4": "The provider is entitled to transfer its rights and obligations under these terms, entirely or in part, to a third party, within a four week period following notice via e-mail.",
+      "text5": "Contact information for the provider or the administrators of the website can be found on the page {link}.",
+      "title": "Closing conditions"
+    }
+  },
+  "why": {
+    "because": "Because it is:",
+    "more_projects": "More projects at",
+    "title": "Why use Testu.eu",
+    "point1": {
+      "subtitle": "No subscriptions, no hidden costs or paywalls, seriously!",
+      "title": "Absolutely free"
+    },
+    "point10": {
+      "subtitle": "Thanks to the Erasmus+ program and the Slovak National Agency you can use testu.eu for free!",
+      "title": "Officially supported by the European Commision"
+    },
+    "point2": {
+      "subtitle": "You are free to use and create content, no need for attributions either.",
+      "title": "CC0 licensed content"
+    },
+    "point3": {
+      "subtitle": "Nothing is hidden.",
+      "title": "Open source"
+    },
+    "point4": {
+      "subtitle": "Testu.eu celebrates languages. Missing yours? Add it here:",
+      "title": "Multilingual"
+    },
+    "point5": {
+      "subtitle": "User friendly, fast, intuitive, and easy to navigate.",
+      "title": "Easy to use"
+    },
+    "point6": {
+      "subtitle": "Immerse yourself in online lessons, courses, exercises, and tests – a modern approach to learning!",
+      "title": "Online"
+    },
+    "point7": {
+      "subtitle": "Learning without borders, teaching without limits – dive into content creation or reuse existing resources.",
+      "title": "Useful"
+    },
+    "point8": {
+      "subtitle": "Crafting educational content is a joy – embrace learning through creativity!",
+      "title": "Fun"
+    },
+    "point9": {
+      "subtitle": "Reuse the content of others or your own, reduce the amount of printing, recycle ideas, exercises and questions!",
+      "title": "Eco-friendly"
+    }
   }
 }

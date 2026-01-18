@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import useUnitComponent from "@/composables/useUnitComponent";
-
 const unit_component = useUnitComponent();
 const all_silent = ref(true);
 const all_readonly = ref(false);

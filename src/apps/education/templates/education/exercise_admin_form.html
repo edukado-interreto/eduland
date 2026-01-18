@@ -3,6 +3,8 @@
 {% block main_header %}
     {{ block.super }}
     <div class="nice-padding">
-        <a href="{% url 'exercise_edit' pk=exercise.pk %}" class="button">Exercise Editor</a>
+        <p>
+            <a href="{% url 'exercise_edit' pk=exercise.pk %}" class="button">Exercise Editor</a>
+        </p>
     </div>
 {% endblock %}

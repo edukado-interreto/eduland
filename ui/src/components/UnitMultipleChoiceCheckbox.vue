@@ -1,13 +1,5 @@
 <script setup lang="ts">
-import {
-  computed,
-  defineEmits,
-  defineExpose,
-  onBeforeMount,
-  ref,
-  watch,
-  watchEffect,
-} from "vue";
+import { computed, onBeforeMount, ref, watch, watchEffect } from "vue";
 import type { ComponentPublicInstance, ComputedRef, Ref } from "vue";
 
 // const { confetti_shoot } = useConfettiShoot()

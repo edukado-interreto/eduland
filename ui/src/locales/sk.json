@@ -1,1 +1,483 @@
-{ "exercise": { "check": "Skontrolujte výsledok" } }
+{
+  "about": {
+    "about": "O projekte",
+    "about_text": "TestU Online je bezplatná, viacjazyčná online e-learningová platforma, ktorá umožňuje jednoduché a rýchle vytváranie kvízov, testov a cvičení, ktoré sú určené predovšetkým na učenie sa cudzích jazykov. Používateľmi platformy budú predovšetkým učitelia, lektori a ich žiaci, ktorí navštevujú základné školy či iné formy formálneho a neformálneho vzdelávania. Cieľom platformy je umožniť mladej generácii prístup k bezplatnému vzdelávaniu napriek ich socálno-ekonomickému, náboženskému alebo národnostnému pôvodu, geografickým obmedzeniam alebo rôznym typom postihnutia.",
+    "partners_title": "Partneri",
+    "partners": {
+      "bit_description": "bit (= best in training) schulungcenter (= tréningové centrum) bolo založené v roku 1986 a je jedným z hlavných poskytovateľov vzdelávania v oblasti projektov zameraných na pracovný trh, odborné vzdelávanie, tréning a zamestnateľnosť v Rakúsku. Najväčšou hybnou silou tohto centra sú skúsenosti a know-how v dizajnovaní (didaktika, metodológa, dizajn výučby) a realizácii rôznych národných a nadnárodných projektov. bitschulungcenter má veľké skúsenosti s prácou s rôznymi cieľovými skupinami (napr. mladí ľudia, mladí nezamestnaní dospelí, a pod.) a ich vzdelávacími potrebami.",
+      "bit_location": "Graz, Rakúsko",
+      "european_commission": "Tento projekt bol financovaný s podporou Európskej komisie. Táto webová stránka vyjadruje len názory autora a Komisia nenesie zodpovednosť za akékoľvek použitie informácií v nej obsiahnutých.",
+      "ikso_description": "Medzinárodná mládežnícka organizácia E{'@'}I, ktorá sa opiera o podporu viac ako 250 dobrovoľníkov, podporuje medzikultúrne vzdelávanie na internete. Jej projekty, ktoré dali základ aj pre portál deutsch.info, sú viacjazyčné webové stránky, na ktorých sa ľudia môžu učiť rôzne jazyky, napr. Esperanto ({1}) a Slovenský jazyk ({2}). Okrem vytvárania bezplatných stránok na učenie sa cudzích jazykov, E{'@'}I sa zameriava aj na tréningové aktivity, špecificky na aktivity v oblasti jazykov a technológii.",
+      "ikso_location": "Partizánske, Slovensko",
+      "leipzig_description": "Lipská Univerzita, založená v roku 1409, je výskumnou univerzitou a ponúka bohaté a rôznorodné vzdelávanie pre viac ako 30 000 študentov, ktoré zabezpečuje približne 400 zamestnancov fakúlt. Široké spektrum 14 fakúlt (od medicíny po prírodné vedy, od matematiky po teológiu či od sociálnych vied po šport) poskytuje skvelé príležitosti pre medzisektorovú spoluprácu. Univerzita sa môže pýšiť unikátnym Inštitútom pre lužickú srbčinu, ktorý sa zameriava na výskum lužickej srbčiny a iných menšinových jazykov, ich literatúry a kultúry a taktiež na vzdelávanie učiteľov v tomto jazyku. Po roku 1989, univerzita obdržala obrovské množstvo finančnej podpory, ktorá bola investovaná do výskumu, vďaka čomu je dnes Lipská Univerzita jednou z top univerzít.",
+      "leipzig_location": "Lipsko, Nemecko",
+      "leipzig_name": "Lipská Univerzita",
+      "uam_description": "Univerzita Adama Mickiewicza v Poznani, pomenovaná po váženom poľskom romantickom básnikovi, je výskumná univerzita, jedna z popredných poľských univerzít a významná akademická inštitúcia v Poznani. Bola založená v roku 1919, ale jej povesť je založená na dlhej tradícii vyššieho vzdelávania v meste Poznaň, ktorá siaha až do 16. storočia (Akademia Lubrańskiego, anglicky: The Lubrański Academy, latinsky: Collegium Lubranscianum; založená v roku 1518 v Poznani). V súčasnosti 3 000 akademických zamestnancov ponúka 193 odborov a špecializácií asi 40 000 študentom, z toho viac ako 1 300 doktorandom v doktorandských študijných programoch. Ročne je zodpovedná za viac ako 8 000 vedeckých publikácií a podieľa sa na viac ako 600 národných a medzinárodných projektoch. Univerzita je rozdelená na 20 fakúlt naprieč širokým spektrom prírodných, spoločenských a humanitných vied, z ktorých tri sú zamerané na štúdium jazykov, ponúkajú praktickú jazykovú výučbu približne 50 jazykov. Mnohé z jazykových kurzov boli ocenené poľskou akreditačnou komisiou najvyššou kategóriou kvality, čo svedčí o vynikajúcej odbornosti učiteľov a používaní najnovších vyučovacích metód, ako aj o vynikajúcich akademických výsledkoch. Fakulta moderných jazykov a literatúr je jednou z najväčších na univerzite a ponúka najväčší počet jazykových kurzov. Inštitút etnolingvistiky v rámci fakulty vyučuje viac ako tucet jazykov v 6 odboroch so zamestnancami z viac ako 15 rôznych krajín.",
+      "uam_location": "Poznaň, Poľsko",
+      "uam_name": "Univerzita Adama Mickiewicza",
+      "vu_description": "Vilnius University bola založená v 16. st. a je považovaná za jednu z najstarších univerzít v strednej a východnej Európe. Vyučovanie cudzích jazykov je neoddeliteľnou súčasťou učebných osnou tejto univerzity. V minulosti boli hlavnými vyučovacími jazykmi latinčina, staroveká gréčtina a hebrejčina. Hoci bola Filologická fakulta založená až v roku 1944, vyučovanie cudzích jazykov prebiehalo ešte predtým ako sa Jezuitská vysoká škola stala v roku 1579 univerzitou. Inštitút jazykov a kultúry baltského regiónu združuje výskumníkov všeobecnej lingvistiky, baltských, germánskych, poľských, ruských a škandinávskych štúdii, no i mnohých ďalších. Dlhoročná tradícia v študovaní ruského jazyka, literatúry a kultúry (Ruský filologický ústav bol založený už v roku 1803) úspešne nedväzuje na nové moderné spôsoby učenia sa, čo dokazuje aj aktívna účasť výskumníkov ústavu na mnohých medzinárodných projektoch a vedeckých podujatiach.",
+      "vu_location": "Vilnius, Litva",
+      "vu_name": "Vilnius University"
+    }
+  },
+  "editor": {
+    "age_range": "Veková kategória",
+    "cefr_levels_label": "CEFR (SERR) úrovne",
+    "confirm_leave": "Na tejto stránke vás žiadame o potvrdenie, že chcete odísť - zadané údaje sa nemusia uložiť.",
+    "description": "Popis",
+    "details": "Podrobnosti cvičenia",
+    "save": "Uložiť",
+    "tags": "Štítky",
+    "title": "Názov",
+    "unexpected_response": "Neočakávaná odpoveď servera",
+    "unlisted": "Nezaradené vo výsledkoch vyhľadávania"
+  },
+  "exam": {
+    "accept_submissions": "Prijať príspevky",
+    "confirm": "Túto operáciu nie je možné vrátiť. Pokračovať?",
+    "copy": "Kópia",
+    "created": "Vytvorené: {date}",
+    "delete": "Vymazať test",
+    "description": "Popis testu",
+    "details": "Podrobnosti testu",
+    "error": "Pri odoslaní skúšky došlo k chybe.",
+    "goto_exercise": "Ísť k cvičeniu",
+    "is_exam": "Toto je skúška.",
+    "link": "Odkaz",
+    "name": "Názov testu",
+    "no_new_submissions": "Táto skúška neprijíma nové pokusy.",
+    "no_submissions": "Žiadne príspevky",
+    "or": "alebo",
+    "please_log_in": "Ak chcete prejsť ku skúške, prosím, prihláste sa alebo si vyberte zobrazované meno.",
+    "untitled": "Test bez názvu",
+    "view": "Náhľad",
+    "visible_by": "Výsledky tohto cvičenia budú viditeľné pre skúšajúceho {meno}.",
+    "well_done": "Vaša skúška bola úspešne odoslaná skúšajúcemu!"
+  },
+  "exercise": {
+    "age": "Vek:",
+    "anonymous": "anonymný",
+    "author": "Autor",
+    "check": "Skontrolujte výsledok",
+    "create_copy": "Vytvoriť kópiu",
+    "create_exam": "Vytvoriť test",
+    "create_exam_confirm": "Tvorca tohto cvičenia ho môže upraviť alebo vymazať, kým skúška prebieha. Chcete napriek tomu pokračovať?",
+    "delete": "Zmazať cvičenie",
+    "delete_confirm": "Naozaj chcete odstrániť toto cvičenie?",
+    "drop_here": "drop here",
+    "edit": "Upraviť cvičenie",
+    "error": "Pri ukladaní zadania cvičenia sa vyskytla chyba",
+    "explanation": "Vysvetlenie:",
+    "language": "Jazyk",
+    "mistake": "Nahlásiť chybu",
+    "mistake_explanation": "Vysvetlenie:",
+    "misuse": "Nahlásiť zneužitie",
+    "pdf": "PDF",
+    "report_mistake_to_creator": "Nahlásiť chybu {username}",
+    "report_misuse_to_administrators": "Nahlásiť zneužitie správcom",
+    "submit_mistake_confirm": "Ďakujem! Tvorca dostane upozornenie.",
+    "submit_misuse_confirm": "Ďakujeme, že pomáhate udržiavať Testu.eu vhodné.",
+    "target_language": "Študovaný jazyk",
+    "target_language_is": "Študovaný jazyk:",
+    "unlisted": "Toto cvičenie nie je uvedené vo výsledkoch vyhľadávania"
+  },
+  "guide": {
+    "about": "Ako vytvárať cvičenia",
+    "about_text": "Ak chcete vytvoriť nové cvičenie, musíte sa najprv zaregistrovať a prihlásiť na stránke.",
+    "construction": "Vo výstavbe",
+    "gap_filling": "Vyplň medzeru",
+    "video": "o videu",
+    "exam": {
+      "explanation1": "Keď ste urobili cvičenie, môžete ho premeniť na skúšku. Ak to chcete urobiť, musíte byť na stránke cvičenia a kliknúť na tri bodky v pravom hornom rohu cvičenia (1).",
+      "explanation2": "Skúšku môžete vykonať z vlastných cvičení, ktoré nájdete v časti \"Moje učenie\", alebo môžete použiť cvičenia iných používateľov v časti \"Domov\". Ak použijete cudzie cvičenie, vaša skúška sa zmení, ak vlastník cvičenia zmení samotné cvičenie.",
+      "explanation3": "Po kliknutí na tri bodky (1) sa zobrazia štyri možnosti. Ak chcete vytvoriť skúšku, musíte kliknúť na možnosť \"Vytvoriť skúšku\" (2). Potom sa dostanete na ďalšiu stránku, kde si budete môcť skúšku prispôsobiť.",
+      "explanation4": "Ako vidíte nižšie, môžete si vybrať názov skúšky (3). Ten sa potom zobrazí v hornej časti (4). Môžete tiež pridať opis skúšky (5) a uložiť ju kliknutím na tlačidlo \"Uložiť\" (6).",
+      "explanation5": "Stránka sa zmení a zobrazí sa stránka s názvom, ktorý ste vybrali, ako je uvedené nižšie. V políčku \"link\" (7) máte odkaz na vašu skúšku. Môžete ho skopírovať kliknutím na ľavú ikonu (a poslať ho svojim študentom) alebo môžete kliknúť na \"VIEW\" (zobrazenie) a zobraziť svoju skúšku tak, ako ju uvidia vaši študenti.",
+      "explanation6": "Ak chcete zmeniť cvičenie, môžete sa k nemu vrátiť kliknutím na (8) \"Prejsť na cvičenie\". V políčku \"Odovzdania\" (9) sa zobrazia skúšky odovzdané študentmi a vy si budete môcť pozrieť ich výsledky a skontrolovať každé odovzdanie.",
+      "explanation7": "Ak chcete zmeniť alebo kontrolovať podrobnosti skúšky, vždy sa nachádzajú v rámčeku (10) v dolnej časti tejto stránky. Všetky vaše skúšky budú uložené v časti \"Moje učenie\" (11).",
+      "name": "Vytvoriť test"
+    },
+    "exercice": {
+      "explanation1": "Ak chcete vytvoriť nové cvičenie, musíte byť v ponuke Home (1), potom môžete vybrať „+ VYTVORIŤ NOVÉ CVIČENIE“ (2). Po vytvorení sa zobrazia na tejto stránke. Ale zatiaľ budete presunutí na ďalšiu stránku, ako môžete vidieť nižšie.",
+      "explanation2": "Cvičenie môže byť zostavené z viacerých jednotiek. Jednotky môžete pridať kliknutím na „+ PRIDAŤ JEDNOTKU“ (3). Existujú rôzne druhy cvičení, ale v každej jednotke môžete použiť len ten istý druh. Ak chcete v cvičení kombinovať rôzne typy otázok, budete musieť urobiť samostatné jednotky pre každý typ požadovaných otázok.",
+      "explanation3": "Ako vidíte vľavo, existuje niekoľko typov jednotiek. Môžeme ich rozdeliť do troch základných skupín: doplňovanie, výber z viacerých možností, triedenie a priraďovanie.",
+      "explanation4": "Otázka na vyplnenie medzier je text alebo veta, kde sa rozhodnete odstrániť slovo alebo niekoľko slov. Pri týchto otázkach si môžete vybrať, či poskytnete nejaké odpovede (aspoň jednu správnu odpoveď a niektoré nepravdivé), alebo môžete pole nechať otvorené a osoba odpovedajúca na otázku bude musieť odpoveď vyplniť napísaním odpovede. V každom prípade pri vytváraní otázky uvediete správnu odpoveď (odpovede).",
+      "explanation5": "Výber z možností vám umožní vytvoriť otázku s výberom odpovedí. Môže to byť jedna alebo viacero správnych odpovedí a pokiaľ ide o otázky na vyplnenie medzier, pri vytváraní otázky budete musieť uviesť správnu odpoveď (odpovede).",
+      "explanation6": "V prípade otázok na spárovanie alebo zoradenie budete mať možnosť zadať popisy alebo otázky alebo obrázky alebo dokonca zvuky a slová alebo odpovede súvisiace s danými položkami. Študenti budú musieť spárovať položky s odpoveďami, alebo ak ste vybrali otázku na triedenie, budú ich musieť zoradiť v správnom poradí.",
+      "explanation7": "Ďalšie vysvetlenia pre každú rodinu nájdete kliknutím na karty v hornej časti tejto stránky.",
+      "gap_filling_1": "Predvoleným typom cvičenia je otázka na vyplnenie medzier. Existujú dva druhy cvičení na vyplnenie medzier. Prvá (1) sa nazýva „Predvolená“ a dáva odpovede, keď kliknete na medzeru. Druhým typom je „otvorená odpoveď“ (8), nie je uvedená žiadna odpoveď, študent ju musí napísať priamo. Uvidíme, ako napísať otázky a ako dať odpovede, niektoré nesprávne a správne.",
+      "gap_filling_2": "Do polí (2) môžete napísať názov cvičení a do políčka (3) krátky popis na vysvetlenie pokynov k nasledujúcim otázkam alebo uvedenie kontextu.",
+      "gap_filling_3": "Samotné otázky sú napísané v rámčeku (4). Vždy existujú dva spôsoby, ako to urobiť. Otázky a odpovede môžete napísať priamo do poľa alebo môžete použiť nástroje v ľavom hornom rohu (6). Výsledok bude rovnaký, v poli (4) uvidíte rovnaký text.",
+      "gap_filling_4": "Ak napíšete otázky priamo do rámčeka, všetky otázky musia byť oddelené prázdnym riadkom a odpoveď musí byť uvedená v zátvorkách [ ] a oddelená zvislým oddeľovačom |. A pred správnu odpoveď (odpovede) musíte dať +. Ak existuje viac ako jedna správna odpoveď, ktorákoľvek z nich sa bude považovať za správnu pre výsledok. Môžete sa tiež rozhodnúť premiešať navrhované odpovede kliknutím na „Možnosti zamiešania“ (7).",
+      "gap_filling_5": "Ak použijete nástroje na vytvorenie otázok (6), tá naľavo prejde prázdnym riadkom na začatie novej otázky. Budete musieť napísať otázku alebo text a tam, kde chcete vložiť medzeru, kliknite na nástroj vpravo. Otvorí sa vyskakovacie okno, ako je znázornené na obrázku. Odpovede môžete písať jednu po druhej. Budú overené, keď zadáte „enter“. V predvolenom nastavení bude prvá automaticky považovaná za správnu a pred ňou sa zobrazí zelené „v“, ale správnu odpoveď (odpovede) môžete vybrať kliknutím na malé tlačidlo pred každou odpoveďou ( 8). Môžete sa tiež rozhodnúť pridať možnosť „nechať prázdne“ kliknutím na prerušovaný štvorec vpravo (9).",
+      "gap_filling_open_answer_1": "Ďalším typom cvičenia na vyplnenie medzier je „Otvorená odpoveď“ (10). Ako vidíte nižšie, pre tento druh cvičenia neexistuje žiadna navrhovaná odpoveď. Očakávané odpovede, jednu alebo viac, môžete poskytnúť rovnakým spôsobom, ako sme práve vysvetlili, pomocou nástroja alebo priamo v rámčeku (11). Môžete navrhnúť nesprávne odpovede, tie sa nezobrazia, ale pri oprave sa zobrazí červené X, ak niekto vyplnil jednu z týchto odpovedí, nič, ak napísal inú odpoveď a zelené V, ak má jednu zo správnych odpovedí.",
+      "gap_filling_open_answer_2": "Ďalšie otázky môžete pridať rovnakým spôsobom ako predtým, prejdením prázdneho riadku alebo kliknutím na tlačidlo vľavo (6). Keď budete spokojní so svojimi otázkami, nezabudnite kliknúť na tlačidlo „Uložiť“ a svoju prácu uložte. Vždy sa môžete vrátiť a pridať otázky alebo vykonať nejaké zmeny.",
+      "name": "Nové cvičenie"
+    },
+    "multiple_choice": {
+      "explanation1": "Ak uprednostňujete zobrazenie odpovedí nie ako medzery, ale ako viacnásobný výber s odpoveďami pod otázkou s políčkami na zaškrtnutie, môžete vybrať typ „Výber z viacerých možností“ (12).",
+      "explanation2": "V zozname cvičení, ktorý sa zobrazí, keď pridáte jednotku, vám typy „Otázky o obrázku, pravdivé alebo nepravdivé“ a „Otázky k textu, výber z viacerých možností“ poskytujú ďalšie dva príklady použitia tohto typu otázok.",
+      "explanation3": "Sériu otázok môžete rovnako ako predtým pomenovať. Môžete tiež pridať popis, napríklad text, na ktorý sa chcete opýtať, alebo úvod k otázkam...",
+      "explanation4": "Otázky a odpovede je možné pridať tak, ako predtým, ich napísaním priamo do textového poľa (13) alebo pomocou tlačidiel, ako je vysvetlené vyššie pre otázky na vyplnenie medzier (6). Správna odpoveď musí mať pred sebou „+“ a odpovede musia byť oddelené „|“. Ak je viac správnych odpovedí, otázka bude označená ako správna, keď budú skontrolované všetky správne odpovede.",
+      "explanation5": "Máte tiež možnosť pridať obrázky alebo zvuky do popisu kliknutím na tri bodky (14) a ich výberom na vašom počítači. Potom môžete klásť otázky týkajúce sa zvuku alebo obrazu. Môžete ich pridať koľko chcete a vybrať, kam ich chcete v texte umiestniť, presunutím prvku medzi zložené zátvorky {'{}'} (15).",
+      "name": "Výber z možností"
+    },
+    "sort_and_match": {
+      "explanation1": "Poslednou skupinou cvičení je „sort and match“ nazývané aj párovanie (text s textom, text s obrázkami, obrázky so zvukmi a triedenie obrázkov). Tento typ cvičení si môžete vybrať v poli typu (16) alebo v zozname nových jednotiek.",
+      "explanation1_1": "Najjednoduchší spôsob spočíva v zhode slov. Na ich vytvorenie môžete použiť tlačidlo (17) alebo ich napísať do textového poľa (18).",
+      "explanation2": "Každá zhoda musí byť napísaná s jednou časťou naľavo a jednou napravo od symbolu ”==”, s jedným prázdnym riadkom medzi nimi. V tomto príklade je ovocie v jednom stĺpci a farby v druhom. Ale môžu to byť preklady, čísla alebo dokonca obrázky, zvuky či videá. Najdôležitejšie je dať rovnaký typ do rovnakého stĺpca. Na cvičenie budú propozície zmiešané.",
+      "explanation3": "Ak chcete pridať obrázky alebo zvuk, musíte použiť tlačidlá (19) a vybrať súbor v počítači. Potom vytvorí prvky medzi zloženými zátvorkami {'{}'} ako predtým. Potom ich môžete presunúť na požadované miesto. Ak chcete pridať video, musíte vybrať tretie tlačidlo (19) a napísať url adresu videa (napríklad na youtube alebo vimeo...). Video nemôžete nahrať priamo z počítača.",
+      "explanation4": "Môžete priradiť text k textu, obrázku alebo zvuku, alebo priradiť obrázky zvukom, ako je znázornené na (20).",
+      "explanation5": "Ak nenapíšete symbol \"==\", aby ste niečo spojili s propozíciou, ako je uvedené v (21), úloha sa stane triedením, v ktorom musíte zoradiť propozície v správnom poradí. Môžete to urobiť pomocou obrázkov, textu, zvukov alebo videa.",
+      "name": "Zoradiť a priradiť",
+      "video": "Video môžete pridať aj priamo do poľa s popisom, a to tak, že url adresu videa napíšete medzi kučeravé zátvorky a pred ňu napíšete \"video:\", ako je znázornené v (22). Nie je na to žiadne tlačidlo, ale môžete mať napísaný príklad výberom typu jednotky: \"Otázky týkajúce sa videa, otvorená odpoveď\"."
+    }
+  },
+  "home": {
+    "create_exercise": "Vytvoriť nové cvičenie",
+    "search_exercise": "Vyhľadať cvičenie"
+  },
+  "langs": {
+    "help": "Pomôžte nám preložiť webstránku",
+    "name": {
+      "cs": "Čeština",
+      "cy": "Welština",
+      "de": "Nemčina",
+      "dsb": "Dolnolužická srbčina",
+      "en": "Angličtina",
+      "eo": "Esperanto",
+      "es": "Španielčina",
+      "fr": "Francúzština",
+      "ga": "Írčina",
+      "hu": "Maďarčina",
+      "lt": "Litovčina",
+      "pl": "Poľština",
+      "ru": "Ruština",
+      "sk": "Slovenčina",
+      "uk": "Ukrajinčina"
+    },
+    "self": "Slovenčina"
+  },
+  "learn": {
+    "date": "Dátum",
+    "exam": "Test",
+    "exercise": "Cvičenie",
+    "recent": "Posledná aktivita",
+    "review": "Náhľad",
+    "submitted": "Odovzdané cvičenia za deň"
+  },
+  "login": {
+    "already_registered": "Máte už účet?",
+    "check_inbox": "Skontrolujte si prosím doručenú e-mailovú poštu a potvrďte svoju registráciu.",
+    "email": "E-mail",
+    "email_is_verified": "Vaša emailová adresa bola overená! Teraz sa môžete prihlásiť.",
+    "login": "Prihlásiť sa",
+    "mail_invalid": "E-mail musí byť platný",
+    "no_account_yet": "Ešte nemáte konto?",
+    "page_title": "Prihlásiť sa",
+    "password": "Heslo",
+    "password_reset": "Resetovanie hesla",
+    "password_reset_done": "Vaše heslo bolo úspešne resetované",
+    "password_reset_sent": "Na vašu mailovú adresu sme poslali odkaz na resetovanie vášho hesla.",
+    "required_field": "Požadované pole",
+    "resend_link": "Opäť odoslať odkaz",
+    "signup": "Zaregistrujte sa v TestU",
+    "signup_thanks": "Ďakujeme za registráciu.",
+    "username": "Používateľské meno",
+    "verify_email": "Overujeme vašu emailovú adresu!",
+    "verify_token_used_or_invalid": "Zdá sa, že tento odkaz už bol použitý alebo je neplatný."
+  },
+  "main": {
+    "about": "O stránke",
+    "accept": "Prijať",
+    "cancel": "Zrušiť",
+    "catchphrase": "Vytvorte si vlastné jazykové kvízy",
+    "cookie_consent": "Táto webová stránka používa pre svoje fungovanie minimálne množstvo cookies. Pokračovaním v používaní tejto webovej stránky predpokladáme, že súhlasíte s používaním funkčných cookies.",
+    "edit": "Upraviť",
+    "guide": "Ako na to",
+    "home": "Domovská stránka",
+    "lang_menu_header": "Jazyk stránky",
+    "login": "Prihlásiť sa",
+    "logout": "Odhlásiť sa",
+    "my_learning": "Moje učenie sa",
+    "my_teaching": "Moje vyučovanie",
+    "ok": "OK",
+    "only_logged_in": "Táto stránka je dostupná len pre prihlásených používateľov",
+    "privacy": "Vyhlásenie o ochrane osobných údajov",
+    "settings": "Nastavenia účtu",
+    "signup": "Zaregistrovať sa",
+    "social": "Sociálny",
+    "source_code": "Zdrojový kód",
+    "submit": "Odoslať",
+    "terms": "Podmienky používania",
+    "why": "Prečo"
+  },
+  "review": {
+    "exam": "Prehľad skúšok",
+    "exercise": "Prehľad cvičení",
+    "go_exam": "Choďte na skúšku",
+    "go_exercise": "Choďte k cvičeniu",
+    "submitted_on": "Toto sú riešenia cvičení, ktoré ste odoslali dňa {date}."
+  },
+  "sheet_editor": {
+    "add_matching_pair": "Pridať dvojicu",
+    "add_sentence": "Pridať vetu",
+    "add_unit": "Pridať jednotku",
+    "add_unit_to_begin": "Pridať novú jednotku a začať",
+    "close": "Zatvoriť editor",
+    "delete": "Odstrániť",
+    "edit_next": "Upraviť text",
+    "edit_previous": "Upraviť predošlé",
+    "empty_exercise": "Prázdne cvičenie",
+    "first_item": "Prvá položka",
+    "ignore_case": "Ignorovať veľké a malé písmená",
+    "insert_gap": "Vložiť medzeru",
+    "insert_image": "Vložiť obrázok",
+    "insert_pair": "Vložiť pár",
+    "insert_sound": "Vložiť zvuk",
+    "insert_video": "Vložiť video",
+    "move_down": "Presunúť nadol",
+    "move_up": "Presunúť nahor",
+    "new_gap": "Nová medzera",
+    "new_matching_pair": "Nová dvojica",
+    "second_item": "Druhá položka",
+    "shuffle_options": "Možnosti náhodného výberu",
+    "start_typing": "Začnite písať vetu...",
+    "title": "Názov",
+    "untitled_unit": "Jednotka bez názvu",
+    "valid_url": "Zadajte, prosím, platnú URL",
+    "snippets": {
+      "blank_unit": {
+        "name": "Prázdna jednotka"
+      },
+      "gap_filling_dropdown": {
+        "code": "Kniha je [+na{'|'}na] stole.",
+        "name": "Vyplnenie medzier, rozbaľovacia ponuka"
+      },
+      "gap_filling_open_answer": {
+        "code": "Kniha je [+na{'|'}na] stole.",
+        "name": "Vyplnenie medzier, otvorená odpoveď"
+      },
+      "multiple_choice": {
+        "code": "Kde je kniha?\n[+na stole{'|'}v stole]",
+        "name": "Viac možností (pre otázky)"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{'{img:dog.jpeg}'} == {'{sound:dog.mp3}'}\n\n{'{img:elephant.jpeg}'} == {'{sound:elephant.mp3}'}\n\n{'{img:cat.jpeg}'} == {'{sound:cat.mp3}'}",
+        "name": "Spárovať obrázky so zvukmi"
+      },
+      "pairing_text_with_pictures": {
+        "code": "Pes == {'{img:dog.jpeg}'}\n\nSlon == {'{img:elephant.jpeg}'}\n\nMačka == {'{img:cat.jpeg}'}",
+        "name": "Spárovať text s obrázkami"
+      },
+      "pairing_text_with_sounds": {
+        "code": "Pes == {'{sound:dog.mp3}'}\n\nSlon == {'{sound:elephant.mp3}'}\n\nMačka == {'{sound:cat.mp3}'}",
+        "name": "Spárovať text so zvukmi"
+      },
+      "pairing_text_with_text": {
+        "code": "Čerešňa == Červená\n\nCitrón == Žltý\n\nBrokolica == Zelená",
+        "name": "Spárovať text s textom"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "Zviera na obrázku je: [pes{'|'}+mačka{'|'}slon]\n\nJe to divoké zviera alebo domáce zviera? [+Domáce zviera{'|'}Divoké zviera]",
+        "description": "{'{img:cat.jpeg}'}",
+        "name": "Otázky o obrázku, pravdivé alebo nepravdivé"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Ktoré zviera vydáva tento zvuk?\n[+Mačka{'|'}Pes{'|'}Slon]\n\nAký výraz sa používa na opis zvuku, ktorý toto zviera vydáva?\n[+Mňaukanie{'|'}Štekanie{'|'}Trúbenie]",
+        "description": "Vypočujte si zvuk a odpovedzte na otázky:\n{'{sound:cat.mp3}'}",
+        "name": "Otázky týkajúce sa zvuku, rozbaľovacia ponuka"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Kto vyzval zajaca na preteky? [Zajac{'|'}+korytnačka{'|'}Vták]\n\nPrečo si zajac počas pretekov zdriemol? [Bol unavený{'|'}Chcel dať korytnačke šancu, aby ho dobehla{'|'}+Veril vo svoje víťazstvo]\n\nKto vyhral preteky? [Zajac{'|'}+korytnačka{'|'}Vták]",
+        "description": "Kde bolo, tam bolo, zajac a korytnačka sa vždy hádali, kto je rýchlejší.\nKorytnačka vyzvala zajaca na preteky a zajac to prijal. Myslel si, že to bude ľahké víťazstvo.\n\nPreteky sa začali a zajac rýchlo vyštartoval a nechal korytnačku za sebou. Zajac začal byť príliš sebavedomý a rozhodol sa zdriemnuť si. Korytnačka sa medzitým neustále pohybovala k  cieľovej čiare.\n\nKeď sa zajac prebudil, uvedomil si, že korytnačka je takmer v cieli. Zajac sa ju snažil dobehnúť, ale už bolo neskoro. Korytnačka preteky vyhrala.",
+        "name": "Otázky o texte, viac možností"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Kde sa toto miesto nachádza?\n[]\n\nKto to postavil?\n[]",
+        "description": "Pozrite si video a odpovedzte na otázky.\n\n{'{video:https://www.youtube.com/watch?v=chii_rEU30g}'}",
+        "name": "Otázky o videu, otvorená odpoveď"
+      },
+      "sorting_pictures": {
+        "code": "{'{img:one_circle.png}'}\n\n{'{img:two_circles.png}'}\n\n{'{img:three_circles.png}'}",
+        "name": "Triedenie obrázkov"
+      }
+    },
+    "types": {
+      "default": "Rozbaľovací zoznam",
+      "multiple_choice": "Výber z možností",
+      "open_answer": "Otvorená odpoveď",
+      "pairing": "Zoradiť a priradiť"
+    }
+  },
+  "sort": {
+    "rated": "Najlepšie hodnotené",
+    "recent": "Najnovšie",
+    "sort": "Triediť"
+  },
+  "tags": {
+    "agriculture": "Poľnohospodárstvo",
+    "art": "Umenie",
+    "astronomy": "Astronómia",
+    "biology": "Biológia",
+    "business": "Obchod",
+    "chemistry": "Chémia",
+    "computing": "Počítače",
+    "crafting": "Remeslá",
+    "economics": "Ekonómia",
+    "engineering": "Technika",
+    "geography": "Geografia",
+    "grammar": "Gramatika",
+    "history": "História",
+    "languages": "Jazyky",
+    "literature": "Literatúra",
+    "logic": "Logika",
+    "math": "Matematika",
+    "medicine": "Medicína",
+    "miscellaneous": "Rôzne",
+    "music": "Hudba",
+    "pedagogy": "Pedagogika",
+    "philosophy": "Filozofia",
+    "physics": "Fyzika",
+    "politics": "Politika",
+    "psychology": "Psychológia",
+    "religion": "Náboženstvo",
+    "science": "Veda",
+    "sport": "Šport",
+    "technology": "Technológia",
+    "trivia": "Zaujímavosti",
+    "zoology": "Zoológia"
+  },
+  "teach": {
+    "exams": "Testy",
+    "exercises": "Cvičenia"
+  },
+  "terms": {
+    "intro": "Srdečne vás vítame na TestU Online, bezplatnej viacjazyčnej online e-learningovej platforme, ktorá umožňuje jednoduché a rýchle vytváranie rôznych kvízov, testov a cvičení určených predovšetkým na výučbu jazykov! Prístup na webovú stránku testu.eu (ďalej len \"webová stránka\", \"služba\", \"poskytovateľ\") a jej používanie znamená, že ste si (ďalej len \"používateľ\") prečítali nasledujúce podmienky, porozumeli im a súhlasíte s nimi, a to bez ohľadu na to, či ste na teste.eu zaregistrovaný ako člen. Preto si prosím dôkladne prečítajte nasledujúci text.",
+    "last_update": "Dátum poslednej aktualizácie: {date}",
+    "section1": {
+      "text1": "Niektoré z našich služieb môžete využívať bez prihlásenia na portáli. Aby ste mohli využívať všetky služby portálu, musíte si zriadiť osobné používateľské konto. Registrácia je bezplatná.",
+      "text2": "Registrácia je povolená pre osoby vo veku od 13 rokov. Neplnoleté osoby smú portál používať výlučne so súhlasom zákonného zástupcu.",
+      "text3": "Zabezpečujete pravdivosť a správnosť vami zadaných údajov pri registrácii, ako aj ich včasnú aktualizáciu.",
+      "text4": "Pri registrácii je zakázané používať údaje (napr. používateľské meno, meno, texty cvičení, obrázky, audio a video súbory atď.), ktoré porušujú práva tretích strán vrátane ochranných známok alebo registrovaných práv. Takisto sa nesmú používať nezákonné údaje alebo údaje, ktoré sú v rozpore s týmito podmienkami používania.",
+      "text5": "Pri registrácii si volíte heslo, ktoré ste povinní držať v tajnosti.",
+      "text6": "Súhlasíte s verejným zobrazením vašich profilových údajov (napr. vášho používateľského mena, učebného pokroku, stavu „prihlásený“, zvolenej jazykovej verzie, dátumu registrácie a dátumu posledného prihlásenia, ako aj ďalších dobrovoľne uvádzaných informácií vrátane profilovej fotografie). E-mailová adresa a heslo sa verejne nezobrazujú.",
+      "text7": "Registráciu na portáli dokončíte kliknutím na aktivačný odkaz. Za týmto účelom dostanete po registrácii od poskytovateľa portálu automatické potvrdenie formou e-mailu, ktorý obsahuje tento aktivačný odkaz.",
+      "text8": "V prípade nedokončenia registrácie aktivovaním konta si poskytovateľ vyhradzuje právo neaktivované používateľské konto zmazať.",
+      "text9": "Poskytovateľ portálu neručí za to, že identity používateľov sú skutočné. Každý používateľ sa musí sám presvedčiť o identite iného používateľa. Poskytovateľ si však vyhradzuje právo vyžiadať si príslušné dôkazy o identite a veku používateľa s cieľom overiť zadané údaje. Ak príslušné dôkazy nebudú poskytnuté v lehote stanovenej poskytovateľom portálu, poskytovateľ dané používateľské konto zmaže.",
+      "title": "Registrácia"
+    },
+    "section2": {
+      "text1": "Poskytovateľ portálu si je vedomý dôležitosti ochrany osobných údajov. Z toho dôvodu sa portál prísne riadi pravidlami stanovenými zákonmi o ochrane osobných údajov. Spracovanie údajov používateľov sa riadi Pravidlami ochrany osobných údajov.",
+      "title": "Ochrana osobných údajov"
+    },
+    "section3": {
+      "text1": "Portál je povolené používať výlučne na účely neporušujúce zákon.",
+      "text2": "Ako používateľ ste povinní:",
+      "text2_1": "vo svojom profile a vo svojej komunikácii s inými používateľmi uvádzať výlučne pravdivé a nezavádzajúce údaje;",
+      "text2_2": "prihlasovacie údaje držať v tajnosti a neposkytovať ich tretím stranám;",
+      "text2_3": "neodkladne informovať poskytovateľa portálu v prípade vzniku podozrenia, že tretia strana získala prístup k prihlasovacím údajom a/alebo zneužíva používateľské konto.",
+      "text3": "Ste zodpovední za vami zverejnený obsah, ako aj za (verejnú aj neverejnú) komunikáciu s ostatnými používateľmi. Tiež ste povinní chrániť práva a záujmy ostatných používateľov alebo ostatných tretích strán, predovšetkým ich osobnostné práva.",
+      "text4": "Nasledovný obsah (v podobe obrázkov, odkazov, fotografií, cvičení, audio a video súborov alebo iného obsahu) je prísne zakázané nahrávať na portál, zverejňovať, rozposielať, odkazovať naň, sprostredkovávať, propagovať, ponúkať alebo poskytovať iným spôsobom:",
+      "text4_1": "zákonom chránený obsah, ktorý je chránený napr. autorskými a s nimi súvisiacimi právami, právom na názov, ochrannou známkou, patentovými, dizajnovými právami, právami na úžitkové vzory, vlastníckymi alebo osobnostnými právami, ak na to nie ste oprávnení;",
+      "text4_2": "pornografický obsah, obsah propagujúci násilie, obscénny, sexistický, hanlivý, ohovárajúci, rasistický obsah, obsah poškodzujúci príslušníkov menšín alebo náboženstiev, ako aj obsah porušujúci zákon na ochranu mládeže;",
+      "text4_3": "propagačné materiály a označenia protiústavných organizácií;",
+      "text4_4": "obťažujúci, urážlivý, hanlivý, ohrozujúci obsah a diskriminujúce výroky;",
+      "text4_5": "súkromné údaje iných používateľov (napr. adresu, telefónne číslo, bankové spojenie), príp. citácie zo súkromnej komunikácie s inými používateľmi, poskytovateľmi/administrátormi portálu alebo tretími stranami;",
+      "text4_6": "odkazy na internetové stránky s protiprávnym obsahom;",
+      "text4_7": "akúkoľvek nevyžiadanú alebo neoprávnenú reklamu, reklamné materiály, hromadné správy („junk mail“), spam, reťazové správy, pyramídové systémy alebo akýkoľvek iný druh zákazníckej reklamy;",
+      "text4_8": "akýkoľvek materiál obsahujúci vírusy, červy, trójske kone alebo iné programy, ktoré môžu ohroziť alebo poškodiť fungovanie alebo stav tejto alebo inej internetovej stránky;",
+      "text5": "Používateľovi je zakázané nasledovné:",
+      "text5_1": "používať alebo pokúsiť sa používať konto iného používateľa alebo systém bez povolenia poskytovateľa;",
+      "text5_2": "vydávať sa za inú osobu, ako aj uvádzať o sebe falošné informácie;",
+      "text5_3": "blokovať funkcie portálu, prepisovať, meniť alebo kopírovať obsah, programový kód a/alebo dáta portálu, ako aj vykonávať automatické volanie obsahu, pokiaľ to nie je nevyhnutné na riadne používanie služieb portálu;",
+      "text6": "Vlastník tohto portálu si vyhradzuje právo kedykoľvek a bez predchádzajúceho upozornenia zmazať nedovolené príspevky (vrátane testov, cvičení, textov a obrázkov) alebo konto používateľa nespĺňajúce tieto podmienky používania.",
+      "title": "Povinnosti používateľa"
+    },
+    "section4": {
+      "text1": "Poskytovateľ je ďalej oprávnený kedykoľvek podľa vlastného uváženia a bez upozornenia meniť a zastaviť prevádzku ponúkaných služieb.",
+      "title": "Zmena služieb"
+    },
+    "section5": {
+      "text1": "Poskytovateľ portálu vám ako používateľovi priznáva osobné, celosvetovo platné, neprenosné a nie výlučné právo používať služby v súlade s týmito Podmienkami používania.",
+      "text2": "Ako používateľ priznávate portálu celosvetové, nie výlučné, bezplatné, prenosné, časovo, obsahovo a priestorovo neobmedzené právo používať vami zverejnený obsah vo všetkých médiách používaných poskytovateľom. Poskytovateľ portálu je oprávnený najmä používať, zverejňovať, kopírovať, reprodukovať a šíriť tento obsah vo všetkých médiách, ako aj prispôsobovať, meniť a upravovať ho na tento účel.",
+      "text3": "Ako používateľ zaručujete, že vami zverejnený obsah nie je chránený autorskými právami tretích strán a môže byť tak použitý v zmysle bodu 5.2. Zaručujete, že vlastníte všetky práva, plnú moc a právomoci potrebné na to, aby bolo možné priznať portálu vyššie uvedené práva na vami sprostredkovaný obsah.",
+      "text4": "Práva, ktoré priznáte portálu, a vyššie opísané nároky na poskytnutie práv zostávajú v platnosti aj po ukončení používania portálu.",
+      "title": "Priznanie práv"
+    },
+    "section6": {
+      "text1": "Všetky texty, obrázky a iný obsah uverejnený na webovej stránke vrátane obsahu poskytnutého používateľmi sú - pokiaľ nie je uvedené inak - uverejnené pod {license}.",
+      "text1_license": "CC0 1.0 Universal Creative Commons license",
+      "title": "Vlastnícke práva"
+    },
+    "section7": {
+      "text1": "Doba platnosti členstva na portáli začína plynúť okamihom registrácie a súhlasu s týmito Podmienkami používania a s Pravidlami ochrany osobných údajov, a to na dobu neurčitú.",
+      "text2": "Túto službu môžete vypovedať kedykoľvek bez udania dôvodu na adrese {link}. Po vypovedaní služby stratíte prístup k svojmu profilu a všetky informácie, ktoré obsahuje, budú zmazané poskytovateľom portálu. Súhlasíte s tým, že časť obsahu (ako napríklad komentáre, príspevky v diskusnom fóre alebo správy), ktorá nie je priamo spojená s vaším profilom, môže zostať zachovaná. Nevzniká vám nárok na vrátenie vami zverejneného obsahu, ani na jeho postúpenie iným spôsobom.",
+      "text3": "Právo na mimoriadne vypovedanie služby z vážnych dôvodov zostáva týmto nedotknuté. Za vážny dôvod možno považovať najmä situáciu, keď sa jedna zo strán previní proti povinnostiam vyplývajúcim z týchto Podmienok používania. V prípade mimoriadneho vypovedania služby poskytovateľom ste zásadne natrvalo vylúčení z ďalšieho používania portálu, pričom nie je povolená ani nová registrácia.",
+      "text4": "Poskytovateľ portálu si vyhradzuje právo zmazať konto používateľa, ktorý túto službu nevyužil počas viac ako 6 mesiacov.",
+      "title": "Doba a ukončenie platnosti"
+    },
+    "section8": {
+      "text1": "Poskytovateľ sa usiluje udržiavať portál v prevádzke, bez chýb a bezpečný, avšak nezaručuje to, že portál je bezpečný, spoľahlivý a bez chýb po celý čas, alebo že funguje neustále bez prerušení, oneskorení či nedostatkov.",
+      "text2": "Poskytovateľ nenesie zodpovednosť za ľahšie porušenie povinností, pokiaľ v dôsledku tohto porušenia nevznikli žiadne škody na živote, tele alebo zdraví a pokiaľ nie sú dotknuté žiadne záruky alebo nároky podľa Zákona o ručení za škodu spôsobenú chybným výrobkom („Produkthaftungsgesetz“). Zodpovednosť za porušenie povinností, ktorých plnenie je vôbec predpokladom riadneho plnenia používateľského vzťahu a dodržiavaniu ktorých smie používateľ dôverovať, zostáva naďalej nedotknutá. To platí aj pre porušenie povinností našich zástupcov.",
+      "text3": "Podľa zákonných ustanovení nie je poskytovateľ portálu ako poskytovateľ služby povinný monitorovať sprostredkované alebo uložené informácie, ani pátrať po okolnostiach, ktoré ukazujú na protiprávnu činnosť. Nepreberá tak žiadnu zodpovednosť za obsah, údaje a/alebo informácie poskytnuté používateľmi portálu, zverejnené výroky ani za obsah externých internetových stránok, na ktoré sa na portáli odkazuje.",
+      "text4": "Napriek tomu, že poskytovateľ portálu obsah starostlivo kontroluje, nepreberá zodpovednosť za obsah externých odkazov. Za obsah externých internetových stránok, na ktoré sa na portáli odkazuje, je zodpovedný výlučne ich poskytovateľ.",
+      "text5": "Poskytovateľ nezodpovedá za obsah a správnosť reklamy. Za obsah reklamných inzerátov je zodpovedný jedine ich autor. To platí aj pre obsah propagovaných internetových stránok. Zverejnením reklamného inzerátu na portáli poskytovateľ nevyjadruje zároveň súhlas s protiprávnym obsahom. Zodpovedným je v takom prípade výlučne zákazník, ktorý si zverejnenie reklamy objednal.",
+      "text6": "Ako používateľ oslobodzujete poskytovateľa portálu od plnenia akýchkoľvek nárokov, vrátane nárokov na náhradu škody, ktoré si ostatní používatelia alebo iné tretie strany uplatnia voči poskytovateľovi, ak porušíte ich práva prostredníctvom vami zverejneného obsahu. Používateľ, ktorý daný obsah zverejnil, preberá všetky náklady, ktoré vzniknú poskytovateľovi portálu v dôsledku porušenia práv tretích strán, vrátane primeraných nákladov na právnu obhajobu. Všetky ďalšie práva, ako aj nároky poskytovateľa na náhradu škody zostávajú nedotknuté.",
+      "title": "Vymedzenie zodpovednosti"
+    },
+    "section9": {
+      "text1": "Tieto podmienky používania a akékoľvek spory v súvislosti s týmito podmienkami používania podliehajú právu Slovenskej republiky. Miestom plnenia a výlučným miestom jurisdikcie, pokiaľ je to právne možné, je Slovensko.",
+      "text2": "Právne záväzným znením tejto dohody je anglická verzia.",
+      "text3": "Poskytovateľ portálu si vyhradzuje právo kedykoľvek a bez udania dôvodu tieto Podmienky používania zmeniť. Aktuálna verzia sa vždy nachádza na adrese {link}. Používatelia nie sú na zmenu Podmienok používania výslovne upozornení, zobrazenie a prečítanie aktuálnej verzie Podmienok používania je na zodpovednosti každého používateľa. Pokračovaním v používaní portálu po zmene Podmienok používania vyjadruje používateľ súhlas s týmito zmenami.",
+      "text4": "Poskytovateľ je oprávnený úplne alebo čiastočne previesť svoje práva a povinnosti vyplývajúce z tohto používateľského vzťahu na tretiu stranu, a to do 4 týždňov od oznámenia formou e-mailu.",
+      "text5": "Kontaktné informácie na poskytovateľa alebo správcov webovej stránky nájdete na stránke {link}.",
+      "title": "Záverečné ustanovenia"
+    }
+  },
+  "why": {
+    "because": "Pretože to je:",
+    "more_projects": "Viac projektov na",
+    "title": "Prečo používať Testu.eu",
+    "point1": {
+      "subtitle": "Žiadne predplatné, žiadne skryté poplatky alebo platobné brány, vážne!",
+      "title": "Absolútne zadarmo"
+    },
+    "point10": {
+      "subtitle": "Vďaka programu Erasmus+ a Slovenskej národnej agentúre môžete používať testu.eu zadarmo!",
+      "title": "Oficiálne podporila Európska komisia"
+    },
+    "point2": {
+      "subtitle": "Môžete slobodne používať a vytvárať obsah, nemusíte prispievať.",
+      "title": "licencovaný obsah CC0"
+    },
+    "point3": {
+      "subtitle": "Nič nie je skryté.",
+      "title": "Otvorený zdroj"
+    },
+    "point4": {
+      "subtitle": "Testu.eu oslavuje jazyky. Chýba ten váš? Pridajte ho tu:",
+      "title": "Mnohojazyčný"
+    },
+    "point5": {
+      "subtitle": "Používateľsky prívetivý, rýchly, intuitívny a ľahko navigovateľný.",
+      "title": "Ľahko sa používa"
+    },
+    "point6": {
+      "subtitle": "Ponorte sa od online lekcií, kurzov, cvičení a testov - je to moderný prístup k učeniu!",
+      "title": "Online"
+    },
+    "point7": {
+      "subtitle": "Učenie bez hraníc, učenie bez obmedzení - ponorte sa do vytvárania obsahu alebo opätovne používajte existujúce zdroje.",
+      "title": "Užitočný"
+    },
+    "point8": {
+      "subtitle": "Vytváranie vzdelávacieho obsahu je radosť - učte sa prostredníctvom tvorivosti!",
+      "title": "Zábava"
+    },
+    "point9": {
+      "subtitle": "Opätovne používajte obsah iných ľudí alebo svoj vlastný, znížte množstvo vytlačeného papiera, recyklujte myšlienky, cvičenia a otázky!",
+      "title": "Eko-priateľský"
+    }
+  }
+}

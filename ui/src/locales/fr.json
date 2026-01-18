@@ -1,1 +1,487 @@
-{ "exercise": { "check": "Vérifier le résultat" } }
+{
+  "about": {
+    "about": "À propos du projet",
+    "about_text": "TestU Online est une plate-forme d’apprentissage en ligne gratuite et multilingue permettant la création facile et rapide de divers quiz, tests et exercices principalement destinés à l’apprentissage des langues. Les utilisateurs de la plateforme seront principalement des enseignants, des entraîneurs/conférenciers ainsi que leurs élèves, qui fréquentent des écoles élémentaires ou d’autres formes d’éducation, qu’elles soient formelles ou informelles. Les raisons de la création d’une telle plateforme s’expliquent par la nécessité de permettre à une jeune génération d’accéder à une éducation gratuite en dépit de leurs origines socio-économiques, religieuses ou de leur nationalité, des limites géographiques, voire de leurs divers handicaps.",
+    "partners_title": "Partenaires",
+    "partners": {
+      "bit_description": "bit (best in training, ou « meilleur en formation ») schulungscenter (= centre de formation), fondé en 1986, est l’un des principaux prestataires de formation dans le domaine des projets sur le marché du travail, de la formation professionnelle et de la formation et de l’employabilité en Autriche. Leur atout principal est leur expérience et leur savoir-faire dans la conception (didactique, méthodologie, conception pédagogique) et la réalisation de divers projets nationaux et internationaux. Ils ont une expérience substantielle du travail avec différents groupes cibles, par ex. les jeunes, les jeunes adultes au chômage et leurs besoins éducatifs à travers leurs activités quotidiennes.",
+      "bit_location": "Graz, Autriche",
+      "european_commission": "Ce projet a été financé avec le soutien de la Commission Européenne. Cette publication reflète uniquement les opinions de l’auteur, la Commission ne peut être tenue responsable de l’utilisation qui pourrait être faite des informations qu’elle contient.",
+      "ikso_description": "L’organisation internationale E{'@'}I, s’appuyant sur environ 250 bénévoles, soutient l’apprentissage interculturel sur internet. Leur projets, qui servent de base d’élaboration pour deutsch.info, sont des sites web multilingues où l’on peut apprendre l’espéranto ({1}) et le slovaque ({2}). Outre le développement de portails d’apprentissage, E{'@'}I organise également diverses actions de formation, notamment dans les domaines des langues et des nouvelles technologies.",
+      "ikso_location": "Partizánske, Slovaquie",
+      "leipzig_description": "L’Université de Leipzig, fondée en 1409, est une université de recherche qui offre un enseignement dans un environnement de recherche riche et diversifié, avec un corps professoral d’environ 400 membres qui enseigne à environ 30 000 étudiants. La diversité de ses 14 facultés (couvrant des disciplines allant de la médecine aux sciences naturelles, des mathématiques à la théologie et des sciences sociales aux sports) offre d’excellentes opportunités de travail interdisciplinaire. Son Institut d’études sorabes, chargé de la recherche sur le sorabe et d’autres langues minoritaires, leur littérature et leur culture, ainsi que sur la formation des enseignants, est unique au monde. Au cours des années qui ont suivi les changements politiques de 1989, des sommes importantes ont été investies dans l’infrastructure de recherche, de sorte que l’Université de Leipzig est aujourd’hui une institution de premier plan en matière de bâtiments et d’équipement.",
+      "leipzig_location": "Leipzig, Allemagne",
+      "leipzig_name": "Université de Leipzig",
+      "uam_description": "L’Université Adam Mickiewicz à Poznań, nommée d’après le célèbre poète romantique polonais, est l’une des meilleures universités de Pologne et l’une des institutions académiques les plus importantes de Poznań. Elle a été fondée en 1919, mais sa réputation, issue d’une longue tradition d’éducation supérieure dans la ville de Poznań, remonte au XVIᵉ siècle (Akademia Lubrańskiego, français : Académie de Lubrański, latin: Collegium Lubranscianum, établie à Poznań en 1518). Aujourd’hui, un personnel académique de plus de 3 000 personnes offre 193 matières et spécialités à environ 40 000 étudiants, dont plus de 1 300 doctorants. Elle est à l’origine de plus de 8 000 publications scientifiques par an et participe à plus de 600 projets nationaux et internationaux. L’université est divisée en 20 facultés couvrant un large éventail de sciences naturelles et sociales et de sciences humaines. Trois d’entre elles sont axées sur les études de langues et proposent un enseignement pratique d’une cinquantaine de langues. De nombreux cours de langues se sont vus attribuer la catégorie de qualité la plus élevée par la commission d’accréditation polonaise, ce qui atteste à la fois de l’excellente compétence disciplinaire des enseignants et de l’utilisation des méthodes d’enseignement les plus récentes, ainsi que d’excellents résultats universitaires. La faculté des langues et littératures modernes est l’une des plus grandes de l’université et propose le plus grand nombre de cours de langues. L’institut d’ethnolinguistique, au sein de la faculté, enseigne plus d’une douzaine de langues dans six spécialités, avec un personnel originaire de plus de 15 pays différents.",
+      "uam_location": "Poznań, Pologne",
+      "uam_name": "Université Adam Mickiewicz",
+      "vu_description": "L’Université de Vilnius a été fondée au XVIᵉ siècle et est considérée comme l’une des plus anciennes universités d’Europe Centrale et d’Europe de l’Est. Les études de langues font partie intégrante du programme d’études de l’Université de Vilnius. À l’époque, la langue principale enseignée était le latin aux côtés du grec ancien et de l’hébreu. Ainsi, même si la Faculté de Philologie a été créée seulement en 1944, les études de langues étaient enseignées avant même que le Collège des Jésuites ne devienne une université en 1579. L’Institut des langues et des cultures de la Baltique rassemble des chercheurs en linguistique générale et en études baltes,  germaniques, polonaises, russes, scandinaves, ainsi que bien d’autres. De fortes traditions d’étude de la langue, de la littérature et de la culture russes (le département de philologie russe a été fondé en 1803) coexistent avec succès avec les méthodes d’enseignement les plus avancées et les plus modernes, ce qui se traduit par la participation active des membres de ce département à des projets internationaux et à des événements scientifiques.",
+      "vu_location": "Vilnius, Lituanie",
+      "vu_name": "Université de Vilnius"
+    }
+  },
+  "editor": {
+    "age_range": "Tranche d’âge",
+    "cefr_levels_label": "Niveaux CECR",
+    "confirm_leave": "Voulez vous vraiment quitter cette page ? Les informations que vous avez saisies peuvent ne pas être enregistrées.",
+    "description": "Description",
+    "details": "Détails de l’exercice",
+    "save": "Sauvegarder",
+    "tags": "Étiquettes",
+    "title": "Titre",
+    "unexpected_response": "Réponse inattendue du serveur",
+    "unlisted": "Non listé dans les résultats de recherche"
+  },
+  "exam": {
+    "accept_submissions": "Accepter les soumissions",
+    "accepts_submissions": "Accepte les soumissions",
+    "confirm": "Cette opération ne peut pas être annulée. Continuer ?",
+    "copy": "Copier",
+    "created": "Créé le : {date}",
+    "delete": "Supprimer l’examen",
+    "description": "Description de l’examen",
+    "details": "Détails de l’examen",
+    "error": "Une erreur s’est produite lors de la soumission de l’examen.",
+    "goto_exercise": "Aller à l’exercice",
+    "is_exam": "Il s’agit d’un examen",
+    "link": "Lien",
+    "name": "Nom de l’examen",
+    "no_new_submissions": "Cet examen n’accepte pas de nouvelles soumissions",
+    "no_submissions": "Aucune soumission",
+    "or": "ou",
+    "please_log_in": "Pour accéder à l’examen, veuillez vous connecter ou choisir un nom d’affichage.",
+    "untitled": "Examen sans titre",
+    "view": "Voir",
+    "visible_by": "Les résultats de cet exercice seront visibles par l’examinateur {name}.",
+    "well_done": "Votre examen a été soumis avec succès à l’examinateur !"
+  },
+  "exercise": {
+    "age": "Âge :",
+    "anonymous": "anonyme",
+    "author": "Auteur",
+    "check": "Vérifier le résultat",
+    "create_copy": "Créer une copie",
+    "create_exam": "Créer un examen",
+    "create_exam_confirm": "Le créateur de cet exercice peut le modifier ou le supprimer pendant que l’examen est en cours. Continuer quand même ?",
+    "delete": "Supprimer l’exercice",
+    "delete_confirm": "Êtes-vous sûr(e) de vouloir supprimer cet exercice ?",
+    "drop_here": "déposer ici",
+    "edit": "Modifier l’exercice",
+    "error": "Une erreur s’est produite lors de l’enregistrement de l’exercice",
+    "explanation": "Explication :",
+    "language": "Langue",
+    "mistake": "Signaler une erreur",
+    "mistake_explanation": "Explication :",
+    "misuse": "Signaler un abus",
+    "pdf": "PDF",
+    "report_mistake_to_creator": "Signaler une erreur à {username}",
+    "report_misuse_to_administrators": "Signaler un abus aux administrateurs",
+    "submit_mistake_confirm": "Merci ! Le créateur recevra une notification.",
+    "submit_misuse_confirm": "Merci d'aider à garder Testu.eu convenable.",
+    "target_language": "Langue cible",
+    "target_language_is": "Langue cible :",
+    "unlisted": "Cet exercice n’est pas listé dans les résultats de recherche"
+  },
+  "guide": {
+    "about": "Comment créer des exercices",
+    "about_text": "Pour créer un nouvel exercice, vous devez d'abord vous inscrire et vous connecter.",
+    "construction": "En cours de construction",
+    "gap_filling": "Exercice à trous",
+    "video": "à propos d'une vidéo",
+    "exam": {
+      "explanation1": "Lorsque vous avez fait un exercice, vous pouvez le transformer en examen. Pour ce faire, vous devez être sur la page de l'exercice en question et cliquer sur les trois petits points en haut à droite (1).",
+      "explanation2": "Vous pouvez faire des examens à partir de vos propres exercices, que vous trouverez dans \"Mon enseignement\", ou à partir de l'exercice de quelqu'un d'autre trouvable dans \"Accueil\". Notez que si vous utilisez l'exercice de quelqu'un d'autre et que son auteur en modifie le contenu alors votre examen sera également modifié.",
+      "explanation3": "Lorsque vous cliquez sur les trois petits points (1), quatre options apparaissent. Pour faire un examen, vous devez cliquer sur l'option \"Créer un examen\" (2). Cela vous emmenera sur la page suivante où vous pourrez personnaliser votre examen.",
+      "explanation4": "Comme vous pouvez le voir ci-dessous, vous pouvez choisir le titre de votre examen (3). Il s'affichera ensuite sur la partie supérieure (4). Vous pouvez aussi ajouter une description (5) puis sauvegarder en cliquant sur le bouton \"sauvegarder\" (6).",
+      "explanation5": "Ensuite la page changera et vous verrez celle ci-dessous, portant le nom choisit par vous. Dans la boite \"lien\" (7), vous aurez le lien vers l'examen. Vous pouvez le copier en cliquant sur l'icône de gauche (afin de l'envoyer à vos élèves) ou vous pouvez cliquer sur \"VOIR\" pour voir votre examen comme vos élèves le verront.",
+      "explanation6": "Vous pouvez aussi retourner à l'exercice si vous voulez le changer en cliquant sur \"Aller à l'exercice\" (8). Dans la boîte \"Soumissions\" (9), il y aura les examens soumisent par les élèves et vous pourrez voir leurs résultats et vérifier chaque soumission.",
+      "explanation7": "Si vous voulez changer ou contrôler les détails de l'examen, il y a la boîte \"Détails de l'examen\" (10) en bas de l'écran pour le permettre. Tous vos examens seront rangés dans \"Mon enseignement\" (11).",
+      "name": "Créer un examen"
+    },
+    "exercice": {
+      "explanation1": "Pour créer un nouvel exercice, vous devez être dans l'Accueil (1) puis sélectionnez \"+ CRÉER UN NOUVEL EXERCICE\" (2). Une fois créés, ils apparaîtront sur cette page. Mais pour le moment vous allez être emmenés à la page suivante comme vous pouvez le voir ci-dessous.",
+      "explanation2": "Un exercice peut être composé de plusieurs unités. Vous pouvez en ajouter en cliquant sur \"AJOUTER UNE UNITÉ\" (3). Il y a différents types d'exercices mais vous ne pouvez en utiliser qu'un type par unité. Si vous souhaitez mélanger différents types de questions dans un même exercice, vous devrez le faire dans des unités séparées pour chaque type de questions voulues.",
+      "explanation3": "Comme visible sur la gauche, il y a de nombreux types d'unités. Toutefois nous pouvons les regrouper en trois familles: exercices à trous, à choix multiples ou de triage/faire correspondre.",
+      "explanation4": "Un exercice à trou est un texte ou une phrase auquel l'on retire un ou plusieurs mots. Pour ces questions, vous pouvez choisir de proposer des réponses (au moins une correcte et quelques incorrectes) ou vous pouvez laisser un espace vierge et la personne répondant à la question devra écrire la réponse dans ledit espace. Dans chaque cas, vous indiquerez quelle est la ou les réponses correctes lors de la création de la question.",
+      "explanation5": "Le choix multiple vous permet de créer une question avec un choix de réponse. Il peut y avoir une ou plusieurs bonnes réponses tout comme les exercices à trou, vous devrez indiquer quelle est la ou les réponses correctes lors de la création de la question.",
+      "explanation6": "Pour les questions de trier et faire correspondre, vous aurez le choix d'ajouter une question, image, réponses, mots ou encore sons en liens avec les items donnés. Les apprentis auront à associer les items avec les réponses ou, si vous choisissez une question de triage, ils devront les trier dans le bon ordre.",
+      "explanation7": "Vous pouvez trouver davantage d'explication sur chaque famille en cliquant sur les onglets en haut de la page.",
+      "gap_filling_1": "Le type d'exercice par défaut est l'exercice à trou. Il y a deux genres d'exercices à trou. Le premier (1) est nommé \"Défaut\" et montre les réponses proposés lorsque l'on clique sur le trou. Le second genre est la \"Réponse ouverte\" (8) où il n'y a pas de propositions et l'apprenti doit écrire directement la réponse. Nous verrons comment écrire les questions et comment proposer des réponses, des fausses et les bonnes.",
+      "gap_filling_2": "Dans ce champs (2), vous pouvez écrire le titre de l'exercice et dans celui-ci (3) une brève description pour expliquer les consignes des questions ou donner du contexte.",
+      "gap_filling_3": "Les questions elles-mêmes sont écrites dans cette boîte (4). Il y a toujours deux manières de procéder. Vous pouvez écrire directement la question et les réponses dans l'emplacement ou vous pouvez utiliser les outils dans son coin en haut à gauche (6). Le résultat sera identique, vous verrez le même texte dans la boîte (4).",
+      "gap_filling_4": "Si vous écrivez les questions directement dans la boîte, chaque question sera séparée par une ligne vierge et les réponses doivent être données entre des crochets [ ] et séparées par un séparateur vertical |. De plus vous devez ajouter un + devant la ou les bonnes réponses. S'il y a plus d'une réponse correcte, n'importe laquelle de celles-cis sera considérée comme correcte pour le résultat. Vous pouvez également mélanger les réponses proposées en cliquant sur \"Mélanger les options\" (7).",
+      "gap_filling_5": "Si vous utilisez les outils pour créer les questions (6), celui sur la gauche vous permettra de commencer une nouvelle question. Vous pourrez écrire la question ou le texte et, lorsque vous souhaitez insérer un trou à compléter, cliquer sur l'outil de droite. Une fenêtre pop-up s'ouvrira, comme montré sur l'image. Vous pourrez y écrire les réponses une par une. Elles seront validées lorsque vous appuierez sur la touche \"Entrée\" de votre clavier. Par défaut, la première sera considérée automatiquement comme étant la correcte et un \"v\" vert sera montrée devant elle. Cependant vous pouvez sélectionner si les réponses sont correctes ou non en cochant/décochant le petit bouton présent devant chaque réponse (8). Vous pouvez également choisir d'ajouter une option \"laisser un trou\" en cliquant sur le carré en pointillant situé sur la droite (9).",
+      "gap_filling_open_answer_1": "L'autre type d'exercices à trou est la \"Réponse ouverte\" (10). Comme vous pouvez le voir ci-dessous, pour ce type d'exercices il n'y a pas de réponses proposées. Vous pouvez donner des réponses attendues, une ou plusieurs, comme nous venons de le voir, avec l'outil correspondant ou directement dans la boîte (11). Vous pouvez indiquer des réponses fausses, elles n'apparaîtront pas mais, durant la correction, un X rouge sera affiché si quelqu'un a écrit une de ces mauvaises réponses, rien s'il s'agit d'une réponse autre et un V vert s'il s'agit d'une réponse correcte.",
+      "gap_filling_open_answer_2": "Vous pouvez ajouter d'autres questions, comme précédemment, en sautant une ligne ou en cliquant sur l'outil de gauche (6). Lorsque vous êtes satisfait avec vos questions, n'oubliez pas de cliquer sur le bouton \"Sauvegarder\" pour ne pas perdre votre travail. Vous pouvez toujours revenir ultérieurement pour ajouter ou modifier des questions.",
+      "name": "Nouvel exercice"
+    },
+    "multiple_choice": {
+      "explanation1": "Si vous préférez montrer les réponses non en comme des trous mais comme un choix multiple ayant les réponses sous les questions et des cases à cocher, vous pouvez sélectionner le type \"Choix Multiple\" (12).",
+      "explanation2": "Dans la liste d'exercices qui apparaît lorsque vous ajoutez une unité, les types \"Questions sur une image, vrai ou faux\" et \"Questions sur un texte, choix multiple\" vous donne deux autres exemples de comment utiliser ce type de questions.",
+      "explanation3": "Comme précédemment, vous pouvez donner un titre à la série de questions. Vous pouvez également ajouter une description, comme par exemple un texte sur lequel portera les questions ou encore une introduction à celles-cis.",
+      "explanation4": "Les questions et les réponses peuvent être ajoutées, comme précédemment, en les écrivant directement dans la boîte (13) ou avec les outils (6) vu dans la partie des exercices à trous.\nLa réponse correcte doit avoir un \"+\" devant elle et les réponses doivent être séparées par un \"|\". S'il y a plus d'une réponse correcte, la question sera marquée comme répondue correctement une fois toutes les bonnes réponses cochées.",
+      "explanation5": "Vous avez aussi la possibilité d'ajouter des images ou sons dans la description en cliquant sur les trois points (14) et en les sélectionnant dans votre ordinateur. Vous pouvez également poser des questions à propos du son ou de l'image. Vous pouvez en ajouter autant que vous le souhaitez et choisir où vous voulez les voir dans le texte en déplaçant les éléments entre les accolades {'{}'} (15).",
+      "name": "Choix multiple"
+    },
+    "sort_and_match": {
+      "explanation1": "La dernière famille d'exercices est \"trier et faire correspondre\" aussi appeler association (texte avec texte, texte avec image, image avec son et trier les images). Vous pouvez sélectionner ce type d'exercice dans le menu déroulant des types (16) ou dans la liste d'ajout d'unités.",
+      "explanation1_1": "Le plus basique consiste à faire correspondre des mots. Pour les créer, utilisez l'outil (17) ou écrivez les directement dans la boîte (18).",
+      "explanation2": "Chaque correspondance doit être écrite avec une part sur la gauche et l'autre sur la droite du symbole \"==\" avec un saut de ligne entre chacune. Dans cet exemple, il y a des fruits dans une colonne et des couleurs dans l'autre. Mais il peut s'agir de traductions, de nombres ou même d'images de sons ou de vidéos. Le plus important est de mettre les mêmes types dans les mêmes colonnes. Les propositions seront mélangées pour l'exercice.",
+      "explanation3": "Pour ajouter images ou sons, vous devez utiliser les boutons (19) et sélectionner le fichier dans l'ordinateur. Les élements seront alors créés entre les accolades {'{}'} comme avant. Après cela, vous pourrez les déplacer à l'endroit de votre choix. Pour ajouter une vidéo, vous devez sélectionner le bouton de droite (19) et vous devez renseigner l'adresse url de la vidéo (par exemple sur youtube ou vimeo...). Vous ne pouvez pas télécharger directement une vidéo depuis votre ordinateur.",
+      "explanation4": "Vous pouvez associer un texte avec un autre ou encore une image avec un son comme montré dans l'exemple (20).",
+      "explanation5": "Si vous n'écrivez pas le symbole \"==\" pour lier quelque chose avec la proposition, comme indiqué en (21), l'exercice devient un triage où l'on doit mettre les propositions dans le bon ordre. Vous pouvez le faire avec des images, textes, sons ou vidéos.",
+      "name": "Trier et faire correspondre",
+      "video": "Vous pouvez aussi ajouter une vidéo, directement dans le champs descriptif, en y écrivant l'adresse url de la vidéo entre des accolades {'{}'} et en ajoutant \"vidéo:\" au début comme fait en (22). Il n'y a pas de bouton pour le faire mais vous pouvez avoir un exemple écrit en sélectionnant l'unité: \"Question sur une vidéo, réponse ouverte\"."
+    }
+  },
+  "home": {
+    "create_exercise": "Créer un nouvel exercice",
+    "search_exercise": "Rechercher un exercice"
+  },
+  "langs": {
+    "help": "Aidez-nous à traduire le site",
+    "name": {
+      "cs": "Tchèque",
+      "cy": "Gallois",
+      "de": "Allemand",
+      "dsb": "Bas sorabe",
+      "en": "Anglais",
+      "eo": "Espéranto",
+      "es": "Espagnol",
+      "fr": "Français",
+      "ga": "Irlandais",
+      "hu": "Hongrois",
+      "lt": "Lituanien",
+      "pl": "Polonais",
+      "ru": "Russe",
+      "sk": "Slovaque",
+      "uk": "Ukrainien"
+    },
+    "self": "Français"
+  },
+  "learn": {
+    "date": "Date",
+    "exam": "Examen",
+    "exercise": "Exercice",
+    "recent": "Activité récente",
+    "review": "Révision",
+    "submitted": "Exercices faits par jour"
+  },
+  "login": {
+    "already_registered": "Vous avez déjà un compte ?",
+    "check_inbox": "Veuillez vérifier votre boîte de réception pour confirmer votre inscription.",
+    "email": "Adresse électronique",
+    "email_is_verified": "Votre e-mail est vérifié ! Vous pouvez maintenant vous connecter.",
+    "login": "Se connecter",
+    "mail_invalid": "L’adresse électronique n’est pas valide",
+    "no_account_yet": "Vous ne possédez pas encore un compte ?",
+    "page_title": "Connexion",
+    "password": "Mot de passe",
+    "password_reset": "Réinitialisation du mot de passe",
+    "password_reset_done": "Votre mot de passe a été réinitialisé avec succès",
+    "password_reset_sent": "Un lien a été envoyé à votre adresse email afin de réinitialiser votre mot de passe.",
+    "required_field": "Champ obligatoire",
+    "resend_link": "Renvoyer le lien",
+    "signup": "S’inscrire à TestU",
+    "signup_thanks": "Merci de vous être inscrit(e).",
+    "username": "Nom d’utilisateur",
+    "verify_email": "Vérification de votre e-mail",
+    "verify_token_used_or_invalid": "Il semble que ce lien ait déjà été utilisé ou soit invalide."
+  },
+  "main": {
+    "about": "À propos",
+    "accept": "Accepter",
+    "cancel": "Annuler",
+    "catchphrase": "Créez vos propres quiz linguistiques",
+    "cookie_consent": "Ce site utilise le minimum de cookies pour son fonctionnement. En continuant à utiliser ce site, nous supposons que vous acceptez l'utilisation des cookies fonctionnels.",
+    "edit": "Modifier",
+    "facebook_page": "Facebook page",
+    "guide": "Comment faire",
+    "home": "Accueil",
+    "lang_menu_header": "Langue de l’interface",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "my_learning": "Mon apprentissage",
+    "my_teaching": "Mon enseignement",
+    "of": "{current} sur {total}",
+    "ok": "OK",
+    "only_logged_in": "Cette page n’est accessible qu’aux utilisateurs inscrits.",
+    "privacy": "Politique de confidentialité",
+    "settings": "Paramètres du compte",
+    "signup": "Inscription",
+    "social": "Social",
+    "source_code": "Code source",
+    "submit": "Envoyer",
+    "telegram_chat": "Telegram chat",
+    "terms": "Conditions d’utilisation",
+    "why": "Pourquoi ?"
+  },
+  "review": {
+    "exam": "Révision d’examen",
+    "exercise": "Révision d’exercice",
+    "go_exam": "Aller à l’examen",
+    "go_exercise": "Aller à l’exercice",
+    "submitted_on": "Ce sont les solutions aux exercices que vous avez envoyées le {date}."
+  },
+  "sheet_editor": {
+    "add_matching_pair": "Ajouter une paire correspondante",
+    "add_sentence": "Ajouter une phrase",
+    "add_unit": "Ajouter une unité",
+    "add_unit_to_begin": "Ajouter une nouvelle unité pour commencer",
+    "close": "Fermer l'éditeur",
+    "delete": "Supprimer",
+    "edit_next": "Modifier le suivant",
+    "edit_previous": "Modifier le précédent",
+    "empty_exercise": "Exercice vide",
+    "first_item": "Premier élément",
+    "ignore_case": "Ignorer la casse",
+    "insert_gap": "Insérer un espace",
+    "insert_image": "Insérer une image",
+    "insert_pair": "Insérer une paire",
+    "insert_sound": "Insérer un son",
+    "insert_video": "Insérer une vidéo",
+    "move_down": "Déplacer vers le bas",
+    "move_up": "Déplacer vers le haut",
+    "new_gap": "Nouvel espace",
+    "new_matching_pair": "Nouvelle paire correspondante",
+    "second_item": "Deuxième élément",
+    "shuffle_options": "Mélanger les options",
+    "start_typing": "Commencez à taper une phrase...",
+    "title": "Titre",
+    "untitled_unit": "Unité sans titre",
+    "valid_url": "Veuillez saisir une URL valide",
+    "snippets": {
+      "blank_unit": {
+        "name": "Unité vide"
+      },
+      "gap_filling_dropdown": {
+        "code": "Le livre est [+sur{'|'}dans] la table.",
+        "name": "Exercice à trou, liste déroulante"
+      },
+      "gap_filling_open_answer": {
+        "code": "Le livre est [+sur{'|'}dans] la table.",
+        "name": "Exercice à trou, réponse ouverte"
+      },
+      "multiple_choice": {
+        "code": "Où est le livre ?\n[+sur la table{'|'}dans la table]",
+        "name": "Choix multiple (pour questions)"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{'{img:dog.jpeg}'} == {'{sound:dog.mp3}'}\n\n{'{img:elephant.jpeg}'} == {'{sound:elephant.mp3}'}\n\n{'{img:cat.jpeg}'} == {'{sound:cat.mp3}'}",
+        "name": "Associer des images avec des sons"
+      },
+      "pairing_text_with_pictures": {
+        "code": "Chien == {'{img:dog.jpeg}'}\n\nÉléphant == {'{img:elephant.jpeg}'}\n\nChat == {'{img:cat.jpeg}'}",
+        "name": "Associer du texte à des images"
+      },
+      "pairing_text_with_sounds": {
+        "code": "Chien == {'{sound:dog.mp3}'}\n\nÉléphant == {'{sound:elephant.mp3}'}\n\nChat == {'{sound:cat.mp3}'}",
+        "name": "Associer du texte à des sons"
+      },
+      "pairing_text_with_text": {
+        "code": "Cerise == Rouge\n\nCitron == Jaune\n\nBrocoli == Vert",
+        "name": "Associer du texte avec du texte"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "L'animal sur l'image est: [Un chien{'|'}+Un chat{'|'}Un éléphant]\n\nEst-ce un animal sauvage ou de compagnie ? [+Un animal de compagnie{'|'}Un animal sauvage]",
+        "description": "{'{img:cat.jpeg}'}",
+        "name": "Question sur une image, vrai ou faux"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Quel animal produit ce son?\n[+Chat{'|'}Chien{'|'}Éléphant]\n\nQuel est le terme utilisé pour décrire le son produit par cet animal?\n[+Miaulement{'|'}Aboiement{'|'}Barrissement]",
+        "description": "Écoutez l'audio et répondez aux questions:\n\n{'{sound:cat.mp3}'}",
+        "name": "Questions sur un son, liste déroulante"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Qui défia le lièvre à la course? [Le lièvre{'|'}+La tortue{'|'}Un oiseau]\n\nPourquoi le lièvre a-t-il fait une sieste durant la course? [Il était fatigué{'|'}Il voulait donner à la tortue une chance de le rattraper{'|'}+Il était confiant en sa future victoire]\n\nQui gagna la course? [Le lièvre{'|'}+La tortue{'|'}Un oiseaux]",
+        "description": "Il était une fois un lièvre et une tortue, se disputant toujours pour savoir qui était le plus rapide.\nLa tortue défia le lièvre à une course et le lièvre accepta, pensant que ce serait une victoire facile.\n\nLa course commença et le lièvre décolla rapidement, laissant la tortue derrière lui. Le lièvre, devenu trop confiant, décida de faire une sieste. Pendant ce temps, la tortue continuait à avancer régulièrement vers la ligne d'arrivée.\n\nQuand le lièvre se réveilla, il se rendit compte que la tortue était presque à la ligne d'arrivée. Le lièvre essaya de rattraper son retard, mais il était trop tard. La tortue avait gagné la course.",
+        "name": "Questions sur un texte, choix multiple"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Où est situé l'endroit?\n[]\n\nQui l'a construit?\n[]",
+        "description": "Regardez la vidéo et répondez aux questions.\n\n{'{video:https://www.youtube.com/watch?v=chii_rEU30g}'}",
+        "name": "Questions sur une vidéo, réponse ouverte"
+      },
+      "sorting_pictures": {
+        "code": "{'{img:one_circle.png}'}\n\n{'{img:two_circles.png}'}\n\n{'{img:three_circles.png}'}",
+        "name": "Trier des images"
+      }
+    },
+    "types": {
+      "default": "Liste déroulante",
+      "multiple_choice": "Choix multiple",
+      "open_answer": "Réponse ouverte",
+      "pairing": "Trier et faire correspondre"
+    }
+  },
+  "sort": {
+    "rated": "Mieux notés",
+    "recent": "Plus récents",
+    "sort": "Trier"
+  },
+  "tags": {
+    "agriculture": "Agriculture",
+    "art": "Art",
+    "astronomy": "Astronomie",
+    "biology": "Biologie",
+    "business": "Affaires",
+    "chemistry": "Chimie",
+    "computing": "Informatique",
+    "crafting": "Artisanat",
+    "economics": "Économie",
+    "engineering": "Ingénierie",
+    "geography": "Géographie",
+    "grammar": "Grammaire",
+    "history": "Histoire",
+    "languages": "Langues",
+    "literature": "Littérature",
+    "logic": "Logique",
+    "math": "Mathématiques",
+    "medicine": "Médecine",
+    "miscellaneous": "Divers",
+    "music": "Musique",
+    "pedagogy": "Pédagogie",
+    "philosophy": "Philosophie",
+    "physics": "Physique",
+    "politics": "Politique",
+    "psychology": "Psychologie",
+    "religion": "Religion",
+    "science": "Science",
+    "sport": "Sport",
+    "technology": "Technologie",
+    "trivia": "Culture générale",
+    "zoology": "Zoologie"
+  },
+  "teach": {
+    "exams": "Examens",
+    "exercises": "Exercices"
+  },
+  "terms": {
+    "intro": "Bienvenue sur TestU Online, une plateforme d'apprentissage en ligne gratuite et multilingue permettant de créer facilement et rapidement divers quiz, tests et exercices principalement destinés à l'apprentissage des langues ! L'accès et l'utilisation du site testu.eu (\"le site\", \"le service\", \"le fournisseur\") impliquent que vous (l'\"utilisateur\") avez lu, compris et accepté les conditions générales suivantes, que vous soyez ou non enregistré en tant que membre sur testu.eu. Veuillez donc lire attentivement le texte suivant.\nBienvenue sur slovake.eu, un site web multilingue pour apprendre le slovaque ! L’accès et l’utilisation du site slovake.eu (« le site », « le service », « le prestataire ») part du principe que vous (« l’utilisateur ») avez lu, compris et accepté les conditions d’utilisation suivantes, que vous soyez ou non inscrit à slovake.eu. Veuillez lire attentivement le texte ci-dessous.",
+    "last_update": "Dernière mise à jour : {date}",
+    "section1": {
+      "text1": "Vous pouvez utiliser certains de nos services sans être inscrit au site. Pour pouvoir profiter de toutes les fonctions du site, vous devez créer un compte d’utilisateur. L’inscription est gratuite.",
+      "text2": "Les personnes âgées de plus de 13 ans sont autorisées à s’inscrire. L’utilisation du site par des mineurs est autorisée uniquement avec l’accord de son tuteur légal.",
+      "text3": "Vous devez vous assurer que les informations que vous entrez en vous inscrivant sont vraies et que vous les mettrez toujours à jour.",
+      "text4": "En vous inscrivant, l'utilisation d’informations (par exemple: nom d’utilisateur, nom, textes d'exercices, images, fichiers audios ou vidéos, etc.) portant atteinte aux droits d'un tiers, y comprit les marques déposées et les droit réservés, est prohibée. Les données illégales ou contraires à ces conditions d’utilisation ne sont pas permises non plus.",
+      "text5": "Vous devez garder secret le mot de passe que vous choisissez à l’inscription.",
+      "text6": "Vous consentez à ce que les données de votre profil (telles que votre nom d’utilisateur, les progrès linguistiques, le statut de connexion, la langue utilisée, la date d’inscription et la dernière date de connexion et d’autres informations que vous indiquez volontairement, y compris la photo de profil) soient publiques. L’adresse électronique et le mot de passe ne seront pas rendus publics.",
+      "text7": "L’inscription au site est finalisée au moyen d’un lien d’activation. Après inscription, vous recevrez automatiquement un courriel du site qui contient ce lien d’activation.",
+      "text8": "Si l’inscription n’est pas finalisée par l’activation du compte, le fournisseur se réserve le droit de supprimer le compte inactivé.",
+      "text9": "Le fournisseur du site ne garantie pas la véritable identité des utilisateurs. Chaque utilisateur est responsable de la vérification de l’identité des autres utilisateurs. Le fournisseur se réserve le droit de demander une preuve de l’identité et de l’âge. Si les pièces justificatives ne sont pas fournies dans un délai fixé par le fournisseur du site, le fournisseur supprimera le compte de l’utilisateur en question.",
+      "title": "Inscription"
+    },
+    "section2": {
+      "text1": "Le fournisseur de ce site est conscient du fait que la protection des données personnelles a une grande importance. Pour cette raison, il adhère strictement aux règles établies dans les lois sur la protection des données. Les détails concernant le traitement des données des utilisateurs sont fixés par la politique de confidentialité.",
+      "title": "Protection des données"
+    },
+    "section3": {
+      "text1": "Le site Internet ne peut être utilisé à des fins autorisées par la loi.",
+      "text2": "En tant qu’utilisateur, vous êtes obligé de :",
+      "text2_1": "ne donner que des informations correctes et non mensongères dans votre profil et lorsque vous communiquez avec les autres utilisateurs ;",
+      "text2_2": "garder secrètes vos données de connexion et de ne pas les divulguer à un tiers ;",
+      "text2_3": "informer immédiatement le fournisseur du site si vous avez des raisons de soupçonner qu’un tiers a eu connaissances de données de connexion et/ou a abusé du compte d’un utilisateur.",
+      "text3": "Vous êtes seul responsable du contenu que vous publiez et des communication avec les autres (aussi bien publiques que privées). Vous êtes également tenus de protéger les droits et les intérêts des autres utilisateurs ou des tiers, en particulier leurs droits personnels.",
+      "text4": "Il est strictement interdit de télécharger le contenu suivant (sous forme d'images, de liens, de photos, d'exercices, de fichiers audio et vidéo ou d'autres contenus) sur le site web et de le poster, l'envoyer, le lier à d'autres contenus, le transmettre, le promouvoir ou le fournir de toute autre manière :",
+      "text4_1": "les contenus protégées par la loi, par exemple les contenus protégés par les droits d’auteur, la protection des prestations, noms déposés, marques déposés, brevets, dessins industriels, modèles déposés, bien ou droits personnels si vous n’en avez pas le droit ;",
+      "text4_2": "les contenus pornographiques, violents, obscènes, sexistes, diffamatoires, calomnieux, racistes, offensants pour les minorités ou les religions, ainsi que les contenus qui violent les lois de protection de l’enfance ;",
+      "text4_3": "la propagande et les symboles d’organisation anticonstitutionnelles ;",
+      "text4_4": "le harcèlement, les propos offensants, diffamatoires, menaçants ou discriminatoires ;",
+      "text4_5": "les données privées d’autres utilisateurs (par exemple adresse, numéro de téléphone, compte bancaire) ou les citations de communications privées avec d’autres utilisateurs, les fournisseurs ou administrateurs du site ou des tiers ;",
+      "text4_6": "les liens vers des sites Internet au contenu illégal ;",
+      "text4_7": "toute publicité non sollicitée ou non autorisée, matériel promotionnel, messages indésirables, spam, chaînes de lettres, système de vente pyramidale ou toute autre forme de solicitation;",
+      "text4_8": "tout fichier qui contient des virus, vers, chevaux de Troie ou d’autres programmes qui pourraient compromettre ou nuire au fonctionnement ou à l’existence de ce site.",
+      "text5": "Les actions suivantes sont interdites aux utilisateurs :",
+      "text5_1": "utiliser ou essayer d’utiliser le compte d’un autre utilisateur ou le système sans autorisation du fournisseur ;",
+      "text5_2": "se faire passer pour une autre personne ou donner de fausses informations à propos de soi ;",
+      "text5_3": "bloquer les fonctions du site, écraser, modifier ou copier le contenu du code source ou des données du site, ainsi que récupérer automatiquement le contenu du site, à moins que ce soit nécessaire à la bonne utilisation des services du site.",
+      "text6": "Le fournisseur du site se réserve le droit de supprimer les messages non autorisés (y compris les tests, exercices, textes et images) le compte des utilisateurs qui ne respectent pas ces conditions d’utilisation, à tout moment et sans préavis.",
+      "title": "Devoirs de l’utilisateur"
+    },
+    "section4": {
+      "text1": "Le fournisseur a également le droit de modifier ou d’arrêter les services proposés à tout moment, à sa discrétion et sans préavis.",
+      "title": "Modification des services"
+    },
+    "section5": {
+      "text1": "Le fournisseur du site donne à l’utilisateur le droit personnel, mondial, non transmissible et non exclusif d’utiliser ces services en accord avec ces conditions d’utilisation.",
+      "text2": "En tant qu’utilisateur, vous accordez au site le droit mondial, non exclusif, libre de redevance, transmissible, illimité dans en temps, contenu ou espace d’utiliser le contenu que vous publiez dans tous les médias utilisés par le fournisseur. Le propriétaire de ce site est expressément autorisé à utiliser ce contenu dans tous les médias, ainsi que de le publier, copier, reproduire, modifier, éditer, distribuer et adapter dans ce but.",
+      "text3": "Vous l’utilisateur, garantissez que votre contenu peut être utilisé librement dans les contextes définis au paragraphe 5.2. Vous certifiez que vous possédez tous les droits et l’autorité nécessaires pour octroyer ces droits concernant le contenu que vous avez soumis.",
+      "text4": "Les droits que vous accordent le site et les garanties et indemnités stipulées ci-dessus ne se terminent pas à la fin du rapport de jouissance.",
+      "title": "Concession des droits"
+    },
+    "section6": {
+      "text1": "Tous les textes, images et autres contenus publiés sur le site, y compris les contenus fournis par les utilisateurs sont, sauf indication contraire, publiés sous la {license}.",
+      "text1_license": "licence Creative Commons CC0 1.0 universel",
+      "title": "Droits de propriété"
+    },
+    "section7": {
+      "text1": "La durée de l’appartenance au site commence à l’inscription et par l’acceptation de ces conditions d’utilisation et de la politique de confidentialité et continue indéfiniment.",
+      "text2": "Vous pouvez résilier votre inscription aux services à tout moment et sans préavis, pour quelque raison que ce soit, à l’adresse {link}. En cas de résiliation, vous n’aurez plus accès à votre profil et toutes les informations qu’il contient sont supprimés par le fournisseur du site. Vous acceptez que certains contenus (tels les commentaires ou les messages) qui ne sont pas directement associés à votre profil puissent persister même après la suppression de votre profil. Vous n’avez pas droit à la restitution ou au transfert du contenu que vous avez publié.",
+      "text3": "Le droit de résiliation exceptionnelle pour une raison valable reste inchangée. Une raison importante serait que l’une des parties ait manqué à ses obligations en vertu de ces conditions d'utilisation. Dans le cas d’une résiliation exceptionnelle par le fournisseur, vous êtes exclus du site pour une durée indéterminée. Cela signifie aussi que vous n’êtes pas autorisé à vous réinscrire.",
+      "text4": "Le propriétaire de ce site se réserve le droit de supprimer le compte de l’utilisateur si un utilisateur n’a pas utilisé le service pendant plus de 6 mois.",
+      "title": "Durée de validité et fin du contrat"
+    },
+    "section8": {
+      "text1": "Le fournisseur s’efforce d’assurer le fonctionnement du site sans erreurs et en sécurité, mais il ne garantit pas que le site est sûr, sécurisé et sans erreur à tout moment, ni qu’il fonctionne en permanence sans interruptions, retards ou défauts.",
+      "text2": "Le fournisseur décline toute responsabilité pour les manquements légers à ses obligations dus à une imprudence, à moins que cette violation porte atteinte à la vie, au corps ou à la santé, du moment que les garanties et les exigences de la loi sur la responsabilité du fait des produits défectueux ont été respectées. Cela n’affecte pas la responsabilité pour les manquements aux obligations qui empêchent la mise en œuvre correcte de la relation contractuelle et sur laquelle l’utilisateur peut compter. La même chose s’applique aux manquements de nos agents à leurs obligations.",
+      "text3": "Selon la loi, le fournisseur de ce site en tant que fournisseur de services n’est pas tenu de surveiller les informations transmises ou stockées, ni d’enquêter sur les circonstances qui indiquent une activité illégale. Il n’accepte donc aucune responsabilité en ce qui concerne les informations fournies par les utilisateurs du contenu du site, les données et/ou des informations, les déclarations faites ou le contenu des sites externes liés.",
+      "text4": "En dépit des vérifications minutieuses du contenu, le fournisseur du site n’est pas responsables du contenu des liens externes. Seuls les administrateurs des pages liées en sont responsables.",
+      "text5": "Le fournisseur n’est pas responsable du contenu et de la véracité des publicités. Seul l’auteur de la publicité en est responsable. La même chose s’applique au contenu des site promus par les publicités. Permettre l’affichage de publicités sur le site ne signifie pas que le fournisseur approuve un éventuel contenu illégal. Par conséquent, la responsabilité incombe exclusivement aux annonceurs.",
+      "text6": "En tant qu’utilisateur, vous renoncez à toute réclamation au fournisseur, y compris les réclamations pour dommages et intérêts que peuvent faire les autres utilisateurs ou un tiers contre le fournisseur pour une violation de leur droits due à vous ou au contenu que vous avez créé. L’utilisateur qui a publié ces contenus sur le site assume tous les coûts engagés par le prestataire du site en raison d’une violation des droits, y compris les coûts pour les frais de défense juridique. Tous les autres droits, y compris les demandes d’indemnisation du fournisseur, demeurent inchangés.",
+      "title": "Responsabilité"
+    },
+    "section9": {
+      "text1": "Ces conditions d’utilisation et tout différend relatif à ces conditions sont soumis aux lois de la République slovaque. Le lieu d’exécution et le tribunal compétent exclusif sont, dans la mesure où la loi l’autorise, en Slovaquie.",
+      "text2": "La version juridiquement valable de ces conditions d’utilisation est la version en langue anglaise.",
+      "text3": "Le propriétaire de ce site se réserve le droit de modifier ces conditions d’utilisation à tout moment et sans donner de raisons. La version actuelle est toujours disponible à l’adresse {link}. Les modifications apportées aux conditions d’utilisation ne sont pas explicitement indiquées, mais il est de la responsabilité de l’utilisateur de consulter et d’examiner les présentes conditions d’utilisation. En continuant à utiliser le site après une modification des conditions d’utilisation, l’utilisateur accepte les modifications.",
+      "text4": "Le fournisseur a le droit de transférer ses droits et ses obligations, en entier ou en partie, à un tiers, après un préavis de quatre semaines envoyé par courrier électronique.",
+      "text5": "Les coordonnées pour contacter le fournisseur ou les administrateurs du site se trouvent sur la page {link}.",
+      "title": "Dispositions finales"
+    }
+  },
+  "why": {
+    "because": "Car c'est:",
+    "more_projects": "Plus de projets sur",
+    "title": "Pourquoi utiliser Testu.eu",
+    "point1": {
+      "subtitle": "sans abonnement, pas de paiement caché ou paywall, sérieusement !",
+      "title": "Totalement gratuit"
+    },
+    "point10": {
+      "subtitle": "Grace au programme Erasmus+ et l'Agence Nationale Slovaque vous pouvez utiliser testu.eu gratuitement !",
+      "title": "Soutenu officiellement par la Comission Européenne"
+    },
+    "point2": {
+      "subtitle": "Vous être libre d'utiliser et créer du contenu, aucun besoin d'attribution non plus.",
+      "title": "Contenu sous licence CC0"
+    },
+    "point3": {
+      "subtitle": "Rien n'est caché.",
+      "title": "Open source"
+    },
+    "point4": {
+      "subtitle": "Testu.eu célèbre les langues. La votre manque ? Ajoutez là ici:",
+      "title": "Multilingue"
+    },
+    "point5": {
+      "subtitle": "Facile d'utilisation, rapide, intuitive et simple à naviguer.",
+      "title": "Facile à utiliser"
+    },
+    "point6": {
+      "subtitle": "Immergez vous en ligne dans des leçons, cours, exercices et tests – une approche moderne à l'apprentissage !",
+      "title": "En ligne"
+    },
+    "point7": {
+      "subtitle": "Apprendre sans frontières, enseigner sans limites – plongez dans la création de contenus ou la réutilisation de ressources existantes.",
+      "title": "Utile"
+    },
+    "point8": {
+      "subtitle": "Concevoir des contenus éducatifs est une joie – adopter apprendre par la créativité !",
+      "title": "Sympa"
+    },
+    "point9": {
+      "subtitle": "Réutilisez le contenu des autres ou le vôtre, réduisez la quantité d'impression, recyclez les idées, les exercices et les questions!",
+      "title": "Respectueux de l'environnement"
+    }
+  }
+}

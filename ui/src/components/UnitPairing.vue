@@ -145,67 +145,78 @@ defineExpose({ get_solved });
 </script>
 
 <template>
-  <div class="mb-5">
-    <v-row v-for="(pair, i) in drags" :key="parsed_local[i][1]">
-      <v-col md="4" class="grow-2">
-        <div class="fill-height">
-          <v-row
-            v-if="pair[0] !== null"
-            :draggable="!readonly && movable[i][0]"
-            @dragstart="on_dragstart($event, i, 0)"
-            class="v-sheet v-sheet--rounded d-flex elevation-2 align-center fill-height"
-            dense
+  <v-container class="mb-5" fluid>
+    <v-row
+      v-for="(pair, i) in drags"
+      :key="parsed_local[i][1]"
+      class="d-flex"
+      style="align-items: stretch"
+    >
+      <!-- 1st column: options -->
+      <v-col md="4" class="grow-2 fill-height">
+        <v-sheet
+          v-if="pair[0] !== null"
+          :draggable="!readonly && movable[i][0]"
+          @dragstart="on_dragstart($event, i, 0)"
+          rounded
+          elevation="2"
+          class="draggable-sheet align-center fill-height"
+          dense
+        >
+          <span
+            class="ms-2"
+            :class="{ 'cursor-grab': !readonly }"
+            @mouseenter="movable[i][0] = true"
+            @touchstart="movable[i][0] = true"
+            @mouseleave="movable[i][0] = false"
+            @touchend="movable[i][0] = false"
           >
-            <v-col
-              class="flex-grow-0 cursor-grab first"
-              @mouseenter="movable[i][0] = true"
-              @touchstart="movable[i][0] = true"
-              @mouseleave="movable[i][0] = false"
-              @touchend="movable[i][0] = false"
-            >
-              <v-icon color="grey" :disabled="readonly === true">
-                mdi-drag
-              </v-icon>
-            </v-col>
-            <v-col class="ps-1 ps-lg-2 second">
-              <RichContent :text="pair[0]" />
-            </v-col>
-          </v-row>
-          <v-sheet
-            v-else
-            rounded
-            :color="hovered[i][0] ? 'grey-lighten-2' : 'grey-lighten-5'"
-            class="drop-zone ma-n1 pa-2 text-grey border-t border-s text-center fill-height"
-            @drop="on_drop($event, i, 0)"
-            @dragenter="on_dragenter($event, i, 0)"
-            @dragleave="on_dragleave($event, i, 0)"
-            @dragover="on_dragover($event, i, 0)"
-          >
-            &nbsp;
-          </v-sheet>
-        </div>
+            <v-icon color="grey" :disabled="readonly">mdi-drag</v-icon>
+          </span>
+          <span class="ps-1 ps-lg-2">
+            <RichContent :text="pair[0]" />
+          </span>
+          <span></span>
+        </v-sheet>
+        <v-sheet
+          v-else
+          rounded
+          :color="hovered[i][0] ? 'grey-lighten-2' : 'grey-lighten-5'"
+          class="drop-zone ma-n1 pa-2 text-grey border-t border-s text-center fill-height"
+          @drop="on_drop($event, i, 0)"
+          @dragenter="on_dragenter($event, i, 0)"
+          @dragleave="on_dragleave($event, i, 0)"
+          @dragover="on_dragover($event, i, 0)"
+        >
+          &nbsp;
+        </v-sheet>
       </v-col>
-      <v-col md="4" class="grow-2" ref="guess_col">
-        <v-row
+
+      <!-- 2nd column: drop zones -->
+      <v-col md="4" class="grow-2 fill-height" ref="guess_col">
+        <v-sheet
           v-if="pair[1] !== null"
           :draggable="!readonly && movable[i][1]"
           @dragstart="on_dragstart($event, i, 1)"
-          class="v-sheet v-sheet--rounded d-flex elevation-2 align-center fill-height"
-          dense
+          rounded
+          elevation="2"
+          class="draggable-sheet align-center fill-height"
         >
-          <v-col
-            class="flex-grow-0 cursor-grab first"
+          <span
+            class="ms-2"
+            :class="{ 'cursor-grab': !readonly }"
             @mouseenter="movable[i][1] = true"
             @touchstart="movable[i][1] = true"
             @mouseleave="movable[i][1] = false"
             @touchend="movable[i][1] = false"
           >
-            <v-icon color="grey" :disabled="readonly === true">mdi-drag</v-icon>
-          </v-col>
-          <v-col class="ps-2 ps-lg-4 second">
+            <v-icon color="grey" :disabled="readonly">mdi-drag</v-icon>
+          </span>
+          <span class="ps-2 ps-lg-4">
             <RichContent :text="pair[1]" />
-          </v-col>
-        </v-row>
+          </span>
+          <span></span>
+        </v-sheet>
         <v-sheet
           v-else
           rounded
@@ -221,37 +232,49 @@ defineExpose({ get_solved });
           </div>
         </v-sheet>
       </v-col>
-      <v-col md="4" class="md-flex flex-wrap grow-1">
-        <TransitionGroup name="result">
-          <v-row>
-            <v-sheet
-              rounded
-              :elevation="2"
-              class="d-flex v-col v-col-11 align-center fill-height ps-2 ps-lg-4"
-              key="answer"
-            >
+
+      <!-- 3rd column: answers -->
+      <TransitionGroup name="result">
+        <v-col md="4" class="grow-1 fill-height">
+          <v-sheet
+            rounded
+            elevation="2"
+            class="draggable-sheet align-center fill-height"
+            key="answer"
+          >
+            <span></span>
+            <span class="ps-2 ps-lg-4">
               <RichContent :text="parsed_local[i][1]" />
-            </v-sheet>
-            <v-col
-              cols="1"
-              v-if="!silent && success !== undefined"
+            </span>
+            <span
+              v-show="!silent && success !== undefined"
               key="feedback"
+              class="px-2"
             >
-              <v-icon v-if="success[i] === true" color="success">
+              <v-icon v-if="success[i]" color="success">
                 mdi-check-bold
               </v-icon>
-              <v-icon v-if="success[i] === false" color="error">
+              <v-icon v-if="!success[i]" color="error">
                 mdi-close-thick
               </v-icon>
-            </v-col>
-          </v-row>
-        </TransitionGroup>
-      </v-col>
+            </span>
+          </v-sheet>
+        </v-col>
+      </TransitionGroup>
     </v-row>
-  </div>
+  </v-container>
 </template>
 
 <style scoped>
+.draggable-sheet {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+.v-sheet {
+  min-height: 3rem;
+}
 .v-locale--is-ltr {
   .first {
     order: 1;

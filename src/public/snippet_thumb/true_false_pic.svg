@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="39.871758mm"
+   height="39.871758mm"
+   viewBox="0 0 39.871758 39.871758"
+   version="1.1"
+   id="svg11146"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs11143" />
+  <g
+     id="g10659"
+     transform="translate(394.00851,-260.81039)">
+    <rect
+       style="fill:#e6e6e6;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect67212"
+       width="39.871758"
+       height="39.871758"
+       x="-394.00851"
+       y="260.81039"
+       ry="1.7747978" />
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:0.970556;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect67214"
+       width="6.1561923"
+       height="6.0771651"
+       x="-382.21967"
+       y="279.99844"
+       ry="1.0397705" />
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:0.970556;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+       id="rect67224"
+       width="6.1561923"
+       height="6.0771651"
+       x="-382.21967"
+       y="289.48849"
+       ry="1.0397705" />
+    <path
+       style="font-variation-settings:normal;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.37167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
+       d="m -380.77637,283.67437 1.22783,1.6634 2.3427,-3.64388"
+       id="path67226" />
+    <path
+       id="text13007"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.196px;line-height:500%;font-family:'FuraMono Nerd Font';-inkscape-font-specification:'FuraMono Nerd Font Bold';letter-spacing:0px;word-spacing:0px;stroke-width:0.391186"
+       d="m -368.95807,279.75011 c -1.8294,0 -3.29282,1.46374 -3.29282,3.28094 0,1.8294 1.46342,3.29282 3.29282,3.29282 1.8172,0 3.29282,-1.46342 3.29282,-3.29282 0,-1.8172 -1.47562,-3.28094 -3.29282,-3.28094 z m 0,0.63408 c 1.43913,0 2.57349,1.20773 2.57349,2.64686 0,1.46352 -1.13436,2.65875 -2.57349,2.65875 -1.46352,0 -2.57349,-1.19523 -2.57349,-2.65875 0,-1.43913 1.10997,-2.64686 2.57349,-2.64686 z m -0.99994,1.17098 c -0.34149,0 -0.58549,0.24391 -0.58549,0.54881 0,0.32929 0.244,0.57309 0.58549,0.57309 0.34149,0 0.58498,-0.2438 0.58498,-0.57309 0,-0.3049 -0.24349,-0.54881 -0.58498,-0.54881 z m 1.9513,0 c -0.34148,0 -0.58549,0.24391 -0.58549,0.54881 0,0.32929 0.24401,0.57309 0.58549,0.57309 0.34149,0 0.5855,-0.2438 0.5855,-0.57309 0,-0.3049 -0.24401,-0.54881 -0.5855,-0.54881 z m -2.69544,1.84175 c 0.10976,0.89031 0.7806,1.63401 1.74408,1.63401 0.96349,0 1.63432,-0.7437 1.74408,-1.63401 h -0.53692 c -0.15854,0.63419 -0.51199,1.08521 -1.20716,1.08521 -0.69517,0 -1.04913,-0.45102 -1.20768,-1.08521 z" />
+    <g
+       id="g15527"
+       transform="translate(-131.2749,65.39548)">
+      <path
+         id="text15159"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.70744px;line-height:500%;font-family:'FuraMono Nerd Font';-inkscape-font-specification:'FuraMono Nerd Font Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;stroke-width:0.391186"
+         d="m -237.68317,223.84473 c -1.8294,0 -3.29282,1.46373 -3.29282,3.28094 0,1.8294 1.46342,3.29282 3.29282,3.29282 1.81721,0 3.29282,-1.46342 3.29282,-3.29282 0,-1.81721 -1.47561,-3.28094 -3.29282,-3.28094 z m 0,0.63407 c 1.43913,0 2.57349,1.20774 2.57349,2.64687 0,1.46352 -1.13436,2.65823 -2.57349,2.65823 -1.46352,0 -2.57348,-1.19471 -2.57348,-2.65823 0,-1.43913 1.10996,-2.64687 2.57348,-2.64687 z" />
+      <path
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.70744px;line-height:500%;font-family:'FuraMono Nerd Font';-inkscape-font-specification:'FuraMono Nerd Font Bold';letter-spacing:0px;word-spacing:0px;stroke-width:0.391187"
+         d="m -239.42725,229.12555 c 0.10981,-0.89031 0.78059,-1.63401 1.74408,-1.63401 0.96348,0 1.63431,0.7437 1.74408,1.63401 h -0.53693 c -0.15853,-0.63419 -0.51197,-1.08521 -1.20715,-1.08521 -0.69517,0 -1.04913,0.45102 -1.20768,1.08521 z"
+         id="path15188" />
+      <path
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.70744px;line-height:500%;font-family:'FuraMono Nerd Font';-inkscape-font-specification:'FuraMono Nerd Font Bold';letter-spacing:0px;word-spacing:0px;stroke-width:0.391186"
+         d="m -236.73181,225.64979 c -0.34148,0 -0.58549,0.2439 -0.58549,0.5488 0,0.3293 0.24401,0.57309 0.58549,0.57309 0.34149,0 0.5855,-0.24379 0.5855,-0.57309 0,-0.3049 -0.24401,-0.5488 -0.5855,-0.5488 z"
+         id="path15186" />
+      <path
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.70744px;line-height:500%;font-family:'FuraMono Nerd Font';-inkscape-font-specification:'FuraMono Nerd Font Bold';letter-spacing:0px;word-spacing:0px;stroke-width:0.391186"
+         d="m -238.68311,225.64979 c -0.34149,0 -0.58549,0.2439 -0.58549,0.5488 0,0.3293 0.244,0.57309 0.58549,0.57309 0.34149,0 0.58498,-0.24379 0.58498,-0.57309 0,-0.3049 -0.24349,-0.5488 -0.58498,-0.5488 z"
+         id="path15184" />
+    </g>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.47457;stroke-linecap:square;stop-color:#000000"
+       id="rect106158"
+       width="16.814728"
+       height="9.0774012"
+       x="-382.47998"
+       y="265.39447"
+       ry="1.2040085" />
+    <g
+       id="g157323"
+       transform="matrix(1.2745752,0,0,1.2745752,-58.163328,9.06151)">
+      <g
+         id="g106768"
+         transform="translate(-0.50402385,0.27826169)">
+        <rect
+           style="fill:#2196f3;fill-opacity:1;stroke:none;stroke-width:1.09915;stroke-linecap:square;stop-color:#000000"
+           id="rect84677-1"
+           width="5.3592248"
+           height="5.3592248"
+           x="-247.84164"
+           y="201.71555"
+           ry="0.51177311" />
+        <circle
+           style="fill:#e91e63;fill-opacity:1;stroke:#ffffff;stroke-width:1.63741;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stop-color:#000000"
+           id="circle1551"
+           cx="-250.27304"
+           cy="204.94029"
+           r="2.1344907" />
+        <circle
+           style="fill:#e91e63;fill-opacity:1;stroke:none;stroke-width:0.77472;stroke-linecap:square;stop-color:#000000"
+           id="path81427-3"
+           cx="-250.27304"
+           cy="204.94029"
+           r="2.1344907" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -17,6 +17,8 @@ User = get_user_model()
 CEFR = models.IntegerChoices("CEFR", "A1 A2 B1 B2 C1 C2")
 AGES = [(i, str(i)) for i in range(18)] + [(18, "18+")]
 
+def empty_data():
+    return {"sheet": list()}
 
 class Exercise(TimeStampedModel, Orderable):
     """Testu exercises.Exercise
@@ -34,7 +36,7 @@ class Exercise(TimeStampedModel, Orderable):
     created_by = models.ForeignKey(
         User, on_delete=models.SET_NULL, blank=True, null=True
     )
-    data = models.JSONField("data", default=dict, blank=True)
+    data = models.JSONField("data", default=empty_data, blank=True)
     lang_learn = models.BooleanField("about language", default=True)
     src_lang = models.CharField(
         "source language", choices=settings.LANGUAGES, max_length=10, blank=True
@@ -73,7 +75,9 @@ class Exercise(TimeStampedModel, Orderable):
         return dict(settings.LANGUAGES).get(self.src_lang, "N/A")
 
     def get_absolute_url(self):
-        return reverse_lazy("wagtailsnippets_education_exercise:edit", pk=self.pk)
+        return reverse_lazy(
+            "wagtailsnippets_education_exercise:edit", kwargs={"pk": self.pk}
+        )
 
     def save(self, *args, **kwargs):
         print("SELF", self)

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="39.871758mm"
+   height="39.871758mm"
+   viewBox="0 0 39.871758 39.871758"
+   version="1.1"
+   id="svg11146"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs11143" />
+  <g
+     id="layer1"
+     transform="translate(-72.416327,-122.94621)">
+    <g
+       id="g107837"
+       transform="translate(394.98374,-72.189789)">
+      <rect
+         style="fill:#e6e6e6;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stop-color:#000000"
+         id="rect2577-6"
+         width="39.871758"
+         height="39.871758"
+         x="-322.56741"
+         y="195.136"
+         ry="1.7747978" />
+    </g>
+  </g>
+  <path
+     id="rect2416"
+     style="color:#000000;fill:#ffffff;stroke-width:3.77953;-inkscape-stroke:none"
+     d="M 24.789062 24.789062 L 24.789062 28.308594 L 24.789062 48.728516 L 31.837891 48.728516 L 31.837891 31.837891 L 46.888672 31.837891 L 46.888672 24.789062 L 24.789062 24.789062 z M 103.80469 24.789062 L 103.80469 31.837891 L 118.85547 31.837891 L 118.85547 48.728516 L 125.90625 48.728516 L 125.90625 24.789062 L 103.80469 24.789062 z M 24.789062 105.64453 L 24.789062 125.90625 L 46.888672 125.90625 L 46.888672 118.85547 L 31.837891 118.85547 L 31.837891 105.64453 L 24.789062 105.64453 z M 118.85547 105.64453 L 118.85547 118.85547 L 103.80469 118.85547 L 103.80469 125.90625 L 125.90625 125.90625 L 125.90625 105.64453 L 118.85547 105.64453 z "
+     transform="scale(0.26458333)" />
+</svg>

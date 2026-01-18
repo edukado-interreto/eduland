@@ -18,6 +18,11 @@ from wagtail.snippets.views.snippets import SnippetViewSet
 from apps.education.models import Exercise
 
 
+def wagtail_sidebar(response, collapsed):
+    response.set_cookie("wagtail_sidebar_collapsed", int(collapsed), samesite="Lax")
+    return response
+
+
 class ExerciseFormView(UpdateView):
     model = Exercise
     template_name = "education/exercise_editor.html"
@@ -25,6 +30,12 @@ class ExerciseFormView(UpdateView):
 
     def get_context_data(self, **kwargs):
         return {**super().get_context_data(), **{"submit_button_label": "Save"}}
+
+    def get(self, request, *args, **kwargs):
+        return wagtail_sidebar(super().get(request, *args, **kwargs), collapsed=True)
+
+    def form_valid(self, form):
+        return wagtail_sidebar(super().form_valid(form), collapsed=False)
 
 
 class ExerciseViewSet(SnippetViewSet):
@@ -40,32 +51,29 @@ class ExerciseViewSet(SnippetViewSet):
     inspect_view_enabled = True
     add_to_admin_menu = True
     exclude_form_fields = ["lid", "created_by", "lang_learn"]
-    edit_handler: PanelGroup = TabbedInterface(
+    edit_handler: PanelGroup = ObjectList(
         [
+            ObjectList(
+                [
+                    FieldPanel("name"),
+                    FieldPanel("description"),
+                ],
+            ),
             FieldRowPanel(
                 [
-                    ObjectList(
-                        [
-                            FieldPanel("lid"),
-                            FieldPanel("name"),
-                            FieldPanel("description"),
-                            FieldPanel("created_by"),
-                        ],
-                    ),
-                    ObjectList(
-                        [
-                            FieldPanel("src_lang"),
-                            FieldPanel("lang_learn_lang"),
-                            FieldPanel("lang_learn_cefr_level_min"),
-                            FieldPanel("lang_learn_cefr_level_max"),
-                        ],
-                    ),
-                    ObjectList(
-                        [FieldPanel("age_min"), FieldPanel("age_max")],
-                    ),
+                    FieldPanel("src_lang"),
+                    FieldPanel("lang_learn_lang"),
+                    FieldPanel("lang_learn_cefr_level_min"),
+                    FieldPanel("lang_learn_cefr_level_max"),
                 ],
-                heading="Basic information",
+                heading="Languages",
             ),
-            ObjectList([FieldPanel("data")], heading="Raw Data"),
+            FieldRowPanel(
+                [
+                    FieldPanel("age_min"),
+                    FieldPanel("age_max"),
+                ],
+                heading="Public",
+            ),
         ]
     )

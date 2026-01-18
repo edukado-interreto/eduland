@@ -1,1 +1,417 @@
-{ "exercise": { "check": "Kontroli la rezulton" } }
+{
+  "about": {
+    "about": "Pri la projekto",
+    "about_text": "TestU Online estas senpaga multlingva retlerna platformo, kiu ebligas facilan kaj rapidan kreadon de diversaj kvizoj, testoj kaj ekzercoj, ĉefe por lingvolernado. La uzantoj de la platformo estos ĉefe instruistoj, trejnistoj/prelegistoj kaj iliaj lernantoj, kiuj lernas en bazlernejo aŭ alimaniere lernas, ĉu formale aŭ neformale. La kialo de kreo de tia platformo estas la bezono ebligi al juna generacio aliri senpagan edukadon sendepende de soci-ekonomia, religia aŭ nacia fono, geografiaj limigoj aŭ diversspecaj handikapoj.",
+    "partners_title": "Partneroj",
+    "partners": {
+      "bit_description": "bit (= best in training, t.e. plej bona en trejnado) schulungscenter (= trejncentro), fondita en 1986, estas unu el la ĉefaj edukaj provizantoj en la tereno de labormerkataj projektoj, profesia edukado, trejnado kaj dungiteco en Aŭstrio. Ilia klara forto estas ilia sperto kaj scipovo en projektado (didaktiko, metodaro, instrua dezajno) kaj efektivigo de diversaj naciaj kaj internaciaj projektoj. Ili havas grandan sperton pri laborado kun malsamaj celgrupoj, ekz. junuloj, junaj senlaboraj plenkreskuloj, kaj iliaj edukaj bezonoj per siaj regulaj agadoj.",
+      "bit_location": "Graz, Aŭstrio",
+      "european_commission": "Tiu ĉi projekto estas financata per subteno de Eŭropa Komisiono. Tiu ĉi publikaĵo respegulas nur vidpunkton de la aŭtoro, pro tio la Komisiono ne povas esti respondeca pri ajna uzado de informoj, kiuj aperas ĉi tie.",
+      "ikso_description": "La internacia organizo E{'@'}I, kun helpo de ĉirkaŭ 250 volontuloj, subtenas interkulturan lernadon en la Interreto, Ĝiaj projektoj, kiuj provizas la bazon de deutsch.info, estas multingvaj retejoj, kie oni povas lerni Esperanton ({1}) kaj la slovakan ({2}). Krom evoluigo de edukaj portaloj, E{'@'}I ankaŭ organizas diversajn trejnadojn, ĉefe en la fakoj lingvoj kaj novaj teknologioj.",
+      "ikso_location": "Partizánske, Slovakio",
+      "leipzig_description": "La Universitato de Leipzig, fondita en 1409, estas esplora universitato kiu ofertas edukadon en riĉa kaj diversa esplora medio por ĉirkaŭ 30,000 studentoj instruitaj de proksimume 400 fakultatanoj. La granda vario de 14 fakultatoj (kovrantaj fakojn de medicino ĝis natursciencoj, de matematiko ĝis teologio kaj de sociaj sciencoj ĝis sportoj) ofertas bonegajn ŝancojn por interfaka laboro. Ĝia Instituto de Sorabaj Studoj, okupita pri esplorado pri la soraba kaj aliaj minoritataj lingvoj, ties literaturo kaj kulturo, kaj ankaŭ pri la trejnado de lernejaj instruistoj, estas unika en la mondo. En la jaroj ekde la politikaj ŝanĝoj en 1989 signifaj monsumoj estis investitaj en la esplora infrastrukturo, tiel ke la Universitato de Leipzig estas plej alta institucio kaj en konstruaĵoj kaj ekipaĵo hodiaŭ.",
+      "leipzig_location": "Lepsiko, Germanio",
+      "leipzig_name": "Universitato de Lepsiko",
+      "uam_description": "La Universitato Adam Mickiewicz en Poznań/Poznano, nomita laŭ la fama pola romantika poeto, estas esplora universitato, unu el la pintaj polaj universitatoj kaj la plej grava akademia institucio en Poznano. Ĝi estis fondita en 1919, sed ĝia reputacio fontas el longa tradicio de supera edukado en la urbo Poznań, reiras al la 16-a jarcento (pole: Akademia Lubrańskiego, angle: The Lubrański Academy, latine: Collegium Lubranscianum; establita en 1518 en Poznano). Nuntempe, ĉirkau 3000 akademiaj kunlaborantoj  ofertas 193 studdirektojn kaj specialaĵojn al proksimume 40 000 studentoj, inkluzive pli ol 1,300 doktorajn studentojn. Aperas pli ol 8 000 sciencaj publikaĵoj ĉiujare kaj AMU partoprenas en pli ol 600 naciaj kaj internaciaj projektoj. La universitato estas dividita en 20 fakultatojn tra larĝa gamo de naturaj kaj sociaj sciencoj kaj la homscienco, tri el ili koncentriĝas pri lingvostudoj, ofertante praktikan lingvoinstruadon de ĉirkaŭ 50 lingvoj. Multaj el la lingvokursoj ricevis la plej altkvalitan kategorion fare de la Pola Akredita Komisiono, kiu atestas la bonegan fakan kompetenton de la instruistoj, la uzadon de la plej novaj instrumetodoj kaj ankaŭ bonegajn akademiajn rezultojn. La Fakultato de Modernaj Lingvoj kaj Literaturoj estas unu el la plej grandaj de la universitato kaj ofertas la plej grandan nombron da lingvokursoj. La Etnolingvistika Instituto, ene de la Fakultato instruas pli ol dekduon da lingvoj en 6 studdirektoj kun kunlaborantaro el pli ol 15 malsamaj landoj.",
+      "uam_location": "Poznano, Pollando",
+      "uam_name": "Universitato Adam Mickiewicz",
+      "vu_description": "La Universitato de Vilno estis fondita en la 16-a jarcento kaj estas konsiderata kiel unu el la plej malnovaj universitatoj en Centra kaj Orienta Eŭropo. Lingvostudoj ĉiam estis integrita parto de la instruplano de la Universitato de Vilno. Tiam, la ĉefa lingvo instruita estis la latina kune kun la malnovgreka kaj la hebrea. Tiel, kvankam la Fakultato de Filologio estis establita same lastatempe kiel 1944, lingvostudoj estis instruitaj eĉ antaŭ ol la Jezuita Kolegio iĝis universitato en 1579. La Instituto por la Lingvoj kaj Kulturoj de la Baltiko kunigas esploristojn de Ĝenerala Lingvistiko, Balta, ĝermanaj, polaj, rusaj, skandinavaj studoj, same kiel multaj aliaj. Fortaj tradicioj pri studado de la rusa lingvo, literaturo kaj kulturo (rusa filologio-fako estis fondita en 1803) sukcese kunekzistas kun la plej altnivelaj kaj modernaj instrumetodoj, kio montriĝas en la aktiva partopreno de la membroj de tiu ĉi fako en internaciaj projektoj kaj sciencaj aranĝoj.",
+      "vu_location": "Vilno, Litovio",
+      "vu_name": "Universitato de Vilno"
+    }
+  },
+  "editor": {
+    "age_range": "Aĝogrupo",
+    "cefr_levels_label": "KER nivelo",
+    "confirm_leave": "Tiu ĉi paĝo petas konfirmon ke vi volas forlasi ĝin - enigitaj datumoj povas perdiĝ,",
+    "description": "Priskribo",
+    "details": "Detaloj de la ekzerco",
+    "save": "Konservi",
+    "tags": "Etikedoj",
+    "title": "Titolo",
+    "unexpected_response": "Neantaŭvidita respondo de la servilo",
+    "unlisted": "Nelistigita en serĉrezultoj"
+  },
+  "exam": {
+    "accept_submissions": "Akcepti provojn",
+    "confirm": "Ĉi tiu operacio ne estas malfarebla. Ĉu daŭrigi?",
+    "copy": "Kopio",
+    "created": "Kreita: {date}",
+    "delete": "Forigi ekzamenon",
+    "description": "Priskribo de la ekzameno",
+    "details": "Detaloj de la ekzameno",
+    "error": "Eraro okazis dum sendado de la ekzameno.",
+    "goto_exercise": "Iri al la ekzerco",
+    "is_exam": "Ĉi tio estas ekzameno",
+    "link": "Ligilo",
+    "name": "Nomo de ekzameno",
+    "no_new_submissions": "Ĉi tiu ekzameno ne plu akceptas novajn provojn",
+    "no_submissions": "Neniu provo",
+    "or": "aŭ",
+    "please_log_in": "Por komenci la ekzamenon, bonvolu ensaluti aŭ elekti uzantonomon.",
+    "untitled": "Sentitola ekzameno",
+    "view": "Vidi",
+    "visible_by": "La rezultoj de ĉi tiu ekzerco estos videblaj por la ekzamenanto {name}.",
+    "well_done": "Via ekzameno estis sukcese sendita al la ekzamenanto!"
+  },
+  "exercise": {
+    "age": "Aĝo:",
+    "anonymous": "anonima",
+    "author": "aútoro",
+    "check": "Kontroli la rezulton",
+    "create_copy": "Krei kopion",
+    "create_exam": "Krei ekzamenon",
+    "create_exam_confirm": "La kreinto de ĉi tiu ekzerco povas redakti aŭ forigi ĝin dum la ekzameno okazas. Ĉu tamen daŭrigi?",
+    "delete": "Forigi la ekzercon",
+    "delete_confirm": "Ĉu vi certe volas forigi ĉi tiun ekzercon?",
+    "drop_here": "drop here",
+    "edit": "Redakti la ekzercon",
+    "error": "Eraro okazis dum konservado de la ekzerco",
+    "explanation": "Klarigo",
+    "language": "Lingvo",
+    "mistake": "Raporto pri eraro",
+    "mistake_explanation": "Klarigo",
+    "misuse": "Raporto pri misuzo",
+    "pdf": "PDF",
+    "report_mistake_to_creator": "Raporto al la aútoro pri eraro {username}",
+    "report_misuse_to_administrators": "Raporto al la administrantoj pri misuzo",
+    "submit_mistake_confirm": "Dankon! La aútoro ricevos informon.",
+    "submit_misuse_confirm": "Dankon pro via helpo por plibonigi TestU.eu.",
+    "target_language": "Lernata lingvo",
+    "target_language_is": "Lernata lingvo:",
+    "unlisted": "Ĉi tiu ekzerco ne estas listigata en serĉrezultoj"
+  },
+  "guide": {
+    "about": "Kiel krei ekzercojn",
+    "about_text": "Por krei novan ekzercon vi devas unue registriĝi kaj ensaluti en la retejo.",
+    "construction": "Pretigata",
+    "gap_filling": "Truekzerco",
+    "video": "Pri video",
+    "exam": {
+      "explanation1": "Se vi pretigis ekzercon, vi povas transformi ĝin al ekzameno. Por tion fari vi devas esti en la paĝo de la ekzerco kaj kliki sur la tri punktojn supre dekstre (1)",
+      "explanation2": "Vi povas fari ekzamenon el viaj propraj ekzercoj kiujn vi trovas in \"My learning\" aŭ vi povas uzi ekzercojn de aliaj en la \"Home\" parto. Se vi uzas alies ekzercon, via ekzameno povas ŝanĝiĝi, la kreanto de la ekzerco ŝanĝas sian ekzercon.",
+      "explanation3": "Se vi klikas sur la tri punktojn supre dekstre (1), aperos 4 eblecoj. Por fari ekzamenon, vi devas elekti la eblecon ”Create an exam” (2). Tio gvidos vin al la sekva paĝo kie v povas adapti vian ekzamenon.",
+      "explanation4": "Kiel vi vidas sube, vi povas elekti la titolon de via ekzameno (3). Tio montriĝos en la supra parto (4). Vi povas aldoni ankaŭ priskribon de la ekzameno (5) kaj konservi ĝin per kliko al la \"save\" butono (6)",
+      "explanation5": "La paĝo tiam ŝanĝiĝos kaj vi vidos ĝin kiel sube kun la elektita titolo. En la skatolo \"link\" (7) vi havos la ligon al via ekzameno. Vi povas kopii ĝin per kliko sur la maldekstran butonon (kaj sendi ĝin al viaj studentoj) aŭ povas kliki sur \"VIEW\" por vidi la ekzamenon tiel kiel viaj studentoj vidas.",
+      "explanation6": "Vi povas ankaŭ reiri al la ekzerco, se vi volas ŝanĝi ĝin per kliko sur ”Go to the exercise” (8). En la skatolo ”Submissions” (9) troviĝos la ekzamenoj plenumitaj far la studentoj, kaj vi povos vidi iliajn rezultojn kaj kontroli ĉiujn.",
+      "explanation7": "Se vi volas ŝanĝi aŭ kontroli la detalojn de la ekzameno, ili estas en la skatolo (10) sube de la paĝo. Ĉiuj viaj ekzamenoj estos konservataj en ”My teaching” part (11).",
+      "name": "Kreu ekzamenon"
+    },
+    "exercice": {
+      "explanation1": "Por krei novan ekzercon vi devas esti en la Home menu (1), poste vi povas elekti \"+CREATE A NEW EXERCISE\" (2). Se jam kreita, ĝi aperas sur tiu ĉi paĝo. Sed nun vi estos sendita al la sekva paĝo kiel vi povas vidi sube.",
+      "explanation2": "Ekzerco povas esti kunmetita en multoblaj unuoj. Vi povas aldoni unuojn alklakante \"+ ALDONU UNION\" (3). Estas malsamaj specoj de ekzercoj sed en ĉiu unuo vi povas uzi nur la saman specon. Se vi volas miksi malsamajn specojn de demandoj en ekzerco, vi devos fari apartajn unuojn por ĉiu speco de demandoj, kiujn vi volas.",
+      "explanation3": "Kiel vi povas vidi maldekstre, estas multaj malsamaj specoj de unuoj. Sed ĉefe, ni povas grupigi ilin al 3 familioj: frazoj kun truoj plenigendaj, demandoj kun multoblaj elektoj kaj kongruaj aŭ ordigaj demandoj.",
+      "explanation4": "En ekzercoj kun frazoj kun truoj plenigendaj vi povas proponi solvojn, el kiuj oni elektas. (Almenaŭ unu ĝusta respondo kaj unu falsa estu prentataj.) Aŭ vi povas lasi la kampon malferma por ke la persono respondanta la demandon kompletigu ĝin tajpante la respondon. En ĉiu kazo, vi devas indiki la ĝusta(j)n respondo(j)n kreante la demandon.",
+      "explanation5": "En ekzercoj kun multoblaj elektoj unu aŭ pluraj solvoj povas esti korektaj. Kreante la ekzercon, vi devas indiki la ĝusta(j)n respondo(j)n.",
+      "explanation6": "Por kongruaj aŭ ordigaj demandoj, vi havos la elekton doni priskribojn aŭ demandojn aŭ bildojn aŭ eĉ sonojn kaj vortojn aŭ respondojn, kiuj rilatas al la donitaj eroj. La lernantoj devos parigi la erojn kun la respondoj aŭ se vi elektis la ordigan demandon, ili devas prezenti ilin en la ĝusta ordo.",
+      "explanation7": "Vi povas trovi pliajn klarigojn por ĉiu familio klakante sur la langetoj supre de ĉi tiu paĝo.",
+      "gap_filling_1": "La baza aŭ defaŭlta tipo de tiu ekzerco estas frazoj kun truoj plenigendaj. Estas du specoj de tiuj ekzercoj. La unua (1) nomiĝas \"defaŭlta\" kaj proponas respondojn kiam vi alklakas la interspacon. La dua tipo estas la ”Malferma respondo” (8), en kiu ne estas respondo donita, kaj la lernanto devas rekte skribi ĝin. Ni vidos kiel skribi la demandojn kaj kiel doni la respondon, kelkajn malĝustajn kaj la ĝusta(j)n.",
+      "gap_filling_2": "En kesto (2) vi povas prezenti la titolon de la ekzerco kaj en kesto (3) mallongan tekston, kiu priskribas kion oni faru en la ekzerco aŭ donas iom da kunteksto.",
+      "gap_filling_3": "La demandoj mem estas skribitaj en la kesto (4). Ĉiam estas du manieroj fari tion. Vi povas skribi rekte la demandojn kaj la respondojn en la keston aŭ vi povas uzi la ilojn en la supra maldekstra angulo (6). La rezulto estos la sama, vi vidos la saman tekston en la kesto (4).",
+      "gap_filling_4": "Se vi skribas la demandojn rekte en la keston, ĉiuj demandoj devas esti apartigitaj per malplena linio kaj la respondo devas esti donita inter krampoj [ ] kaj apartigita per vertikala streko |. Kaj vi devas meti + antaŭ la ĝusta(j)n respondo(j)n. Se estas pli ol unu ĝusta respondo, iu el ili estos konsiderata ĝusta por la rezulto. Vi ankaŭ povas elekti miksi la proponitajn respondojn alklakante la butonon\"Miksi opciojn\" (7)",
+      "gap_filling_5": "Se vi uzas la ilojn por krei la demandojn (6), tiu maldekstre faras malplenan linion por komenci novan demandon. Vi devas skribi la demandon aŭ tekston kaj kie vi volas meti breĉon, alklakante la ilon dekstre. Ŝprucfenestro malfermiĝos, kiel montrite en la bildo. Vi povas tajpi la respondojn unu post la alia. Ili estos validigitaj kiam vi tajpas \"enigi\". Defaŭlte, la unua aŭtomate estos konsiderata kiel la ĝusta, kaj verda ”v” montros antaŭ ĝi, sed vi povas elekti la ĝusta(j)n respondo(j)n klakante sur la malgranda butono antaŭ ĉiu respondo (8). Vi ankaŭ povas elekti aldoni opcion \"lasi malplena\" alklakante la streketan kvadraton dekstre (9).",
+      "gap_filling_open_answer_1": "La alia speco de ekzerco por plenigi  breĉon estas la \"Malferma respondo\" (10). Kiel vi povas vidi ĉi-sube, por ĉi tiu speco de ekzerco ne estas proponita respondo. Vi povas doni atenditajn respondojn, unu aŭ pli, en la samaj manieroj kiel ni ĵus klarigis, per la ilo aŭ rekte en la kesto (11). Vi povas proponi malĝustajn respondojn; ili ne aperos, sed dum la korekto montriĝos ruĝa X, se iu uzis unu el ĉi tiuj respondoj; nenio okazos, se iu skribis alian respondon kaj verda V aperos, se iu elektis unu el la ĝustaj respondoj.",
+      "gap_filling_open_answer_2": "Vi povas aldoni aliajn demandojn, same kiel antaŭe, kreante malplenan linion aŭ alklakante la butonon maldekstre (6). Kiam vi estas kontenta kun viaj demandoj, ne forgesu alklaki la butonon \"Konservi\" por konservi vian laboron. Vi ĉiam povas reveni por aldoni demandojn aŭ fari iujn ŝanĝojn.",
+      "name": "Nova ekzerco"
+    },
+    "multiple_choice": {
+      "explanation1": "Se vi preferas montri la respondojn ne kiel truojn, sed kiel plurelekteblecon kun la respondoj sub la demando kun skatoloj, vi povas elekti ”Multiple choice” (12).",
+      "explanation2": "En la listo de ekzercoj kiu aperas kiam vi aldonas novan, la tipoj ”Questions about a picture, true or false” kaj la ”Questions about a text, multiple choice” ofertas al vi du aliajn ekzemplojn por montri kiel uzi tiun ekzercotipon.",
+      "explanation3": "Kiel antaúe vi povas doni nomon por la demandoserio. Vi povas aldoni ankaú priskribon, nuntempe tekston pri kiu vi volas farigi demandojn aú enkondukon pri la demandoj.",
+      "explanation4": "La demandojn kaj respondojn eblas aldoni kiel antaúe, skribante ilin senpere en la skatolon de la teksto (13) aú per la butonoj kiel klarigite antaúe kaze de la truplenigaj demandoj (6). La ĝusta respondo devas havi \"+\" komence kaj kaze de pluraj eblaj respondoj, \"|\" apartigas ilin. Se estas pluraj bonaj respondoj, la demando estas markita ĝusta post la kontrolo de ĉiuj respondoj.",
+      "explanation5": "Vi havas eblecon aldoni ankaú bildojn kaj sonojn en la priskribon, klikante la tri punktojn (14) kaj elektante ilin el via komputilo. Tiel vi povas starigi demandojn pri la bildoj kaj sonmaterialo. Vi povas aldoni tiom kiom vi volas kaj kie vi volas, montrante la lokon en la teksto kaj metante la elementojn inter  {'{}'} (15).",
+      "name": "Plurelekta ekzerco"
+    },
+    "sort_and_match": {
+      "explanation1": "La lasta tipo de ekzercoj estas la ”sort and match”, nomita ankaú parigo (tekston kun teksto, tekston kun bildo, bildojn kun sono kaj ordigo de bildoj). Vi povas elekti tiun ĉi ekzercotipon el la skatolo (16) aú el la listo de novaj unuoj.",
+      "explanation1_1": "La plej simpla estas parigo de vortoj. Por krei ilin, vi povas uzi la butonon (17) aú skribi ilin en la tekstoskatolon (18)",
+      "explanation2": "Ĉiu paro devas esti skribita kun unu parto maldekstre kaj unu parto dekstre de la simbolo ”==”, kun unu malplena linio inter ili. En ĉi tiu ekzemplo, estas fruktoj en unu kolumno kaj koloroj en la alia. Sed povas aperi tradukoj, numeroj, aŭ eĉ bildoj, sonoj aŭ filmetoj. La plej grava afero estas meti la saman tipon en la saman kolumnon La proponoj estos miksitaj por la ekzerco.",
+      "explanation3": "Por aldoni bildojn aŭ sonon, vi devas uzi la butonojn (19) kaj elekti la dosieron en via komputilo. Tiel kreiĝos la elementoj inter buklaj krampoj {'{}'} kiel antaŭe. Post tio, vi povas movi ilin sur la lokon, kien vi volas. Por aldoni videon, vi devas elekti la trian butonon (19) kaj skribi la url-adreson de la video (ekzemple en youtube aŭ vimeo...). Vi ne povas rekte alŝuti videon de via komputilo.",
+      "explanation4": "Vi povas kunigi tekston kun teksto aú bildo aú sono aú kunigi bildojn kun sonoj kiel montrita en (20).",
+      "explanation5": "Se vi ne skribas la simbolon ”==” por parigi ion kun la propono, kiel montrite en (21), la ekzerco fariĝas ordiga ekzerco kie vi devas meti la proponon en la ĝustan ordon. Vi povas tion fari per bildoj, tekstoj, sonoj aŭ filmetoj.",
+      "name": "Ordigu kaj parigu",
+      "video": "Vi povas aldoni ankaŭ filmeton, senpere en la priskriban skatolon, skribante la url-adreson de la video/filmeto inter krampoj {'{}'} kaj kun \"video:\" antaŭ tio, kiel montrite en (22). Ne ekzistas butono por fari tion, sed vi povas havi skriban ekzemplon elektante la tipon de unuo: ”Questions about a video, open answer”."
+    }
+  },
+  "home": {
+    "create_exercise": "Krei novan ekzercon",
+    "search_exercise": "Serĉi ekzercon"
+  },
+  "langs": {
+    "help": "Helpu al ni por traduki la retejon",
+    "name": {
+      "cs": "Ĉeĥa",
+      "cy": "Kimra",
+      "de": "Germana",
+      "dsb": "Malsuprasoraba",
+      "en": "Angla",
+      "eo": "Esperanto",
+      "es": "Hispana",
+      "fr": "Franca",
+      "ga": "Irlanda",
+      "hu": "Hungara",
+      "lt": "Litova",
+      "pl": "Pola",
+      "ru": "Rusa",
+      "sk": "Slovaka",
+      "uk": "Ukraina"
+    },
+    "self": "Esperanto"
+  },
+  "learn": {
+    "date": "Dato",
+    "exam": "Ekzameno",
+    "exercise": "Ekzerco",
+    "recent": "Lastaj aktivaĵoj",
+    "review": "Revizii",
+    "submitted": "Ekzercoj submetitaj laŭtage"
+  },
+  "login": {
+    "already_registered": "Ĉu vi jam havas konton?",
+    "check_inbox": "Bonvolu kontroli vian retpoŝtkeston por konfirmi vian registriĝon.",
+    "email": "Retpoŝtadreso",
+    "email_is_verified": "Via retmesaĝo estas kontrolita. Vi povas ensaluti.",
+    "login": "Ensaluti",
+    "mail_invalid": "La retpoŝtadreso devas esti valida",
+    "no_account_yet": "Ĉu vi ankoraú ne havas konton?",
+    "page_title": "Ensaluto",
+    "password": "Pasvorto",
+    "password_reset": "Reakiri pasvorton",
+    "password_reset_done": "Via pasvorto estas sukcese reakirita",
+    "password_reset_sent": "Ligo estas sendita al via retadreso por reakiri vian pasvorton.",
+    "required_field": "Tiu ĉi kampo estas deviga",
+    "resend_link": "Resendu la ligilon!",
+    "signup": "Registriĝi en TestU",
+    "signup_thanks": "Dankon pro via registriĝo.",
+    "username": "Uzantnomo",
+    "verify_email": "Via retmesaĝo estas kontrolata.",
+    "verify_token_used_or_invalid": "Ŝajnas ke tiu ĉi ligo estis jam uzata aŭ ne validas."
+  },
+  "main": {
+    "about": "Prie",
+    "accept": "Akcepti",
+    "cancel": "Nuligi",
+    "catchphrase": "Kreu viajn proprajn lingvajn kvizojn",
+    "cookie_consent": "Ĉi tiu retejo uzas la minimuman kvanton da kuketoj por sia funkciado. Daŭrigante uzi ĉi tiun retejon, ni supozas, ke vi akceptas la uzon de la funkciaj kuketoj.",
+    "edit": "Redakti",
+    "guide": "Kiel uzi",
+    "home": "Ĉefpaĝo",
+    "lang_menu_header": "interfaca lingvo",
+    "login": "Ensaluti",
+    "logout": "Elsaluti",
+    "my_learning": "Mia lernado",
+    "my_teaching": "Mia instruado",
+    "ok": "Bone",
+    "only_logged_in": "Ĉi tiu paĝo estas disponebla nur por ensalutintaj uzantoj",
+    "privacy": "Privateca regularo",
+    "settings": "Agordoj de la konto",
+    "signup": "Registriĝi",
+    "social": "Sociálne siete",
+    "source_code": "Fontkodo",
+    "submit": "Sendi",
+    "terms": "Uzokondiĉoj",
+    "why": "Kial"
+  },
+  "review": {
+    "exam": "Revizio de ekzameno",
+    "exercise": "Revizio de ekzerco",
+    "go_exam": "Iri al la ekzameno",
+    "go_exercise": "Iri al la ekzerco",
+    "submitted_on": "Jen la ekzercoj, kiujn vi submetis la {date}."
+  },
+  "sheet_editor": {
+    "add_matching_pair": "Aldoni kunmetendan paron",
+    "add_sentence": "Aldoni frazon",
+    "add_unit": "Aldoni unuon",
+    "add_unit_to_begin": "Aldonu novan unuon por komenci",
+    "close": "Fermi la redaktilon",
+    "delete": "Forigi",
+    "edit_next": "Redakti sekvan",
+    "edit_previous": "Redakti antaŭan",
+    "empty_exercise": "Malplena ekzerco",
+    "first_item": "Unua elemento",
+    "ignore_case": "Ignori usklecon",
+    "insert_gap": "Enmeti truon",
+    "insert_image": "Enmeti bildon",
+    "insert_pair": "Enmeti paron",
+    "insert_sound": "Enmeti sonon",
+    "insert_video": "Enmeti videon",
+    "move_down": "Movi subten",
+    "move_up": "Movi supren",
+    "new_gap": "Nova truo",
+    "new_matching_pair": "Nova kunmetenda paro",
+    "second_item": "Dua elemento",
+    "shuffle_options": "Hazardigi la ordon de elektebloj",
+    "start_typing": "Komencu tajpi frazon…",
+    "title": "Titolo",
+    "untitled_unit": "Sentitola unuo",
+    "valid_url": "Bonvolu entajpi validan URL-n",
+    "snippets": {
+      "blank_unit": {
+        "name": "Malplena unuo"
+      },
+      "gap_filling_dropdown": {
+        "code": "La libro estas [+sur{'|'}en] la tablo.",
+        "name": "Truoplenigo, altiro kaj faligo"
+      },
+      "gap_filling_open_answer": {
+        "code": "La libro estas [+sur{'|'}en] la tablo.",
+        "name": "Truplenigo, malfermita respondo"
+      },
+      "multiple_choice": {
+        "code": "Kie estas la libro?\n[+sur la tablo{'|'}en la tablo]",
+        "name": "Plurelektebleco (por demandoj)"
+      },
+      "pairing_pictures_with_sounds": {
+        "code": "{'{img:dog.jpeg}'} == {'{sound:dog.mp3}'}\n\n{'{img:elephant.jpeg}'} == {'{sound:elephant.mp3}'}\n\n{'{img:cat.jpeg}'} == {'{sound:cat.mp3}'}",
+        "name": "Parigo de bildoj kun sonoj"
+      },
+      "pairing_text_with_pictures": {
+        "code": "Dog == {'{img:dog.jpeg}'}\n\nElephant == {'{img:elephant.jpeg}'}\n\nCat == {'{img:cat.jpeg}'}",
+        "name": "Parigo de teksto kun bildoj"
+      },
+      "pairing_text_with_sounds": {
+        "code": "Dog == {'{sound:dog.mp3}'}\n\nElephant == {'{sound:elephant.mp3}'}\n\nCat == {'{sound:cat.mp3}'}",
+        "name": "Parigo de teksto kun sonoj"
+      },
+      "pairing_text_with_text": {
+        "code": "Ĉerizo == Ruĝa\n\nCitrono == Flava\n\nBrokolo == Verda",
+        "name": "Parigo de teksto kun teksto"
+      },
+      "questions_about_a_picture_true_or_false": {
+        "code": "La besto sur la bildo estas: [hundo{'|'}+kato{'|'}elefanto]\n\nĈu ĝi estas sovaĝa aú hejma besto? [+hejma{'|'}sovaĝa besto]",
+        "description": "{'{img:cat.jpeg}'}",
+        "name": "Demajdoj pri bildo, vera aú falsa"
+      },
+      "questions_about_a_sound_dropdown": {
+        "code": "Kiu besto eligas tiun sonon?\n[+Kato{'|'}Hundo{'|'}Elefanto]\n\nKiel eblas nomi tiun bestan voĉon?\n[+Miaúado{'|'}Bojado{'|'}Trumpetado]",
+        "description": "Aúskultu la sonon kaj respondu al la demandoj:\n{'{sound:cat.mp3}'}",
+        "name": "Demandoj pri sono, altiro kaj faligo"
+      }
+    }
+  },
+  "sort": {
+    "rated": "Plej alte taksitaj",
+    "recent": "Plej novaj",
+    "sort": "Ordigi"
+  },
+  "tags": {
+    "agriculture": "Agrikulturo",
+    "art": "Arto",
+    "astronomy": "Astronomio",
+    "biology": "Biologio",
+    "business": "Negoco",
+    "chemistry": "Ĥemio",
+    "computing": "Komputado",
+    "crafting": "Metio",
+    "economics": "Ekonomio",
+    "engineering": "Inĝenierarto",
+    "geography": "Geografio",
+    "grammar": "Gramatiko",
+    "history": "Historio",
+    "languages": "Lingvoj",
+    "literature": "Literaturo",
+    "logic": "Logiko",
+    "math": "Matematiko",
+    "medicine": "Medicino",
+    "miscellaneous": "Diversaĵoj",
+    "music": "Muziko",
+    "pedagogy": "Pedagogio",
+    "philosophy": "Filozofio",
+    "physics": "Fiziko",
+    "politics": "Politiko",
+    "psychology": "Psikologio",
+    "religion": "Religio",
+    "science": "Scienco",
+    "sport": "Sporto",
+    "technology": "Teknologio",
+    "trivia": "Kuriozaĵoj",
+    "zoology": "Zoologio"
+  },
+  "teach": {
+    "exams": "Ekzamenoj",
+    "exercises": "Ekzercoj"
+  },
+  "terms": {
+    "intro": "Bonvenon ĉe slovake.eu, multlingva retpaĝo por lerni la slovakan! La aliro kaj la uzo de la retpaĝo slovake.eu (\"la retpaĝo\", \"la servo\", \"la ofertanto\" okazas sub la kondiĉo, ke vi (\"la uzanto\") legis la sekvajn uzkondiĉojn, komprenis kaj akceptis ilin, sendepende ĉu vi ankaŭ registriĝis kiel membro ĉe slovake.eu aŭ ne. Pro tio bv. legi la sekvan tekston tre atente.",
+    "last_update": "Laste aktualigita: {date}",
+    "section1": {
+      "text1": "Kelkaj el niaj servoj uzeblas sen registriĝo ĉe la retpaĝo. Por uzi ĉiujn funkciojn de la retpaĝo, vi devas krei personan uzantkonton. La registriĝo estas senkosta.",
+      "text2": "Nur personoj, kiuj minimume havas 13 jarojn rajtas registriĝi. La uzo de la retpaĝo por personoj sub 18 jaraj (en kelkaj landoj 21 jaraj) nur eblas kun la konsento de la edukrajtaj personoj.",
+      "text3": "Vi garantias, ke ĉiuj informoj donitaj de vi ĉe la registriĝo estas veraj kaj korektaj kaj ke vi ilin ĉiam aktualigos.",
+      "text4": "Ĉe la registriĝo vi ne rajtas uzi informojn (ekz. uzantnomo, nomo, profilbildo ktp.) kiuj kontraŭas la rajtojn de aliaj personoj, specife marko- kaj nomrajtojn. Kontraŭleĝaj Informoj aŭ informoj, kiuj estas kontraŭ la uzkondiĉoj same ne estas permesitaj.",
+      "text5": "Ĉe la registriĝo vi elektas pasvorton kaj vi devas teni tiun pasvorton sekrete.",
+      "text6": "Vi konsentas pri la publikigo de la profilinformoj (ekz. via uzantnomo, la lingva progreso, la retstatuso, la elektita lingvoversio, la registriĝodato, la dato de la lasta ensaluto kaj pliaj libervolaj informoj, inkluzive de via profilbildo). La retpoŝtadreso kaj la pasvorto ne estos publikigitaj.",
+      "text7": "La registriĝo ĉe la retpaĝo nur finiĝas per klako al aktiviga ligilo. Por aktivigi la konton, vi ricevos post la ricevo de la registriĝo aŭtomatan konfirmon per retpoŝto, kiu enhavos la aktivigan ligilon.",
+      "text8": "Se vi ne finas la aktivigon de la konto, la ofertanto rajtas forigi la nekomplete registritan uzantkonton.",
+      "text9": "La ofertanto de la retpaĝo ne garantias la veran identecon de uzantoj. Ĉiu uzanto do mem devas kontroli la identecon de iu alia uzanto. La ofertanto rezervas al si la rajton peti dokumentojn aŭ pruvojn rilate al la identeco kaj al aĝo por kontroli informojn. Se iu ne liveras la petitajn pruvojn ene de tempo definita de la ofertanto de la retpaĝo, ĝi forigos la koncernan uzantkonton.",
+      "title": "Registriĝo"
+    },
+    "section2": {
+      "text1": "La ofertanto de la retpaĝo konscias, ke la protekto de la personaj informoj estas ege grava. Pro tio la retpaĝo strikte atentas la regulojn de la leĝoj pri protekto de datenoj. Detalojn pri la uzo kaj prilaboro de datenoj vi trovas en la Reguloj pri protekto de datenoj .",
+      "title": "Protekto de informoj"
+    },
+    "section3": {
+      "text1": "La retpaĝo nur povas esti uzata por la leĝe permesitaj celoj.",
+      "text2": "Kiel uzanto vi devas:",
+      "text2_1": "nur doni verajn kaj ne erarigajn informojn en via profilo kaj ĉe via komunikado kun aliaj uzantoj;",
+      "text2_2": "teni la alirinformojn sekrete kaj ne doni ilin al aliaj;",
+      "text2_3": "informi la ofertanton de la retpaĝo tuj, kiam ekzistas la supozo, ke aliulo ekhavis informojn pri la alirinformoj kaj/aŭ misuzas uzantkonton.",
+      "text3": "Nur vi respondecas pri la enmetita enhavo kaj (la publika kaj la nepublika) komunikado kun aliaj. Vi ankaŭ devas atenti pri la rajtoj kaj interesoj de aliaj uzantoj aŭ aliuloj, speciale pri la personaj rajtoj.",
+      "text4": "Estas strikte malpermesite alŝuti, publikigi, sendi, ligi, enmeti, privarbi, oferti aŭ alimaniere aldoni la sekvajn enhavojn (kiel bildoj, ligiloj, fotoj, forumkontribuoj aŭ aliaj enhavoj, inkluzive de privataj mesaĝoj kaj profilbildoj):",
+      "text4_1": "leĝe protektitaj enhavoj, ekzemple enhavo kiu estas protektita pro kopirajto, nomrajtoj, markorajtoj, patentoj, rajtoj pri industria dezajno, aŭ personaj rajtoj, se vi ne havas la permeson pri tio.",
+      "text4_2": "pornografiaj, perfortgloraj, obscenaj, seksistaj, kalumniaj, rasismaj, anoj de malplimultoj aŭ religioj ofendantaj prezentoj kaj enhavoj, kiuj malobservas la junularprotektan leĝon (Jugendschutzgesetz);",
+      "text4_3": "Propagandiloj kaj insignoj de organizaĵoj kontraŭleĝaj;",
+      "text4_4": "ĝenaj, ofendaj, kalumniaj, minacantaj enhavoj kaj diskriminaciaj eldiroj;",
+      "text4_5": "privataj informoj de aliaj uzantoj (ekz. adreso, telefonnumero, bankinformoj) respektive citaĵoj el privata komunikado kun aliaj uzantoj, la ofertantoj/administrantoj de la retpaĝo aŭ aliuloj.",
+      "text4_6": "Ligiloj al retpaĝoj kun kontraŭleĝaj enhavoj;",
+      "text4_7": "ĉiu nepetita aŭ nepermesita reklamo, reklammaterialoj, rubmesaĝoj, ĉenleteroj, neĝbul- aŭ piramidaj sistemoj kaj ĉiuspeca klientreklamo;",
+      "text4_8": "ĉiuj materialoj, kiu enhavas virusojn, vermojn, trojanojn aŭ aliajn programetojn, kiuj minacas aŭ malhelpas la ekziston aŭ la funkciadon de ĉi tiu aŭ aliaj retpaĝoj;",
+      "text5": "Sekvaj agoj ne estas permesitaj al la uzanto:",
+      "text5_1": "uzi la konton de alia uzanto aŭ uzi aŭ provi uzi la sistemon sen permeso de la ofertanto;",
+      "text5_2": "ŝajnigi esti alia persono aŭ enmeti falsajn informojn pri si",
+      "text5_3": "la blokadon de la retpaĝfunkcioj, la surskribo, ŝanĝo aŭ kopiado de la enhavo, de la programkodo kaj/aŭ de la datenoj de la retpaĝo, kaj la aŭtomatigita elpreno de enhavo, se ĝi ne estas necesa por la normala uzo de la servo de la retpaĝo;",
+      "text6": "La ofertanto de la retpaĝo rezervas al si la rajton forigi nepermesitajn kontribuojn (inkluzive de privataj mesaĝoj kaj bildoj) aŭ la konton de la uzanto, kiu kontraŭas la aktualajn uzantkondiĉojn en iu ajn momento ankaŭ sen antaŭ averto.",
+      "title": "Devoj de la uzanto"
+    },
+    "section4": {
+      "text1": "La ofertanto havas la rajton, laŭ propra decido, ŝanĝi aŭ ne plu oferti la servon en iu ajn momento.",
+      "title": "Ŝanĝo de la oferto"
+    },
+    "section5": {
+      "text1": "La ofertanto de la retpaĝo donas al vi, kiel uzanto, personigitan, tutmonde validan, ne transdoneblan kaj en-ekskluzivan rajton, uzi la servojn laŭ la priskribitaj uzkondiĉoj.",
+      "text2": "Kiel uzanto vi donas al la retpaĝo, la tutmondan, ne ekskluzivan, senpagan, transdoneblan, tempe, enhave kaj loke nelimigitan rajton, uzi la de vi enmetitajn enhavojn en ĉiuj medioj, kiun uzas la ofertanto. La ofertanto de la retpaĝo speciale havas la rajton uzi tiujn enhavojn en ĉiuj medioj, publikigi, plimultigi, kopii kaj disvastigi ilin kaj adapti, ŝanĝi aŭ prilabori ilin.",
+      "text3": "Kiel uzanto vi garantias, ke la de vi alŝutitaj enhavoj estas liberaj de rajtoj de aliaj kaj povas esti uzitaj kadre de 5.2. Vi garantias, ke vi havas ĉiujn rajtojn kaj permesojn, kiuj estas bezonataj, por garantii la transdonon de la rajtoj de la de vi alŝutitaj enhavoj.",
+      "text4": "La rajtojn, kiujn vi transdonis al la retpaĝo kaj la antaŭe klarigitaj garanti- kaj kompenspostuloj ne ĉesas per la fino de la uzantrilato.",
+      "title": "Transdono de rajtoj"
+    },
+    "section6": {
+      "text1": "Ĉiuj tekstoj, bildoj kaj aliaj en la retpaĝo publikigitaj enhavoj, krom la de la uzantoj enmetitaj enhavoj falas – se ne markita alimaniere – sub la kopirajto de slovake.eu kaj ne rajtas esti uzitaj de uzantoj aŭ aliuloj ekstere de la retpaĝo, enrete aŭ eksterrete.",
+      "title": "Rajto je posedo"
+    },
+    "section7": {
+      "text1": "La membreco ĉe la retpaĝo komenciĝas ĉe la registriĝo, la akcepto de la uzantkondiĉoj kaj de la deklaro pri privateco. Ĝi daŭras je nedifinita tempo.",
+      "text2": "Vi povas malaboni la servon en iu ajn momento kaj sen mencii kaŭzojn ĉe {link}. Post la malabono vi ne plu havos aliron a lla profiloj kaj ĉiuj en ĝi ekzistantaj informoj estos forigitaj. Vi akceptas, ke kelkaj enhavoj (kiel ekz. komentoj, forumkontribuoj, kaj novaĵoj), kiuj ne estas rekte ligita kun la profilo, daŭre estos alireblaj por aliuloj. Vi ne havas la rajton pri transdono aŭ uzo de la de vi kreitaj enhavoj.",
+      "text3": "Tio ne tuŝas la rajton je eksterordinara fino de la kontrakto pro grava kaŭzo. Estus grava kaŭzo, se iu el la kontraktpartioj agus kontraŭ la devoj de tiuj uzantkondiĉoj. Kaze de eksterordinara fino de la kontrakto fare de la ofertanto vi tute estos ekskluditaj de la plua uzo de la retpaĝo. Tiel ankaŭ novregistriĝo ne estas permesita.",
+      "text4": "La ofertanto de la retpaĝo rezervas al si la rajton, forigi konton de uzanto, se la konto ne estas uzita dum daŭro de pli ol 6 monatoj.",
+      "title": "Tempodaŭro kaj fino"
+    },
+    "section8": {
+      "text1": "La ofertanto klopodas teni la funkciadon de la retpaĝo sendanĝera, senerara kaj sekura, tamen ĝi ne garantias, ke la retpaĝo en iu ajn momento estas sendanĝera, sekura kaj senerara. Krome ne estas garantio, ke ĝi ĉiam funkcias sen interrompoj, malfruoj aŭ eraretoj.",
+      "text2": "La ofertanto ekskludas la respondecon por leĝera neglekto de devoj, se el ĝi ne rezultas damaĝoj de vivo, korpo aŭ sano aŭ se ne estas tuŝitaj postuloj el la leĝo pri produktrespondeco (Produkthaftungsgesetz). Netuŝita de tio krome restas la respondeco pri lezo de devoj, kiuj nur ebligas la laŭordan realigon de la uzantrilato kaj je kies priatento la uzanto rajtas fidi. La samo validas por lezo de devoj fare de likvida helpanto.",
+      "text3": "Laŭ la leĝaj reguloj la ofertanto de tiu retpaĝo, kiel servoofertanto ne estas devigata inspekti la transdonitajn kaj konservitajn informojn aŭ esplori cirkonstancojn, kiuj indikas kontraŭleĝan agadon. Ĝi ne transprenas la respondecon rilate al enhavoj enmetitaj de la uzantoj, datenoj kaj/aŭ informoj, faritaj eldiroj aŭ enhavoj sur ekstere ligitaj retpaĝoj.",
+      "text4": "Kvankam ni zorge kontrolas la enhavon, la ofertanto de la retpaĝo ne transprenas la respondecon pri la enhavo de eksteraj ligiloj. Por la enhavo de ligitaj paĝoj nur respondecas ties funkciiganto.",
+      "text5": "La ofertanto de la retpaĝo ne estas respondeca pri enhavo kaj ĝusteco de reklamanoncoj. Nur la aŭtoro de la reklamanonco respondecas sola pri la enhavo. La samo validas por la enhavo de la privarbata retpaĝo. Ĉe montro de reklamanonco en la retpaĝo, la ofertanto ne samtempe kunakordas kun eventuala kontraŭleĝa enhavo. Pro tio la respondeco pri ĝi nur estas ĉe la kliento, kiu mendis la reklamon.",
+      "text6": "Kiel uzanto vi liberigas la ofertanton de la retpaĝo de ĉiuj postuloj, inkluzive de postuloj pro damaĝkompenso, kiuj aliaj uzantoj aŭ ceteraj aliuloj validigas kontraŭ la ofertanto pro lezo de rajtoj fare de vi, respektive kaŭze de la de vi kreitaj enhavoj. La uzanto, kiu publikigis la koncernajn enhavojn en la retpaĝo, transprenas ĉiujn kostojn, estigitajn ala ofertanto pro lezo de rajtoj de aliuloj, inkluzive de normalaj kostoj por jura defendo. Ĉiuj aldonaj rajtoj pro damaĝkompenso de la ofertanto restas netuŝitaj.",
+      "title": "Respondeco"
+    },
+    "section9": {
+      "text1": "Por tiuj uzantkondiĉoj kaj ĉiuj kvereloj kun tiuj uzantkondiĉoj nur validas la leĝaro de Germanujo, Liverloko kaj nura loko de respondeca juĝejo, se leĝe permesita, estas Berlin.",
+      "text2": "Nur la germana versio de la uzantkondiĉoj estas jure valida.",
+      "text3": "La ofertanto de la retpaĝo rezervas al si la rajton, ŝanĝi tiujn uzantkondiĉojn en iu ajn momento, sen mencii kaŭzojn. La plej aktuala versio ĉiam estas trovebla ĉe {link}. Ni ne informos la uzantojn post ŝanĝo de la uzantkondiĉoj, sed la uzantoj mem havas la respondecon legi kaj esplori la aktualajn uzantkondiĉojn. Pluuzo de la retpaĝo post ŝanĝo de la uzantkondiĉoj signifas, ke la uzanto konsentas pri la ŝanĝoj kaj akceptas ilin.",
+      "text4": "La ofertanto povas, informante la uzantojn per retpoŝto, transdoni la rajtojn kaj devojn el tiu uzantrilato, komplete aŭ parte al aliuloj.",
+      "text5": "Informoj por kontaktigi la ofertanton aŭ la retpaĝadministranton troviĝas ĉe Kontaktseite.",
+      "title": "Finaj rimarkoj"
+    }
+  }
+}

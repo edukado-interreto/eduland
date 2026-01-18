@@ -20,7 +20,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         "exercise-vue": "src/exercise.ts",
-        // "editor-vue": "src/editor.ts",
+        "editor-vue": "src/editor.ts",
       },
     },
   },
