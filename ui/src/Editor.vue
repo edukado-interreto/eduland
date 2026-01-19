@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const textarea: HTMLTextAreaElement = document.getElementById("id_data");
-const exercise = JSON.parse(textarea.value);
+const exercise =  textarea.value === "{}" ? { sheet: [] } : JSON.parse(textarea.value);
 const sheet = ref(exercise.sheet);
 
 watchEffect(() => {

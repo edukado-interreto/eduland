@@ -1,26 +1,28 @@
-import calendar
-
-from django.shortcuts import render
-from django.utils import timezone
-from django.views.generic import FormView, ListView
+from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView
 from wagtail.admin.panels import (
     FieldPanel,
     FieldRowPanel,
-    MultiFieldPanel,
     ObjectList,
-    PanelGroup,
     TabbedInterface,
+    PanelGroup,
 )
 from wagtail.admin.ui.tables import UpdatedAtColumn, UserColumn
-from wagtail.snippets.views.snippets import SnippetViewSet
-
+from wagtail.snippets.views.snippets import CreateView, SnippetViewSet
 from apps.education.models import Exercise
 
 
 def wagtail_sidebar(response, collapsed):
     response.set_cookie("wagtail_sidebar_collapsed", int(collapsed), samesite="Lax")
     return response
+
+
+class ExerciseCreateView(CreateView):
+    def get_success_url(self):
+        """Redirect to the Editor if the exercise data is empty"""
+        if self.object.has_empty_data:
+            return reverse_lazy("exercise_editor", kwargs={"pk": self.object.pk})
+        return super().get_success_url()
 
 
 class ExerciseFormView(UpdateView):
@@ -50,30 +52,29 @@ class ExerciseViewSet(SnippetViewSet):
     list_per_page = 100
     inspect_view_enabled = True
     add_to_admin_menu = True
+    add_view_class = ExerciseCreateView
     exclude_form_fields = ["lid", "created_by", "lang_learn"]
-    edit_handler: PanelGroup = ObjectList(
+    edit_handler: PanelGroup = TabbedInterface(
         [
             ObjectList(
                 [
-                    FieldPanel("name"),
-                    FieldPanel("description"),
+                    ObjectList([FieldPanel("name"), FieldPanel("description")]),
+                    FieldRowPanel(
+                        [
+                            FieldPanel("src_lang"),
+                            FieldPanel("lang_learn_lang"),
+                            FieldPanel("lang_learn_cefr_level_min"),
+                            FieldPanel("lang_learn_cefr_level_max"),
+                        ],
+                        heading="Languages",
+                    ),
+                    FieldRowPanel(
+                        [FieldPanel("age_min"), FieldPanel("age_max")],
+                        heading="Best for",
+                    ),
                 ],
+                heading="Basic information",
             ),
-            FieldRowPanel(
-                [
-                    FieldPanel("src_lang"),
-                    FieldPanel("lang_learn_lang"),
-                    FieldPanel("lang_learn_cefr_level_min"),
-                    FieldPanel("lang_learn_cefr_level_max"),
-                ],
-                heading="Languages",
-            ),
-            FieldRowPanel(
-                [
-                    FieldPanel("age_min"),
-                    FieldPanel("age_max"),
-                ],
-                heading="Public",
-            ),
+            ObjectList([FieldPanel("data", read_only=True)], heading="Raw data"),
         ]
     )

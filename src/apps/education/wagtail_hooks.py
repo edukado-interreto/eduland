@@ -13,13 +13,13 @@ def register_exercise_list_url():
         path(
             "exercises/edit/<int:pk>/editor/",
             ExerciseFormView.as_view(),
-            name="exercise_edit",
+            name="exercise_editor",
         ),
     ]
 
 
 @hooks.register("after_create_snippet")
-def add_user_to_exercise_snippet(request: HttpRequest, instance: Exercise):
+def fill_empty_field_on_exercise_snippet(request: HttpRequest, instance: Exercise):
     if isinstance(instance, Exercise):
         if not instance.created_by:
             if request.user.is_authenticated:

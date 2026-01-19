@@ -87,6 +87,14 @@ class Exercise(TimeStampedModel, Orderable):
                 self.lid = long_id()
         return super().save(*args, **kwargs)
 
+    @property
+    def has_empty_data(self):
+        try:
+            self.object.data["sheet"][0]
+        except AttributeError, IndexError:
+            return True
+        return False
+
 
 class ModulePage(Page):
     image = models.ForeignKey(
