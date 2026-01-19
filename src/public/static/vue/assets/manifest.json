@@ -33,7 +33,7 @@
     "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2"
   },
   "src/editor.ts": {
-    "file": "assets/editor-vue-BT39wtQN.js",
+    "file": "assets/editor-vue-DkWOMK9G.js",
     "name": "editor-vue",
     "src": "src/editor.ts",
     "isEntry": true,
