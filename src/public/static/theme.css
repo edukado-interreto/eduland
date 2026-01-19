@@ -32,10 +32,10 @@ body.light {
   --surface-dim: #e0d8dc;
   --surface-bright: #fff7fa;
   --surface-container-lowest: #ffffff;
-  --surface-container-low: #faf1f5;
-  --surface-container: #f4ecf0;
-  --surface-container-high: #eee6ea;
-  --surface-container-highest: #e9e0e4;
+  --surface-container-low: #fafafa;
+  --surface-container: #f4f4f4;
+  --surface-container-high: #eeeeee;
+  --surface-container-highest: #e9e9e9;
 
 }
 

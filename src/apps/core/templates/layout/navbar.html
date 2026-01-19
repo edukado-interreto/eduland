@@ -8,10 +8,7 @@
       {% if item.subitems %}
       <button class="transparent extra">
         <span><i class="extra">{{ item.icon }}</i> {{ item.title }}</span>
-        <menu class="left min no-wrap">
-        <li>
-          <i>{{ item.icon }}</i> {{ item.title }}
-        </li>
+        <menu class="no-wrap">
         {% for subitem in item.subitems %}
           <li>
             <a href="{{ subitem.page.url }}">
@@ -47,11 +44,22 @@
       <span><i class="large">menu</i></span>
       <menu class="left no-wrap white">
         {% for item in main_menu %}
-        <li>
-          <a href="#"> <i>{{ item.icon }}</i> {{ item.title }} </a>
-        </li>
+          {% if item.subitems %}
+          {% for subitem in item.subitems %}
+            <li>
+              <a href="{{ subitem.page.url }}">
+                <i>{{ subitem.icon }}</i>
+                <div>{% firstof subitem.title subitem.page.title %}</div>
+              </a>
+            </li>
+          {% endfor %}
+          {% else %}
+          <li>
+            <a href="#"> <i>{{ item.icon }}</i> {{ item.title }} </a>
+          </li>
+          {% endif %}
         {% endfor %}
-        <li class="active"><i>translate</i>{{ page.locale.language_name_localizd | capfirst }}</li>
+        <li class="active text-black"><i>translate</i>{{ page.locale.language_name_localized | capfirst }}</li>
         {% for page_tr in page.get_translations %}
         <li><a href="{{ page_tr.get_url }}"><i>translate</i> {{ page_tr.locale.language_name_local | capfirst }}</a></li>
         {% endfor %}
