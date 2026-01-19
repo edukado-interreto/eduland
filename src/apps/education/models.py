@@ -17,8 +17,10 @@ User = get_user_model()
 CEFR = models.IntegerChoices("CEFR", "A1 A2 B1 B2 C1 C2")
 AGES = [(i, str(i)) for i in range(18)] + [(18, "18+")]
 
+
 def empty_data():
     return {"sheet": list()}
+
 
 class Exercise(TimeStampedModel, Orderable):
     """Testu exercises.Exercise
@@ -80,14 +82,6 @@ class Exercise(TimeStampedModel, Orderable):
         )
 
     def save(self, *args, **kwargs):
-        print("SELF", self)
-        for attr in dir(self):
-            if attr.startswith("__"):
-                continue
-            if attr == "objects":
-                continue
-            print(attr, getattr(self, attr))
-
         if self._state.adding:
             while self.__class__.objects.filter(lid=self.lid).exists():
                 self.lid = long_id()
