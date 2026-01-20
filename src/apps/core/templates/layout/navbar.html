@@ -1,18 +1,20 @@
 {% load ftl static %}{# Icons: https://fonts.google.com/icons #}
 {% url "wagtail_serve" "" as home_url %}
 <header class="white medium-padding medium-elevate indigo-text">
-  <nav class="m l">
-    <a href="{{ home_url }}"><img src="{% static "android-chrome-192x192.png" %}" class="extra round"></a>
-    <h6 class="bold max"><a href="{{ home_url }}">{% ftlmsg "app-project-name" %}</a></h6>
+  <nav class="m l" aria-label="main">
+    <a href="{{ home_url }}" style="display: flex; gap: 1rem">
+      <img src="{% static 'android-chrome-192x192.png' %}" class="extra round" role="presentation">
+      <h6 class="bold max" style="margin: unset">{% ftlmsg "app-project-name" %}</h6>
+    </a>
     {% for item in main_menu %}
       {% if item.subitems %}
       <button class="transparent extra">
-        <span><i class="extra">{{ item.icon }}</i> {{ item.title }}</span>
+        <span><i role="presentation" class="extra">{{ item.icon }}</i> {{ item.title }}</span>
         <menu class="no-wrap">
         {% for subitem in item.subitems %}
           <li>
             <a href="{{ subitem.page.url }}">
-              <i>{{ subitem.icon }}</i>
+              <i role="presentation">{{ subitem.icon }}</i>
               <div>{% firstof subitem.title subitem.page.title %}</div>
             </a>
           </li>
@@ -21,13 +23,13 @@
       </button>
       {% else %}
       <a href="{{ item.page.url }}" class="button transparent extra">
-        <i class="extra">{{ item.icon }}</i>
+        <i role="presentation" class="extra">{{ item.icon }}</i>
         <div>{% firstof item.title item.page.title %}</div>
       </a>
       {% endif %}
     {% endfor %}
     <button class="button transparent extra">
-      <i class="extra">translate</i>
+      <i role="presentation" class="extra">translate</i>
       <menu class="left no-wrap surface-container-lowest">
         <li class="active">{{ page.locale.language_name_localized | capfirst }}</li>
         {% for page_tr in page.get_translations %}
@@ -37,31 +39,31 @@
     </button>
   </nav>
 
-  <nav class="s small">
-    <img src="{% static "android-chrome-192x192.png" %}" class="extra round">
+  <nav class="s small" aria-label="main">
+    <img src="{% static "android-chrome-192x192.png" %}" class="extra round" role="presentation">
     <h6 class="bold max">{% ftlmsg "app-project-name" %}</h6>
     <button class="transparent large round">
-      <span><i class="large">menu</i></span>
+      <span><i role="presentation" class="large">menu</i></span>
       <menu class="left no-wrap white">
         {% for item in main_menu %}
           {% if item.subitems %}
           {% for subitem in item.subitems %}
             <li>
               <a href="{{ subitem.page.url }}">
-                <i>{{ subitem.icon }}</i>
+                <i role="presentation">{{ subitem.icon }}</i>
                 <div>{% firstof subitem.title subitem.page.title %}</div>
               </a>
             </li>
           {% endfor %}
           {% else %}
           <li>
-            <a href="#"> <i>{{ item.icon }}</i> {{ item.title }} </a>
+            <a href="#"> <i role="presentation">{{ item.icon }}</i> {{ item.title }} </a>
           </li>
           {% endif %}
         {% endfor %}
-        <li class="active text-black"><i>translate</i>{{ page.locale.language_name_localized | capfirst }}</li>
+        <li class="active text-black"><i role="presentation">translate</i>{{ page.locale.language_name_localized | capfirst }}</li>
         {% for page_tr in page.get_translations %}
-        <li><a href="{{ page_tr.get_url }}"><i>translate</i> {{ page_tr.locale.language_name_local | capfirst }}</a></li>
+        <li><a href="{{ page_tr.get_url }}"><i role="presentation">translate</i> {{ page_tr.locale.language_name_local | capfirst }}</a></li>
         {% endfor %}
       </menu>
     </button>
