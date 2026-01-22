@@ -4,15 +4,14 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('home', '0011_newsindexpage_newspost'),
-        ('wagtailcore', '0096_referenceindex_referenceindex_source_object_and_more'),
+        ("home", "0011_newsindexpage_newspost"),
+        ("wagtailcore", "0096_referenceindex_referenceindex_source_object_and_more"),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name='AboutPage',
-            new_name='SimplePage',
+            old_name="AboutPage",
+            new_name="SimplePage",
         ),
     ]

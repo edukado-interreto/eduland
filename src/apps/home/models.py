@@ -62,10 +62,11 @@ class NewsIndexPage(Page):
 
 
 class NewsPost(Page):
+    standfirst = models.TextField(default="")
     content = StreamField(
         {"text": RichTextBlock(), "image": ImageBlock()}.items(),
         blank=True,
     )
 
     parent_page_types = ["home.NewsIndexPage"]
-    content_panels = Page.content_panels + ["content"]
+    content_panels = Page.content_panels + ["standfirst", "content"]
