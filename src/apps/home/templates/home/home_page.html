@@ -1,8 +1,9 @@
 {% extends "layout/base.html" %}
 {% load static ftl wagtailcore_tags wagtailimages_tags %}
 
-{% block body_class %}template-homepage{% endblock %}
-{% block main_class %}{% endblock %}
+{% block body_class %}primary-gradient{% endblock %}
+{% block main_class %}responsive max{% endblock %}
+
 {% block extra_css %}{% image page.hero_image width-1024 as hero_image %} {{ block.super }}
     .hero::before {
         background-image: url('{{ hero_image.url }}')

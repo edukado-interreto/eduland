@@ -1,12 +1,21 @@
-{% extends "layout/base.html" %}
+{% extends "home/simple_page.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
-<h1 class="center-align bold white-text" style="margin-top:4vh">{{ self.title }}</h1>
+<div class="heading secondary-gradient medium-elevate white-text">
+  <h1 class="small">{{ self.title }}</h1>
+</div>
 
-<section style="margin-top:4vh">
-<article style="min-height:50vh">
-{{ self.content }}
-</article>
+<section style="margin-top: 4vh">
+  <article class="reactive indigo-text" style="min-height:50vh">
+  <p class="bold standfirst">{{ self.standfirst }}</p>
+  {% for block in self.content %}
+  {% if block.block_type == "image" %}
+    {% image block.value width-800 class="richtext-image full-width" %}
+  {% else %}
+    {{ block }}
+  {% endif %}
+  {% endfor %}
+  </article>
 </section>
 {% endblock content %}

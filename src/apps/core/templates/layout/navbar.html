@@ -2,10 +2,11 @@
 {% url "wagtail_serve" "" as home_url %}
 <header class="white medium-padding medium-elevate indigo-text">
   <nav class="m l" aria-label="main">
-    <a href="{{ home_url }}" style="display: flex; gap: 1rem">
+    <a href="{{ home_url }}" style="display: inline-flex; gap: 1rem">
       <img src="{% static 'android-chrome-192x192.png' %}" class="extra round" role="presentation">
-      <h6 class="bold max" style="margin: unset">{% ftlmsg "app-project-name" %}</h6>
+      <p class="bold" style="font-size: 1.6em; margin: unset">{% ftlmsg "app-project-name" %}</p>
     </a>
+    <div class="max">{# spacer #}</div>
     {% for item in main_menu %}
       {% if item.subitems %}
       <button class="transparent extra">
@@ -41,7 +42,7 @@
 
   <nav class="s small" aria-label="main">
     <img src="{% static "android-chrome-192x192.png" %}" class="extra round" role="presentation">
-    <h6 class="bold max">{% ftlmsg "app-project-name" %}</h6>
+    <p class="bold max" style="font-size: 1.8em">{% ftlmsg "app-project-name" %}</p>
     <button class="transparent large round">
       <span><i role="presentation" class="large">menu</i></span>
       <menu class="left no-wrap white">

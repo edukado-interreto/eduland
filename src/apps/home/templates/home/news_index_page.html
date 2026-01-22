@@ -1,18 +1,19 @@
 {% extends "layout/base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
+{% block main_class %}primary-gradient{% endblock %}
 
 {% block content %}
-<h1 class="center-align bold white-text" style="margin-top:4vh">{{ self.title }}</h1>
+<h1 class="center-align bold white-text" style="margin-top: 4vh">{{ self.title }}</h1>
 
-<section class="center-align white-text">
+<section class="responsive center-align white-text" style="margin-bottom: 4rem">
 {{ self.header | richtext }}
 </section>
 
-<section style="margin-top:4vh">
+<section class="responsive" style="margin-top: 4vh">
 {% for news_page in self.get_children.live %}
-<article href="{{ news_page.url }}">
+<article class="indigo-text" style="padding: 2rem 5vw; margin-bottom: 4vh">
   <h5 class="bold"><a href="{{ news_page.url }}">{{ news_page.title }}</a></h5>
-  <p>{{ news_page.specific.content }}</p>
+  <p><a href="{{ news_page.url }}"><small>{{ news_page.specific.standfirst }}</small></a></p>
 </article>
 {% endfor %}
 </section>

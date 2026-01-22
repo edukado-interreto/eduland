@@ -14,15 +14,25 @@
 }
 
 body {
-  background: var(--primary-gradient);
   min-height: 100vh;
   font-family: "Baloo 2", "Gill Sans", "Gill Sans MT", Roboto, Calibri, "Trebuchet MS", sans-serif;
-  font-size: 18px;
   line-height: 1.4em;
+  font-size: calc(15px + 0.4vw);
+  background: white;
 }
 
-main p {
-  font-size: 20px;
+.primary-gradient {
+  background: var(--primary-gradient);
+}
+
+.secondary-gradient {
+  background: var(--secondary-gradient);
+}
+
+img.full-width {
+  display: block;
+  height: auto;
+  margin: 4rem auto;
 }
 
 article>a {
@@ -31,11 +41,22 @@ article>a {
 
 /*** HEADER ***/
 
+header {
+  /* fix elevation when main has bg color */
+  z-index: 1;
+}
+
 nav .sub {
   margin-left: 2rem;
   block-size: 3rem !important;
 }
 
+
+/*** MAIN ***/
+
+main {
+  padding: 0;
+}
 
 /*** FOOTER ***/
 
@@ -107,5 +128,45 @@ main section.responsive {
 
   img {
     max-height: 8rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Gobo Caps";
+}
+
+/* BeerCSS fix for <i> interpreted as icon */
+main section {
+
+  p,
+  h2,
+  h3,
+  h4 {
+    i {
+      font-style: italic;
+      --_size: unset;
+      border-radius: unset;
+      box-sizing: unset;
+      direction: unset;
+      display: unset;
+      font-family: unset;
+      font-feature-settings: unset;
+      font-size: unset;
+      font-weight: unset;
+      inline-size: unset;
+      letter-spacing: unset;
+      line-height: unset;
+      min-block-size: unset;
+      min-inline-size: unset;
+      text-align: unset;
+      text-transform: unset;
+      vertical-align: unset;
+      white-space: unset;
+      word-wrap: unset;
+    }
   }
 }

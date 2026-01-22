@@ -1,7 +1,10 @@
-{% extends "layout/base.html" %}
+{% extends "home/simple_page.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 
+{% block main_class %}responsive max{% endblock %}
+
 {% block extra_css %}
+{{ block.super }}
 .youtube {
   position: relative;
   text-align: center;
@@ -15,12 +18,15 @@
 {% endblock %}
 
 {% block content %}
-<section class="large-margin large-padding">
-<h1 class="center-align bold white-text">{{ self.title }}</h1>
+<div class="heading secondary-gradient medium-elevate white-text">
+  <h1>{{ self.title }}</h1>
+</div>
+
+<section class="responsive">
 
 {% for content in self.body %}
   {% if content.block_type == "text" %}
-    <div class="large-margin large-padding">{{ content }}</div>
+    <div class="indigo-text">{{ content }}</div>
   {% elif content.block_type == "video" %}
     {% include "core/video_block.html" with video=content %}
   {% elif content.block_type == "pdf" %}
@@ -28,10 +34,10 @@
       <a
         href="{{ content.value.url }}"
         target="_blank"
-        class="button extra margin surface-container-lowest primary-text elevate"
+        class="button extra margin surface-container-lowest primary-gradient elevate"
         style="min-width:16em;font-size:1.2em"
       >
-        <b class="primary-text">PDF: {{ content.value }}</b>
+        <b class="white-text">PDF: {{ content.value }}</b>
       </a>
     </div>
   {% else %} {# never reached #}
@@ -48,10 +54,10 @@
 <div class="s12 center-align">
   <a
     href="{{ exercise_page.url }}"
-    class="button extra margin surface-container-lowest primary-text elevate"
+    class="button extra margin surface-container-lowest primary-gradient elevate"
     style="min-width:16em;font-size:1.2em"
   >
-    <b class="primary-text">{{ exercise_page.title }}</b>
+    <b class="white-text">{{ exercise_page.title }}</b>
   </a>
 </div>
 {% endfor %}

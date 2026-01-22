@@ -1,23 +1,32 @@
 {% extends "layout/base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 
+{% block body_class %}primary-gradient{% endblock %}
+{% block main_class %}responsive{% endblock %}
+
 {% block content %}
 <h1 class="center-align bold white-text" style="margin-top:4vh">{{ self.title }}</h1>
 
 <section style="margin-top:4vh">
 {% for unit_page in self.get_children.live %}
-    {% image unit_page.specific.image height-500 as illustration %}
-    <article class="no-padding round" style="width:80vw;margin-left:auto;margin-right:auto">
-        <a href="{{ unit_page.url }}">
-          <img class="responsive medium" src="{{ illustration.url }}">
-          <div class="absolute bottom left right padding bottom-shadow bottom-round white-text">
-            <nav>
-              <h3><b>{{ unit_page.title }}</b></h5>
-              <div class="max"></div>
-            </nav>
-          </div>
-      </a>
-    </article>
+  {% image unit_page.specific.image height-500 as illustration %}
+  <a href="{{ unit_page.url }}" class="unit round">
+    <h2 class="center-align white-text">{{ unit_page.title }}</h2>
+    <img class="full-width" src="{{ illustration.url }}">
+  </a>
 {% endfor %}
 </section>
 {% endblock content %}
+
+{% block extra_css %}
+h1 {
+  margin-bottom: 6rem;
+}
+a.unit {
+  display: block;
+
+  h2 {
+    margin-bottom: -2rem;
+  }
+}
+{% endblock %}

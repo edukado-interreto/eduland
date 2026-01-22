@@ -1,10 +1,50 @@
 {% extends "layout/base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
+{% block main_class %}responsive max{% endblock %}
 
 {% block content %}
-<h1 class="center-align bold white-text" style="margin-top:4vh">{{ self.title }}</h1>
+<div class="heading secondary-gradient medium-elevate white-text">
+  <h1>{{ self.title }}</h1>
+</div>
 
 <section style="margin-top:4vh">
-{{ self.content | richtext }}
+  <article class="reactive indigo-text" style="min-height:50vh">
+    {{ self.content | richtext }}
+  </article>
 </section>
 {% endblock content %}
+
+{% block extra_css %}
+{{ block.super }}
+.heading {
+  margin-top: -1rem;
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+}
+h1 {
+  max-inline-size: min(100vw,75rem);
+  text-align: center;
+  font-weight: bold;
+  margin: 4vh auto;
+}
+
+section {
+  article {
+    margin: 5vh 0;
+    background-color: white;
+  	box-shadow: none;
+  	padding: var(--_padding);
+
+    &.reactive {
+      max-inline-size: min(100vw,75rem);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .standfirst {
+      margin-bottom: 5vh;
+    }
+  }
+}
+
+{% endblock %}

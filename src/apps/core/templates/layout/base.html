@@ -24,7 +24,7 @@
     </style>
     {% block extra_head %}{% endblock %}
   </head>
-  <body>
+  <body class="{% block body_class %}{% endblock %}">
     {% include "layout/navbar.html" %}
     <main class="{% block main_class %}responsive{% endblock %}">
       {% block content %}{% endblock %}
