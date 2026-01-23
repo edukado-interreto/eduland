@@ -140,33 +140,27 @@ h5 {
 }
 
 /* BeerCSS fix for <i> interpreted as icon */
-main section {
-
-  p,
-  h2,
-  h3,
-  h4 {
-    i {
-      font-style: italic;
-      --_size: unset;
-      border-radius: unset;
-      box-sizing: unset;
-      direction: unset;
-      display: unset;
-      font-family: unset;
-      font-feature-settings: unset;
-      font-size: unset;
-      font-weight: unset;
-      inline-size: unset;
-      letter-spacing: unset;
-      line-height: unset;
-      min-block-size: unset;
-      min-inline-size: unset;
-      text-align: unset;
-      text-transform: unset;
-      vertical-align: unset;
-      white-space: unset;
-      word-wrap: unset;
-    }
+main {
+  i:not([role="presentation"]):not(.v-icon) {
+    font-style: italic;
+    --_size: unset;
+    border-radius: unset;
+    box-sizing: unset;
+    direction: unset;
+    display: unset;
+    font-family: unset;
+    font-feature-settings: unset;
+    font-size: unset;
+    font-weight: unset;
+    inline-size: unset;
+    letter-spacing: unset;
+    line-height: unset;
+    min-block-size: unset;
+    min-inline-size: unset;
+    text-align: unset;
+    text-transform: unset;
+    vertical-align: unset;
+    white-space: unset;
+    word-wrap: unset;
   }
 }

@@ -5,33 +5,50 @@
   {% vite_asset "src/exercise.ts" %}
 {% endblock %}
 
+{% block extra_css %}
+  #breadcrumbs {
+    i[role="presentation"] {
+      font-size: 1.5em;
+      bottom: 0.05em;
+    }
+  }
+{% endblock %}
+
+{% block body_class %}secondary-gradient{% endblock %}
+{% block main_class %}{% endblock %}
+
 {% block content %}
+<div id="breadcrumbs" aria-role="navigation">
 <p class="margin small-opacity white-text">
   <a href="{{ page.get_parent.get_parent.url }}">{{ page.get_parent.get_parent }}</a>
-  <i class="medium-opacity" style="font-size:2rem">chevron_right</i>
+  <i role="presentation" class="medium-opacity">chevron_right</i>
   <a href="{{ page.get_parent.url }}">{{ page.get_parent }}</a>
-  <i class="medium-opacity" style="font-size:2rem">chevron_right</i>
+  <i role="presentation" class="medium-opacity">chevron_right</i>
   {{ self }}
 </p>
+</div>
 
+<section class="responsive">
 <h1 class="large-margin center-align white-text">{{ page.title }}</h1>
+
 {% with value=page.exercise.first_block_by_name.exercise.value %}
 {% if value.testu_link %}
-<article
-  id="testu-exercise"
-  style="height:200vh; overflow-y:auto; resize:vertical"
-  class="round large-margin surface-container-lowest"
->
- <iframe src="{{ value.testu_link }}" style="height:100%;width:100%" frameborder="0"></iframe></article>
-{% elif value.exercise %}
-<article
-  id="exercise"
-  class="round large-margin surface-container-lowest"
-  style="min-height:80vh"
->
-  <code id="exercise-data" style="display:none">{% autoescape off %}{{ exercise }}{% endautoescape %}</code>
-  <div id="mount-exercise"></div>
-</article>
+  <article
+    id="testu-exercise"
+    style="height:200vh; overflow-y:auto; resize:vertical"
+    class="round large-margin surface-container-lowest"
+  >
+   <iframe src="{{ value.testu_link }}" style="height:100%;width:100%" frameborder="0"></iframe></article>
+  {% elif value.exercise %}
+  <article
+    id="exercise"
+    class="round large-margin surface-container-lowest"
+    style="min-height:80vh"
+  >
+    <code id="exercise-data" style="display:none">{% autoescape off %}{{ exercise }}{% endautoescape %}</code>
+    <div id="mount-exercise"></div>
+  </article>
 {% endif %}
 {% endwith %}
+</section>
 {% endblock content %}
