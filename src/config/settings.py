@@ -30,6 +30,7 @@ DJANGO_CONTRIB_APPS = [
     "contenttypes",
     "sessions",
     "messages",
+    "postgres",
     "staticfiles",
 ]
 WAGTAIL_APPS = [
