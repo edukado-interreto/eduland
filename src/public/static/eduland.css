@@ -164,3 +164,9 @@ main {
     word-wrap: unset;
   }
 }
+
+.gap-select {
+  .v-field {
+      font-size: calc(15px + 0.4vw) !important;
+  }
+}

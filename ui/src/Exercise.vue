@@ -31,9 +31,6 @@ const submit = () => {
       <div class="text-h4 my-4">
         <span v-if="exercise.sheet.length > 1">{{ i + 1 }}.</span>
         <span class="font-weight-medium">{{ unit.title }}</span>
-        <span v-if="unit.title === ''" class="font-italic">
-          {{ $t("sheet_editor.untitled_unit") }}
-        </span>
       </div>
       <div v-if="unit.description" class="body-2 mb-4 pre-line">
         <RichContent :text="unit.description" />
