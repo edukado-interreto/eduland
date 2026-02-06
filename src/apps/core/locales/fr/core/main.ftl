@@ -7,3 +7,8 @@ app-modules-about-language = À propos de la langue
 app-modules-about-history = À propos de l’histore
 app-modules-about-eu = À propos de l’UE
 app-methodology = Méthodologie
+edu-exercises = {$count ->
+  [zero] Exercice
+  [one] Exercice
+  *[other] Exercices
+}

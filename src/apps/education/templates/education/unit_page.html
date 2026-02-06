@@ -1,5 +1,5 @@
 {% extends "home/simple_page.html" %}
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load ftl static wagtailcore_tags wagtailimages_tags %}
 
 {% block main_class %}responsive max{% endblock %}
 
@@ -34,10 +34,13 @@
       <a
         href="{{ content.value.url }}"
         target="_blank"
-        class="button extra margin surface-container-lowest primary-gradient elevate"
+        class="pdf button extra margin surface-container-lowest secondary-gradient medium-elevate small-round"
         style="min-width:16em;font-size:1.2em"
       >
-        <b class="white-text">PDF: {{ content.value }}</b>
+        <b class="white-text">
+          <i role="presentation" class="extra">picture_as_pdf</i>
+          {{ content.value }}
+        </b>
       </a>
     </div>
   {% else %} {# never reached #}
@@ -49,8 +52,11 @@
   {% endif %}
 {% endfor %}
 
+{% with exercise_pages=page.get_children.live %}
+<h2 class="padding margin center-align primary-text">{% ftlmsg "edu-exercises" count=exercise_pages|length %}</h2>
+
 <div class="grid space">
-{% for exercise_page in page.get_children.live %}
+{% for exercise_page in exercise_pages %}
 <div class="s12 center-align">
   <a
     href="{% pageurl exercise_page %}"
@@ -62,6 +68,7 @@
 </div>
 {% endfor %}
 </div>
+{% endwith %}
 
 </section>
 {% endblock content %}

@@ -91,7 +91,7 @@ main>footer {
 }
 
 main section.responsive {
-  margin-bottom: 4rem
+  margin-block: 3rem
 }
 
 .card-medium {
@@ -139,6 +139,10 @@ h5 {
   font-family: "Gobo Caps";
 }
 
+.pdf.button {
+  margin-block: 3em;
+}
+
 /* BeerCSS fix for <i> interpreted as icon */
 main {
   i:not([role="presentation"]):not(.v-icon) {
@@ -167,6 +171,6 @@ main {
 
 .gap-select {
   .v-field {
-      font-size: calc(15px + 0.4vw) !important;
+    font-size: calc(15px + 0.4vw) !important;
   }
 }

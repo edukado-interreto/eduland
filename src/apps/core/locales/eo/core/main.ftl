@@ -7,3 +7,8 @@ app-modules-about-language = Pri lingvo
 app-modules-about-history = Pri historio
 app-modules-about-eu = Pri EU
 app-methodology = Metodologio
+edu-exercises = {$count ->
+  [zero] Ekzerco
+  [one] Ekzerco
+  *[other] Ekzercoj
+}
