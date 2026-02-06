@@ -1,4 +1,4 @@
-{% load ftl static %}{# Icons: https://fonts.google.com/icons #}
+{% load ftl wagtailcore_tags static %}{# Icons: https://fonts.google.com/icons #}
 {% url "wagtail_serve" "" as home_url %}
 <header class="white medium-padding medium-elevate indigo-text">
   <nav class="m l" aria-label="main">
@@ -14,18 +14,18 @@
         <menu class="no-wrap">
         {% for subitem in item.subitems %}
           <li>
-            <a href="{{ subitem.page.url }}">
+            <a href="{% pageurl subitem.page.localized %}">
               <i role="presentation">{{ subitem.icon }}</i>
-              <div>{% firstof subitem.title subitem.page.title %}</div>
+              <div>{% firstof subitem.title subitem.page.localized.title %}</div>
             </a>
           </li>
         {% endfor %}
         </menu>
       </button>
       {% else %}
-      <a href="{{ item.page.url }}" class="button transparent extra">
+      <a href="{% pageurl item.page.localized %}" class="button transparent extra">
         <i role="presentation" class="extra">{{ item.icon }}</i>
-        <div>{% firstof item.title item.page.title %}</div>
+        <div>{% firstof item.title item.page.localized.title %}</div>
       </a>
       {% endif %}
     {% endfor %}
@@ -52,7 +52,7 @@
             <li>
               <a href="{{ subitem.page.url }}">
                 <i role="presentation">{{ subitem.icon }}</i>
-                <div>{% firstof subitem.title subitem.page.title %}</div>
+                <div>{% firstof subitem.title subitem.page.localized.title %}</div>
               </a>
             </li>
           {% endfor %}

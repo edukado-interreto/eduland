@@ -1,5 +1,7 @@
 from dataclasses import asdict, dataclass
 
+from django.utils.translation import activate, get_language
+
 from wagtail.models import Locale, Page
 
 from apps.core.ftl_bundles import main
