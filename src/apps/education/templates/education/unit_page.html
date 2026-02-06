@@ -53,7 +53,7 @@
 {% for exercise_page in page.get_children.live %}
 <div class="s12 center-align">
   <a
-    href="{{ exercise_page.url }}"
+    href="{% pageurl exercise_page %}"
     class="button extra margin surface-container-lowest primary-gradient elevate"
     style="min-width:16em;font-size:1.2em"
   >

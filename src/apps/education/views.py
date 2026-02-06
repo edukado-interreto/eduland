@@ -47,8 +47,15 @@ class ExerciseViewSet(SnippetViewSet):
     menu_name = "exercise"
     url_prefix = "exercises"
     edit_template_name = "education/exercise_admin_form.html"
-    list_filter = ["src_lang"]
-    list_display = ["name", "language", UserColumn("created_by"), UpdatedAtColumn()]
+    list_filter = ["src_lang", "lang_learn_lang"]
+    list_display = [
+        "name",
+        "title",
+        "language",
+        "teaching",
+        UserColumn("created_by"),
+        UpdatedAtColumn(),
+    ]
     list_per_page = 100
     inspect_view_enabled = True
     add_to_admin_menu = True
@@ -58,7 +65,13 @@ class ExerciseViewSet(SnippetViewSet):
         [
             ObjectList(
                 [
-                    ObjectList([FieldPanel("name"), FieldPanel("description")]),
+                    ObjectList(
+                        [
+                            FieldPanel("name"),
+                            FieldPanel("title"),
+                            FieldPanel("description"),
+                        ]
+                    ),
                     FieldRowPanel(
                         [
                             FieldPanel("src_lang"),

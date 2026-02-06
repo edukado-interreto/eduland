@@ -8,6 +8,7 @@ from django.urls import reverse_lazy
 from django_extensions.db.models import TimeStampedModel
 from wagtail.fields import StreamField
 from wagtail.models import Orderable, Page
+from wagtail.search import index
 
 from apps.core.utils import long_id
 from apps.education.blocks import ExerciseBlock, UnitStreamBlock
@@ -18,11 +19,15 @@ CEFR = models.IntegerChoices("CEFR", "A1 A2 B1 B2 C1 C2")
 AGES = [(i, str(i)) for i in range(18)] + [(18, "18+")]
 
 
+def display_language(code: str) -> str:
+    return dict(settings.LANGUAGES).get(code, "N/A")
+
+
 def empty_data():
     return {"sheet": list()}
 
 
-class Exercise(TimeStampedModel, Orderable):
+class Exercise(TimeStampedModel, index.Indexed, Orderable):
     """Testu exercises.Exercise
 
     Removed fields: tags, reactions, searchable
@@ -34,6 +39,12 @@ class Exercise(TimeStampedModel, Orderable):
         "lid", unique=True, max_length=8, default=long_id, blank=True
     )
     name = models.CharField("name", max_length=100)
+    title = models.CharField(
+        "title",
+        help_text="The users will only see this name",
+        max_length=100,
+        blank=True,
+    )
     description = models.TextField("description", blank=True)
     created_by = models.ForeignKey(
         User, on_delete=models.SET_NULL, blank=True, null=True
@@ -68,13 +79,26 @@ class Exercise(TimeStampedModel, Orderable):
             models.Index(fields=["lid"], name="exercise_lid_idx"),
         ]
 
+    search_fields = [
+        index.SearchField("name"),
+        index.SearchField("title"),
+        index.AutocompleteField("name"),
+        index.AutocompleteField("title"),
+    ]
+
     def __str__(self):
-        return self.name
+        fields = (self.name, self.language, self.title)
+        return " • ".join(f for f in fields if f)
 
     @property
     @admin.display(ordering="src_lang")
     def language(self):
-        return dict(settings.LANGUAGES).get(self.src_lang, "N/A")
+        return display_language(self.src_lang)
+
+    @property
+    @admin.display(ordering="lang_learn_lang")
+    def teaching(self):
+        return display_language(self.lang_learn_lang)
 
     def get_absolute_url(self):
         return reverse_lazy(
@@ -125,19 +149,8 @@ class UnitPage(Page):
 
 
 class ExercisePage(Page):
-    exercise = StreamField(
-        [("exercise", ExerciseBlock())],
-        block_counts={"exercise": {"max_count": 1}},
-    )
+    exercise = models.ForeignKey(Exercise, on_delete=models.SET_NULL, null=True)
 
     parent_page_types = ["education.UnitPage"]
     subpage_types = []
     content_panels = Page.content_panels + ["exercise"]
-
-    def get_context(self, request, *args, **kwargs):
-        context = super().get_context(request, *args, **kwargs)
-
-        exercise_block: ExerciseBlock = self.exercise.first_block_by_name("exercise")
-        if exercise := exercise_block.value.get("exercise"):
-            context["exercise"] = json.dumps(exercise.data, ensure_ascii=False)
-        return context
