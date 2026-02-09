@@ -14,6 +14,7 @@ declare module 'vue' {
     CopyTextField: typeof import('./src/components/CopyTextField.vue')['default']
     ExerciseFooterAttributes: typeof import('./src/components/ExerciseFooterAttributes.vue')['default']
     ExerciseListItem: typeof import('./src/components/ExerciseListItem.vue')['default']
+    OptionsSelector: typeof import('./src/components/OptionsSelector.vue')['default']
     PlayGapSelect: typeof import('./src/components/PlayGapSelect.vue')['default']
     RichContent: typeof import('./src/components/RichContent.vue')['default']
     RichContentImage: typeof import('./src/components/RichContentImage.vue')['default']
