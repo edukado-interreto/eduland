@@ -56,7 +56,7 @@ const choices = computed(() => {
  * @returns {int}
  */
 const longest_choice_length = computed(() => {
-  return Math.max(...choices.value.map(s => s.length))
+  return Math.max(...choices.value.map(s => s.value?.length || 1))
 })
 
 /**
@@ -68,7 +68,9 @@ const gap_width = computed(() => {
   // open answer without options, return a standard size
   // that should fit for a generic answer
 
-  return longest_choice_length.value + 7 + "ch"
+  const chars = longest_choice_length.value
+  const icon_width = "1em"
+  return `calc(${chars + 7}ch + ${icon_width})`
   // FIXME
   // heuristic calculation: to display the string "0"
   // into the v-select, a minimum width of 8ch was
@@ -123,8 +125,8 @@ watch(answer, value => {
     density="compact"
     variant="underlined"
     class="position-relative mx-1 text-center"
-    style="display: inline-block; top: 0.4rem"
-    :style="`width: ${gap_width}`"
+    style="display: inline-block; bottom: 0.3rem; "
+    :width="gap_width"
     v-model="answer"
     :color="!silent && !!success ? 'success' : undefined"
     :error="!silent && !success"
@@ -135,7 +137,7 @@ watch(answer, value => {
     :readonly="readonly || (once && success !== undefined)"
   >
     <template v-if="!silent" #prepend-inner>
-      <v-icon :color="!silent && !!success ? 'success' : undefined">
+      <v-icon size="x-small" :color="!silent && !!success ? 'success' : undefined">
         {{ icon }}
       </v-icon>
     </template>

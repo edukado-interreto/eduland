@@ -53,7 +53,9 @@
 {% endfor %}
 
 {% with exercise_pages=page.get_children.live %}
+{% if exercise_pages %}
 <h2 class="padding margin center-align primary-text">{% ftlmsg "edu-exercises" count=exercise_pages|length %}</h2>
+{% endif %}
 
 <div class="grid space">
 {% for exercise_page in exercise_pages %}

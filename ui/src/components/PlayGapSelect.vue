@@ -45,7 +45,7 @@ const longest_choice_length = computed(() =>
   Math.max(...choices.value.map((s: any) => s.value.length)),
 )
 
-const gap_width = computed(() => `calc(${longest_choice_length.value}ch + 7em)`)
+const gap_width = computed(() => `calc(${longest_choice_length.value + 7}ch + 4em)`)
 
 const success = computed(() => {
   if ("right" in (answer.value || {})) {
@@ -108,14 +108,19 @@ defineExpose({ answer, choices })
     :success="!props.silent && success === true"
     :error-messages="error_messages"
     :error="!props.silent && success === false"
-    :prepend-inner-icon="icon"
     @change="onChange"
     :readonly="props.readonly || (props.once && success !== undefined)"
     :width="gap_width"
     hide-details="auto"
     density="compact"
     variant="underlined"
-  />
+  >
+    <template v-if="!silent" #prepend-inner>
+      <v-icon size="x-small" :color="!silent && !!success ? 'success' : undefined">
+        {{ icon }}
+      </v-icon>
+    </template>
+  </v-select>
 </template>
 
 <style scoped lang="scss">

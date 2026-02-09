@@ -169,8 +169,7 @@ main {
   }
 }
 
-.gap-select {
-  .v-field {
-    font-size: calc(15px + 0.4vw) !important;
-  }
+.v-field,
+.v-list-item-title {
+  font-size: calc(15px + 0.4vw) !important;
 }
