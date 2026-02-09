@@ -218,7 +218,6 @@ DJANGO_VITE = {
     }
 }
 
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGGING: dict[str, Any] = {
     "version": 1,
