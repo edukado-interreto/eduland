@@ -16,13 +16,24 @@
 {% block extra_css %}
 <style>
 .w-header { margin-bottom: 0; }
+button.sidebar-menu-item__link,
+form[role="search"] button[type="submit"] {
+  color: var(--w-color-text-label-menus-default);
+}
 #mount-editor { margin-left: -5rem; }
+input:focus-visible { outline: unset !important; }
 {% for field_name in form.fields %}
   #id_{{ field_name }}, #id_{{ field_name }}-label { display: none; }
 {% endfor %}
 input[type="text"], input[type="text"]:focus { border: none; }
 body .pre-line span { font-size: 18px }
 .v-input.gap-select { bottom: -0.5em !important; }
+.v-input.v-text-field { bottom: -0.6em !important; }
+input[type="text"].v-field__input{
+  padding-inline: var(--v-field-padding-start) var(--v-field-padding-end);
+  padding-top: var(--v-field-input-padding-top);
+  padding-bottom: var(--v-field-input-padding-bottom);
+}
 </style>
 {{ block.super }}
 {% endblock %}

@@ -800,10 +800,10 @@ defineExpose({
                 </v-btn>
               </v-col>
               <v-col class="ms-4">
-                <div class="text-h4 my-4">
+                <div v-if="section.title" class="text-h4 my-4">
                   <span v-if="sheet.length > 1">{{ i + 1 }}.</span>
                   {{ section.title }}
-                  <span v-if="section.title === ''" class="font-italic">
+                  <span class="font-italic">
                     {{ $t("sheet_editor.untitled_unit") }}
                   </span>
                 </div>

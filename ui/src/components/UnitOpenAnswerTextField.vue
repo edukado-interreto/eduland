@@ -125,7 +125,6 @@ watch(answer, value => {
     density="compact"
     variant="underlined"
     class="position-relative mx-1 text-center"
-    style="display: inline-block; bottom: 0.3rem; "
     :width="gap_width"
     v-model="answer"
     :color="!silent && !!success ? 'success' : undefined"
@@ -143,3 +142,10 @@ watch(answer, value => {
     </template>
   </v-text-field>
 </template>
+
+<style scoped>
+ .v-input {
+  display: inline-block;
+  bottom: 0.3rem;
+}
+</style>
