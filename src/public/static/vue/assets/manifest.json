@@ -1,13 +1,9 @@
 {
-  "_modulepreload-polyfill-5RPUhVlD.css": {
-    "file": "assets/modulepreload-polyfill-5RPUhVlD.css",
-    "src": "_modulepreload-polyfill-5RPUhVlD.css"
-  },
-  "_modulepreload-polyfill-BCznhnN_.js": {
-    "file": "assets/modulepreload-polyfill-BCznhnN_.js",
+  "_modulepreload-polyfill-BohzRaRJ.js": {
+    "file": "assets/modulepreload-polyfill-BohzRaRJ.js",
     "name": "modulepreload-polyfill",
     "css": [
-      "assets/modulepreload-polyfill-5RPUhVlD.css"
+      "assets/modulepreload-polyfill-CxpHOnVf.css"
     ],
     "assets": [
       "assets/materialdesignicons-webfont-CSr8KVlo.eot",
@@ -15,6 +11,10 @@
       "assets/materialdesignicons-webfont-PXm3-2wK.woff",
       "assets/materialdesignicons-webfont-B7mPwVP_.ttf"
     ]
+  },
+  "_modulepreload-polyfill-CxpHOnVf.css": {
+    "file": "assets/modulepreload-polyfill-CxpHOnVf.css",
+    "src": "_modulepreload-polyfill-CxpHOnVf.css"
   },
   "node_modules/@mdi/font/fonts/materialdesignicons-webfont.eot": {
     "file": "assets/materialdesignicons-webfont-CSr8KVlo.eot",
@@ -33,24 +33,24 @@
     "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2"
   },
   "src/editor.ts": {
-    "file": "assets/editor-vue-DOrtVtIV.js",
+    "file": "assets/editor-vue-CpYVV1ak.js",
     "name": "editor-vue",
     "src": "src/editor.ts",
     "isEntry": true,
     "imports": [
-      "_modulepreload-polyfill-BCznhnN_.js"
+      "_modulepreload-polyfill-BohzRaRJ.js"
     ],
     "css": [
-      "assets/editor-vue-DeKSOwDr.css"
+      "assets/editor-vue-eXk5vbji.css"
     ]
   },
   "src/exercise.ts": {
-    "file": "assets/exercise-vue-DZF4yHMg.js",
+    "file": "assets/exercise-vue-C7dxwruT.js",
     "name": "exercise-vue",
     "src": "src/exercise.ts",
     "isEntry": true,
     "imports": [
-      "_modulepreload-polyfill-BCznhnN_.js"
+      "_modulepreload-polyfill-BohzRaRJ.js"
     ]
   }
 }

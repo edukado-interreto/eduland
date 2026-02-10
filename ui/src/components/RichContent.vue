@@ -37,7 +37,7 @@ export default {
           if (type == "video") {
             const id = this.get_youtube_id(content);
             if (id) {
-              ret.embed_url = `https://www.youtube.com/embed/${id}`;
+              ret.embed_url = `https://www.youtube.com/embed/${id}?feature=oembed`;
             } else {
               ret.invalid_url = true;
             }
@@ -91,10 +91,12 @@ export default {
       </div>
       <iframe
         v-else
-        style="max-height: 150px; max-width: 100%"
         :src="t.embed_url"
+        width="200"
+        height="113"
         title="YouTube video player"
         frameborder="0"
+        referrerpolicy="strict-origin-when-cross-origin"
         allow="
           accelerometer;
           autoplay;
@@ -102,6 +104,7 @@ export default {
           encrypted-media;
           gyroscope;
           picture-in-picture;
+          web-share;
         "
         allowfullscreen
       />
@@ -116,3 +119,13 @@ export default {
     </template>
   </template>
 </template>
+
+<style scoped>
+iframe {
+  margin-inline-start: 40px;
+  width: calc(100% - 80px);
+  max-width: 800px;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+</style>

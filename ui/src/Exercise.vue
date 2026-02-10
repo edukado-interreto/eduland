@@ -28,7 +28,7 @@ const submit = () => {
   </v-container>
   <v-container v-if="exercise">
     <v-sheet v-for="(unit, i) in exercise.sheet" :key="unit._key">
-      <div v-if="unit.title" class="text-h4 my-4">
+      <div v-if="unit.title" class="text-h4 my-8">
         <span v-if="exercise.sheet.length > 1">{{ i + 1 }}.</span>
         <span class="font-weight-medium">{{ unit.title }}</span>
       </div>
