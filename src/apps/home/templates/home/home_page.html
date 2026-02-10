@@ -1,5 +1,5 @@
 {% extends "layout/base.html" %}
-{% load static ftl wagtailcore_tags wagtailimages_tags %}
+{% load static ftl wagtailcore_tags wagtailimages_tags wagtail_cache %}
 
 {% block body_class %}primary-gradient{% endblock %}
 {% block main_class %}responsive max{% endblock %}
@@ -11,6 +11,7 @@
 {% endblock extra_css %}
 
 {% block content %}
+{% wagtailpagecache timeout home_page cache_burst %}
 <section id="hero" class="hero white-text medium-elevate small-opacity">
   {{ page.hero_text | richtext }}
   <div class="large-space"></div>
@@ -51,7 +52,7 @@
           <h5>Download methodology PDF</h5>
           <div class="max"></div>
           <button class="circle transparent">
-            <i>more_vert</i>
+            <i role="presentation">more_vert</i>
             <menu class="top left no-wrap white">
               <li>English</li>
               <li>Slovak</li>
@@ -69,5 +70,6 @@
 </section>
 
 <div class="large-space"></div>
+{% endwagtailpagecache %}
 {% endblock content %}
 

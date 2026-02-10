@@ -54,4 +54,5 @@ menu_items = [
 ]
 
 
-main_menu = asdict(Menu(menu_items))["items"]
+def main_menu():
+    return asdict(Menu(menu_items))

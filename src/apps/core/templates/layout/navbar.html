@@ -1,5 +1,6 @@
-{% load ftl wagtailcore_tags static %}{# Icons: https://fonts.google.com/icons #}
+{% load static ftl wagtailcore_tags navigation_tags wagtail_cache %}{# Icons: https://fonts.google.com/icons #}
 {% url "wagtail_serve" "" as home_url %}
+{% main_menu as main_menu %}
 <header class="white medium-padding medium-elevate indigo-text">
   <nav class="m l" aria-label="main">
     <a href="{{ home_url }}" style="display: inline-flex; gap: 1rem">
@@ -7,28 +8,33 @@
       <p class="bold" style="font-size: 1.6em; margin: unset">{% ftlmsg "app-project-name" %}</p>
     </a>
     <div class="max">{# spacer #}</div>
-    {% for item in main_menu %}
-      {% if item.subitems %}
-      <button class="transparent extra">
-        <span><i role="presentation" class="extra">{{ item.icon }}</i> {{ item.title }}</span>
-        <menu class="no-wrap">
-        {% for subitem in item.subitems %}
-          <li>
-            <a href="{% pageurl subitem.page.localized %}">
-              <i role="presentation">{{ subitem.icon }}</i>
-              <div>{% firstof subitem.title subitem.page.localized.title %}</div>
-            </a>
-          </li>
-        {% endfor %}
-        </menu>
-      </button>
-      {% else %}
-      <a href="{% pageurl item.page.localized %}" class="button transparent extra">
-        <i role="presentation" class="extra">{{ item.icon }}</i>
-        <div>{% firstof item.title item.page.localized.title %}</div>
-      </a>
-      {% endif %}
-    {% endfor %}
+    {% wagtailcache timeout navbar_desktop cache_burst %}
+      {% for item in main_menu.items %}
+        {% if item.subitems %}
+        <button class="transparent extra">
+          <span><i role="presentation" class="extra">{{ item.icon }}</i> {{ item.title }}</span>
+          <menu class="no-wrap">
+          {% for subitem in item.subitems %}
+            <li>
+              <a href="{% pageurl subitem.page.localized %}">
+                <i role="presentation">{{ subitem.icon }}</i>
+                <div>{% firstof subitem.title subitem.page.localized.title %}</div>
+              </a>
+            </li>
+          {% endfor %}
+          </menu>
+        </button>
+        {% else %}
+        <a href="{% pageurl item.page.localized %}" class="button transparent extra">
+          <i role="presentation" class="extra">{{ item.icon }}</i>
+          <div>{% firstof item.title item.page.localized.title %}</div>
+        </a>
+        {% endif %}
+      {% endfor %}
+    {% endwagtailcache %}
+
+    {# language switcher #}
+    {% wagtailpagecache timeout lang_desktop %}
     <button class="button transparent extra">
       <i role="presentation" class="extra">translate</i>
       <menu class="left no-wrap surface-container-lowest">
@@ -38,6 +44,8 @@
         {% endfor %}
       </menu>
     </button>
+  {% endwagtailpagecache %}
+
   </nav>
 
   <nav class="s small" aria-label="main">
@@ -46,7 +54,8 @@
     <button class="transparent large round">
       <span><i role="presentation" class="large">menu</i></span>
       <menu class="left no-wrap white">
-        {% for item in main_menu %}
+      {% wagtailcache timeout navbar_mobile cache_burst %}
+        {% for item in main_menu.items %}
           {% if item.subitems %}
           {% for subitem in item.subitems %}
             <li>
@@ -62,10 +71,15 @@
           </li>
           {% endif %}
         {% endfor %}
+      {% endwagtailcache %}
+
+    {# language switcher #}
+        {% wagtailpagecache timeout lang_mobile %}
         <li class="active text-black"><i role="presentation">translate</i>{{ page.locale.language_name_localized | capfirst }}</li>
         {% for page_tr in page.get_translations %}
         <li><a href="{{ page_tr.get_url }}"><i role="presentation">translate</i> {{ page_tr.locale.language_name_local | capfirst }}</a></li>
         {% endfor %}
+        {% endwagtailpagecache %}
       </menu>
     </button>
   </nav>
