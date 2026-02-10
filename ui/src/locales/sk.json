@@ -294,7 +294,7 @@
         "name": "Otázky o texte, viac možností"
       },
       "questions_about_a_video_open_answer": {
-        "code": "Kde sa toto miesto nachádza?\n[]\n\nKto to postavil?\n[]",
+        "code": "Kde sa toto miesto nachádza?\n[+Trikala{'|'}+Tesália{'|'}+Grécko]",
         "description": "Pozrite si video a odpovedzte na otázky.\n\n{'{video:https://www.youtube.com/watch?v=chii_rEU30g}'}",
         "name": "Otázky o videu, otvorená odpoveď"
       },

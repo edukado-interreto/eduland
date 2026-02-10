@@ -315,7 +315,7 @@
         "name": "Questions about a text, multiple choice"
       },
       "questions_about_a_video_open_answer": {
-        "code": "Where is this place located?\n[]\n\nWho built it?\n[]",
+        "code": "Where is this place located?\n[+Trikala{'|'}+Thessaly{'|'}+Greece]",
         "description": "Watch the video and answer the questions.\n\n{'{video:https://www.youtube.com/watch?v=chii_rEU30g}'}",
         "name": "Questions about a video, open answer"
       },

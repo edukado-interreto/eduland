@@ -1,6 +1,6 @@
 {
-  "_modulepreload-polyfill-BohzRaRJ.js": {
-    "file": "assets/modulepreload-polyfill-BohzRaRJ.js",
+  "_modulepreload-polyfill-CsPfNRAI.js": {
+    "file": "assets/modulepreload-polyfill-CsPfNRAI.js",
     "name": "modulepreload-polyfill",
     "css": [
       "assets/modulepreload-polyfill-CxpHOnVf.css"
@@ -33,24 +33,24 @@
     "src": "node_modules/@mdi/font/fonts/materialdesignicons-webfont.woff2"
   },
   "src/editor.ts": {
-    "file": "assets/editor-vue-CpYVV1ak.js",
+    "file": "assets/editor-vue-CcNCj6ev.js",
     "name": "editor-vue",
     "src": "src/editor.ts",
     "isEntry": true,
     "imports": [
-      "_modulepreload-polyfill-BohzRaRJ.js"
+      "_modulepreload-polyfill-CsPfNRAI.js"
     ],
     "css": [
       "assets/editor-vue-eXk5vbji.css"
     ]
   },
   "src/exercise.ts": {
-    "file": "assets/exercise-vue-C7dxwruT.js",
+    "file": "assets/exercise-vue-CVi6uD2Z.js",
     "name": "exercise-vue",
     "src": "src/exercise.ts",
     "isEntry": true,
     "imports": [
-      "_modulepreload-polyfill-BohzRaRJ.js"
+      "_modulepreload-polyfill-CsPfNRAI.js"
     ]
   }
 }

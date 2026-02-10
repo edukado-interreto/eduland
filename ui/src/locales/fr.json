@@ -298,7 +298,7 @@
         "name": "Questions sur un texte, choix multiple"
       },
       "questions_about_a_video_open_answer": {
-        "code": "Où est situé l'endroit?\n[]\n\nQui l'a construit?\n[]",
+        "code": "Où est situé l'endroit?\n[+Trikala{'|'}+Thessalie{'|'}+Grèce]",
         "description": "Regardez la vidéo et répondez aux questions.\n\n{'{video:https://www.youtube.com/watch?v=chii_rEU30g}'}",
         "name": "Questions sur une vidéo, réponse ouverte"
       },

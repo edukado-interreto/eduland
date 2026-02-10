@@ -287,6 +287,20 @@
         "code": "Kiu besto eligas tiun sonon?\n[+Kato{'|'}Hundo{'|'}Elefanto]\n\nKiel eblas nomi tiun bestan voĉon?\n[+Miaúado{'|'}Bojado{'|'}Trumpetado]",
         "description": "Aúskultu la sonon kaj respondu al la demandoj:\n{'{sound:cat.mp3}'}",
         "name": "Demandoj pri sono, altiro kaj faligo"
+      },
+      "questions_about_a_text_multiple_choice": {
+        "code": "Kiu defiis la leporon al vetkuro? [La leporo{'|'}+La testudo{'|'}Birdo]\n\nKial la leporo ekdormis dum la vetkuro? [Li estis laca{'|'}Li volis doni al la testudo ŝancon atingi{'|'}+Li estis certa pri sia venko]\n\nKiu gajnis la vetkuron? [La leporo{'|'}+La testudo{'|'}Birdo]",
+        "description": "Iam antaŭ longe, leporo kaj testudo ĉiam disputadis pri tio, kiu estis pli rapida.\nLa testudo defiis la leporon al vetkuro, kaj la leporo akceptis, pensante ke tio estos facila venko.\n\nLa vetkuro komenciĝis, kaj la leporo rapide ekkuris, lasante la testudon malantaŭe. La leporo fariĝis tro memfida kaj decidis iom dormeti. Dume, la testudo konstante progresis al la cellinio.\n\nKiam la leporo vekiĝis, li rimarkis ke la testudo preskaŭ atingis la cellinion. La leporo provis kapti ĝin, sed estis tro malfrue. La testudo jam gajnis la vetkuron.",
+        "name": "Demandoj pri teksto, multobla elekto"
+      },
+      "questions_about_a_video_open_answer": {
+        "code": "Kie troviĝas ĉi tiu loko?\n[+Trikala{'|'}+Tesalio{'|'}+Grekio]",
+        "description": "Spektu la videon kaj respondu la demandojn.\n\n{'{video:https://www.youtube.com/watch?v=chii_rEU30g}'}",
+        "name": "Demandoj pri video, malferma respondo"
+      },
+      "sorting_pictures": {
+        "code": "{'{img:one_circle.png}'}\n\n{'{img:two_circles.png}'}\n\n{'{img:three_circles.png}'}",
+        "name": "Ordigo de bildoj"
       }
     }
   },
