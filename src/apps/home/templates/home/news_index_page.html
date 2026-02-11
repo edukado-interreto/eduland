@@ -9,9 +9,9 @@
 {{ self.header | richtext }}
 </section>
 
-<section class="responsive" style="margin-top: 4vh">
+<section class="responsive">
 {% for news_page in self.get_children.live.reverse %}
-<article class="indigo-text" style="padding: 2rem 5vw; margin-bottom: 4vh">
+<article class="indigo-text" style="padding: 2rem 5vw; margin-inline: 2em; margin-bottom: 4vh">
   <h5 class="bold"><a href="{% pageurl news_page %}">{{ news_page.title }}</a></h5>
   <p><a href="{% pageurl news_page %}"><small>{{ news_page.specific.standfirst }}</small></a></p>
 </article>

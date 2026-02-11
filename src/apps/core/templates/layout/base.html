@@ -10,10 +10,13 @@
     <link rel="manifest" href="/site.webmanifest">
     <title>{% block head_title %}{{ page.title }} - {% ftlmsg "app-project-name" %}{% endblock %}</title>
     <!-- BeerCSS -->
-    <link rel="stylesheet" href="{% static "beer-3.12.13.min.css" %}">
+    <link rel="preload" as="style" href="{% static "beer-3.12.13.min.css" %}" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{% static "beer-3.12.13.min.css" %}"></noscript>
+    
     <script type="module" src="{% static "beer-3.12.13.min.js" %}"></script>
     <link rel="stylesheet" href="{% static "theme.css" %}">
     <!-- Fonts -->
+    <link rel="preload" as="font" href="{% static "fonts/GoboCaps-Regular.woff2" %}">
     <link rel="stylesheet" href="{% static "fonts/gobocaps.css" %}">
     <link href="https://api.fonts.coollabs.io/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://api.fonts.coollabs.io/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">

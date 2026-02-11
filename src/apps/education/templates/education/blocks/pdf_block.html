@@ -1,7 +1,7 @@
 {% load static wagtailimages_tags %}
 <article class="card-tall large-margin no-padding">
     <a href="{{ self.pdf.url }}" target="_blank">
-      {% srcset_image self.image height-{400,800} class="responsive" %}
+      {% srcset_image self.image format-{avif,webp,jpeg} width-{260,378} class="responsive" role="presentation" %}
       <div class="absolute bottom left right padding bottom-shadow white-text">
         <h5 class="bold">{{ self.title }}</h5>
         <p>{{ self.text }}</p>

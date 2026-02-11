@@ -1,7 +1,7 @@
 import os
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from toml_decouple import config
 
@@ -17,7 +17,7 @@ SECRET_KEY = config.SECRET_KEY
 DEBUG = config.DEBUG
 TESTING = "test" in sys.argv or "PYTEST_VERSION" in os.environ
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", [config("HOST")])
+ALLOWED_HOSTS = cast(list[str], config("ALLOWED_HOSTS", [config("HOST")]))
 CSRF_TRUSTED_ORIGINS = config(
     "CSRF_TRUSTED_ORIGINS",
     default=[f"https://{h}" for h in ALLOWED_HOSTS],
@@ -41,7 +41,7 @@ WAGTAIL_APPS = [
     "users",
     "snippets",
     "documents",
-    "images",
+    # "images",  replaced by apps.core.apps.CustomImagesAppConfig
     "search",
     "admin",
     "",
@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     "django_ftl.apps.DjangoFtlConfig",
     "django_vite",
     *mod("apps", PROJECT_APPS),
+    "apps.core.apps.CustomImagesAppConfig",
 ]
 
 MIDDLEWARE = [

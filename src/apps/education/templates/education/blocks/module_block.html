@@ -1,14 +1,13 @@
-{% load static wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 <h3 id="module-{{ module_page.slug }}" class="center-align">
-  <a href="{{ module_page.url }}">{{ module_page.title }}</a>
+  <a href="{% pageurl module_page %}">{{ module_page.title }}</a>
 </h3>
 
 <div class="card-small row wrap center-align space-evenly large-margin">
 {% for unit_page in module_page.get_children.live %}
-    {% image unit_page.specific.image width-500 as illustration %}
     <article class="no-padding round s m l">
-        <a href="{{ unit_page.url }}">
-          <img class="responsive medium" src="{{ illustration.url }}" role="presentation">
+        <a href="{% pageurl unit_page %}">
+          {% srcset_image unit_page.specific.image format-{avif,webp,jpeg} width-470 class="responsive medium" role="presentation" %}
           <div class="absolute bottom left right padding bottom-shadow bottom-round white-text">
             <nav>
               <h5>{{ unit_page.title }}</h5>
