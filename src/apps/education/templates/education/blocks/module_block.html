@@ -3,7 +3,7 @@
   <a href="{{ module_page.url }}">{{ module_page.title }}</a>
 </h3>
 
-<div class="row space-evenly scroll large-margin">
+<div class="card-small row wrap center-align space-evenly large-margin">
 {% for unit_page in module_page.get_children.live %}
     {% image unit_page.specific.image width-500 as illustration %}
     <article class="no-padding round s m l">

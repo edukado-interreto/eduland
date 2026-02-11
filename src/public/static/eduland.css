@@ -94,6 +94,14 @@ main section.responsive {
   margin-block: 3rem
 }
 
+.card-small {
+  min-height: 20vh;
+
+  img {
+    min-height: 20vh
+  }
+}
+
 .card-medium {
   min-height: 30vh;
 
@@ -107,6 +115,7 @@ main section.responsive {
   aspect-ratio: 5 / 7;
 
   img {
+    min-height: 300px;
     max-height: 50vh;
     aspect-ratio: 5 / 7;
   }
