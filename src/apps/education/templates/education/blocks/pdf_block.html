@@ -3,7 +3,7 @@
     <a href="{{ self.pdf.url }}" target="_blank">
       {% srcset_image self.image format-{avif,webp,jpeg} width-{260,378} class="responsive" role="presentation" %}
       <div class="absolute bottom left right padding bottom-shadow white-text">
-        <h5 class="bold">{{ self.title }}</h5>
+        <h3 class="small-heading bold">{{ self.title }}</h3>
         <p>{{ self.text }}</p>
       </div>
     </a>

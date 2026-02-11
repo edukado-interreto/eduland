@@ -147,6 +147,9 @@ h4,
 h5 {
   font-family: "Gobo Caps";
 }
+.small-heading {
+  font-size: calc(1.4rem + 0.4vw);
+}
 
 .pdf.button {
   margin-block: 3em;
