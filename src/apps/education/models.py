@@ -38,14 +38,13 @@ class Exercise(TimeStampedModel, index.Indexed, Orderable):
     lid = models.CharField(
         "lid", unique=True, max_length=8, default=long_id, blank=True
     )
-    name = models.CharField("name", max_length=100)
+    name = models.CharField("name", help_text="E.g.: M1 U1 01", max_length=100)
     title = models.CharField(
         "title",
-        help_text="The users will only see this name",
+        help_text="Description of the exercise’s content",
         max_length=100,
         blank=True,
     )
-    description = models.TextField("description", blank=True)
     created_by = models.ForeignKey(
         User, on_delete=models.SET_NULL, blank=True, null=True
     )
@@ -87,8 +86,7 @@ class Exercise(TimeStampedModel, index.Indexed, Orderable):
     ]
 
     def __str__(self):
-        fields = (self.name, self.language, self.title)
-        return " • ".join(f for f in fields if f)
+        return " • ".join(f for f in [self.name, self.teaching, self.title] if f)
 
     @property
     @admin.display(ordering="src_lang")

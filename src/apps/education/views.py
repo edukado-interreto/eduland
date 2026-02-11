@@ -69,7 +69,6 @@ class ExerciseViewSet(SnippetViewSet):
                         [
                             FieldPanel("name"),
                             FieldPanel("title"),
-                            FieldPanel("description"),
                         ]
                     ),
                     FieldRowPanel(
