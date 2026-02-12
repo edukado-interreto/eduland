@@ -7,7 +7,7 @@
 
 {% block extra_css %}
   #breadcrumbs {
-    i[role="presentation"] {
+    i[aria-hidden="true"] {
       font-size: 1.5em;
       bottom: 0.05em;
     }
@@ -21,9 +21,9 @@
 <div id="breadcrumbs" aria-role="navigation">
 <p class="margin small-opacity white-text">
   <a href="{{ page.get_parent.get_parent.url }}">{{ page.get_parent.get_parent }}</a>
-  <i role="presentation" class="medium-opacity">chevron_right</i>
+  <i aria-hidden="true" class="medium-opacity">chevron_right</i>
   <a href="{{ page.get_parent.url }}">{{ page.get_parent }}</a>
-  <i role="presentation" class="medium-opacity">chevron_right</i>
+  <i aria-hidden="true" class="medium-opacity">chevron_right</i>
   {{ self }}
 </p>
 </div>

@@ -8,12 +8,9 @@
     <article class="no-padding round s m l">
         <a href="{% pageurl unit_page %}">
           {% srcset_image unit_page.specific.image format-{avif,webp,jpeg} width-470 class="responsive medium" role="presentation" %}
-          <div class="absolute bottom left right padding bottom-shadow bottom-round white-text">
-            <nav>
-              <h3 class="small-heading">{{ unit_page.title }}</h3>
-              <div class="max"></div>
-            </nav>
-          </div>
+          <span class="absolute bottom left right padding bottom-shadow bottom-round white-text">
+            <h3 class="small-heading center-align">{{ unit_page.title }}</h3>
+          </span>
       </a>
     </article>
 {% endfor %}

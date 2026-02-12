@@ -73,9 +73,15 @@ main>footer {
   margin: -0.5rem;
   margin-bottom: 10vh;
   min-height: 60vh;
-  padding: 5rem 10vw;
+  padding: 5rem 20vw;
   text-align: center;
+}
 
+@media screen and (max-width: 600px) {
+  .hero {
+    padding: 2rem 5vw;
+    font-size: 80%;
+  }
 }
 
 .hero::before {
@@ -94,7 +100,8 @@ main>footer {
 }
 
 main section.responsive {
-  margin-block: 3rem
+  margin-block: 3rem;
+  max-inline-size: min(96vw,75rem);
 }
 
 .card-small {
@@ -160,7 +167,7 @@ h5 {
 
 /* BeerCSS reset for <i> interpreted as icon */
 main {
-  i:not([role="presentation"]):not(.v-icon) {
+  i:not([aria-hidden="true"]):not(.v-icon) {
     font-style: italic;
     --_size: unset;
     border-radius: unset;

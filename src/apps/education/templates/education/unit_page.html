@@ -5,20 +5,35 @@
 
 {% block extra_css %}
 {{ block.super }}
-.youtube {
-  position: relative;
-  text-align: center;
-  
-  iframe {
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    height: auto;
+  #breadcrumbs {
+    bottom: 1em;
+
+    i[aria-hidden="true"] {
+      font-size: 1.5em;
+      bottom: 0.05em;
+    }
   }
-}
+  .youtube {
+    position: relative;
+    text-align: center;
+  
+    iframe {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      height: auto;
+    }
+  }
 {% endblock %}
 
 {% block content %}
 <div class="heading secondary-gradient medium-elevate white-text">
+  <div id="breadcrumbs" aria-role="navigation">
+  <p class="margin small-opacity white-text">
+    <a href="{{ page.get_parent.url }}">{{ page.get_parent }}</a>
+    <i aria-hidden="true" class="medium-opacity">chevron_right</i>
+    {{ self }}
+  </p>
+  </div>
   <h1>{{ self.title }}</h1>
 </div>
 
@@ -38,7 +53,7 @@
         style="min-width:16em;font-size:1.2em"
       >
         <b class="white-text">
-          <i role="presentation" class="extra">picture_as_pdf</i>
+          <i aria-hidden="true" class="extra">picture_as_pdf</i>
           {{ content.value }}
         </b>
       </a>
