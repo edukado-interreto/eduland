@@ -4,8 +4,8 @@ django := uv run python manage.py
 all: run
 
 install:
-	mkdir -p uploads
-	mkdir -p .docker/postgres_data .docker/caddy/data
+	mkdir -p staticfiles uploads
+	mkdir -p .docker/postgresql .docker/caddy/data
 	cp .env.example .env
 	cp .env.example .env
 	$(dc) build
@@ -38,8 +38,7 @@ lint:
 
 beercss:
 	$(eval TAG=$(shell xhs api.github.com/repos/beercss/beercss/tags | jq -r '.[0].name' | cut -c 2-))
-	wget -O src/public/static/beer-$(TAG).min.js https://cdn.jsdelivr.net/npm/beercss@$(TAG)/dist/cdn/beer.min.js
-	wget -O src/public/static/beer-$(TAG).min.css https://cdn.jsdelivr.net/npm/beercss@$(TAG)/dist/cdn/beer.min.css
+	wget -r -np -nH -l1 --cut-dirs=4 --reject 'index.html' -P src/public/static/beercss-$(TAG) https://cdn.jsdelivr.net/npm/beercss@$(TAG)/dist/cdn/
 
 vue:
 	npm --prefix ui run build-only

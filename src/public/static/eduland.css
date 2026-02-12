@@ -20,6 +20,9 @@ body {
   font-size: calc(15px + 0.4vw);
   background: white;
 }
+menu {
+  visibility: hidden;
+}
 
 .primary-gradient {
   background: var(--primary-gradient);
