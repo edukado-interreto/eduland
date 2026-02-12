@@ -13,18 +13,21 @@ def mod(pkg: str, modules: list[str]) -> list[str]:
 SRC_DIR = Path(__file__).absolute().parent.parent
 PROJECT_DIR = SRC_DIR.parent
 
-SECRET_KEY = config.SECRET_KEY
-DEBUG = config.DEBUG
+SECRET_KEY = config("SECRET_KEY", "NESEKURA")
+DEBUG = config("DEBUG", False)
 TESTING = "test" in sys.argv or "PYTEST_VERSION" in os.environ
 
-ALLOWED_HOSTS = cast(list[str], config("ALLOWED_HOSTS", [config("HOST")]))
+_DEFAULT_HOST = "127.0.0.1"
+ALLOWED_HOSTS = cast(
+    list[str], config("ALLOWED_HOSTS", [config("HOST", _DEFAULT_HOST)])
+)
 CSRF_TRUSTED_ORIGINS = config(
     "CSRF_TRUSTED_ORIGINS",
     default=[f"https://{h}" for h in ALLOWED_HOSTS],
 )
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
-DJANGO_CONTRIB_APPS = [
+_DJANGO_CONTRIB_APPS = [
     "admin",
     "auth",
     "contenttypes",
@@ -33,7 +36,7 @@ DJANGO_CONTRIB_APPS = [
     "postgres",
     "staticfiles",
 ]
-WAGTAIL_APPS = [
+_WAGTAIL_APPS = [
     "contrib.forms",
     "contrib.redirects",
     "embeds",
@@ -46,21 +49,21 @@ WAGTAIL_APPS = [
     "admin",
     "",
 ]
-PROJECT_APPS = ["core", "education", "home", "search"]
+_PROJECT_APPS = ["core", "education", "home", "search"]
 
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "wagtail_localize",
     "wagtail_localize.locales",
-    *mod("wagtail", WAGTAIL_APPS),
+    *mod("wagtail", _WAGTAIL_APPS),
     "modelcluster",
     "taggit",
     "django_filters",
     "django_extensions",
-    *mod("django.contrib", DJANGO_CONTRIB_APPS),
+    *mod("django.contrib", _DJANGO_CONTRIB_APPS),
     "django_ftl.apps.DjangoFtlConfig",
     "django_vite",
-    *mod("apps", PROJECT_APPS),
+    *mod("apps", _PROJECT_APPS),
     "apps.core.apps.CustomImagesAppConfig",
 ]
 
@@ -123,9 +126,9 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": config.PROJECT,
-        "USER": config.PROJECT,
-        "PASSWORD": config.DB_PASSWORD,
+        "NAME": config("PROJECT", "eduland"),
+        "USER": config("PROJECT", "eduland"),
+        "PASSWORD": config("DB_PASSWORD", "NESEKURA"),
         "HOST": "postgres",
         "PORT": "5432",
     }
@@ -147,7 +150,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-WAGTAIL_SITE_NAME = config.PROJECT
+WAGTAIL_SITE_NAME = config("PROJECT", "eduland")
 
 # Search
 # https://docs.wagtail.org/en/stable/topics/search/backends.html
@@ -159,7 +162,7 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = config.HOST
+WAGTAILADMIN_BASE_URL = config("HOST", _DEFAULT_HOST)
 
 # Allowed file extensions for documents in the document library.
 # This can be omitted to allow all files, but note that this may present a security risk
@@ -215,7 +218,7 @@ DJANGO_VITE = {
         "manifest_path": SRC_DIR / "public/static/vue/assets/manifest.json",
         "static_url_prefix": "vue",
         "dev_mode": config("DJANGO_VITE_DEV_MODE", False),
-        "dev_server_host": config("HOST"),
+        "dev_server_host": config("HOST", _DEFAULT_HOST),
         "dev_server_port": "443",  # Overrides 5173
         "dev_server_protocol": "https",  # Overrides http
     }
