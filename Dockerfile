@@ -67,6 +67,9 @@ COPY --chown=appuser:appuser ./src /app/src
 
 WORKDIR /app/src
 
+RUN python manage.py collectstatic -v 2 --noinput
+RUN ls -la /app/staticfiles/
+
 COPY --chmod=755 <<EOT /entrypoint.sh
 #!/usr/bin/env bash
 set -xe

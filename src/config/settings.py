@@ -197,10 +197,10 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
     ("eo", "Esperanto"),
 ]
 
-WHITENOISE_USE_FINDERS = True
 WHITENOISE_ROOT = SRC_DIR / "public"
 STATICFILES_DIRS = [SRC_DIR / "public" / "static"]
 STATIC_URL = "static/"
+STATIC_ROOT = PROJECT_DIR / "staticfiles/"
 MEDIA_ROOT = PROJECT_DIR / "uploads/"
 MEDIA_URL = "uploads/"
 
@@ -209,7 +209,7 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
 
