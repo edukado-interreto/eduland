@@ -5,14 +5,13 @@ from django.urls import include, path
 from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
 
-from apps.core.views import favicon, home_page
+from apps.core.views import favicon
 from apps.search import views as search_views
 
 urlpatterns = [
     path("favicon.ico", favicon),
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
-    path("home/", home_page, name="home"),  # LEGACY
 ]
 
 urlpatterns += i18n_patterns(
