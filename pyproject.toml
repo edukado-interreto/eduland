@@ -5,33 +5,27 @@ description = "EduLand: lernu lingvojn per komiksoj"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-  "django>=5.2.7",
+  "django>=6.0.2",
   "django-cors-headers>=4.9.0",
   "django-extensions>=4.1",
   "django-ftl>=0.14",
   "django-vite>=3.1.0",
-  "granian>=2.5.2",
+  "granian>=2.7.1",
   "psycopg[binary]>=3.2.10",
   "toml-decouple==0.6.0",
-  "wagtail>=7.1.1",
+  "wagtail>=7.3",
   "wagtail-localize>=1.12.2",
   "whitenoise>=6.11.0",
 ]
 
 [dependency-groups]
 dev = [
-  "basedpyright>=1.31.0",
-  "django-debug-toolbar>=6.0.0",
+  "django-debug-toolbar>=6.2.0",
   "django-types>=0.22.0",
   "pyasyncore>=1.0.4",
   "pyinotify>=0.9.6",
-  "ruff>=0.12.5",
+  "ruff>=0.15",
 ]
-
-[tool.pyright]
-typeCheckingMode = "basic"
-reportUnusedCallResult = false
-reportUnusedParameter = false
 
 [tool.ruff]
 target-version = "py314"

@@ -1,5 +1,5 @@
 ##### BASE STAGE #####
-FROM python:3.14-slim-trixie AS base
+FROM python:3.14-alpine AS base
 
 ENV VIRTUAL_ENV=/opt/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH" \
@@ -7,15 +7,14 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH" \
     UV_SYSTEM_PYTHON=1 \
     UV_PROJECT_ENVIRONMENT=$VIRTUAL_ENV
 
-
 ##### BUILDER STAGE #####
-FROM ghcr.io/astral-sh/uv:python3.14-trixie-slim AS builder
+FROM ghcr.io/astral-sh/uv:python3.14-alpine AS builder
 
 # Install the project into `/app`
 WORKDIR /app
 
 # Enable bytecode compilation
-ENV UV_COMPILE_BYTECODE=1
+ENV UV_COMPILE_BYTECODE=1 UV_PYTHON_DOWNLOADS=0
 
 # Copy from the cache instead of linking since it's a mounted volume
 ENV UV_LINK_MODE=copy
@@ -30,12 +29,9 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-install-project --no-dev
 
 # Then, add the rest of the project source code and install it
-# Installing separately from its dependencies allows optimal layer caching
 COPY pyproject.toml uv.lock /app/
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev
-
-
 
 ##### DEVELOPMENT STAGE #####
 FROM base AS development
@@ -51,11 +47,7 @@ RUN \
 --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
 uv sync --frozen
 
-RUN chmod +x $VIRTUAL_ENV/bin/activate; $VIRTUAL_ENV/bin/activate
-
 WORKDIR /app/src
-
-
 
 ##### PRODUCTION STAGE #####
 FROM base AS production
@@ -74,7 +66,7 @@ COPY --chmod=755 <<EOT /entrypoint.sh
 #!/usr/bin/env bash
 set -xe
 python manage.py migrate --noinput &
-granian --interface wsgi --blocking-threads 3 config.wsgi:application --host 0.0.0.0 --port $PORT
+granian config.wsgi:application
 EOT
 
 ENTRYPOINT ["/entrypoint.sh"]

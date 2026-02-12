@@ -7,3 +7,4 @@ node_modules
 secrets
 uploads/*
 staticfiles
+.ash_history
