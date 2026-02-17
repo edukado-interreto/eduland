@@ -145,6 +145,10 @@ class UnitPage(Page):
     subpage_types = ["education.ExercisePage"]
     content_panels = Page.content_panels + ["image", "body"]
 
+    def exercise_pages(self):
+        """Only translated pages, so not aliases of original English page"""
+        return self.get_children().live().filter(alias_of__isnull=True)
+
 
 class ExercisePage(Page):
     exercise = models.ForeignKey(Exercise, on_delete=models.SET_NULL, null=True)

@@ -67,13 +67,12 @@
   {% endif %}
 {% endfor %}
 
-{% with exercise_pages=page.get_children.live %}
-{% if exercise_pages %}
+{% if page.exercise_pages %}
 <h2 class="padding margin center-align primary-text">{% ftlmsg "edu-exercises" count=exercise_pages|length %}</h2>
 {% endif %}
 
 <div class="grid space">
-{% for exercise_page in exercise_pages %}
+{% for exercise_page in page.exercise_pages %}
 <div class="s12 center-align">
   <a
     href="{% pageurl exercise_page %}"
@@ -85,7 +84,6 @@
 </div>
 {% endfor %}
 </div>
-{% endwith %}
 
 </section>
 {% endblock content %}
