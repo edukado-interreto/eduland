@@ -12,6 +12,7 @@ urlpatterns = [
     path("favicon.ico", favicon),
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
+    path("intentional-blanks/", include("wagtail_localize_intentional_blanks.urls")),
 ]
 
 urlpatterns += i18n_patterns(

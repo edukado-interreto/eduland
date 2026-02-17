@@ -327,6 +327,7 @@ dependencies = [
     { name = "toml-decouple" },
     { name = "wagtail" },
     { name = "wagtail-localize" },
+    { name = "wagtail-localize-intentional-blanks" },
     { name = "whitenoise" },
 ]
 
@@ -346,21 +347,22 @@ requires-dist = [
     { name = "django-extensions", specifier = ">=4.1" },
     { name = "django-ftl", specifier = ">=0.14" },
     { name = "django-vite", specifier = ">=3.1.0" },
-    { name = "granian", specifier = ">=2.5.2" },
+    { name = "granian", specifier = ">=2.7.1" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3.2.10" },
     { name = "toml-decouple", specifier = "==0.6.0" },
-    { name = "wagtail", specifier = ">=7.1.1" },
+    { name = "wagtail", specifier = ">=7.3" },
     { name = "wagtail-localize", specifier = ">=1.12.2" },
+    { name = "wagtail-localize-intentional-blanks", specifier = ">=0.2.4" },
     { name = "whitenoise", specifier = ">=6.11.0" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "django-debug-toolbar", specifier = ">=6.0.0" },
+    { name = "django-debug-toolbar", specifier = ">=6.2.0" },
     { name = "django-types", specifier = ">=0.22.0" },
     { name = "pyasyncore", specifier = ">=1.0.4" },
     { name = "pyinotify", specifier = ">=0.9.6" },
-    { name = "ruff", specifier = ">=0.12.5" },
+    { name = "ruff", specifier = ">=0.15" },
 ]
 
 [[package]]
@@ -758,6 +760,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/6c/19/781b910e3ee3b1f955376efe92c6f192e8e43130dd2ec892592aaac27073/wagtail_localize-1.13.tar.gz", hash = "sha256:48ecfcd6d002009697b84d77ebcb042451a68da916a1f5ca0e161b472c2b74c8", size = 285949, upload-time = "2026-01-25T16:46:42.592Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/27/ab/18535934b8503000ef0bcd892f505f728a44cbb9499ae3d4e052647e1ef9/wagtail_localize-1.13-py3-none-any.whl", hash = "sha256:48296cb90eb3317bea62ecd5f23cc57088c9c9d39aca3b2261e4f19fa15de2cf", size = 511068, upload-time = "2026-01-25T16:46:40.628Z" },
+]
+
+[[package]]
+name = "wagtail-localize-intentional-blanks"
+version = "0.2.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+    { name = "wagtail" },
+    { name = "wagtail-localize" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/fc/82/a9bd94ddd671a711a0d078d49527b7976f68581cb7775452d01c5eedc28a/wagtail_localize_intentional_blanks-0.2.4.tar.gz", hash = "sha256:185b6010b08dce9db7d22839fb6701bb3339310fbdfd31c8c6a8c0b4ed8d38d3", size = 43714, upload-time = "2026-01-29T22:47:35.39Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6c/3e/586aaf312bdcc1cc7ba2b47264510abead4fce505e494fdc1dd214c86811/wagtail_localize_intentional_blanks-0.2.4-py3-none-any.whl", hash = "sha256:8557a1c4c565ffa950aee59c907981a92cb30c7c072f9866dd211ec87253479a", size = 29071, upload-time = "2026-01-29T22:47:33.72Z" },
 ]
 
 [[package]]

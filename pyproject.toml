@@ -15,6 +15,7 @@ dependencies = [
   "toml-decouple==0.6.0",
   "wagtail>=7.3",
   "wagtail-localize>=1.12.2",
+  "wagtail-localize-intentional-blanks>=0.2.4",
   "whitenoise>=6.11.0",
 ]
 

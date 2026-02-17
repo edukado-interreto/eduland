@@ -53,6 +53,7 @@ _PROJECT_APPS = ["core", "education", "home", "search"]
 
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
+    "wagtail_localize_intentional_blanks",
     "wagtail_localize",
     "wagtail_localize.locales",
     *mod("wagtail", _WAGTAIL_APPS),
