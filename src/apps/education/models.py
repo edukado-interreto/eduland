@@ -1,17 +1,15 @@
-import json
-
 from django.conf import settings
 from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse_lazy
 from django_extensions.db.models import TimeStampedModel
-from wagtail.fields import StreamField
+from wagtail.fields import RichTextField, StreamField
 from wagtail.models import Orderable, Page
 from wagtail.search import index
 
-from apps.core.utils import long_id
-from apps.education.blocks import ExerciseBlock, UnitStreamBlock
+from apps.core.utils import field_panels, long_id
+from apps.education.blocks import UnitStreamBlock
 
 User = get_user_model()
 
@@ -128,7 +126,7 @@ class ModulePage(Page):
     )
 
     parent_page_types = ["home.HomePage"]
-    content_panels = Page.content_panels + ["image"]
+    content_panels = field_panels(["image"])
 
 
 class UnitPage(Page):
@@ -143,7 +141,7 @@ class UnitPage(Page):
 
     parent_page_types = ["education.ModulePage"]
     subpage_types = ["education.ExercisePage"]
-    content_panels = Page.content_panels + ["image", "body"]
+    content_panels = field_panels(["image", "body"])
 
     def exercise_pages(self):
         """Only translated pages, so not aliases of original English page"""
@@ -155,4 +153,11 @@ class ExercisePage(Page):
 
     parent_page_types = ["education.UnitPage"]
     subpage_types = []
-    content_panels = Page.content_panels + ["exercise"]
+    content_panels = field_panels(["exercise"])
+
+
+class MethodologyPage(Page):
+    content = RichTextField(blank=True)
+
+    parent_page_types = ["home.HomePage"]
+    content_panels = field_panels(["content"])

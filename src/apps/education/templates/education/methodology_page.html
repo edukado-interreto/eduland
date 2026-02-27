@@ -1,0 +1,30 @@
+{% extends "home/simple_page.html" %}
+
+{% block body_class %}methodology {{ block.super }}{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+  .methodology {
+    main a[href$=".pdf"] {
+      font-size: 1.2em;
+    }
+  }
+{% endblock %}
+
+{% block extra_js %}
+{{ block.super }}
+<script>
+  const CLASSES = "pdf button extra margin surface-container-lowest secondary-gradient medium-elevate small-round";
+
+  document.querySelectorAll('a[href$=".pdf"]').forEach(a => {
+    a.setAttribute("target", "_blank");
+    a.className = CLASSES;
+    a.innerHTML = `
+      <b class="white-text">
+        <i aria-hidden="true" class="extra">picture_as_pdf</i>
+        &nbsp;${a.innerHTML}
+      </b>`
+  })
+</script>
+{% endblock %}
+

@@ -45,23 +45,19 @@
 <section id="methodology" class="responsive white-text">
     <h2 class="center-align bold">{% ftlmsg "app-methodology" %}</h2>
 
+{{methodology_pages}}    {% for methodology_page in page.methodology_pages %}
     <article class="card-medium no-padding round fill">
+    <a href="{% pageurl methodology_page %}">
       <img class="responsive medium" src="{% static 'study.jpeg' %}" role="presentation">
       <div class="absolute bottom left right padding bottom-shadow bottom-round white-text">
         <nav>
-          <h3 class="small-heading">Download methodology PDF</h3>
+          <h3 class="small-heading">{{ methodology_page.title }}</h3>
           <div class="max"></div>
-          <button class="circle transparent" aria-label="Download">
-            <i aria-hidden="true">more_vert</i>
-            <menu class="top left no-wrap white">
-              <li>English</li>
-              <li>Slovak</li>
-              <li>French</li>
-              <li>Esperanto</li>
-          </button>
         </nav>
       </div>
+      </a>
     </article>
+    {% endfor %}
 </section>
 
 
