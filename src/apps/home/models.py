@@ -63,6 +63,7 @@ class HomePage(Page):
 class SimplePage(Page):
     content = RichTextField(blank=True)
 
+    show_in_menus_default = True
     parent_page_types = ["home.HomePage"]
     content_panels = field_panels(["content"])
 
@@ -70,6 +71,7 @@ class SimplePage(Page):
 class NewsIndexPage(Page):
     header = RichTextField(blank=True)
 
+    show_in_menus_default = True
     parent_page_types = ["home.HomePage"]
     content_panels = field_panels(["header"])
 

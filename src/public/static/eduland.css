@@ -20,8 +20,13 @@ body {
   font-size: calc(15px + 0.4vw);
   background: white;
 }
+
 menu {
   visibility: hidden;
+}
+
+.flat-menu .list li>a {
+  font-size: 0.9em;
 }
 
 .primary-gradient {
@@ -101,7 +106,7 @@ main>footer {
 
 main section.responsive {
   margin-block: 3rem;
-  max-inline-size: min(96vw,75rem);
+  max-inline-size: min(96vw, 75rem);
 }
 
 .card-small {
@@ -157,6 +162,7 @@ h4,
 h5 {
   font-family: "Gobo Caps";
 }
+
 .small-heading {
   font-size: calc(1.4rem + 0.4vw);
 }

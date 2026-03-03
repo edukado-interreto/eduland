@@ -16,6 +16,7 @@ dependencies = [
   "wagtail>=7.3",
   "wagtail-localize>=1.12.2",
   "wagtail-localize-intentional-blanks>=0.2.4",
+  "wagtailmenus>=4.0.6",
   "whitenoise>=6.11.0",
 ]
 

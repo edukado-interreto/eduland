@@ -130,6 +130,15 @@ wheels = [
 ]
 
 [[package]]
+name = "django-cogwheels"
+version = "0.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/b6/a5/d3bf15adaaf3de18f5f588b29f0e0feb251e5bf052271d18af51ec117f86/django-cogwheels-0.3.tar.gz", hash = "sha256:848a4d9f2c96c582a4a4f2e7c276dfd95ab3905748cae13bb7c4b365a6717e94", size = 31198, upload-time = "2019-10-30T22:14:20.079Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/9a/3b/2db92c666d39da78cc872da012582dab7bf4f3ff25e8246bd6ebc547e301/django_cogwheels-0.3-py3-none-any.whl", hash = "sha256:197bd05e7114403d7301214b3f8a371c4fb6039cf21c811f099438b167b5ed21", size = 35154, upload-time = "2019-10-30T22:14:18.342Z" },
+]
+
+[[package]]
 name = "django-cors-headers"
 version = "4.9.0"
 source = { registry = "https://pypi.org/simple" }
@@ -328,6 +337,7 @@ dependencies = [
     { name = "wagtail" },
     { name = "wagtail-localize" },
     { name = "wagtail-localize-intentional-blanks" },
+    { name = "wagtailmenus" },
     { name = "whitenoise" },
 ]
 
@@ -353,6 +363,7 @@ requires-dist = [
     { name = "wagtail", specifier = ">=7.3" },
     { name = "wagtail-localize", specifier = ">=1.12.2" },
     { name = "wagtail-localize-intentional-blanks", specifier = ">=0.2.4" },
+    { name = "wagtailmenus", specifier = ">=4.0.6" },
     { name = "whitenoise", specifier = ">=6.11.0" },
 ]
 
@@ -774,6 +785,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/fc/82/a9bd94ddd671a711a0d078d49527b7976f68581cb7775452d01c5eedc28a/wagtail_localize_intentional_blanks-0.2.4.tar.gz", hash = "sha256:185b6010b08dce9db7d22839fb6701bb3339310fbdfd31c8c6a8c0b4ed8d38d3", size = 43714, upload-time = "2026-01-29T22:47:35.39Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/6c/3e/586aaf312bdcc1cc7ba2b47264510abead4fce505e494fdc1dd214c86811/wagtail_localize_intentional_blanks-0.2.4-py3-none-any.whl", hash = "sha256:8557a1c4c565ffa950aee59c907981a92cb30c7c072f9866dd211ec87253479a", size = 29071, upload-time = "2026-01-29T22:47:33.72Z" },
+]
+
+[[package]]
+name = "wagtailmenus"
+version = "4.0.6"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django-cogwheels" },
+    { name = "wagtail" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9d/91/b27e7b9fde2380bbc48188ff10d7625482160d0e19056fe253c63db3ddc2/wagtailmenus-4.0.6.tar.gz", hash = "sha256:ae95035ae629d0dee36a5b94a4633129b81de5b4e8c796ff65a9444408c904e4", size = 117133, upload-time = "2026-02-14T23:36:37.525Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/19/13/9aaf2a49ba5da60b0533b384bfab02bb1617114fba6d4a9078e952212f11/wagtailmenus-4.0.6-py3-none-any.whl", hash = "sha256:bc0423a56742abde2ed32c70eb07ba2efb64faafa7b693ff4ccc657d3a8b4261", size = 200597, upload-time = "2026-02-14T23:36:35.441Z" },
 ]
 
 [[package]]

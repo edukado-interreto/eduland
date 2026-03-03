@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "wagtail_localize_intentional_blanks",
     "wagtail_localize",
     "wagtail_localize.locales",
+    "wagtailmenus",
     *mod("wagtail", _WAGTAIL_APPS),
     "modelcluster",
     "taggit",
@@ -113,6 +114,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "wagtailmenus.context_processors.wagtailmenus",
                 "config.context_processors.app",
                 "config.context_processors.fluent",
             ],
@@ -137,29 +139,20 @@ DATABASES = {
 
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+    {"NAME": f"django.contrib.auth.password_validation.{cls}"}
+    for cls in [
+        "UserAttributeSimilarityValidator",
+        "MinimumLengthValidator",
+        "CommonPasswordValidator",
+        "NumericPasswordValidator",
+    ]
 ]
 
 WAGTAIL_SITE_NAME = config("PROJECT", "eduland")
 
 # Search
 # https://docs.wagtail.org/en/stable/topics/search/backends.html
-WAGTAILSEARCH_BACKENDS = {
-    "default": {
-        "BACKEND": "wagtail.search.backends.database",
-    }
-}
+WAGTAILSEARCH_BACKENDS = {"default": {"BACKEND": "wagtail.search.backends.database"}}
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
