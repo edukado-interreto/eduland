@@ -122,7 +122,7 @@ TEMPLATES = [
     },
 ]
 
-CACHE_TIMEOUT_SEC = 5 if DEBUG else 2 * 3600  # 2 hours
+CACHE_TIMEOUT_SEC = 5 if DEBUG else 48 * 3600  # 48 hours
 
 WSGI_APPLICATION = "config.wsgi.application"
 

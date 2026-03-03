@@ -8,11 +8,14 @@ from apps.core.ftl_bundles import main
 
 EXPORTED_SETTINGS = []
 
+
 def app(request):
     slugs = "".join(Page.objects.live().only("slug").values_list("slug", flat=True))
+    lang = request.LANGUAGE_CODE
+    hexdigest = md5(slugs.encode()).hexdigest()
     return {
-        "timeout": settings.CACHE_TIMEOUT_SEC,
-        "cache_burst": md5(slugs.encode()).hexdigest(),
+        "TIMEOUT": settings.CACHE_TIMEOUT_SEC,
+        "CACHE_BURST": f"{lang}-{hexdigest}",
         **{s: getattr(settings, s) for s in EXPORTED_SETTINGS},
     }
 

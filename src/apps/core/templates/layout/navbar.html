@@ -1,4 +1,5 @@
-{% load static ftl wagtailcore_tags navigation_tags wagtail_cache %}{# Icons: https://fonts.google.com/icons #}
+{% load i18n static ftl wagtailcore_tags navigation_tags wagtail_cache %}{# Icons: https://fonts.google.com/icons #}
+{% get_current_language as LANGUAGE_CODE %}
 {% url "wagtail_serve" "" as home_url %}
 {% main_menu as main_menu %}
 <header class="white medium-padding medium-elevate indigo-text">
@@ -8,7 +9,7 @@
       <p class="bold" style="font-size: 1.6em; margin: unset">{% ftlmsg "app-project-name" %}</p>
     </a>
     <div class="max">{# spacer #}</div>
-    {% wagtailcache timeout navbar_desktop cache_burst %}
+    {% wagtailcache TIMEOUT navbar_desktop CACHE_BURST %}
       {% for item in main_menu.items %}
         {% if item.subitems %}
         <button class="transparent extra">
@@ -34,7 +35,7 @@
     {% endwagtailcache %}
 
     {# language switcher #}
-    {% wagtailpagecache timeout lang_desktop %}
+    {% wagtailpagecache TIMEOUT lang_desktop CACHE_BURST %}
     <button class="button transparent extra" aria-label="Other languages">
       <i aria-hidden="true" class="extra">translate</i>
       <menu class="left no-wrap surface-container-lowest">
@@ -54,7 +55,7 @@
     <button class="transparent large round" aria-label="Open main menu">
       <span><i aria-hidden="true" class="large">menu</i></span>
       <menu class="left no-wrap white">
-      {% wagtailcache timeout navbar_mobile cache_burst %}
+      {% wagtailcache TIMEOUT navbar_mobile CACHE_BURST %}
         {% for item in main_menu.items %}
           {% if item.subitems %}
           {% for subitem in item.subitems %}
@@ -74,7 +75,7 @@
       {% endwagtailcache %}
 
     {# language switcher #}
-        {% wagtailpagecache timeout lang_mobile %}
+        {% wagtailpagecache TIMEOUT lang_mobile CACHE_BURST %}
         <li class="active text-black"><i aria-hidden="true">translate</i>{{ page.locale.language_name_localized | capfirst }}</li>
         {% for page_tr in page.get_translations %}
         <li><a href="{% pageurl page_tr %}"><i aria-hidden="true">translate</i> {{ page_tr.locale.language_name_local | capfirst }}</a></li>

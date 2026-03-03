@@ -11,7 +11,7 @@
 {% endblock extra_css %}
 
 {% block content %}
-{% wagtailpagecache timeout home_page cache_burst %}
+{% wagtailpagecache TIMEOUT home_page CACHE_BURST %}
 <section id="hero" class="hero white-text medium-elevate small-opacity">
   {{ page.hero_text | richtext }}
   <div class="large-space"></div>
