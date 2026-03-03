@@ -52,7 +52,6 @@ _WAGTAIL_APPS = [
 _PROJECT_APPS = ["core", "education", "home", "search"]
 
 INSTALLED_APPS = [
-    "whitenoise.runserver_nostatic",
     "wagtail_localize_intentional_blanks",
     "wagtail_localize",
     "wagtail_localize.locales",
@@ -65,13 +64,13 @@ INSTALLED_APPS = [
     *mod("django.contrib", _DJANGO_CONTRIB_APPS),
     "django_ftl.apps.DjangoFtlConfig",
     "django_vite",
+    "django_rsgi",
     *mod("apps", _PROJECT_APPS),
     "apps.core.apps.CustomImagesAppConfig",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -191,7 +190,7 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
     ("eo", "Esperanto"),
 ]
 
-WHITENOISE_ROOT = SRC_DIR / "public"
+PUBLIC_ROOT = SRC_DIR / "public"
 STATICFILES_DIRS = [SRC_DIR / "public" / "static"]
 STATIC_URL = "static/"
 STATIC_ROOT = PROJECT_DIR / "staticfiles/"
@@ -203,7 +202,7 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
     },
 }
 

@@ -1,15 +1,16 @@
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
-from django.urls import include, path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import include, path, re_path
 from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
 
-from apps.core.views import favicon
+from apps.core.views import public, PUBLIC_FILES_URL
 from apps.search import views as search_views
 
 urlpatterns = [
-    path("favicon.ico", favicon),
+    re_path(PUBLIC_FILES_URL, public),
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("intentional-blanks/", include("wagtail_localize_intentional_blanks.urls")),
@@ -28,3 +29,6 @@ if "debug_toolbar" in settings.INSTALLED_APPS:
     from debug_toolbar.toolbar import debug_toolbar_urls
 
     urlpatterns += debug_toolbar_urls()
+
+if settings.DEBUG:
+    urlpatterns += staticfiles_urlpatterns()
