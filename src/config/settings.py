@@ -33,6 +33,7 @@ _DJANGO_CONTRIB_APPS = [
     "sessions",
     "messages",
     "postgres",
+    "sitemaps",
     "staticfiles",
 ]
 _WAGTAIL_APPS = [

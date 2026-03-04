@@ -18,3 +18,8 @@ PUBLIC_FILES_URL = rf"^(?P<filename>{_get_public_files_re()})$"
 @cache_page(60 * 60 * 24 * 30)
 def public(request: HttpRequest, filename: str):
     return serve_file(request, path=filename, document_root=settings.PUBLIC_ROOT)
+
+
+def robots(request: HttpRequest):
+    path = "robots.txt" if settings.ENVIRONMENT == "production" else "no-robots.txt"
+    return serve_file(request, path, document_root=settings.PUBLIC_ROOT)

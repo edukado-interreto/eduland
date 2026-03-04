@@ -6,7 +6,10 @@
   <nav class="m l" aria-label="main">
     <a href="{{ home_url }}" style="display: inline-flex; gap: 1rem">
       <img src="{% static 'icon-192.png' %}" class="extra round" role="presentation">
-      <p class="bold" style="font-size: 1.6em; margin: unset">{% ftlmsg "app-project-name" %}</p>
+      <p class="bold" style="font-size: 1.6em; margin: unset">
+        {% ftlmsg "app-project-name" %}
+        {% if ENVIRONMENT != "production" %}{{ ENVIRONMENT }}{% endif %}
+      </p>
     </a>
     <div class="max">{# spacer #}</div>
     {% wagtailcache TIMEOUT navbar_desktop CACHE_BURST %}

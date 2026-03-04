@@ -5,11 +5,14 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include, path, re_path
 from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
+from wagtail.contrib.sitemaps.views import sitemap
 
-from apps.core.views import public, PUBLIC_FILES_URL
+from apps.core.views import PUBLIC_FILES_URL, public, robots
 from apps.search import views as search_views
 
 urlpatterns = [
+    path("robots.txt", robots),
+    path("sitemap.xml", sitemap),
     re_path(PUBLIC_FILES_URL, public),
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),

@@ -1,1 +1,5 @@
-beep boop
+User-agent: *
+Disallow: /admin/
+Disallow: /django-admin/
+
+Sitemap: https://eduland.ikso.net/sitemap.xml
