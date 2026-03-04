@@ -13,10 +13,7 @@ FROM ghcr.io/astral-sh/uv:python3.14-alpine AS builder
 # Install the project into `/app`
 WORKDIR /app
 
-# Enable bytecode compilation
 ENV UV_COMPILE_BYTECODE=1 UV_PYTHON_DOWNLOADS=0
-
-# Copy from the cache instead of linking since it's a mounted volume
 ENV UV_LINK_MODE=copy
 
 # Use a different virtual environment from /app/.venv
@@ -28,12 +25,14 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
     uv sync --frozen --no-install-project --no-dev
 
-# Then, add the rest of the project source code and install it
+# Add the rest of the project source code and install it
 COPY pyproject.toml uv.lock /app/
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev
 
+
 ##### DEVELOPMENT STAGE #####
+
 FROM base AS development
 
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -49,7 +48,9 @@ uv sync --frozen
 
 WORKDIR /app/src
 
+
 ##### PRODUCTION STAGE #####
+
 FROM base AS production
 
 ENV HOME="/app/src"
@@ -61,12 +62,3 @@ WORKDIR /app/src
 
 RUN python manage.py collectstatic -v 2 --noinput
 RUN ls -la /app/staticfiles/
-
-COPY --chmod=755 <<EOT /entrypoint.sh
-#!/usr/bin/env sh
-set -xe
-python manage.py migrate --noinput &
-granian config.wsgi:application
-EOT
-
-ENTRYPOINT ["/entrypoint.sh"]

@@ -5,7 +5,7 @@ from django_rsgi.serve import serve_file
 
 
 def _get_public_files_re():
-    """
+    r"""
     Format public files as "favicon\.ico|robots\.txt"
     """
     public_files = (f.name for f in settings.PUBLIC_ROOT.glob("*.*"))

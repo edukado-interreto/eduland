@@ -1,5 +1,6 @@
 import os
 import sys
+from itertools import product
 from pathlib import Path
 from typing import Any, cast
 
@@ -17,15 +18,18 @@ SECRET_KEY = config("SECRET_KEY", "NESEKURA")
 DEBUG = config("DEBUG", False)
 TESTING = "test" in sys.argv or "PYTEST_VERSION" in os.environ
 
-_DEFAULT_HOST = "127.0.0.1"
-ALLOWED_HOSTS = cast(
-    list[str], config("ALLOWED_HOSTS", [config("HOST", _DEFAULT_HOST)])
-)
+HOSTNAME = config("HOSTNAME", "127.0.0.1")
+HOST = config("HOST", "0.0.0.0")
+PORT = config("PORT", 8000)
+ALLOWED_HOSTS = cast(list[str], config("ALLOWED_HOSTS", [HOSTNAME]))
 CSRF_TRUSTED_ORIGINS = config(
     "CSRF_TRUSTED_ORIGINS",
     default=[f"https://{h}" for h in ALLOWED_HOSTS],
 )
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+
+### INSTALLED_APPS ###
 
 _DJANGO_CONTRIB_APPS = [
     "admin",
@@ -94,12 +98,8 @@ if DEBUG:
     INSTALLED_APPS = ["corsheaders", *INSTALLED_APPS]
     MIDDLEWARE = ["corsheaders.middleware.CorsMiddleware", *MIDDLEWARE]
     CORS_ALLOWED_ORIGINS = [
-        "http://eduland.localhost:5173",
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "https://eduland.localhost:5173",
-        "https://localhost:5173",
-        "https://127.0.0.1:5173",
+        f"http{secure}://{host}:5173"
+        for secure, host in product(("", "s"), ALLOWED_HOSTS)
     ]
 
 ROOT_URLCONF = "config.urls"
@@ -147,7 +147,7 @@ AUTH_PASSWORD_VALIDATORS = [
     ]
 ]
 
-WAGTAIL_SITE_NAME = config("PROJECT", "eduland")
+WAGTAIL_SITE_NAME = "EduLand"
 
 # Search
 # https://docs.wagtail.org/en/stable/topics/search/backends.html
@@ -155,24 +155,13 @@ WAGTAILSEARCH_BACKENDS = {"default": {"BACKEND": "wagtail.search.backends.databa
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = config("HOST", _DEFAULT_HOST)
+WAGTAILADMIN_BASE_URL = f"https://{HOSTNAME}"
 
 # Allowed file extensions for documents in the document library.
 # This can be omitted to allow all files, but note that this may present a security risk
 # if untrusted users are allowed to upload files -
 # see https://docs.wagtail.org/en/stable/advanced_topics/deploying.html#user-uploaded-files
-WAGTAILDOCS_EXTENSIONS = [
-    "csv",
-    "docx",
-    "key",
-    "odt",
-    "pdf",
-    "pptx",
-    "rtf",
-    "txt",
-    "xlsx",
-    "zip",
-]
+WAGTAILDOCS_EXTENSIONS = ["csv", "docx", "odt", "pdf", "pptx", "rtf", "xlsx", "zip"]
 
 WAGTAILEMBEDS_RESPONSIVE_HTML = True
 WAGTAILDOCS_SERVE_METHOD = "direct"
@@ -211,7 +200,7 @@ DJANGO_VITE = {
         "manifest_path": SRC_DIR / "public/static/vue/assets/manifest.json",
         "static_url_prefix": "vue",
         "dev_mode": config("DJANGO_VITE_DEV_MODE", False),
-        "dev_server_host": config("HOST", _DEFAULT_HOST),
+        "dev_server_host": HOSTNAME,
         "dev_server_port": "443",  # Overrides 5173
         "dev_server_protocol": "https",  # Overrides http
     }

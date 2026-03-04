@@ -29,9 +29,8 @@ services:
       args:
         - USER_ID=$USER_ID
         - GROUP_ID=$GROUP_ID
-        - PORT=$PORT
     user: $USER_ID:$GROUP_ID
-    command: /bin/sh -c "./manage.py migrate && ./manage.py serve --host 0.0.0.0 --port $PORT"
+    command: /bin/sh -c "./manage.py migrate && ./manage.py serve"
     secrets:
       - source: postgres-password
         target: DB_PASSWORD
