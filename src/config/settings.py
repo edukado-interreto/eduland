@@ -1,22 +1,17 @@
-import os
-import sys
 from itertools import product
 from pathlib import Path
 from typing import Any, cast
 
 from toml_decouple import config
 
-
-def mod(pkg: str, modules: list[str]) -> list[str]:
-    return [".".join([t for t in [pkg, module] if t]) for module in modules]
-
+from .utils import mod, get_environment
 
 SRC_DIR = Path(__file__).absolute().parent.parent
 PROJECT_DIR = SRC_DIR.parent
 
 SECRET_KEY = config("SECRET_KEY", "NESEKURA")
-DEBUG = config("DEBUG", False)
-TESTING = "test" in sys.argv or "PYTEST_VERSION" in os.environ
+DEBUG = cast(bool, config("DEBUG", False))
+ENVIRONMENT = get_environment(config, DEBUG)
 
 HOSTNAME = config("HOSTNAME", "127.0.0.1")
 HOST = config("HOST", "0.0.0.0")
@@ -88,7 +83,7 @@ MIDDLEWARE = [
 ]
 
 # Django Debug Toolbar
-if DEBUG and not TESTING:
+if ENVIRONMENT == "dev":
     INSTALLED_APPS = [*INSTALLED_APPS, "debug_toolbar"]
     MIDDLEWARE = ["debug_toolbar.middleware.DebugToolbarMiddleware", *MIDDLEWARE]
     DEBUG_TOOLBAR_CONFIG = {"SHOW_TOOLBAR_CALLBACK": lambda request: DEBUG}
@@ -180,7 +175,7 @@ WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
 ]
 
 PUBLIC_ROOT = SRC_DIR / "public"
-STATICFILES_DIRS = [SRC_DIR / "public" / "static"]
+STATICFILES_DIRS = [PUBLIC_ROOT / "static"]
 STATIC_URL = "static/"
 STATIC_ROOT = PROJECT_DIR / "staticfiles/"
 MEDIA_ROOT = PROJECT_DIR / "uploads/"

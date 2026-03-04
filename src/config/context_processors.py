@@ -6,7 +6,7 @@ from wagtail.models import Page
 
 from apps.core.ftl_bundles import main
 
-EXPORTED_SETTINGS = []
+EXPORTED_SETTINGS = ["ENVIRONMENT"]
 
 
 def app(request):
@@ -14,8 +14,8 @@ def app(request):
     lang = request.LANGUAGE_CODE
     hexdigest = md5(slugs.encode()).hexdigest()
     return {
-        "TIMEOUT": settings.CACHE_TIMEOUT_SEC,
         "CACHE_BURST": f"{lang}-{hexdigest}",
+        "TIMEOUT": settings.CACHE_TIMEOUT_SEC,
         **{s: getattr(settings, s) for s in EXPORTED_SETTINGS},
     }
 

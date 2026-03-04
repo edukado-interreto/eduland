@@ -1,4 +1,4 @@
-{% load ftl static django_vite %}<!DOCTYPE html>
+{% load ftl static django_vite eduland_tags %}<!DOCTYPE html>
 <html lang="{{ request.LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8">
@@ -10,10 +10,10 @@
     <link rel="manifest" href="/site.webmanifest">
     <title>{% block head_title %}{{ page.title }} - {% ftlmsg "app-project-name" %}{% endblock %}</title>
     <!-- BeerCSS -->
-    <link rel="preload" as="style" href="{% static "beercss-4.0.7/beer.min.css" %}" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{% static "beercss-4.0.7/beer.min.css" %}"></noscript>
+    <link rel="preload" as="style" href="{% beercss "beer.min.css" %}" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{% beercss "beer.min.css" %}"></noscript>
     
-    <script type="module" src="{% static "beercss-4.0.7/beer.min.js" %}"></script>
+    <script type="module" src="{% beercss "beer.min.js" %}"></script>
     <link rel="stylesheet" href="{% static "theme.css" %}">
     <!-- Fonts -->
     <link rel="preload" as="font" href="{% static "fonts/GoboCaps-Regular.woff2" %}">
