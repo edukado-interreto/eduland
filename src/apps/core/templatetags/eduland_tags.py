@@ -23,6 +23,11 @@ def do_beercss(parser, tokens):
     return BeerCssNode.handle_token(parser, tokens)
 
 
+@register.inclusion_tag("core/preload_css.html")
+def preload_css(path):
+    return {"path": path, "css_path": path if path.startswith("https://") else None}
+
+
 @register.simple_tag(takes_context=True)
 def main_menu(context):
     return menus.main_menu()

@@ -1,0 +1,5 @@
+{% spaceless %}
+{% load static eduland_tags %}{% if "beer" in path %}{% beercss path as css_path %}{% elif not css_path %}{% static path as css_path %}{% endif %}
+    <link rel="preload" as="style" href="{{ css_path }}" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ css_path }}"></noscript>
+{% endspaceless %}

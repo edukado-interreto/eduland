@@ -1,3 +1,36 @@
+/*** PRELOAD ***/
+body {
+  margin: 0
+}
+
+.white {
+  background-color: white
+}
+
+header {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  :is(.m, .l):not(.s) {
+    display: none !important;
+  }
+
+  header {
+    /* height: 84px */
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  :is(.m, .s):not(.l) {
+    display: none !important;
+  }
+
+  header {
+    /* height: 56px */
+  }
+}
+
 /*** HELPERS ***/
 .space-evenly {
   justify-content: space-evenly;
@@ -19,6 +52,10 @@ body {
   line-height: 1.4em;
   font-size: calc(15px + 0.4vw);
   background: white;
+}
+
+header nav {
+  margin-block-start: 0 !important;
 }
 
 menu {
