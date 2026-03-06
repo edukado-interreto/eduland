@@ -16,7 +16,13 @@ ENVIRONMENT = get_environment(config, DEBUG)
 HOSTNAME = config("HOSTNAME", "127.0.0.1")
 HOST = config("HOST", "0.0.0.0")
 PORT = config("PORT", 8000)
-ALLOWED_HOSTS = cast(list[str], config("ALLOWED_HOSTS", [HOSTNAME]))
+ALLOWED_HOSTS = cast(
+    list[str],
+    config(
+        "ALLOWED_HOSTS",
+        list({HOSTNAME, "localhost", "127.0.0.1", "0.0.0.0"}),
+    ),
+)
 CSRF_TRUSTED_ORIGINS = config(
     "CSRF_TRUSTED_ORIGINS",
     default=[f"https://{h}" for h in ALLOWED_HOSTS],
@@ -143,7 +149,7 @@ AUTH_PASSWORD_VALIDATORS = [
     ]
 ]
 
-WAGTAIL_SITE_NAME = "EduLand"
+WAGTAIL_SITE_NAME = f"EduLand {ENVIRONMENT}"
 
 # Search
 # https://docs.wagtail.org/en/stable/topics/search/backends.html
