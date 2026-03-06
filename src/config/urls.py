@@ -3,17 +3,19 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include, path, re_path
+from django_rsgi.urls import media_urlpatterns
 from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.contrib.sitemaps.views import sitemap
 
-from apps.core.views import PUBLIC_FILES_URL, public, robots
+from apps.core.views import PUBLIC_FILES_URL, public, robots, serve_upload
 from apps.search import views as search_views
 
 urlpatterns = [
     path("robots.txt", robots),
     path("sitemap.xml", sitemap),
     re_path(PUBLIC_FILES_URL, public),
+    *media_urlpatterns(view=serve_upload),
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("intentional-blanks/", include("wagtail_localize_intentional_blanks.urls")),
