@@ -28,11 +28,14 @@ CSRF_TRUSTED_ORIGINS = config(
     default=[f"https://{h}" for h in ALLOWED_HOSTS],
 )
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_HSTS_SECONDS = 31536000 if ENVIRONMENT.deployed else 0
+SESSION_COOKIE_SECURE = CSRF_COOKIE_SECURE = SECURE_SSL_REDIRECT = ENVIRONMENT.deployed
 
 if ENVIRONMENT.deployed:
     from . import error_tracking
 
     error_tracking.setup_bugsink(config, ENVIRONMENT)
+
 
 ### INSTALLED_APPS ###
 
