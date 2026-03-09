@@ -390,7 +390,7 @@ requires-dist = [
     { name = "django-vite", specifier = ">=3.1.0" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3.2.10" },
     { name = "sentry-sdk", extras = ["django"], specifier = ">=2.54.0" },
-    { name = "toml-decouple", specifier = "==0.6.0" },
+    { name = "toml-decouple", specifier = ">=0.6.0" },
     { name = "wagtail", specifier = ">=7.3" },
     { name = "wagtail-localize", specifier = ">=1.12.2" },
     { name = "wagtail-localize-intentional-blanks", specifier = ">=0.2.4" },
@@ -746,11 +746,11 @@ wheels = [
 
 [[package]]
 name = "toml-decouple"
-version = "0.6.0"
+version = "0.7.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/9a/f5/6bacbc6635075883fd260f90b14c38b86a8b196c8bf07a77e84cf5d4a4f5/toml_decouple-0.6.0.tar.gz", hash = "sha256:5d932a19c2c1fd945d400018876d478d14ade22fe166e27f6bc54748689fab70", size = 5570, upload-time = "2025-10-17T13:36:21.685Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e2/02/e428ff74b2209038d078f5a10bfd6ae60bca83db11dcfaedf454dec8a212/toml_decouple-0.7.0.tar.gz", hash = "sha256:621716a22f6da6d76dc88e6ef9934931eb96b6a4e45956e8909393ad6e9aa5b7", size = 5705, upload-time = "2026-03-09T15:40:43.664Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/bf/f9/9862b8b5077058e5116e63451f4bec951dbb78311dabd5565901b7137205/toml_decouple-0.6.0-py3-none-any.whl", hash = "sha256:3e618111e538ecaa78a03d3c6473f7e2cfe099f867c60f7f6d92e3fc08a5f6fd", size = 7354, upload-time = "2025-10-17T13:36:20.441Z" },
+    { url = "https://files.pythonhosted.org/packages/e9/7f/9cd9e0cafcf5563ef030f88d93241aa72d71c0a8e15581080fdcbda27fd9/toml_decouple-0.7.0-py3-none-any.whl", hash = "sha256:ad987214894502e4857f6c94b6c21d26fedc98c89cc01161cb0be6ee8f2e1e57", size = 7489, upload-time = "2026-03-09T15:40:41.802Z" },
 ]
 
 [[package]]
