@@ -1,9 +1,11 @@
 from pathlib import Path
+from http import HTTPStatus
 
 from django.conf import settings
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.views.decorators.cache import cache_page
 from django_rsgi.serve import serve_file
+from wagtail.models.pages import Page
 
 
 def _get_public_files_re():
@@ -37,3 +39,19 @@ def serve_upload(
     response = serve_file(request, path, document_root, **kwargs)
     response.headers["Cache-Control"] = "max-age=7776000, public"
     return response
+
+
+def healthcheck(request: HttpRequest) -> HttpResponse:
+    if "exception" in request.GET:
+        raise Exception("Raised Exception on purpose to send it to Bugsink")
+
+    try:  # Database check
+        Page.objects.values_list("slug")
+    except Exception as error:
+        print(error)
+        return JsonResponse(
+            {"status": "error", "error": error},
+            status=HTTPStatus.SERVICE_UNAVAILABLE,
+        )
+
+    return JsonResponse({"status": "ok"})

@@ -1,20 +1,44 @@
 import os
 import sys
-from typing import Literal, cast
+from enum import Enum
 
-Environment = Literal["production", "staging", "dev", "testing"]
+
+class Environment(Enum):
+    PRODUCTION = "production"
+    STAGING = "staging"
+    DEV = "dev"
+    BUILD = "build"
+    TESTING = "testing"
+
+    def __str__(self):
+        return self.value
+
+    def display_name(self):
+        if self == self.PRODUCTION:
+            return ""
+        if self == self.STAGING:
+            return "TEST"
+        return str(self).upper()
+
+    @property
+    def deployed(self) -> bool:
+        return self in {self.PRODUCTION, self.STAGING}
 
 
 def mod(pkg: str, modules: list[str]) -> list[str]:
     return [".".join([t for t in [pkg, module] if t]) for module in modules]
 
 
+def is_testing():
+    return "test" in sys.argv or "PYTEST_VERSION" in os.environ
+
+
 def get_environment(config, debug: bool) -> Environment:
-    if "test" in sys.argv or "PYTEST_VERSION" in os.environ:
-        return "testing"
+    if is_testing():
+        return Environment.TESTING
     if debug:
-        return "dev"
-    return cast(Environment, config("ENVIRONMENT", "production"))
+        return Environment.DEV
+    return Environment(config("ENVIRONMENT", "production"))
 
 
 def get_beercss_dir(static_dir) -> str:

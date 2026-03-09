@@ -12,6 +12,7 @@ dependencies = [
   "django-rsgi[server]>=1.0.0",
   "django-vite>=3.1.0",
   "psycopg[binary]>=3.2.10",
+  "sentry-sdk[django]>=2.54.0",
   "toml-decouple==0.6.0",
   "wagtail>=7.3",
   "wagtail-localize>=1.12.2",

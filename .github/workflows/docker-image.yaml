@@ -47,6 +47,8 @@ jobs:
           push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            COMMIT_HASH_TAG=${{ steps.commit_tag_gen.outputs.COMMIT_HASH_TAG }}
           tags: |
             ghcr.io/${{ github.repository }}/django:latest
             ghcr.io/${{ github.repository }}/django:${{ steps.date_tag_gen.outputs.DATE_TAG }}

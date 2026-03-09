@@ -8,7 +8,7 @@ from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.contrib.sitemaps.views import sitemap
 
-from apps.core.views import PUBLIC_FILES_URL, public, robots, serve_upload
+from apps.core.views import PUBLIC_FILES_URL, healthcheck, public, robots, serve_upload
 from apps.search import views as search_views
 
 urlpatterns = [
@@ -16,6 +16,7 @@ urlpatterns = [
     path("sitemap.xml", sitemap),
     re_path(PUBLIC_FILES_URL, public),
     *media_urlpatterns(view=serve_upload),
+    path("healthcheck/", healthcheck),
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("intentional-blanks/", include("wagtail_localize_intentional_blanks.urls")),

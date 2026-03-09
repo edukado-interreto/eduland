@@ -4,7 +4,7 @@ from typing import Any, cast
 
 from toml_decouple import config
 
-from .utils import mod, get_environment
+from .utils import get_environment, mod
 
 SRC_DIR = Path(__file__).absolute().parent.parent
 PROJECT_DIR = SRC_DIR.parent
@@ -29,6 +29,10 @@ CSRF_TRUSTED_ORIGINS = config(
 )
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
+if ENVIRONMENT.deployed:
+    from . import error_tracking
+
+    error_tracking.setup_bugsink(config, ENVIRONMENT)
 
 ### INSTALLED_APPS ###
 

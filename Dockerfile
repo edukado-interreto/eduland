@@ -53,11 +53,16 @@ WORKDIR /app/src
 
 FROM base AS production
 
-ENV HOME="/app/src"
+ARG COMMIT_HASH_TAG
+
+ENV HOME="/app/src" \
+    CONFIG_PREFIX="EDULAND_" \
+    EDULAND_ENVIRONMENT="build" \
+    EDULAND_COMMIT_HASH=$COMMIT_HASH_TAG
 
 COPY --from=builder --chown=appuser:appuser $VIRTUAL_ENV $VIRTUAL_ENV
 COPY --chown=appuser:appuser ./src /app/src
 
-WORKDIR /app/src
+WORKDIR $HOME
 
 RUN python manage.py collectstatic -v 2 --noinput
