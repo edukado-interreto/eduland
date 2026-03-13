@@ -1,0 +1,43 @@
+from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
+from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.urls import include, path, register_converter
+from django_rsgi.urls import media_urlpatterns
+
+from wagtail import urls as wagtail_urls
+from wagtail.admin import urls as wagtailadmin_urls
+from wagtail.contrib.sitemaps.views import sitemap
+from wagtail_localize_intentional_blanks import urls as intentional_blanks_urls
+
+from apps.core.views import healthcheck, public, serve_upload
+from apps.search import views as search_views
+from config.converters import PublicFilesConverter
+
+register_converter(PublicFilesConverter, "public")
+
+urlpatterns = [
+    path("sitemap.xml", sitemap),
+    path("<public:public_file>", public),
+    *media_urlpatterns(view=serve_upload),
+    path("healthcheck/", healthcheck),
+    path("django-admin/", admin.site.urls),
+    path("admin/", include(wagtailadmin_urls)),
+    path("intentional-blanks/", include(intentional_blanks_urls)),
+]
+
+if settings.DEBUG:
+    urlpatterns += staticfiles_urlpatterns()
+
+    if "debug_toolbar" in settings.INSTALLED_APPS:
+        from debug_toolbar.toolbar import debug_toolbar_urls
+
+        urlpatterns += debug_toolbar_urls()
+
+urlpatterns += i18n_patterns(
+    path("search/", search_views.search, name="search"),
+    # For anything not caught by a more specific rule above,
+    # hand over to Wagtail's page serving mechanism.
+    # This should be the last pattern in the list:
+    path("", include(wagtail_urls)),
+)

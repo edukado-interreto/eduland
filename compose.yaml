@@ -2,7 +2,7 @@ name: "eduland"
 
 secrets:
   postgres-password:
-    file: ./secrets/postgres-password
+    file: ./config/secrets/postgres-password
 
 services:
   proxy:
@@ -33,7 +33,7 @@ services:
     command: /bin/sh -c "./manage.py migrate && ./manage.py serve"
     secrets:
       - source: postgres-password
-        target: DB_PASSWORD
+        target: POSTGRES_PASSWORD
     networks:
       - backend
     volumes:
@@ -42,7 +42,7 @@ services:
     ports:
       - 127.0.0.1:$PORT:$PORT
     env_file:
-      - .env.django
+      - ./config/.env
     depends_on:
       - proxy
       - postgres
@@ -61,7 +61,7 @@ services:
     environment:
       - POSTGRES_DB=$POSTGRES_DB
       - POSTGRES_USER=$POSTGRES_USER
-      - POSTGRES_PASSWORD_FILE=/run/secrets/$POSTGRES_PASSWORD_FILE
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres-password
     restart: unless-stopped
 
   adminer:

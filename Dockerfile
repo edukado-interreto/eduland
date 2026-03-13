@@ -46,7 +46,7 @@ RUN \
 --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
 uv sync --frozen
 
-WORKDIR /app/src
+WORKDIR /app
 
 
 ##### PRODUCTION STAGE #####
@@ -55,14 +55,18 @@ FROM base AS production
 
 ARG COMMIT_HASH_TAG
 
-ENV HOME="/app/src" \
+ENV HOME="/app" \
     CONFIG_PREFIX="EDULAND_" \
     EDULAND_ENVIRONMENT="build" \
     EDULAND_COMMIT_HASH=$COMMIT_HASH_TAG
 
 COPY --from=builder --chown=appuser:appuser $VIRTUAL_ENV $VIRTUAL_ENV
-COPY --chown=appuser:appuser ./src /app/src
+COPY --chown=appuser:appuser manage.py pyproject.toml uv.lock ./bin/localize_update_fields.sh $HOME/
+COPY --chown=appuser:appuser apps $HOME/apps/
+COPY --chown=appuser:appuser config $HOME/config/
 
 WORKDIR $HOME
 
 RUN python manage.py collectstatic -v 2 --noinput
+
+EXPOSE 8000

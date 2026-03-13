@@ -1,10 +1,12 @@
 .env
-.env.django
 .env.local
 .docker/db/*
 .docker/caddy/*
 node_modules
-secrets
+config/.env
+config/secrets
+!config/secrets/.gitkeep
 uploads/*
+!uploads/.gitkeep
 staticfiles
 .ash_history

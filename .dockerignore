@@ -1,5 +1,4 @@
 .venv
-backend/.venv
+.ruff_cache
 .docker/db/*_data
 secrets
-.ruff_cache

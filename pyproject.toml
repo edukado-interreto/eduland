@@ -5,6 +5,7 @@ description = "EduLand: lernu lingvojn per komiksoj"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+  "dj-database-url>=3.1.2",
   "django>=6.0.2",
   "django-cors-headers>=4.9.0",
   "django-extensions>=4.1",
@@ -13,7 +14,7 @@ dependencies = [
   "django-vite>=3.1.0",
   "psycopg[binary]>=3.2.10",
   "sentry-sdk[django]>=2.54.0",
-  "toml-decouple>=0.6.0",
+  "toml-decouple>=0.9.0",
   "wagtail>=7.3",
   "wagtail-localize>=1.12.2",
   "wagtail-localize-intentional-blanks>=0.2.4",
@@ -23,11 +24,17 @@ dependencies = [
 [dependency-groups]
 dev = [
   "django-debug-toolbar>=6.2.0",
-  "django-types>=0.22.0",
+  "django-stubs>=5.2.9",
   "pyasyncore>=1.0.4",
   "pyinotify>=0.9.6",
   "ruff>=0.15",
 ]
+
+[tool.mypy]
+mypy_path = "typings"
+
+[tool.django-stubs]
+django_settings_module = "config.settings"
 
 [tool.ruff]
 target-version = "py314"
@@ -36,4 +43,12 @@ target-version = "py314"
 ignore = ["E731"] # lambda/def
 
 [tool.ruff.lint.isort]
-known-third-party = ["django", "wagtail"]
+sections = { "django" = ["django*"], "wagtail" = ["wagtail*"] }
+section-order = [
+  "standard-library",
+  "django",
+  "wagtail",
+  "third-party",
+  "first-party",
+  "local-folder",
+]
