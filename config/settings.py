@@ -18,7 +18,7 @@ HOST = config("HOST", "0.0.0.0")
 PORT = config("PORT", 8000)
 ALLOWED_HOSTS = config(
     "ALLOWED_HOSTS",
-    list({HOSTNAME, "localhost", "127.0.0.1", "0.0.0.0"}),
+    list({HOSTNAME, "django", "localhost", "127.0.0.1", "0.0.0.0"}),
 )
 
 CSRF_TRUSTED_ORIGINS = config(
@@ -27,10 +27,7 @@ CSRF_TRUSTED_ORIGINS = config(
 )
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 SECURE_HSTS_SECONDS = 31536000 if ENVIRONMENT.deployed else 0
-SESSION_COOKIE_SECURE = CSRF_COOKIE_SECURE = SECURE_SSL_REDIRECT = ENVIRONMENT.deployed
-
-if ENVIRONMENT.deployed:
-    setup_bugsink(config)
+SESSION_COOKIE_SECURE = CSRF_COOKIE_SECURE = ENVIRONMENT.deployed
 
 
 ### INSTALLED_APPS ###
