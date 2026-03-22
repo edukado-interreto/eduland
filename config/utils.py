@@ -2,11 +2,6 @@ import os
 import socket
 import sys
 from enum import Enum
-from functools import partial
-
-from dj_database_url import parse as db_url_parse
-
-parse_db_url = partial(db_url_parse, conn_max_age=600, conn_health_checks=True)
 
 
 class Environment(Enum):

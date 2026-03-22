@@ -1,11 +1,12 @@
 from itertools import product
 from pathlib import Path
 
+from dj_database_url import parse as db_url_parse
 from toml_decouple import config
 
 from .error_tracking import setup_bugsink
 from .logging import DEV_LOGGING, PROD_LOGGING
-from .utils import Environment, django_vite_dev_mode, mod, parse_db_url
+from .utils import Environment, django_vite_dev_mode, mod
 
 PROJECT_DIR = Path(__file__).absolute().parent.parent
 
@@ -126,7 +127,7 @@ TEMPLATES = [
 if "DATABASE_URL" in config:
     DATABASES = {
         "default": {
-            **config("DATABASE_URL", to=parse_db_url),
+            **config("DATABASE_URL", to=db_url_parse),
             "PASSWORD": config("POSTGRES_PASSWORD"),
         }
     }
