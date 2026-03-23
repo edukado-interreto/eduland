@@ -14,12 +14,6 @@ class Environment(Enum):
     def __str__(self):
         return self.value
 
-    def _is(self, value: str) -> bool:
-        return self.value == value
-
-    def _not(self, value: str) -> bool:
-        return not self._is(value)
-
     def display_name(self):
         if self == self.PRODUCTION:
             return ""
@@ -38,6 +32,20 @@ class Environment(Enum):
         if debug:
             return cls.DEV
         return cls(config("ENVIRONMENT", "production"))
+
+    def __getattr__(self, attr) -> bool:
+        """Check the enum’s value by attribute
+
+        >>> ENVIRONMENT = Environment.DEV
+        >>> ENVIRONMENT.is_dev
+        True
+        >>> ENVIRONMENT.is_production
+        False
+        """
+        name = attr.replace("is_", "")
+        if name in (e.value for e in type(self)):
+            return self.value == name
+        return super().__getattribute__(name)
 
 
 def mod(pkg: str, modules: list[str]) -> list[str]:

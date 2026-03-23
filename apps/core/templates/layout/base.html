@@ -33,5 +33,9 @@
     {% block bottom %}{% endblock %}
     {% include "layout/footer.html" %}
     {% block extra_js %}{% endblock %}
+    {% if ENVIRONMENT.is_production %}
+      {# Analytics with Goatcounter #}
+      <script data-goatcounter="https://eduland-stats.ikso.net/count" async src="//eduland-stats.ikso.net/count.js"></script>
+    {% endif %}
   </body>
 </html>
