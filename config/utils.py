@@ -1,18 +1,15 @@
 import os
 import socket
 import sys
-from enum import Enum
+from enum import StrEnum, auto
 
 
-class Environment(Enum):
-    PRODUCTION = "production"
-    STAGING = "staging"
-    DEV = "dev"
-    BUILD = "build"
-    TESTING = "testing"
-
-    def __str__(self):
-        return self.value
+class Environment(StrEnum):
+    PRODUCTION = auto()
+    STAGING = auto()
+    DEV = auto()
+    BUILD = auto()
+    TESTING = auto()
 
     def display_name(self):
         if self == self.PRODUCTION:
@@ -46,6 +43,9 @@ class Environment(Enum):
         if name in (e.value for e in type(self)):
             return self.value == name
         return super().__getattribute__(name)
+
+    def __dir__(self):
+        return (*super().__dir__(), *(f"is_{v}" for v in type(self)))
 
 
 def mod(pkg: str, modules: list[str]) -> list[str]:

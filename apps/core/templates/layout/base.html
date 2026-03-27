@@ -35,7 +35,7 @@
     {% block extra_js %}{% endblock %}
     {% if ENVIRONMENT.is_production %}
       {# Analytics with Goatcounter #}
-      <script data-goatcounter="https://eduland-stats.ikso.net/count" async src="//eduland-stats.ikso.net/count.js"></script>
+      <script data-goatcounter="{{ GOATCOUNTER_URL }}/count" async src="{{ GOATCOUNTER_URL }}/count.js"></script>
     {% endif %}
   </body>
 </html>

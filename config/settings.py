@@ -208,3 +208,6 @@ LOGGING = DEV_LOGGING
 if ENVIRONMENT.deployed:
     LOGGING = PROD_LOGGING
     setup_bugsink(config)
+
+if ENVIRONMENT.is_production:
+    GOATCOUNTER_URL: str = config.GOATCOUNTER_URL

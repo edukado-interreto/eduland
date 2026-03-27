@@ -7,7 +7,7 @@ from wagtail.models import Page
 
 from apps.core.ftl_bundles import main
 
-EXPORTED_SETTINGS = ["ENVIRONMENT"]
+EXPORTED_SETTINGS = ["ENVIRONMENT", "GOATCOUNTER_URL"]
 
 
 def app(request):
@@ -17,7 +17,7 @@ def app(request):
     return {
         "CACHE_BURST": f"{lang}-{hexdigest}",
         "TIMEOUT": settings.CACHE_TIMEOUT_SEC,
-        **{s: getattr(settings, s) for s in EXPORTED_SETTINGS},
+        **{s: getattr(settings, s, None) for s in EXPORTED_SETTINGS},
     }
 
 
