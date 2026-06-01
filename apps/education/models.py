@@ -118,16 +118,7 @@ class Exercise(TimeStampedModel, index.Indexed, Orderable):
 
 
 class ModulePage(Page):
-    image = models.ForeignKey(
-        "wagtailimages.Image",
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name="+",
-    )
-
     parent_page_types = ["home.HomePage"]
-    content_panels = field_panels(["image"])
 
 
 class UnitPage(Page):
@@ -140,7 +131,7 @@ class UnitPage(Page):
     )
     body = StreamField(UnitStreamBlock(), blank=True, verbose_name="Content")
 
-    parent_page_types = ["education.ModulePage"]
+    parent_page_types = ["education.ModulePage", "education.MethodologyPage"]
     subpage_types = ["education.ExercisePage"]
     content_panels = field_panels(["image", "body"])
 
