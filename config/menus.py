@@ -35,8 +35,16 @@ menu_items = [
         title=t("app-modules"),
         subitems=[
             MenuItem("emoji_language", page=page("crash-course")),
-            MenuItem("dictionary", page=page("about-history")),
+            MenuItem("military_tech", page=page("about-history")),
             MenuItem("flag", page=page("about-eu")),
+        ],
+    ),
+    MenuItem(
+        icon="cognition_2",
+        title=t("app-methodology"),
+        subitems=[
+            MenuItem("auto_stories", page=page("guided-reading")),
+            MenuItem("globe_book", page=page("content-and-language-integrated-learning")),
         ],
     ),
     MenuItem(
