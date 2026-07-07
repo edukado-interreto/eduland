@@ -24,7 +24,7 @@ class Menu:
 
 def page(slug) -> Page:
     try:
-        return Page.objects.get(slug=slug, locale=ENGLISH).localized
+        return Page.objects.get(slug__icontains=slug, locale=ENGLISH).localized
     except Page.DoesNotExist:
         return Page.objects.filter(locale=ENGLISH).first()
 
@@ -44,7 +44,7 @@ menu_items = [
         title=t("app-methodology"),
         subitems=[
             MenuItem("auto_stories", page=page("guided-reading")),
-            MenuItem("globe_book", page=page("content-and-language-integrated-learning")),
+            MenuItem("globe_book", page=page("content-and-language")),
         ],
     ),
     MenuItem(
@@ -55,7 +55,10 @@ menu_items = [
     MenuItem(
         icon="info",
         title=t("app-about-the-project"),
-        page=page("about"),
+        subitems=[
+            MenuItem(icon="info", page=page("about-eduland")),
+            MenuItem(icon="mail", page=page("contact-us")),
+        ],
     ),
 ]
 
