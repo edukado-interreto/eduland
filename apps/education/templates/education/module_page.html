@@ -7,6 +7,8 @@
 {% block content %}
 <h1 class="center-align bold white-text" style="margin-top:4vh">{{ self.title }}</h1>
 
+{{ self.content|richtext }}
+
 <section style="margin-top:4vh">
 {% for unit_page in self.get_children.live %}
   {% image unit_page.specific.image height-500 as illustration %}

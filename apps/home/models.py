@@ -30,6 +30,7 @@ class HomePage(Page):
 
     comics = StreamField([("pdf", PdfBlock())], blank=True)
 
+    methodology_intro = RichTextField(blank=True)
     about = RichTextField(blank=True)
 
     parent_page_types = ["wagtailcore.Page"]  # under Root only
@@ -40,6 +41,7 @@ class HomePage(Page):
                 heading="Hero section",
             ),
             MultiFieldPanel(["comics"], heading="Content"),
+            MultiFieldPanel(["methodology_intro"], heading="Methodology"),
             MultiFieldPanel(["about"], heading="Footer section"),
         ]
     )
@@ -55,9 +57,10 @@ class HomePage(Page):
         """Only translated pages, so not aliases of original English page"""
         return (
             self.get_children()
-            .live()
             .type(MethodologyPage)
+            .live()
             .filter(alias_of__isnull=True)
+            .order_by("slug")
         )
 
 

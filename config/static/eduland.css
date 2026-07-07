@@ -111,6 +111,10 @@ main>footer {
 
 /*** CONTENT ***/
 
+main>section h2 {
+  margin-top: 3rem;
+}
+
 .hero {
   margin: -0.5rem;
   margin-bottom: 10vh;

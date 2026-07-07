@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django_extensions.db.models import TimeStampedModel
 
 from wagtail.fields import RichTextField, StreamField
+from wagtail.images.fields import ImageField
 from wagtail.models import Orderable, Page
 from wagtail.search import index
 
@@ -118,6 +119,9 @@ class Exercise(TimeStampedModel, index.Indexed, Orderable):
 
 
 class ModulePage(Page):
+    # introduction = RichTextField(blank=True)
+
+    # content_panels = field_panels(["introduction"])
     parent_page_types = ["home.HomePage"]
 
 
@@ -150,6 +154,13 @@ class ExercisePage(Page):
 
 class MethodologyPage(Page):
     content = RichTextField(blank=True)
+    image = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
 
     parent_page_types = ["home.HomePage"]
-    content_panels = field_panels(["content"])
+    content_panels = field_panels(["content", "image"])
