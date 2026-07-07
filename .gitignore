@@ -1,11 +1,11 @@
 .env
 .env.local
-.docker/db/*
-.docker/caddy/*
 node_modules
-config/.env
-config/secrets
-!config/secrets/.gitkeep
+src/config/.env
+containers/db/*
+containers/caddy/*
+containers/secrets
+!containers/secrets/.gitkeep
 uploads/*
 !uploads/.gitkeep
 staticfiles

@@ -2,20 +2,20 @@ name: "eduland"
 
 secrets:
   postgres-password:
-    file: ./config/secrets/postgres-password
+    file: ./containers/secrets/postgres-password
 
 services:
   proxy:
     image: caddy:alpine
-    user: $USER_ID:$GROUP_ID
+    user: ${USER_ID:-1000}:${GROUP_ID:-1000}
     environment:
       - CADDY_HOSTS=${CADDY_HOSTS}
-      - PORT=$PORT
+      - PORT=${PORT:-8000}
     ports:
       - 80:80
       - 443:443
     volumes:
-      - ./.docker/caddy/data:/data:z
+      - ./containers/caddy/data:/data:z
       - ./etc/caddy:/etc/caddy:z
       - ./uploads:/srv/uploads:z
     networks:
@@ -25,11 +25,12 @@ services:
   django:
     build:
       context: .
+      dockerfile: ./containers/Containerfile
       target: development
       args:
-        - USER_ID=$USER_ID
-        - GROUP_ID=$GROUP_ID
-    user: $USER_ID:$GROUP_ID
+        - USER_ID=${USER_ID:-1000}
+        - GROUP_ID=${GROUP_ID:-1000}
+    user: ${USER_ID:-1000}:${GROUP_ID:-1000}
     command: /bin/sh -c "./manage.py migrate && ./manage.py serve"
     secrets:
       - source: postgres-password
@@ -37,12 +38,12 @@ services:
     networks:
       - backend
     volumes:
-      - ./:/app:z
+      - ./src:/app:z
       - ./uploads:/app/uploads:z
     ports:
       - 127.0.0.1:$PORT:$PORT
     env_file:
-      - ./config/.env
+      - ./src/config/.env
     depends_on:
       - proxy
       - postgres
@@ -55,9 +56,9 @@ services:
       - postgres-password
     networks:
       - backend
-    user: $USER_ID:$GROUP_ID
+    user: ${USER_ID:-1000}:${GROUP_ID:-1000}
     volumes:
-      - $POSTGRES_DATA_DIR:/var/lib/postgresql:z
+      - ./containers/db/postgresql:/var/lib/postgresql:z
     environment:
       - POSTGRES_DB=$POSTGRES_DB
       - POSTGRES_USER=$POSTGRES_USER

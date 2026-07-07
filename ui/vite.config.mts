@@ -4,6 +4,7 @@ import Vue from "@vitejs/plugin-vue"
 import Fonts from "unplugin-fonts/vite"
 import AutoImport from "unplugin-auto-import/vite"
 import Components from "unplugin-vue-components/vite"
+
 // Utilities
 import { defineConfig } from "vite"
 import Vuetify, { transformAssetUrls } from "vite-plugin-vuetify"
@@ -15,7 +16,7 @@ export default defineConfig({
   base: "/static/vue/",
   build: {
     manifest: "assets/manifest.json",
-    outDir: absolute("../src/public/static/vue"),
+    outDir: absolute("../src/config/static/vue"),
     emptyOutDir: true,
     rollupOptions: {
       input: {
