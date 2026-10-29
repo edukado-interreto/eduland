@@ -40,7 +40,7 @@ django_settings_module = "config.settings"
 target-version = "py314"
 
 [tool.ruff.lint]
-ignore = ["E731"] # lambda/def
+ignore = ["E731"]  # lambda/def
 
 [tool.ruff.lint.isort]
 sections = { "django" = ["django*"], "wagtail" = ["wagtail*"] }

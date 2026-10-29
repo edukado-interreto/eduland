@@ -164,6 +164,9 @@ WAGTAILEMBEDS_RESPONSIVE_HTML = True  # CSS class .responsive-object
 WAGTAILDOCS_SERVE_METHOD = "direct"
 WAGTAILDOCS_INLINE_CONTENT_TYPES = ["application/pdf"]
 
+# See: https://github.com/jazzband/wagtailmenus/issues/464
+SILENCED_SYSTEM_CHECKS = ["wagtailadmin.W002"]
+
 TIME_ZONE = "Europe/Bratislava"
 
 LANGUAGE_CODE = "en"
