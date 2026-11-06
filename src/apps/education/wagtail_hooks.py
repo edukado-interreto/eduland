@@ -21,11 +21,10 @@ def register_exercise_list_url():
 
 @hooks.register("after_create_snippet")
 def fill_empty_field_on_exercise_snippet(request: HttpRequest, instance: Exercise):
-    if isinstance(instance, Exercise):
-        if not instance.created_by:
-            if request.user.is_authenticated:
-                instance.created_by = request.user
-                instance.save()
+    if isinstance(instance, Exercise) and not instance.created_by:
+        if request.user.is_authenticated:
+            instance.created_by = request.user
+            instance.save()
 
 
 register_snippet(ExerciseViewSet)

@@ -33,7 +33,7 @@ class ExerciseFormView(UpdateView):
     fields = ["data"]
 
     def get_context_data(self, **kwargs):
-        return {**super().get_context_data(), **{"submit_button_label": "Save"}}
+        return {**super().get_context_data(), "submit_button_label": "Save"}
 
     def get(self, request, *args, **kwargs):
         return wagtail_sidebar(super().get(request, *args, **kwargs), collapsed=True)

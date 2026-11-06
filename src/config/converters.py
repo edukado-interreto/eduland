@@ -18,7 +18,6 @@ def _get_public_files_re() -> str:
     # ['favicon.ico', 'robots.txt']
     root_files = (f for f in next(DIRECTORIES)[2])
 
-    #
     others = (f"{d.relative_to(ROOT)}/({_or(files)})" for d, _, files in DIRECTORIES)
     return rf"^{_or(root_files)}|{_or(others)}$".replace(".", r"\.")
 

@@ -14,7 +14,7 @@ class MenuItem:
     icon: str
     page: Page | None = None
     title: str | None = None
-    subitems: "list[MenuItem] | None" = None
+    subitems: list[MenuItem] | None = None
 
 
 @dataclass

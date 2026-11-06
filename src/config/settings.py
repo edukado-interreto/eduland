@@ -15,8 +15,6 @@ DEBUG = config("DEBUG", False)
 ENVIRONMENT = Environment.init(config, DEBUG)
 
 HOSTNAME = config("HOSTNAME", "127.0.0.1")
-HOST = config("HOST", "0.0.0.0")
-PORT = config("PORT", 8000)
 ALLOWED_HOSTS = config(
     "ALLOWED_HOSTS",
     list({HOSTNAME, "django", "localhost", "127.0.0.1", "0.0.0.0"}),
@@ -71,7 +69,6 @@ INSTALLED_APPS = [
     *mod("django.contrib", _DJANGO_CONTRIB_APPS),
     "django_ftl.apps.DjangoFtlConfig",
     "django_vite",
-    "django_rsgi",
     *mod("apps", _PROJECT_APPS),
     "apps.core.apps.CustomImagesAppConfig",
 ]
@@ -106,6 +103,8 @@ if ENVIRONMENT == Environment.DEV:
         ]
 
 ROOT_URLCONF = "config.urls"
+
+WSGI_APPLICATION = "config.wsgi.application"
 
 TEMPLATES = [
     {
@@ -191,7 +190,10 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
+        # collectstatic runs at the image build, it writes the manifest
+        "BACKEND": "config.storage.StaticFilesStorage"
+        if ENVIRONMENT.deployed or ENVIRONMENT.is_build
+        else "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
 

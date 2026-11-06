@@ -31,10 +31,18 @@ services:
         - USER_ID=${USER_ID:-1000}
         - GROUP_ID=${GROUP_ID:-1000}
     user: ${USER_ID:-1000}:${GROUP_ID:-1000}
-    command: /bin/sh -c "./manage.py migrate && ./manage.py serve"
+    command: /bin/sh -c "./manage.py migrate && exec ${DJANGO_RUNSERVER:-granian config.wsgi:application}"
     secrets:
       - source: postgres-password
         target: POSTGRES_PASSWORD
+    environment:
+      - GRANIAN_INTERFACE=wsgi
+      - GRANIAN_HOST=0.0.0.0
+      - GRANIAN_PORT=${PORT:-8000}
+      - GRANIAN_RUNTIME_MODE=st
+      - GRANIAN_LOG_ACCESS_ENABLED=true
+      - GRANIAN_RELOAD=true
+      - GRANIAN_RELOAD_IGNORE_DIRS=static staticfiles uploads
     networks:
       - backend
     volumes:

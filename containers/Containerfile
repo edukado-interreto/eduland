@@ -1,5 +1,5 @@
 ##### BASE STAGE #####
-FROM python:3.14-alpine AS base
+FROM python:3.15-alpine AS base
 
 ENV VIRTUAL_ENV=/opt/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH" \
@@ -8,7 +8,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH" \
     UV_PROJECT_ENVIRONMENT=$VIRTUAL_ENV
 
 ##### BUILDER STAGE #####
-FROM ghcr.io/astral-sh/uv:python3.14-alpine AS builder
+FROM ghcr.io/astral-sh/uv:python3.15-alpine AS builder
 
 # Install the project into `/app`
 WORKDIR /app
@@ -60,6 +60,16 @@ ENV HOME="/app" \
     EDULAND_ENVIRONMENT="build" \
     EDULAND_COMMIT_HASH=$COMMIT_HASH_TAG
 
+# Granian serves the collected static files itself, the route must match STATIC_URL.
+# One year of cache: file names are hashed by ManifestStaticFilesStorage or Vite.
+ENV GRANIAN_INTERFACE=wsgi \
+    GRANIAN_HOST=0.0.0.0 \
+    GRANIAN_PORT=8000 \
+    GRANIAN_LOG_ACCESS_ENABLED=true \
+    GRANIAN_STATIC_PATH_ROUTE=/static \
+    GRANIAN_STATIC_PATH_MOUNT=$HOME/staticfiles \
+    GRANIAN_STATIC_PATH_EXPIRES=31536000
+
 COPY --from=builder --chown=appuser:appuser $VIRTUAL_ENV $VIRTUAL_ENV
 COPY --chown=appuser:appuser src $HOME
 COPY --chown=appuser:appuser pyproject.toml uv.lock ./bin/localize_update_fields.sh $HOME/
@@ -69,3 +79,5 @@ WORKDIR $HOME
 RUN python manage.py collectstatic -v 2 --noinput
 
 EXPOSE 8000
+
+CMD ["granian", "config.wsgi:application"]

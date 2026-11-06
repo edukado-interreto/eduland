@@ -6,7 +6,6 @@ from django.urls import reverse_lazy
 from django_extensions.db.models import TimeStampedModel
 
 from wagtail.fields import RichTextField, StreamField
-from wagtail.images.fields import ImageField
 from wagtail.models import Orderable, Page
 from wagtail.search import index
 
@@ -24,7 +23,7 @@ def display_language(code: str) -> str:
 
 
 def empty_data():
-    return {"sheet": list()}
+    return {"sheet": []}
 
 
 class Exercise(TimeStampedModel, index.Indexed, Orderable):

@@ -1,9 +1,10 @@
+import re
+
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.urls import include, path, register_converter
-from django_rsgi.urls import media_urlpatterns
+from django.urls import include, path, re_path, register_converter
 
 from wagtail import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
@@ -19,7 +20,12 @@ register_converter(PublicFilesConverter, "public")
 urlpatterns = [
     path("sitemap.xml", sitemap),
     path("<public:public_file>", public),
-    *media_urlpatterns(view=serve_upload),
+    # Uploads are served by Django, also in production
+    re_path(
+        rf"^{re.escape(settings.MEDIA_URL.lstrip('/'))}(?P<path>.*)$",
+        serve_upload,
+        {"document_root": settings.MEDIA_ROOT},
+    ),
     path("healthcheck/", healthcheck),
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),

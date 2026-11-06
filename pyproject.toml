@@ -3,19 +3,21 @@ name = "eduland"
 version = "0.1.0"
 description = "EduLand: lernu lingvojn per komiksoj"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.15"
 dependencies = [
+  "attrs>=26.1.0",  # fluent-compiler master imports attrs without declaring it
   "dj-database-url>=3.1.2",
-  "django>=6.0.2",
+  "django>=6.1.3",
   "django-cors-headers>=4.9.0",
   "django-extensions>=4.1",
   "django-ftl>=0.14",
-  "django-rsgi[server]>=1.0.0",
   "django-vite>=3.1.0",
+  "fluent-compiler",
+  "granian>=2.8.5",
   "psycopg[binary]>=3.2.10",
   "sentry-sdk[django]>=2.54.0",
   "toml-decouple>=0.9.0",
-  "wagtail>=7.3",
+  "wagtail>=8.1",
   "wagtail-localize>=1.12.2",
   "wagtail-localize-intentional-blanks>=0.2.4",
   "wagtailmenus>=4.0.6",
@@ -25,10 +27,15 @@ dependencies = [
 dev = [
   "django-debug-toolbar>=6.2.0",
   "django-stubs>=5.2.9",
+  "granian[reload]>=2.8.5",
   "pyasyncore>=1.0.4",
   "pyinotify>=0.9.6",
   "ruff>=0.15",
 ]
+
+[tool.uv.sources]
+# Unreleased fix for Python 3.15 (django-ftl/fluent-compiler#37), remove once > 1.1 is on PyPI
+fluent-compiler = { url = "https://github.com/django-ftl/fluent-compiler/archive/8d5468ed454836428e3a735582bd34e91f5fa7dd.tar.gz" }
 
 [tool.mypy]
 mypy_path = "typings"
@@ -37,10 +44,14 @@ mypy_path = "typings"
 django_settings_module = "config.settings"
 
 [tool.ruff]
-target-version = "py314"
+target-version = "py315"
+extend-exclude = ["**/migrations/*"]
 
 [tool.ruff.lint]
-ignore = ["E731"]  # lambda/def
+ignore = [
+  "E731",  # lambda/def
+  "RUF012",  # Django/Wagtail declarative class attributes (list_display, content_panels…)
+]
 
 [tool.ruff.lint.isort]
 sections = { "django" = ["django*"], "wagtail" = ["wagtail*"] }
