@@ -210,6 +210,10 @@ DJANGO_VITE = {
 
 LOGGING = DEV_LOGGING
 
+if ENVIRONMENT.deployed or ENVIRONMENT.is_build:
+    # The image removes the packages’ static files once collected (Containerfile)
+    SILENCED_SYSTEM_CHECKS += ["wagtailadmin.W001"]
+
 if ENVIRONMENT.deployed:
     LOGGING = PROD_LOGGING
     setup_bugsink(config)

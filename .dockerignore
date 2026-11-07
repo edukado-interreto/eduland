@@ -1,8 +1,15 @@
 .venv
-.ruff_cache
-.docker/db/*_data
-secrets
+.git
 **/__pycache__
+**/.mypy_cache
+**/.ruff_cache
+containers/db
+containers/caddy
+containers/secrets
+uploads
+ui/node_modules
+src/uploads/*
+src/staticfiles
 # Tests are not shipped in the production image
 src/**/tests
 src/conftest.py
