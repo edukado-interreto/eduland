@@ -53,6 +53,11 @@ dbshell:
 urls:
     {{ django }} show_urls
 
+# Run the tests with coverage, against the PostgreSQL of Docker Compose
+[group('django')]
+test args='':
+    {{ dc_exec }} pytest {{ args }}
+
 [group('uv')]
 uv-sync:
     uv sync --locked

@@ -37,6 +37,7 @@
     {% endwagtailcache %}
 
     {# language switcher #}
+    {% if page %}
     {% wagtailpagecache TIMEOUT lang_desktop CACHE_BURST %}
     <button class="button transparent extra" aria-label="Other languages">
       <i aria-hidden="true" class="extra">translate</i>
@@ -48,6 +49,7 @@
       </menu>
     </button>
   {% endwagtailpagecache %}
+    {% endif %}
 
   </nav>
 
@@ -77,12 +79,14 @@
       {% endwagtailcache %}
 
     {# language switcher #}
+        {% if page %}
         {% wagtailpagecache TIMEOUT lang_mobile CACHE_BURST %}
         <li class="active text-black"><i aria-hidden="true">translate</i>{{ page.locale.language_name_localized | capfirst }}</li>
         {% for page_tr in page.get_translations %}
         <li><a href="{% pageurl page_tr %}"><i aria-hidden="true">translate</i> {{ page_tr.locale.language_name_local | capfirst }}</a></li>
         {% endfor %}
         {% endwagtailpagecache %}
+        {% endif %}
       </menu>
     </button>
   </nav>

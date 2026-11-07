@@ -10,3 +10,5 @@ uploads/*
 !uploads/.gitkeep
 staticfiles
 .ash_history
+.coverage
+.pytest_cache

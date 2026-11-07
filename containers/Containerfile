@@ -1,3 +1,6 @@
+# Same uv version as in the CI (.github/workflows/docker-image.yaml)
+FROM ghcr.io/astral-sh/uv:0.12.24 AS uv
+
 ##### BASE STAGE #####
 FROM python:3.15-alpine AS base
 
@@ -8,7 +11,9 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH" \
     UV_PROJECT_ENVIRONMENT=$VIRTUAL_ENV
 
 ##### BUILDER STAGE #####
-FROM ghcr.io/astral-sh/uv:python3.15-alpine AS builder
+FROM base AS builder
+
+COPY --from=uv /uv /uvx /bin/
 
 # Install the project into `/app`
 WORKDIR /app
@@ -40,7 +45,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 COPY --from=builder --chown=appuser:appuser $VIRTUAL_ENV $VIRTUAL_ENV
 
 RUN \
---mount=from=ghcr.io/astral-sh/uv,source=/uv,target=/bin/uv \
+--mount=from=uv,source=/uv,target=/bin/uv \
 --mount=type=cache,target=/root/.cache/uv \
 --mount=type=bind,source=uv.lock,target=uv.lock \
 --mount=type=bind,source=pyproject.toml,target=pyproject.toml \

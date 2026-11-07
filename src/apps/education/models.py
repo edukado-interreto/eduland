@@ -111,8 +111,8 @@ class Exercise(TimeStampedModel, index.Indexed, Orderable):
     @property
     def has_empty_data(self):
         try:
-            self.object.data["sheet"][0]
-        except AttributeError, IndexError:
+            self.data["sheet"][0]
+        except KeyError, IndexError, TypeError:
             return True
         return False
 

@@ -2,3 +2,9 @@
 .ruff_cache
 .docker/db/*_data
 secrets
+**/__pycache__
+# Tests are not shipped in the production image
+src/**/tests
+src/conftest.py
+src/pytest.ini
+src/.coveragerc

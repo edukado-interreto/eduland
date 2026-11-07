@@ -31,6 +31,12 @@ dev = [
   "pyasyncore>=1.0.4",
   "pyinotify>=0.9.6",
   "ruff>=0.15",
+  { include-group = "test" },
+]
+test = [
+  "pytest>=9.2.0",
+  "pytest-cov>=7.1.0",
+  "pytest-django>=4.14.0",
 ]
 
 [tool.uv.sources]

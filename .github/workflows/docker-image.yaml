@@ -4,7 +4,47 @@ on:
   push:
     branches: [ "main" ]
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    services:
+      postgres:
+        image: postgres:18-alpine
+        env:
+          POSTGRES_DB: eduland
+          POSTGRES_USER: eduland
+          POSTGRES_PASSWORD: eduland
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U eduland"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=10
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v10.3.3
+        with:
+          version: "0.12.24"
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --locked --no-dev --group test
+
+      - name: Run tests
+        working-directory: src
+        env:
+          EDULAND_DATABASE_URL: postgres://eduland:_@localhost:5432/eduland
+          EDULAND_POSTGRES_PASSWORD: eduland
+        run: uv run --no-sync pytest --cov-report markdown-append:$GITHUB_STEP_SUMMARY
+
   build:
+    needs: test
     runs-on: ubuntu-latest
     permissions:
       contents: read
