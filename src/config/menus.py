@@ -67,6 +67,8 @@ def get_menu_items() -> list[MenuItem]:
             subitems=shown(
                 MenuItem(icon="info", page=page("about-eduland")),
                 MenuItem(icon="mail", page=page("contact-us")),
+                MenuItem(icon="contract", page=page("terms-of-use")),
+                MenuItem(icon="shield_person", page=page("privacy-policy")),
             ),
         ),
     )
