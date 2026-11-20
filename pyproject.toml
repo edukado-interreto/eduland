@@ -11,6 +11,7 @@ dependencies = [
   "django-cors-headers>=4.9.0",
   "django-extensions>=4.1",
   "django-ftl>=0.14",
+  "django-tailwind>=4.6.0",
   "django-vite>=3.1.0",
   "fluent-compiler",
   "granian>=2.8.5",

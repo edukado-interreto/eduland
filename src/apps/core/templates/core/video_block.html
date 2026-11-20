@@ -1,4 +1,4 @@
 {% load wagtailembeds_tags %}
-<section id="{{ video.value.id }}" class="youtube surface-container-lowest no-round responsive">
+<section id="{{ video.value.id }}" class="relative mx-auto mt-4 mb-12 w-full max-w-section rounded-lg bg-surface-container-lowest text-center text-on-surface first:mt-12 [&_iframe]:aspect-video [&_iframe]:h-auto [&_iframe]:w-full">
     {% embed video.value.url %}
 </section>

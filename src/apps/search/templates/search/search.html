@@ -8,16 +8,16 @@
 {% block content %}
 <h1>Search</h1>
 
-<form action="{% url 'search' %}" method="get">
-    <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
-    <input type="submit" value="Search" class="button">
+<form action="{% url 'search' %}" method="get" class="mt-4">
+    <input type="text" name="query" class="box-border h-[19px] w-[181px] border-2 border-[#767680] bg-white px-0.5 py-px font-[Arial] text-[13.333px] text-black"{% if search_query %} value="{{ search_query }}"{% endif %}>
+    <input type="submit" value="Search" class="btn">
 </form>
 
 {% if search_results %}
-<ul>
+<ul class="mt-4 list-disc pl-10">
     {% for result in search_results %}
     <li>
-        <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
+        <h4><a href="{% pageurl result %}" class="inline-flex">{{ result }}</a></h4>
         {% if result.search_description %}
         {{ result.search_description }}
         {% endif %}
@@ -26,11 +26,11 @@
 </ul>
 
 {% if search_results.has_previous %}
-<a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
+<a class="inline-flex" href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
 {% endif %}
 
 {% if search_results.has_next %}
-<a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
+<a class="inline-flex" href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
 {% endif %}
 {% elif search_query %}
 No results found

@@ -1,40 +1,30 @@
 {% extends "layout/base.html" %}
-{% load static django_vite wagtailcore_tags wagtailimages_tags %}
+{% load static django_vite wagtailcore_tags wagtailimages_tags eduland_tags %}
 
 {% block extra_head %}
   {% vite_asset "src/exercise.ts" %}
 {% endblock %}
 
-{% block extra_css %}
-  #breadcrumbs {
-    i[aria-hidden="true"] {
-      font-size: 1.5em;
-      bottom: 0.05em;
-    }
-  }
-{% endblock %}
-
-{% block body_class %}secondary-gradient{% endblock %}
+{% block body_class %}bg-secondary-gradient{% endblock %}
 {% block main_class %}{% endblock %}
 
 {% block content %}
-<div id="breadcrumbs" aria-role="navigation">
-<p class="margin small-opacity white-text">
-  <a href="{{ page.get_parent.get_parent.url }}">{{ page.get_parent.get_parent }}</a>
-  <i aria-hidden="true" class="medium-opacity">chevron_right</i>
-  <a href="{{ page.get_parent.url }}">{{ page.get_parent }}</a>
-  <i aria-hidden="true" class="medium-opacity">chevron_right</i>
+<div id="breadcrumbs" class="flow-root" aria-role="navigation">
+<p class="m-4 text-white opacity-75">
+  <a href="{{ page.get_parent.get_parent.url }}" class="inline-flex">{{ page.get_parent.get_parent }}</a>
+  {% icon "chevron_right" "breadcrumb-separator" %}
+  <a href="{{ page.get_parent.url }}" class="inline-flex">{{ page.get_parent }}</a>
+  {% icon "chevron_right" "breadcrumb-separator" %}
   {{ self }}
 </p>
 </div>
 
-<section class="responsive">
-<h1 class="large-margin center-align white-text">{{ page.title }}</h1>
+<section class="mx-auto mt-4 mb-12 flow-root w-full max-w-section">
+<h1 class="m-6 text-center text-white">{{ page.title }}</h1>
 
   <article
     id="exercise"
-    class="round large-margin surface-container-lowest"
-    style="min-height:80vh"
+    class="card m-6 min-h-[80vh] rounded-[2rem] bg-surface-container-lowest"
   >
     <div id="mount-exercise"></div>
   </article>

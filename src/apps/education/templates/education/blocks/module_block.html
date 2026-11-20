@@ -1,15 +1,15 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
-<h3 id="module-{{ module_page.slug }}" class="center-align">
-  <a href="{% pageurl module_page %}">{{ module_page.title }}</a>
+<h3 id="module-{{ module_page.slug }}" class="mt-4 text-center">
+  <a href="{% pageurl module_page %}" class="inline-flex">{{ module_page.title }}</a>
 </h3>
 
-<div class="card-small row wrap center-align space-evenly large-margin">
+<div class="m-6 flex min-h-[20vh] flex-wrap items-center justify-center gap-4 text-center">
 {% for unit_page in module_page.get_children.live %}
-    <article class="no-padding round s m l">
-        <a href="{% pageurl unit_page %}">
-          {% srcset_image unit_page.specific.image format-{avif,webp,jpeg} width-470 class="responsive medium" role="presentation" %}
-          <span class="absolute bottom left right padding bottom-shadow bottom-round white-text">
-            <h3 class="small-heading center-align">{{ unit_page.title }}</h3>
+    <article class="card flex-none overflow-hidden rounded-[2rem] p-0">
+        <a href="{% pageurl unit_page %}" class="relative flex items-center justify-center">
+          {% srcset_image unit_page.specific.image format-{avif,webp,jpeg} width-470 class="mx-auto h-48 min-h-[20vh] w-full object-cover" role="presentation" %}
+          <span class="card-overlay">
+            <h3 class="text-center text-small-heading">{{ unit_page.title }}</h3>
           </span>
       </a>
     </article>

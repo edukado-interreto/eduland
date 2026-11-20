@@ -1,10 +1,8 @@
 from dataclasses import asdict, dataclass
 
-from wagtail.models import Locale, Page
+from wagtail.models import Page
 
 from apps.core.ftl_bundles import main
-
-ENGLISH = Locale.objects.get(language_code="en")
 
 t = main.format_lazy
 
@@ -23,7 +21,9 @@ class Menu:
 
 
 def page(slug) -> Page | None:
-    english_page = Page.objects.filter(slug__icontains=slug, locale=ENGLISH).first()
+    english_page = Page.objects.filter(
+        slug__icontains=slug, locale__language_code="en"
+    ).first()
     return english_page.localized if english_page else None
 
 

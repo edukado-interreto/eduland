@@ -1,31 +1,21 @@
 from django import template
-from django.conf import settings
-from django.templatetags.static import StaticNode
+from django.template.loader import render_to_string
 
-from config import menus, utils
+from config import menus
 
 register = template.Library()
 
 
-BEERCSS_DIR = utils.get_beercss_dir(static_dir=settings.STATICFILES_DIRS[0])
-
-
-class BeerCssNode(StaticNode):
-    def url(self, context):
-        filename = self.path.resolve(context)
-        path = f"{BEERCSS_DIR}/{filename}"
-        return self.handle_simple(path)
-
-
-@register.tag("beercss")
-def do_beercss(parser, tokens):
-    """Handle BeerCSS version just as the {% static %} tag."""
-    return BeerCssNode.handle_token(parser, tokens)
+@register.simple_tag
+def icon(name: str, css_class: str = "") -> str:
+    """Inline SVG icon from apps/theme/templates/icons/, e.g. {% icon "menu" "size-8" %}"""
+    return render_to_string(f"icons/{name}.svg", {"class": css_class})
 
 
 @register.inclusion_tag("core/preload_css.html")
-def preload_css(path):
-    return {"path": path, "css_path": path if path.startswith("https://") else None}
+def preload_css(url: str):
+    """Load a stylesheet without blocking the rendering"""
+    return {"url": url}
 
 
 @register.simple_tag(takes_context=True)

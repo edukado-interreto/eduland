@@ -54,7 +54,7 @@ _WAGTAIL_APPS = [
     "admin",
     "",
 ]
-_PROJECT_APPS = ["core", "education", "home", "search"]
+_PROJECT_APPS = ["core", "education", "home", "search", "theme"]
 
 INSTALLED_APPS = [
     "wagtail_localize_intentional_blanks",
@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     *mod("django.contrib", _DJANGO_CONTRIB_APPS),
     "django_ftl.apps.DjangoFtlConfig",
     "django_vite",
+    "tailwind",
     *mod("apps", _PROJECT_APPS),
     "apps.core.apps.CustomImagesAppConfig",
 ]
@@ -196,6 +197,11 @@ STORAGES = {
         else "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
+
+# Tailwind CSS, built by the standalone binary (no Node.js): `manage.py tailwind start`
+TAILWIND_APP_NAME = "apps.theme"
+TAILWIND_USE_STANDALONE_BINARY = True
+TAILWIND_STANDALONE_BINARY_VERSION = "v4.3.5"
 
 DJANGO_VITE = {
     "default": {

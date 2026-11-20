@@ -1,19 +1,19 @@
 {% extends "layout/base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
-{% block main_class %}primary-gradient{% endblock %}
+{% block main_class %}bg-primary-gradient{% endblock %}
 
 {% block content %}
-<h1 class="center-align bold white-text" style="margin-top: 4vh">{{ self.title }}</h1>
+<h1 class="mt-[4vh] text-center font-bold text-white">{{ self.title }}</h1>
 
-<section class="responsive center-align white-text" style="margin-bottom: 4rem">
+<section class="flow mx-auto mt-4 mb-16 w-full max-w-section text-center text-white">
 {{ self.header | richtext }}
 </section>
 
-<section class="responsive">
+<section class="mx-auto mt-4 mb-12 w-full max-w-section">
 {% for news_page in self.get_children.live.reverse %}
-<article class="indigo-text" style="padding: 2rem 5vw; margin-inline: 2em; margin-bottom: 4vh">
-  <h2 class="small-heading bold"><a href="{% pageurl news_page %}">{{ news_page.title }}</a></h2>
-  <p><a href="{% pageurl news_page %}"><small>{{ news_page.specific.standfirst }}</small></a></p>
+<article class="card mx-[2em] mb-[4vh] px-[5vw] py-8 text-indigo not-first:mt-4">
+  <h2 class="text-small-heading font-bold"><a href="{% pageurl news_page %}" class="inline-flex">{{ news_page.title }}</a></h2>
+  <p class="mt-4"><a href="{% pageurl news_page %}" class="inline-flex"><small>{{ news_page.specific.standfirst }}</small></a></p>
 </article>
 {% endfor %}
 </section>

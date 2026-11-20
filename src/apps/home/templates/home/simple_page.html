@@ -1,50 +1,15 @@
 {% extends "layout/base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
-{% block main_class %}responsive max{% endblock %}
+{% block main_class %}w-full{% endblock %}
 
 {% block content %}
-<div class="heading secondary-gradient medium-elevate white-text">
-  <h1>{{ self.title }}</h1>
+<div class="-mt-4 mb-16 bg-secondary-gradient py-8 text-white shadow-elevate-2">
+  <h1 class="mx-auto my-[4vh] max-w-page text-center font-bold">{{ self.title }}</h1>
 </div>
 
-<section style="margin-top:4vh">
-  <article class="reactive indigo-text" style="min-height:50vh">
+<section class="mt-[4vh]">
+  <article class="card flow mx-auto my-[5vh] min-h-[50vh] max-w-page bg-white text-indigo shadow-none">
     {{ self.content | richtext }}
   </article>
 </section>
 {% endblock content %}
-
-{% block extra_css %}
-{{ block.super }}
-.heading {
-  margin-top: -1rem;
-  margin-bottom: 4rem;
-  padding: 2rem 0;
-}
-h1 {
-  max-inline-size: min(100vw,75rem);
-  text-align: center;
-  font-weight: bold;
-  margin: 4vh auto;
-}
-
-section {
-  article {
-    margin: 5vh 0;
-    background-color: white;
-  	box-shadow: none;
-  	padding: var(--_padding);
-
-    &.reactive {
-      max-inline-size: min(100vw,75rem);
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .standfirst {
-      margin-bottom: 5vh;
-    }
-  }
-}
-
-{% endblock %}

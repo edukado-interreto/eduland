@@ -10,6 +10,7 @@ uploads
 ui/node_modules
 src/uploads/*
 src/staticfiles
+src/apps/theme/static/css/dist
 # Tests are not shipped in the production image
 src/**/tests
 src/conftest.py

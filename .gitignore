@@ -9,6 +9,7 @@ containers/secrets
 uploads/*
 !uploads/.gitkeep
 staticfiles
+src/apps/theme/static/css/dist
 .ash_history
 .coverage
 .pytest_cache

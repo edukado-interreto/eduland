@@ -1,59 +1,34 @@
 {% extends "home/simple_page.html" %}
-{% load ftl static wagtailcore_tags wagtailimages_tags %}
-
-{% block main_class %}responsive max{% endblock %}
-
-{% block extra_css %}
-{{ block.super }}
-  #breadcrumbs {
-    bottom: 1em;
-
-    i[aria-hidden="true"] {
-      font-size: 1.5em;
-      bottom: 0.05em;
-    }
-  }
-  .youtube {
-    position: relative;
-    text-align: center;
-  
-    iframe {
-      aspect-ratio: 16 / 9;
-      width: 100%;
-      height: auto;
-    }
-  }
-{% endblock %}
+{% load ftl static wagtailcore_tags wagtailimages_tags eduland_tags %}
 
 {% block content %}
-<div class="heading secondary-gradient medium-elevate white-text">
-  <div id="breadcrumbs" aria-role="navigation">
-  <p class="margin small-opacity white-text">
-    <a href="{{ page.get_parent.url }}">{{ page.get_parent }}</a>
-    <i aria-hidden="true" class="medium-opacity">chevron_right</i>
+<div class="-mt-4 mb-16 bg-secondary-gradient py-8 text-white shadow-elevate-2">
+  <div id="breadcrumbs" class="relative bottom-[1em] flow-root" aria-role="navigation">
+  <p class="m-4 text-white opacity-75">
+    <a href="{{ page.get_parent.url }}" class="inline-flex">{{ page.get_parent }}</a>
+    {% icon "chevron_right" "breadcrumb-separator" %}
     {{ self }}
   </p>
   </div>
-  <h1>{{ self.title }}</h1>
+  <h1 class="mx-auto mt-4 mb-[4vh] max-w-page text-center font-bold">{{ self.title }}</h1>
 </div>
 
-<section class="responsive">
+<section class="mx-auto mt-4 mb-12 flow-root w-full max-w-section">
 
 {% for content in self.body %}
   {% if content.block_type == "text" %}
-    <div class="indigo-text">{{ content }}</div>
+    <div class="flow text-indigo">{{ content }}</div>
   {% elif content.block_type == "video" %}
     {% include "core/video_block.html" with video=content %}
   {% elif content.block_type == "pdf" %}
-    <div class="s12 center-align">
+    <div class="text-center">
       <a
         href="{{ content.value.url }}"
         target="_blank"
-        class="pdf button extra margin surface-container-lowest secondary-gradient medium-elevate small-round"
-        style="min-width:16em;font-size:1.2em"
+        class="btn btn-extra m-4 min-w-[16em] rounded-lg bg-secondary-gradient text-[1.2em] text-on-surface shadow-elevate-2"
       >
-        <b class="white-text">
-          <i aria-hidden="true" class="extra">picture_as_pdf</i>
+        <b class="text-white">
+          {% icon "picture_as_pdf" "size-8" %}
           {{ content.value }}
         </b>
       </a>
@@ -63,23 +38,22 @@
   {% endif %}
 
   {% if not forloop.last %}
-    <br class="space">
+    <br>
   {% endif %}
 {% endfor %}
 
 {% if page.exercise_pages %}
-<h2 class="padding margin center-align primary-text">{% ftlmsg "edu-exercises" count=page.exercise_pages|length %}</h2>
+<h2 class="m-4 p-4 text-center text-primary">{% ftlmsg "edu-exercises" count=page.exercise_pages|length %}</h2>
 {% endif %}
 
-<div class="grid space">
+<div class="mt-4 grid grid-cols-12 gap-4">
 {% for exercise_page in page.exercise_pages %}
-<div class="s12 center-align">
+<div class="col-span-12 text-center">
   <a
     href="{% pageurl exercise_page %}"
-    class="button extra margin surface-container-lowest primary-gradient elevate"
-    style="min-width:16em;font-size:1.2em"
+    class="btn btn-extra m-4 min-w-[16em] bg-primary-gradient text-[1.2em] text-on-surface shadow-elevate-1"
   >
-    <b class="white-text">{{ exercise_page.title }}</b>
+    <b class="text-white">{{ exercise_page.title }}</b>
   </a>
 </div>
 {% endfor %}
@@ -87,4 +61,3 @@
 
 </section>
 {% endblock content %}
-

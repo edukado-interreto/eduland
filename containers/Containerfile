@@ -2,6 +2,8 @@
 ARG PYTHON_VERSION=3.15
 # Same uv version as in the CI (.github/workflows/docker-image.yaml)
 ARG UV_VERSION=0.12.24
+# Same version as TAILWIND_STANDALONE_BINARY_VERSION in src/config/settings.py
+ARG TAILWINDCSS_VERSION=v4.3.5
 
 FROM ghcr.io/astral-sh/uv:${UV_VERSION} AS uv
 
@@ -42,6 +44,17 @@ RUN --mount=from=uv,source=/uv,target=/bin/uv \
     uv pip sync --python $VIRTUAL_ENV /tmp/requirements.txt
 
 
+##### TAILWIND STAGE #####
+# Standalone binary of Tailwind CSS (no Node.js), only for the development and
+# static stages: the production image serves the CSS built in the static stage.
+FROM builder AS tailwind
+
+ARG TAILWINDCSS_VERSION
+ENV TAILWINDCSS_BIN_DIR=/opt/tailwindcss
+
+RUN TAILWINDCSS_VERSION=$TAILWINDCSS_VERSION tailwindcss_install
+
+
 ##### SLIM VENV STAGE #####
 # Rebuilt only when dependencies change. The packages’ static files are
 # collected in the static stage, Django only reads compiled .mo files, and
@@ -69,9 +82,11 @@ RUN find $VIRTUAL_ENV -name "*.po" -delete && \
 
 FROM base AS development
 
-ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    TAILWINDCSS_BIN_DIR=/opt/tailwindcss
 
 COPY --from=builder $VIRTUAL_ENV $VIRTUAL_ENV
+COPY --from=tailwind $TAILWINDCSS_BIN_DIR $TAILWINDCSS_BIN_DIR
 
 RUN \
 --mount=from=uv,source=/uv,target=/bin/uv \
@@ -87,20 +102,25 @@ WORKDIR /app
 # collectstatic with the full venv, which still has the packages’ static files
 FROM base AS static
 
-ENV HOME="/app"
+ENV HOME="/app" \
+    TAILWINDCSS_BIN_DIR=/opt/tailwindcss
 
 COPY --from=builder $VIRTUAL_ENV $VIRTUAL_ENV
+COPY --from=tailwind $TAILWINDCSS_BIN_DIR $TAILWINDCSS_BIN_DIR
 COPY src $HOME
 COPY pyproject.toml uv.lock ./bin/localize_update_fields.sh $HOME/
 
 WORKDIR $HOME
 
+# Tailwind CSS builds apps/theme/static/css/dist/styles.css before it is collected.
 # Once collected, config/static (in STATICFILES_DIRS) only keeps what is read
-# at runtime: the Vite manifest (django-vite) and the BeerCSS directory name
-# (eduland_tags). The project's code is precompiled, like the venv.
-RUN EDULAND_ENVIRONMENT="build" python manage.py collectstatic -v 2 --noinput && \
+# at runtime: the Vite manifest (django-vite). The sources of the CSS are
+# removed too. The project's code is precompiled, like the venv.
+RUN EDULAND_ENVIRONMENT="build" python manage.py tailwind build && \
+    EDULAND_ENVIRONMENT="build" python manage.py collectstatic -v 2 --noinput && \
     find config/static -type f ! -path config/static/vue/assets/manifest.json -delete && \
-    find config/static -mindepth 1 -type d -empty ! -name "beercss-*" -delete && \
+    find config/static -mindepth 1 -type d -empty -delete && \
+    rm -rf apps/theme/static apps/theme/static_src && \
     python -m compileall -q .
 
 

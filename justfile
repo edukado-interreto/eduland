@@ -88,11 +88,16 @@ vue:
 vue-dev:
     npm -C ui run dev
 
-# Download the latest BeerCSS release into the static files
-beercss:
-    #!/usr/bin/env sh
-    TAG=$(xhs api.github.com/repos/beercss/beercss/tags | jq -r '.[0].name' | cut -c 2-)
-    wget -r -np -nH -l1 --cut-dirs=4 --reject 'index.html' -P src/config/static/beercss-$TAG https://cdn.jsdelivr.net/npm/beercss@$TAG/dist/cdn/
+# Build the CSS once (the tailwind service of Docker Compose rebuilds it on changes)
+[group('tailwind')]
+css:
+    {{ django }} tailwind build
+
+# Watch the templates and rebuild the CSS, when running Django outside of Docker
+[group('tailwind')]
+[working-directory('src')]
+css-watch:
+    uv run python manage.py tailwind start
 
 copy_dotenv:
     #!/usr/bin/env python3

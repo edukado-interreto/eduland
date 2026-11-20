@@ -1,4 +1,4 @@
-{% load ftl static django_vite eduland_tags %}<!DOCTYPE html>
+{% load ftl static django_vite eduland_tags tailwind_tags %}<!DOCTYPE html>
 <html lang="{{ request.LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8">
@@ -12,22 +12,15 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="preload" href="/uploads/images/classroom.format-avif.width-1024.avif" as="image" type="image/avif" />
     <link rel="preload" as="font" href="{% static "fonts/GoboCaps-Regular.woff2" %}">
-    {% preload_css "beer.min.css" %}
-    {% preload_css "theme.css" %}
-    {% preload_css "eduland.css" %}
-    {% preload_css "fonts/gobocaps.css" %}
-    <script type="module" src="{% beercss "beer.min.js" %}"></script>
-    {% preload_css "https://api.fonts.coollabs.io/icon?family=Material+Icons" %}
+    {% tailwind_css %}
     {% preload_css "https://api.fonts.coollabs.io/css2?family=Baloo+2:wght@400..800&display=swap" %}
 
     {% vite_hmr_client %}
-    <style>{% block extra_css %}{% endblock %}
-    </style>
     {% block extra_head %}{% endblock %}
   </head>
   <body class="{% block body_class %}{% endblock %}">
     {% include "layout/navbar.html" %}
-    <main class="{% block main_class %}responsive{% endblock %}">
+    <main class="grow overflow-hidden {% block main_class %}mx-auto w-full max-w-page{% endblock %}">
       {% block content %}{% endblock %}
     </main>
     {% block bottom %}{% endblock %}

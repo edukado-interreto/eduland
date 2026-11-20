@@ -1,23 +1,18 @@
 {% extends "layout/base.html" %}
 {% load static ftl wagtailcore_tags wagtailimages_tags wagtail_cache %}
 
-{% block body_class %}primary-gradient{% endblock %}
-{% block main_class %}responsive max{% endblock %}
-
-{% block extra_css %}{% image page.hero_image format-avif width-1024 as hero_image %} {{ block.super }}
-    .hero::before {
-        background-image: url('{{ hero_image.url }}')
-    }
-{% endblock extra_css %}
+{% block body_class %}bg-primary-gradient{% endblock %}
+{% block main_class %}w-full{% endblock %}
 
 {% block content %}
 {% wagtailpagecache TIMEOUT home_page CACHE_BURST %}
-<section id="hero" class="hero white-text medium-elevate small-opacity">
+{% image page.hero_image format-avif width-1024 as hero_image %}
+<section id="hero" class="hero flow text-white opacity-75 shadow-elevate-2" style="--hero-image: url('{{ hero_image.url }}')">
   {{ page.hero_text | richtext }}
-  <div class="large-space"></div>
+  <div class="h-12"></div>
   {% for cta in page.hero_cta %}
     <p>
-      <a href="{% firstof cta.value.url cta.value.page.url %}" class="button extra border transparent">
+      <a href="{% firstof cta.value.url cta.value.page.url %}" class="btn btn-extra btn-flat box-border border border-outline-variant">
         {{ cta.value.text }}
       </a>
     </p>
@@ -25,37 +20,36 @@
 </section>
 
 
-<section id="comics" class="responsive white-text">
-    <h2 class="center-align bold">{% ftlmsg "app-comics" %}</h2>
-    <div class="row space-evenly wrap">
+<section id="comics" class="mx-auto mt-4 mb-12 w-full max-w-section text-white">
+    <h2 class="text-center font-bold">{% ftlmsg "app-comics" %}</h2>
+    <div class="mt-4 flex flex-wrap items-center justify-evenly gap-4">
       {% for file in page.comics %}
         {{ file }}
       {% endfor %}
     </div>
 </section>
 
-<section id="modules" class="white-text">
-    <h2 class="center-align bold">{% ftlmsg "app-modules" %}</h2>
+<section id="modules" class="mt-4 flow-root text-white">
+    <h2 class="text-center font-bold">{% ftlmsg "app-modules" %}</h2>
 
     {% for module in self.module_pages %}
         {% include "education/blocks/module_block.html" with module_page=module only %}
     {% endfor %}
 </section>
 
-<section id="methodology" class="responsive white-text">
-    <h2 class="center-align bold">{% ftlmsg "app-methodology" %}</h2>
+<section id="methodology" class="flow mx-auto mt-4 mb-12 w-full max-w-section text-white">
+    <h2 class="text-center font-bold">{% ftlmsg "app-methodology" %}</h2>
 
     {{ page.methodology_intro|richtext }}
 
     {% for methodology_page in page.methodology_pages %}
-      <article class="card-medium no-padding round fill" id="{{ methodology_page.slug }}">
-      <a href="{% pageurl methodology_page %}">
-        {% srcset_image methodology_page.specific.image format-{avif,webp,jpeg} width-800 class="responsive medium" role="presentation" %}
-        <div class="absolute bottom left right padding bottom-shadow bottom-round white-text">
-          <nav>
-            <h3 class="small-heading">{{ methodology_page.title }}</h3>
-            <div class="max"></div>
-          </nav>
+      <article class="card min-h-[30vh] overflow-hidden rounded-[2rem] bg-surface-variant p-0" id="{{ methodology_page.slug }}">
+      <a href="{% pageurl methodology_page %}" class="relative flex items-center justify-center">
+        {% srcset_image methodology_page.specific.image format-{avif,webp,jpeg} width-800 class="mx-auto h-48 min-h-[30vh] w-full object-cover" role="presentation" %}
+        <div class="card-overlay">
+          <div class="flex items-center gap-4">
+            <h3 class="flex-none text-small-heading">{{ methodology_page.title }}</h3>
+          </div>
         </div>
         </a>
       </article>
@@ -63,11 +57,10 @@
 </section>
 
 
-<section id="about" class="responsive white-text">
+<section id="about" class="flow mx-auto mt-4 mb-12 w-full max-w-section text-white">
     {{ page.about|richtext }}
 </section>
 
-<div class="large-space"></div>
+<div class="h-12"></div>
 {% endwagtailpagecache %}
 {% endblock content %}
-

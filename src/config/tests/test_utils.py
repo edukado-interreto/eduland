@@ -1,6 +1,6 @@
 import pytest
 
-from config.utils import Environment, get_beercss_dir, is_testing, mod
+from config.utils import Environment, is_testing, mod
 
 
 def test_mod():
@@ -46,13 +46,3 @@ def test_environment_init(monkeypatch):
 
 def test_is_testing():
     assert is_testing()
-
-
-def test_get_beercss_dir(tmp_path):
-    (tmp_path / "beercss-4.0.16").mkdir()
-    assert get_beercss_dir(tmp_path) == "beercss-4.0.16"
-
-
-def test_get_beercss_dir_missing(tmp_path):
-    with pytest.raises(IndexError, match="BeerCSS"):
-        get_beercss_dir(tmp_path)

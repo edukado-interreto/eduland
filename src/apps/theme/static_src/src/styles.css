@@ -1,0 +1,385 @@
+/*
+ * EduLand styles, compiled by the Tailwind CSS standalone binary:
+ * `./manage.py tailwind start` (watch mode) or `./manage.py tailwind build`.
+ *
+ * Only the theme variables and the preflight are in cascade layers. The
+ * project styles and the utilities stay unlayered on purpose: the Vuetify CSS
+ * of the exercises is unlayered and starts with `* {margin: 0; padding: 0}`,
+ * which would win over any layered rule, utilities included.
+ */
+@layer theme, base;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+
+@source "../../../**/*.html";
+@source "../../templates/**/*.{html,svg}";
+
+@theme {
+  /* Same breakpoints as BeerCSS: s ≤ 600px < m ≤ 992px < l */
+  --breakpoint-*: initial;
+  --breakpoint-md: 601px;
+  --breakpoint-lg: 993px;
+
+  --container-page: min(100vw, 75rem);
+  --container-section: min(96vw, 75rem);
+
+  --font-sans: "Baloo 2", "Gill Sans", "Gill Sans MT", Roboto, Calibri, "Trebuchet MS", sans-serif;
+  --font-display: "Gobo Caps";
+
+  --text-small-heading: calc(1.4rem + 0.4vw);
+  --text-small-heading--line-height: normal;
+
+  --color-indigo: #3f51b5;
+  /* Material Design palette, light scheme */
+  --color-primary: #9a25ae;
+  --color-on-surface: #1e1a1d;
+  --color-surface-variant: #fff;
+  --color-surface-container: #f4f4f4;
+  --color-surface-container-low: #fafafa;
+  --color-surface-container-lowest: #fff;
+  --color-tertiary-container: #d4e7ff;
+  --color-on-tertiary-container: #33110c;
+  --color-outline-variant: #d0c3cc;
+
+  --shadow-elevate-1: 0 0.125rem 0.125rem 0 rgb(0 0 0 / 0.32);
+  --shadow-elevate-2: 0 0.25rem 0.5rem 0 rgb(0 0 0 / 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #cfbcff;
+    --color-on-surface: #e9e0e4;
+    --color-surface-variant: #4d444c;
+    --color-surface-container: #221e22;
+    --color-surface-container-low: #1e1a1d;
+    --color-surface-container-lowest: #100d10;
+    --color-tertiary-container: #673b34;
+    --color-on-tertiary-container: #ffdad4;
+    --color-outline-variant: #4d444c;
+  }
+}
+
+@font-face {
+  font-family: "Gobo Caps";
+  src: url("/static/fonts/GoboCaps-Italic.woff2") format("woff2"),
+    url("/static/fonts/GoboCaps-Italic.woff") format("woff");
+  /* European Latin characters */
+  unicode-range: U+0000-024F;
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gobo Caps";
+  src: url("/static/fonts/GoboCaps-Regular.woff2") format("woff2"),
+    url("/static/fonts/GoboCaps-Regular.woff") format("woff");
+  /* European Latin characters */
+  unicode-range: U+0000-024F;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Defaults the preflight removes, but that the Vuetify reset may override */
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  small {
+    font-size: smaller;
+  }
+
+  button,
+  input,
+  select,
+  optgroup,
+  textarea {
+    letter-spacing: normal;
+  }
+}
+
+/*** ELEMENTS ***/
+
+body {
+  @apply flex min-h-dvh flex-col overflow-x-hidden bg-white font-sans text-on-surface;
+  font-size: calc(15px + 0.4vw);
+  line-height: 1.4em;
+  letter-spacing: 0.0313rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  line-height: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-display);
+}
+
+h1 {
+  font-size: 3.5625rem;
+}
+
+h2 {
+  font-size: 2.8125rem;
+}
+
+h3 {
+  font-size: 2.25rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 1.75rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-block: 0.5rem;
+}
+
+main > section h2 {
+  margin-top: 3rem;
+}
+
+:is(a, button):focus-visible {
+  outline: 0.125rem solid var(--color-primary);
+  outline-offset: 0.25rem;
+}
+
+/* Thin scrollbars inside the page (menus, exercises…) */
+@media (pointer: fine) {
+  body ::-webkit-scrollbar,
+  body ::-webkit-scrollbar-thumb,
+  body ::-webkit-scrollbar-button {
+    background: none;
+    inline-size: 0.4rem;
+    block-size: 0.4rem;
+  }
+
+  body :is(:focus, :hover)::-webkit-scrollbar-thumb,
+  body :has(:focus, :hover)::-webkit-scrollbar-thumb {
+    background: var(--color-outline-variant);
+    border-radius: 1rem;
+  }
+}
+
+/*** UTILITIES ***/
+
+@utility bg-primary-gradient {
+  background: linear-gradient(135deg, #4facfe 0%, #764ba2 100%);
+}
+
+@utility bg-secondary-gradient {
+  background: linear-gradient(135deg, #0c608f 0%, #4facfe 100%);
+}
+
+/*** COMPONENTS ***/
+
+/* Vertical rhythm: a block that follows another element is spaced by 1rem */
+.flow > :where(* + :is(article, blockquote, form, h1, h2, h3, h4, h5, h6, nav, ol, p, pre, section, table, ul)) {
+  margin-block-start: 1rem;
+}
+
+/* Inline SVG icon, from {% icon %} */
+.icon {
+  @apply inline-block size-6 shrink-0 fill-current align-middle;
+}
+
+/* Chevron between breadcrumbs: a 1.5em glyph drawn in a 1.5rem box */
+.breadcrumb-separator {
+  @apply relative bottom-[0.075em] -m-[calc(0.75em-0.75rem)] size-[1.5em] opacity-50;
+}
+
+.btn {
+  @apply relative box-content inline-flex h-10 cursor-pointer items-center justify-center gap-2 rounded-[2.5rem] bg-primary px-4 text-sm leading-[normal] font-medium text-white select-none;
+  transition:
+    transform 0.3s,
+    border-radius 0.2s,
+    padding 0.3s;
+
+  & > :is(span, svg, img) {
+    pointer-events: none;
+  }
+
+  /* Ripple on hover */
+  &::after {
+    @apply pointer-events-none absolute inset-0 z-1 rounded-[inherit] opacity-0;
+    content: "";
+    background-position: center;
+    background-image: radial-gradient(circle, currentColor 1%, transparent 1%);
+  }
+
+  &:is(:hover, :focus-visible)::after {
+    background-size: 22500%;
+    opacity: 0.1;
+    transition: background-size 0.2s linear;
+  }
+
+  &:active::after {
+    background-size: 0%;
+    opacity: 0;
+  }
+
+  &:active {
+    @apply rounded-lg;
+  }
+}
+
+.btn-extra {
+  @apply h-14 rounded-[3.5rem] px-6 text-base;
+}
+
+.btn-flat {
+  @apply bg-transparent text-inherit shadow-none;
+}
+
+/* Drop-down menu, opened when its parent (usually a button) has the focus */
+.menu {
+  @apply invisible absolute bottom-0 left-0 z-11 flex max-h-[50vh] w-max flex-col justify-start gap-0.5 overflow-x-hidden overflow-y-auto rounded-2xl bg-surface-container p-1 text-start text-sm leading-[normal] font-normal whitespace-nowrap normal-case text-on-surface opacity-0 shadow-elevate-2;
+  transform: scale(0.8) translateY(120%);
+  transition: all 0.2s 0.2s;
+
+  & > li,
+  & > li > a {
+    @apply relative box-border flex min-h-11 flex-1 cursor-pointer items-center gap-4 rounded-sm px-4 py-2;
+    transition: border-radius 0.2s;
+  }
+
+  & > li:has(> a) {
+    @apply p-0;
+  }
+
+  & > li:first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+
+  & > li:last-child {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+  }
+
+  & > li:hover {
+    background-color: color-mix(in srgb, currentColor 10%, transparent);
+  }
+
+  & > li.active {
+    @apply rounded-xl bg-tertiary-container text-on-tertiary-container;
+  }
+
+  :focus-within > & {
+    @apply visible opacity-100;
+    transform: scale(1) translateY(100%);
+    transition:
+      all 0.2s,
+      background-color 0s;
+  }
+
+  @media (pointer: coarse) {
+    :hover > & {
+      @apply visible opacity-100;
+      transform: scale(1) translateY(100%);
+    }
+  }
+}
+
+.card {
+  @apply block rounded-xl bg-surface-container-low p-4 text-on-surface shadow-elevate-1;
+  transition:
+    transform 0.3s,
+    border-radius 0.3s,
+    padding 0.3s;
+}
+
+/* Caption at the bottom of a card image */
+.card-overlay {
+  @apply absolute inset-x-0 bottom-0 p-4 text-white;
+  background-image: linear-gradient(to top, black, transparent);
+}
+
+.hero {
+  @apply relative -m-2 mb-[10vh] min-h-[60vh] px-[20vw] py-20 text-center max-md:px-[5vw] max-md:py-8 max-md:text-[80%];
+
+  /* --hero-image is set by the template */
+  &::before {
+    @apply absolute inset-0 block bg-cover bg-no-repeat opacity-10;
+    content: " ";
+    background-image: var(--hero-image);
+    background-position: 70%;
+  }
+}
+
+/*** EXERCISES ***/
+
+/*
+ * The exercises (Vue and Vuetify) were laid out under the global base rules of
+ * BeerCSS. They are kept for their mount point only, with the same low
+ * specificity, so that Vuetify's own rules still win.
+ */
+:where(#mount-exercise, #mount-exercise *) {
+  position: relative;
+  vertical-align: middle;
+  border-radius: inherit;
+}
+
+:where(#mount-exercise) :where(a, b, i, span, strong, em, code, label) {
+  vertical-align: baseline;
+}
+
+:where(#mount-exercise) :is(button, i) {
+  box-sizing: content-box;
+}
+
+:where(#mount-exercise) i {
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+/* e.g. the pill-shaped .v-sheet--rounded */
+:where(#mount-exercise) [class*="-round"] {
+  border-radius: 2rem !important;
+}
+
+:where(#mount-exercise) :is(img, svg, video, canvas, audio, iframe, embed, object) {
+  display: inline;
+}
+
+:where(#mount-exercise) :is(img, video) {
+  max-width: none;
+}
+
+/* Default style of the browsers */
+:where(#mount-exercise) ol {
+  position: static;
+  vertical-align: baseline;
+  box-sizing: content-box;
+  margin-block: 1em;
+  padding-inline-start: 40px;
+  list-style: decimal;
+}
+
+/* Vuetify text fields and lists */
+.v-field,
+.v-list-item-title {
+  font-size: calc(15px + 0.4vw) !important;
+}
+
+@tailwind utilities;

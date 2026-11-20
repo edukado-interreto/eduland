@@ -23,7 +23,7 @@ services:
       - backend
 
   django:
-    build:
+    build: &django-build
       context: .
       dockerfile: ./containers/Containerfile
       target: development
@@ -42,7 +42,7 @@ services:
       - GRANIAN_RUNTIME_MODE=st
       - GRANIAN_LOG_ACCESS_ENABLED=true
       - GRANIAN_RELOAD=true
-      - GRANIAN_RELOAD_IGNORE_DIRS=static staticfiles uploads
+      - GRANIAN_RELOAD_IGNORE_DIRS=static static_src staticfiles uploads
     networks:
       - backend
     volumes:
@@ -55,8 +55,25 @@ services:
     depends_on:
       - proxy
       - postgres
+      - tailwind
     restart: unless-stopped
     stop_grace_period: 1s
+
+  # Rebuilds the CSS when the templates or apps/theme/static_src change
+  tailwind:
+    build: *django-build
+    user: ${USER_ID:-1000}:${GROUP_ID:-1000}
+    command: ./manage.py tailwind start
+    # The Tailwind CSS watcher stops when its standard input is closed
+    stdin_open: true
+    secrets:
+      - source: postgres-password
+        target: POSTGRES_PASSWORD
+    volumes:
+      - ./src:/app:z
+    env_file:
+      - ./src/config/.env
+    restart: unless-stopped
 
   postgres:
     image: postgres:18-alpine

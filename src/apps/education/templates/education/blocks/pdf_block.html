@@ -1,10 +1,10 @@
 {% load static wagtailimages_tags %}
-<article class="card-tall large-margin no-padding">
-    <a href="{{ self.pdf.url }}" target="_blank">
-      {% srcset_image self.image format-{avif,webp,jpeg} width-{260,378} class="responsive" role="presentation" %}
-      <div class="absolute bottom left right padding bottom-shadow white-text">
-        <h3 class="small-heading bold">{{ self.title }}</h3>
-        <p>{{ self.text }}</p>
+<article class="card m-6 aspect-[5/7] min-h-[30vh] flex-none overflow-hidden p-0">
+    <a href="{{ self.pdf.url }}" target="_blank" class="relative flex items-center justify-center">
+      {% srcset_image self.image format-{avif,webp,jpeg} width-{260,378} class="mx-auto aspect-[5/7] size-full max-h-[40vh] min-h-[300px] object-cover" role="presentation" %}
+      <div class="card-overlay">
+        <h3 class="text-small-heading font-bold">{{ self.title }}</h3>
+        <p class="mt-4">{{ self.text }}</p>
       </div>
     </a>
 </article>
